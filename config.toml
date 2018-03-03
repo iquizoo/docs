@@ -12,7 +12,7 @@ theme = "hugo-xmin"
 # ignore blogdown related files
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "\\.csv$", "\\.R$", "\\.gv$", "\\.png", "README.md"]
 # enable gitinfo for publish date
-enableGitInfo = false
+enableGitInfo = true
 # misc settings
 preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
