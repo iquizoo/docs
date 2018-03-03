@@ -1,0 +1,26 @@
+{{ partial "header.html" . }}
+
+{{if not .IsHome }}
+<h1>{{ .Title }}</h1>
+{{ end }}
+
+{{ .Content }}
+
+<table class="sortable">
+  <tr>
+    <td>ID</td>
+    <td>名称</td>
+    <td>创建日期</td>
+    <td>最后修改日期</td>
+  </tr>
+  {{ range (where .Data.Pages "Section" "!=" "") }}
+  <tr>
+    <td>{{ .Params.code }}</td>
+    <td><a href="{{ .URL }}">{{ .Title }}</a></td>
+    <td>{{ .Date.Format "2006/01/02" }}</td>
+    <td>{{ .Lastmod.Format "2006/01/02" }}</td>
+  </tr>
+  {{ end }}
+</table>
+
+{{ partial "footer.html" . }}

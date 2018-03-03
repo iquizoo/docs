@@ -1,0 +1,6 @@
+[submodule "public"]
+	path = public
+	url = ./public
+[submodule "content"]
+	path = content
+	url = ./content

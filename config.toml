@@ -1,0 +1,46 @@
+# site is based on github pages
+baseurl = "http://iquizoo.github.io/"
+# use Chinese languages
+languageCode = "zh-CN"
+hasCJKLanguage = true
+# set title
+title = "爱智游设计文档中心"
+# use xmin theme designed by Yihui
+theme = "hugo-xmin"
+# googleAnalytics = ""
+# disqusShortname = ""
+# ignore blogdown related files
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "\\.csv$", "\\.R$", "\\.gv$", "\\.png"]
+# enable gitinfo for publish date
+enableGitInfo = false
+# misc settings
+preserveTaxonomyNames = true
+footnotereturnlinkcontents = "↩"
+
+[permalinks]
+    post = "/post/:slug/"
+
+[[menu.main]]
+    name = "主页"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 2
+[[menu.main]]
+    name = "术语表"
+    url = "/glossary/"
+    weight = 3
+[[menu.main]]
+    name = "标准"
+    url = "/standard/"
+    weight = 4
+[[menu.main]]
+    name = "文档"
+    url = "/post/"
+    weight = 5
+
+[params]
+    description = "A website built through Hugo and blogdown."
+    footer = "&copy; [爱智游](http://www.iquizoo.com/) 2017 -- 2018"
