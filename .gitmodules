@@ -1,6 +1,6 @@
 [submodule "public"]
 	path = public
-	url = ./public
+	url = https://github.com/iquizoo/iquizoo.github.io
 [submodule "content"]
 	path = content
-	url = ./content
+	url = https://github.com/iquizoo/docs
