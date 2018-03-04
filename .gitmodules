@@ -4,3 +4,6 @@
 [submodule "content"]
 	path = content
 	url = https://github.com/iquizoo/docs
+[submodule "themes/hugo-xmin"]
+	path = themes/hugo-xmin
+	url = https://github.com/iquizoo/hugo-xmin
