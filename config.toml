@@ -1,5 +1,5 @@
 # site is based on github pages
-baseurl = "http://iquizoo.github.io/"
+baseurl = "http://docs-iquizoo.netlify.com/"
 # use Chinese languages
 languageCode = "zh-CN"
 hasCJKLanguage = true
