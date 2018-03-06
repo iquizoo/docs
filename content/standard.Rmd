@@ -1,0 +1,52 @@
+---
+title: "标准"
+---
+
+# 说明
+
+为了便于机器或人之间进行交流，此处对数据交换定出一些标准格式，后面将严格依照这些标准进行数据交换。
+
+# 标准列表
+
+## 原始数据记录
+
+* 把原始数据记录为[`json`](http://json.org/)字符串
+    + 由多个同质的对象构成为一个有序的数组，长度等于试次个数，顺序则和试次出现的顺序一致
+    + 每个对象都是由数个“名称/值”配对组成，单个配对构成一个试次中需要记录的一个变量，所有需要记录的变量及每个变量的类型将在每个题目的设计文档中给出。
+* 记录格式举例
+    + 本例示范了一个包含3个试次的数据记录
+    + 每个试次中记录了两个变量
+        - `RT`：`int`类型变量（此变量名称一般都会用于记录用户的**反应时间**）
+        - `RSeries`：`char`类型变量
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+library(jsonlite)
+jtest <- data.frame(RT = c(341, 234, 765), RSeries = c("123", "3451", "31242"))
+toJSON(jtest, auto_unbox = TRUE)
+```
+
+* 部分特殊变量数值标准
+    + 用户的**反应时间**始终采用名称**RT**记录，且使用毫秒作单位。若用户没有操作，反应时间记为`0`。
+    + 用户的反应**是否正确**始终采用名称**ACC**记录，且正确记为`1`，错误记为`0`。需要用户操作而用户未操作时则记为`-1`（注意有时候不操作时正确的）。
+
+## 刺激呈现序列
+
+* 刺激序列一般都采用预先设置好的伪随机序列，并使用[`json`](http://json.org/)字符串传输和交流。
+* 传输格式
+    + 不同长度的序列构成一个`json`数组。
+    + 单个元素为`json`对象，其中包含如下`名称/值(name/value)`
+        - `length`：必须的值，表示序列的长度
+        - `stim`：必须的值，由**刺激名称**组成的多个序列的合并，不同序列采用`;`分隔，序列前后采用`,`分隔
+        - 其他变量：其他一些非必需的值，注意和`stim`保持格式一致
+* 记录格式举例
+    + 本例和[捉虫-CPT2](`r blogdown::shortcode("relref", "post/00903_CPT2.html")`)一致。
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+library(jsonlite)
+jslist <- data.frame(
+  length = c(5, 10),
+  stim = c("A,B,X,A,X;C,A,D,X,A", "A,B,C,D,X,A,X,D,B,C"),
+  scat = c("Aonly,AnotX,Xonly,Aonly,Target;Random,Aonly,AnotX,Xonly,Aonly",
+           "Aonly,AnotX,Random,Random,Xonly,Aonly,Target,Random,Random,Random"))
+prettify(toJSON(jslist, auto_unbox = TRUE))
+```

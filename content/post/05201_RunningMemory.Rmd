@@ -1,0 +1,75 @@
+---
+title: 记忆尾巴（RunningMemory）
+author: 张亮
+date: 2018-03-03
+slug: 05201-runningmemory
+code: "05201"
+---
+
+```{r basic-settings, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+CODE <- "05201"
+SDK <- 100
+NAME_CN <- "记忆尾巴"
+NAME_EN <- "RunningMemory"
+VER <- "V4"
+```
+
+## 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：测查自控力，特别是更新记忆内容的能力。
+* **测查能力**：自控力-信息更新
+* **参考模板**：倒背数，顺背数
+
+## 交互界面
+
+屏幕中央以**一次一个**的方式呈现一系列数字，用户需要不断更新记忆以记住序列中**最后呈现的四个数字**。待所有数字呈现完毕后，屏幕上方显示出与呈现数字个数相同的方框，但仅有最后四个显示为可填入数字的样式（如，将前面数个的样式改为灰色框）。用户此时使用**鼠标点击**（`PC`）或**触摸**（`Android/iOS`）屏幕下方呈现的数字键盘以输入所记住的最后四个数字。每输入一个，上方那四个可填入数字的方框的相应位置就显示出所输入的数字。直到四个数字输入完毕后，屏幕显示一定时间（试次间隔时间）的空白，之后进入下一个试次。
+
+**练习**。练习时候需要让用户了解到作答时候顺序的重要性，即必须按原来的顺序点击最后出现的四个数字。
+
+## 详细说明
+
+* 刺激
+    + 每个试次中会呈现一系列数字，单个数字呈现时间由参数`maxSt`（默认300ms）控制，数字呈现时间间隔由参数`isi`（默认1000ms）控制。
+
+* 序列
+    + 本题目中单个试次要呈现的数字个数有三种，即5，7，9个。
+    + 正式测评总计12个试次，即每种4个试次。
+    + 练习总计3次，即每种1次。
+
+* 序列配置（参考[标准](`r blogdown::shortcode("relref", "standard.html")`)中关于格式的说明）
+    + 本题目只有一种序列，因此传输序列的[`json`](http://json.org/)字符串仅包含一个由两个`名称/值`配对组成的对象。
+        - `prac`: 练习阶段的3个序列。
+        - `test`: 正式测试阶段的12个序列。
+
+## 配置参数
+
+```{r configs, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+knitr::kable(readr::read_csv(file.path("config", NAME_EN, "configs.csv")),
+             caption = "配置参数总表")
+```
+
+## 数据记录
+
+* 题目结果显示
+    + 显示正确率和平均正确反应时间
+    + 展示标准分数和超越百分比
+* 提交原始数据如下表（参考[标准](`r blogdown::shortcode("relref", "standard.html")`)中关于格式的说明）
+    
+```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+knitr::kable(readr::read_csv(file.path("config", NAME_EN, "recs.csv")),
+             caption = "原始数据变量列表")
+```
+
+## 试题算分
+
+* 算分码：`r SDK`
+* 传入参数：
+
+```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+knitr::kable(readr::read_csv(file.path("config", NAME_EN, "sdk.csv")))
+```
+
+## 修订历史

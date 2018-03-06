@@ -1,0 +1,6 @@
+﻿名称,类型,说明
+`STIM`,`char`,刺激名称(STIMulus)，即`A`、`B`、`C`、`D`或`X`
+`SCat`,`char`,"刺激类型(Stimulus Category)，包括五种类型：'Target','AnotX','Aonly','Xonly'或'Random'"
+`Resp`,`int`,用户是否操作(Response)，0=未操作，1=操作。
+`ACC`,`int`,正确或错误(ACCuracy)，0=错误，1=正确。
+`RT`,`int`,用户完成操作所需时间（单位：毫秒）(Response Time)，若未完成操作，则记为0
