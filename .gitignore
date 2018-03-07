@@ -1,4 +1,11 @@
+# rstudio project related
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+
+# vs code related
+.vscode
+
+# temporary files
+tmp/
