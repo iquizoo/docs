@@ -13,6 +13,8 @@ theme = "hugo-xmin"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "\\.csv$", "\\.R$", "\\.gv$", "README.md", "_bookdown.yml"]
 # enable gitinfo for publish date
 enableGitInfo = true
+# disable taxonomies
+disableKinds = ["taxonomy", "taxonomyTerm"]
 # misc settings
 preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
