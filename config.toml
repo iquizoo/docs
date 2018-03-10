@@ -13,11 +13,14 @@ theme = "hugo-xmin"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "\\.csv$", "\\.R$", "\\.gv$", "README.md", "_bookdown.yml"]
 # enable gitinfo for publish date
 enableGitInfo = true
-# disable taxonomies
-disableKinds = ["taxonomy", "taxonomyTerm"]
+# disable "taxonomyTerm" because there is no need for a separated term page
+disableKinds = "taxonomyTerm"
 # misc settings
 preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
+
+[taxonomies]
+    taskname = "tasknames"
 
 [permalinks]
     post = "/post/:slug/"
