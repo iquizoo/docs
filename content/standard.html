@@ -1,0 +1,73 @@
+---
+title: "标准"
+---
+
+
+
+<div class="section level1">
+<h1>说明</h1>
+<p>为了便于机器或人之间进行交流，此处对数据交换定出一些标准格式，后面将严格依照这些标准进行数据交换。</p>
+</div>
+<div class="section level1">
+<h1>标准列表</h1>
+<div class="section level2">
+<h2>原始数据记录</h2>
+<ul>
+<li>把原始数据记录为<a href="http://json.org/"><code>json</code></a>字符串
+<ul>
+<li>由多个同质的对象构成为一个有序的数组，长度等于试次个数，顺序则和试次出现的顺序一致</li>
+<li>每个对象都是由数个“名称/值”配对组成，单个配对构成一个试次中需要记录的一个变量，所有需要记录的变量及每个变量的类型将在每个题目的设计文档中给出。</li>
+</ul></li>
+<li>记录格式举例
+<ul>
+<li>本例示范了一个包含3个试次的数据记录</li>
+<li>每个试次中记录了两个变量
+<ul>
+<li><code>RT</code>：<code>int</code>类型变量（此变量名称一般都会用于记录用户的<strong>反应时间</strong>）</li>
+<li><code>RSeries</code>：<code>char</code>类型变量</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code>## [{&quot;RT&quot;:341,&quot;RSeries&quot;:&quot;123&quot;},{&quot;RT&quot;:234,&quot;RSeries&quot;:&quot;3451&quot;},{&quot;RT&quot;:765,&quot;RSeries&quot;:&quot;31242&quot;}]</code></pre>
+<ul>
+<li>部分特殊变量数值标准
+<ul>
+<li>用户的<strong>反应时间</strong>始终采用名称<strong>RT</strong>记录，且使用毫秒作单位。若用户没有操作，反应时间记为<code>0</code>。</li>
+<li>用户的反应<strong>是否正确</strong>始终采用名称<strong>ACC</strong>记录，且正确记为<code>1</code>，错误记为<code>0</code>。需要用户操作而用户未操作时则记为<code>-1</code>（注意有时候不操作时正确的）。</li>
+</ul></li>
+</ul>
+</div>
+<div class="section level2">
+<h2>刺激呈现序列</h2>
+<ul>
+<li>刺激序列一般都采用预先设置好的伪随机序列，并使用<a href="http://json.org/"><code>json</code></a>字符串传输和交流。</li>
+<li>传输格式
+<ul>
+<li>不同长度的序列构成一个<code>json</code>数组。</li>
+<li>单个元素为<code>json</code>对象，其中包含如下<code>名称/值(name/value)</code>
+<ul>
+<li><code>length</code>：必须的值，表示序列的长度</li>
+<li><code>stim</code>：必须的值，由<strong>刺激名称</strong>组成的多个序列的合并，不同序列采用<code>;</code>分隔，序列前后采用<code>,</code>分隔</li>
+<li>其他变量：其他一些非必需的值，注意和<code>stim</code>保持格式一致</li>
+</ul></li>
+</ul></li>
+<li>记录格式举例
+<ul>
+<li>本例和<a href="{{% relref "post/00903_CPT2.html" %}}">捉虫-CPT2</a>一致。</li>
+</ul></li>
+</ul>
+<pre><code>## [
+##     {
+##         &quot;length&quot;: 5,
+##         &quot;stim&quot;: &quot;A,B,X,A,X;C,A,D,X,A&quot;,
+##         &quot;scat&quot;: &quot;Aonly,AnotX,Xonly,Aonly,Target;Random,Aonly,AnotX,Xonly,Aonly&quot;
+##     },
+##     {
+##         &quot;length&quot;: 10,
+##         &quot;stim&quot;: &quot;A,B,C,D,X,A,X,D,B,C&quot;,
+##         &quot;scat&quot;: &quot;Aonly,AnotX,Random,Random,Xonly,Aonly,Target,Random,Random,Random&quot;
+##     }
+## ]
+## </code></pre>
+</div>
+</div>
