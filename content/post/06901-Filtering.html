@@ -6,9 +6,30 @@ draft: true
 slug: 06901-filtering
 code: "06901"
 tasknames: "干扰排除范式"
+bibliography: "refs/MyFullResearch.bib"
+link-citations: true
+output:
+  blogdown::html_page:
+    toc: true
 ---
 
 
+<div id="TOC">
+<ul>
+<li><a href="#info">基本信息</a></li>
+<li><a href="#flow">交互界面</a></li>
+<li><a href="#detail">详细说明</a><ul>
+<li><a href="#stim">刺激</a></li>
+<li><a href="#oper">操作</a></li>
+<li><a href="#seq">序列配置</a></li>
+</ul></li>
+<li><a href="#config">配置参数</a></li>
+<li><a href="#rec">数据记录</a></li>
+<li><a href="#sdk">试题算分</a></li>
+<li><a href="#mod">修订历史</a></li>
+<li><a href="#ref">参考文献</a></li>
+</ul>
+</div>
 
 <div id="info" class="section level2">
 <h2>基本信息</h2>
@@ -32,7 +53,7 @@ tasknames: "干扰排除范式"
 <p>图<a href="#fig:taskflow-image">1</a>展示了基本流程<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>：</p>
 <ol style="list-style-type: decimal">
 <li>屏幕中间呈现一个<em>加号</em>（+，用于提醒用户注意的注视点）。</li>
-<li>200毫秒后，加号消失，同时屏幕中央呈现一个<em>刺激阵列</em>（具体见<strong><a href="#stim">刺激</a></strong>）。</li>
+<li>200毫秒（此时间可由配置参数更改）后，加号消失，同时屏幕中央呈现一个<em>刺激阵列</em>（具体见<strong><a href="#stim">刺激</a></strong>）。</li>
 <li>100毫秒（此时间可由配置参数更改）后，刺激阵列消失，屏幕变为空白。</li>
 <li>900毫秒（此时间可由配置参数更改）后，屏幕中央呈现另一个刺激阵列，同时屏幕下方左右侧分别呈现一个按钮：左侧按钮显示“变了”，右侧按钮显示“没变”。</li>
 <li>在第二个刺激阵列出现后，用户需要在2000毫秒（即<em>最长等待时间</em>，此时间可由配置参数更改）时间内做出判断和操作。刺激阵列会在用户按键后或者达到最长等待时间后消失<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>。</li>
@@ -48,12 +69,26 @@ tasknames: "干扰排除范式"
 <h2>详细说明</h2>
 <div id="stim" class="section level3">
 <h3>刺激</h3>
-<p>本题目的刺激是</p>
-<ul>
-<li><p>操作</p></li>
-<li><p>序列</p></li>
-<li><p>序列配置（参考“标准.html”文件中关于格式的说明）</p></li>
-</ul>
+<p>本题目的刺激是刺激阵列，即由多个元素组成<span class="citation">(Ophir, Nass, and Wagner <a href="#ref-Ophir2009">2009</a>)</span>。其中包含两类元素：</p>
+<ol style="list-style-type: decimal">
+<li>黄色糖果。这是需要用户<strong>注意</strong>的刺激元素。</li>
+<li>绿色糖果。这是需要用户<strong>忽略</strong>的刺激元素。</li>
+</ol>
+<p>每一个刺激阵列都是由若干个这两种元素随机排列而成。每一个元素的朝向都是<em>水平</em>、<em>垂直</em>、<em>左倾45°</em>和<em>右倾45°</em>中的一种，且<em>相互不重叠</em>。在一个试次中先后出现的刺激阵列里，需要用户忽略的元素不会发生变化，但需要用户注意的元素的朝向可能（顺时针或逆时针）旋转45°。</p>
+<p><strong>刺激的呈现</strong>。每一个试次都包含5个部分（进一步内容参考表<a href="#tab:configs"><strong>??</strong></a>）：</p>
+<ol style="list-style-type: decimal">
+<li>注视点呈现。时间配置参数：线索刺激间隔（<code>csi</code>），默认200毫秒。</li>
+<li>刺激阵列1呈现。时间配置参数：最大呈现时间1（<code>maxSt1</code>），默认100毫秒。</li>
+<li>刺激间空白屏。时间配置参数：刺激间隔时间（<code>isi</code>），默认900毫秒。</li>
+<li>刺激阵列2呈现。时间配置参数：最大呈现时间2（<code>maxSt2</code>），默认2000毫秒。注意在用户操作后刺激也会立即消失。</li>
+<li>试次间空白屏。时间配置参数：试次间隔时间（<code>iti</code>），默认200毫秒。</li>
+</ol>
+</div>
+<div id="oper" class="section level3">
+<h3>操作</h3>
+</div>
+<div id="seq" class="section level3">
+<h3>序列配置</h3>
 </div>
 </div>
 <div id="config" class="section level2">
@@ -80,10 +115,18 @@ tasknames: "干扰排除范式"
 <div id="mod" class="section level2">
 <h2>修订历史</h2>
 </div>
+<div id="ref" class="section level2 unnumbered">
+<h2>参考文献</h2>
+<div id="refs" class="references">
+<div id="ref-Ophir2009">
+<p>Ophir, E., C. Nass, and A. D. Wagner. 2009. “Cognitive Control in Media Multitaskers.” <em>Proceedings of the National Academy of Sciences</em> 106 (37). Proceedings of the National Academy of Sciences:15583–7. <a href="https://doi.org/10.1073/pnas.0903620106" class="uri">https://doi.org/10.1073/pnas.0903620106</a>.</p>
+</div>
+</div>
+</div>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>注意该图仅为样例，实际使用的图形元素一般与图中不完全一致。<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>注意该图仅为样例，实际使用的<a href="#stim">图形元素</a>（本题目采用的是糖果）与图中不完全一致。<a href="#fnref1" class="footnote-back">↩</a></p></li>
 <li id="fn2"><p>刺激阵列消失后需注意给用户的反馈信息。<a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
