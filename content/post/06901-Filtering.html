@@ -1,0 +1,89 @@
+---
+title: 班务达人（Filtering）
+author: 张亮
+date: '2018-03-07'
+draft: true
+slug: 06901-filtering
+code: "06901"
+tasknames: "干扰排除范式"
+---
+
+
+
+<div id="info" class="section level2">
+<h2>基本信息</h2>
+<ul>
+<li><strong>显示名称</strong>：班务达人</li>
+<li><strong>英文名称</strong>：Filtering</li>
+<li><strong>题目编号</strong>：06901</li>
+<li><strong>任务描述</strong>：测查注意力，特别是个体的注意选择的能力和注意广度的高低。</li>
+<li><strong>测查能力</strong>：注意力-选择注意</li>
+<li><strong>相关任务</strong>：科学达人（Filtering2，近期将修改名字）。</li>
+</ul>
+</div>
+<div id="flow" class="section level2">
+<h2>交互界面</h2>
+<div class="figure" style="text-align: center"><span id="fig:taskflow-image"></span>
+<img src="/images/Filtering/taskflow.png" alt="基本流程"  />
+<p class="caption">
+图1: 基本流程
+</p>
+</div>
+<p>图<a href="#fig:taskflow-image">1</a>展示了基本流程<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>：</p>
+<ol style="list-style-type: decimal">
+<li>屏幕中间呈现一个<em>加号</em>（+，用于提醒用户注意的注视点）。</li>
+<li>200毫秒后，加号消失，同时屏幕中央呈现一个<em>刺激阵列</em>（具体见<strong><a href="#stim">刺激</a></strong>）。</li>
+<li>100毫秒（此时间可由配置参数更改）后，刺激阵列消失，屏幕变为空白。</li>
+<li>900毫秒（此时间可由配置参数更改）后，屏幕中央呈现另一个刺激阵列，同时屏幕下方左右侧分别呈现一个按钮：左侧按钮显示“变了”，右侧按钮显示“没变”。</li>
+<li>在第二个刺激阵列出现后，用户需要在2000毫秒（即<em>最长等待时间</em>，此时间可由配置参数更改）时间内做出判断和操作。刺激阵列会在用户按键后或者达到最长等待时间后消失<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>。</li>
+<li>第二个刺激阵列消失后，屏幕进入空白状态。200毫秒（此时间可由配置参数更改）后，重新进入第一步。</li>
+</ol>
+<p>引导与练习：</p>
+<ul>
+<li>引导：由于本题目的面对的对象是年龄较小的孩子，所以引导需要更加丰富，即多使用<em>简单的文字</em>、<em>语音</em>和<em>动画</em>，使孩子明白题目的要求。</li>
+<li>练习：刺激总计有10种（具体见<strong><a href="#stim">刺激</a></strong>），有左右两种反应可能，因此，练习设置为20种，随机呈现。仅当正确率达到60%及以上才能进入正式测评。</li>
+</ul>
+</div>
+<div id="detail" class="section level2">
+<h2>详细说明</h2>
+<div id="stim" class="section level3">
+<h3>刺激</h3>
+<p>本题目的刺激是</p>
+<ul>
+<li><p>操作</p></li>
+<li><p>序列</p></li>
+<li><p>序列配置（参考“标准.html”文件中关于格式的说明）</p></li>
+</ul>
+</div>
+</div>
+<div id="config" class="section level2">
+<h2>配置参数</h2>
+</div>
+<div id="rec" class="section level2">
+<h2>数据记录</h2>
+<ul>
+<li>题目结果显示
+<ul>
+<li>显示正确率和平均正确反应时间</li>
+<li>展示标准分数和超越百分比</li>
+</ul></li>
+<li>提交原始数据如下表（参考“标准.html”文件中关于格式的说明）</li>
+</ul>
+</div>
+<div id="sdk" class="section level2">
+<h2>试题算分</h2>
+<ul>
+<li>算分码：0</li>
+<li>传入参数：</li>
+</ul>
+</div>
+<div id="mod" class="section level2">
+<h2>修订历史</h2>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>注意该图仅为样例，实际使用的图形元素一般与图中不完全一致。<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>刺激阵列消失后需注意给用户的反馈信息。<a href="#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</div>

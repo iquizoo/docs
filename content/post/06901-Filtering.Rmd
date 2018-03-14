@@ -52,6 +52,8 @@ knitr::include_graphics("/images/Filtering/taskflow.png")
 
 ### 刺激 {#stim}
 
+本题目的刺激是
+
 * 操作
 
 * 序列
