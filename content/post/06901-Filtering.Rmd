@@ -16,7 +16,7 @@ SDK <- 0
 VER <- "V4"
 ```
 
-## 基本信息
+## 基本信息 {#info}
 
 * **显示名称**：`r NAME_CN`
 * **英文名称**：`r NAME_EN`
@@ -25,16 +25,16 @@ VER <- "V4"
 * **测查能力**：注意力-选择注意
 * **相关任务**：科学达人（Filtering2，近期将修改名字）。
 
-## 交互界面
+## 交互界面 {#flow}
 
 ```{r taskflow-image, fig.cap="基本流程", fig.align='center', echo=FALSE}
 knitr::include_graphics("/images/Filtering/taskflow.png")
 ```
 
-[上图](#fig:taskflow-image)展示了基本流程[^1]：
+图\@ref(fig:taskflow-image)展示了基本流程[^1]：
 
 1. 屏幕中间呈现一个*加号*（+，用于提醒用户注意的注视点）。
-1. 200毫秒后，加号消失，同时屏幕中央呈现一个*刺激阵列*（具体见**详细说明**）。
+1. 200毫秒后，加号消失，同时屏幕中央呈现一个*刺激阵列*（具体见**[刺激][]**）。
 1. 100毫秒（此时间可由配置参数更改）后，刺激阵列消失，屏幕变为空白。
 1. 900毫秒（此时间可由配置参数更改）后，屏幕中央呈现另一个刺激阵列，同时屏幕下方左右侧分别呈现一个按钮：左侧按钮显示“变了”，右侧按钮显示“没变”。
 1. 在第二个刺激阵列出现后，用户需要在2000毫秒（即*最长等待时间*，此时间可由配置参数更改）时间内做出判断和操作。刺激阵列会在用户按键后或者达到最长等待时间后消失[^2]。
@@ -43,14 +43,14 @@ knitr::include_graphics("/images/Filtering/taskflow.png")
 引导与练习：
 
 * 引导：由于本题目的面对的对象是年龄较小的孩子，所以引导需要更加丰富，即多使用*简单的文字*、*语音*和*动画*，使孩子明白题目的要求。
-* 练习：刺激总计有10种（具体见**详细说明**），有左右两种反应可能，因此，练习设置为20种，随机呈现。仅当正确率达到60%及以上才能进入正式测评。
+* 练习：刺激总计有10种（具体见**[刺激][]**），有左右两种反应可能，因此，练习设置为20种，随机呈现。仅当正确率达到60%及以上才能进入正式测评。
 
 [^1]: 注意该图仅为样例，实际使用的图形元素一般与图中不完全一致。
 [^2]: 刺激阵列消失后需注意给用户的反馈信息。
 
-## 详细说明
+## 详细说明 {#detail}
 
-* 刺激
+### 刺激 {#stim}
 
 * 操作
 
@@ -58,14 +58,14 @@ knitr::include_graphics("/images/Filtering/taskflow.png")
 
 * 序列配置（参考“标准.html”文件中关于格式的说明）
 
-## 配置参数
+## 配置参数 {#config}
 
 ```{r configs, echo=FALSE, message=FALSE, warning=FALSE}
 # knitr::kable(readr::read_csv(file.path("config", NAME_EN, "configs.csv")),
 #              caption = "配置参数总表")
 ```
 
-## 数据记录
+## 数据记录 {#rec}
 
 * 题目结果显示
     + 显示正确率和平均正确反应时间
@@ -77,7 +77,7 @@ knitr::include_graphics("/images/Filtering/taskflow.png")
 #              caption = "原始数据变量列表")
 ```
 
-## 试题算分
+## 试题算分 {#sdk}
 
 * 算分码：`r SDK`
 * 传入参数：
@@ -86,4 +86,4 @@ knitr::include_graphics("/images/Filtering/taskflow.png")
 # knitr::kable(readr::read_csv(file.path("config", NAME_EN, "sdk.csv")))
 ```
 
-## 修订历史
+## 修订历史 {#mod}
