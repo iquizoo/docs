@@ -74,7 +74,69 @@ output:
 <li>黄色糖果。这是需要用户<strong>注意</strong>的刺激元素。</li>
 <li>绿色糖果。这是需要用户<strong>忽略</strong>的刺激元素。</li>
 </ol>
-<p>每一个刺激阵列都是由若干个这两种元素随机排列而成。每一个元素的朝向都是<em>水平</em>、<em>垂直</em>、<em>左倾45°</em>和<em>右倾45°</em>中的一种，且<em>相互不重叠</em>。在一个试次中先后出现的刺激阵列里，需要用户忽略的元素不会发生变化，但需要用户注意的元素的朝向可能（顺时针或逆时针）旋转45°。</p>
+<p>每一个刺激阵列都是由若干个（所有可能情况见表<a href="#tab:stimuli">1</a>）这两种元素<em>随机排列</em>而成。每一个元素的朝向都是<em>水平</em>、<em>垂直</em>、<em>左倾45°</em>和<em>右倾45°</em>中的一种，且<em>相互不重叠</em>。在一个试次中先后出现的刺激阵列里，需要用户忽略的元素不会发生变化，但需要用户注意的元素的朝向可能（顺时针或逆时针）旋转45°。</p>
+<table>
+<caption><span id="tab:stimuli">表1: </span>所有可能的刺激阵列</caption>
+<thead>
+<tr class="header">
+<th align="center">编号</th>
+<th align="center">黄色糖果数目</th>
+<th align="center">绿色糖果数目</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">4</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">2</td>
+<td align="center">6</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">4</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">4</td>
+<td align="center">4</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="center">6</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="center">6</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="center">8</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
 <p><strong>刺激的呈现</strong>。每一个试次都包含5个部分（进一步内容参考表<a href="#tab:configs"><strong>??</strong></a>）：</p>
 <ol style="list-style-type: decimal">
 <li>注视点呈现。时间配置参数：线索刺激间隔（<code>csi</code>），默认200毫秒。</li>
