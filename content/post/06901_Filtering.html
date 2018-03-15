@@ -157,6 +157,15 @@ output:
 </div>
 <div id="序列配置" class="section level3">
 <h3>序列配置</h3>
+<p>序列配置规则请参考[标准]({{% relref "standard.html" %}}。序列中各个元素的意义：</p>
+<ul>
+<li><code>length</code>：序列的长度</li>
+<li><code>id</code>：刺激阵列（参考表<a href="#tab:stimuli">1</a>）的编号（1-10）。</li>
+<li><code>target</code>：与<code>id</code>对应，是当前刺激包含的需要用户注意的元素（即黄色糖果）的个数。</li>
+<li><code>distractor</code>：与<code>id</code>对应，是当前刺激包含的需要用户忽略的元素（即绿色糖果）的个数。</li>
+<li><code>type</code>：刺激阵列第二次出现时的变化。<code>Stay</code>表示不旋转，<code>Clockwise</code>表示顺时针旋转45°，<code>Counter</code>表示逆时针旋转45°。</li>
+<li><code>cresp</code>：正确答案。<code>Left</code>表示左侧，<code>Right</code>表示右侧。</li>
+</ul>
 </div>
 </div>
 <div id="配置参数" class="section level2">
