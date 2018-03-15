@@ -11,6 +11,7 @@ link-citations: true
 output:
   blogdown::html_page:
     toc: true
+    md_extensions: -ascii_identifiers
 ---
 
 ```{r basic settings, include=FALSE}
@@ -21,7 +22,7 @@ SDK <- 0
 VER <- "V4"
 ```
 
-## 基本信息 {#info}
+## 基本信息
 
 * **显示名称**：`r NAME_CN`
 * **英文名称**：`r NAME_EN`
@@ -30,7 +31,7 @@ VER <- "V4"
 * **测查能力**：注意力-选择注意
 * **相关任务**：科学达人（Filtering2，近期将修改名字）。
 
-## 交互界面 {#flow}
+## 交互界面
 
 ```{r taskflow-image, fig.cap="基本流程", fig.align='center', echo=FALSE}
 knitr::include_graphics("/images/Filtering/taskflow.png")
@@ -53,9 +54,9 @@ knitr::include_graphics("/images/Filtering/taskflow.png")
 [^1]: 注意该图仅为样例，实际使用的[图形元素](#stim)（本题目采用的是糖果）与图中不完全一致。
 [^2]: 刺激阵列消失后需注意给用户的反馈信息。
 
-## 详细说明 {#detail}
+## 详细说明
 
-### 刺激 {#stim}
+### 刺激
 
 本题目的刺激是刺激阵列，即由多个元素组成[@Ophir2009]。其中包含两类元素：
 
@@ -78,23 +79,23 @@ knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "stimuli.csv"
 1. 刺激阵列2呈现。时间配置参数：最大呈现时间2（`maxSt2`），默认2000毫秒。注意在用户操作后刺激也会立即消失。
 1. 试次间空白屏。时间配置参数：试次间隔时间（`iti`），默认200毫秒。
 
-### 操作 {#oper}
+### 操作
 
 用户需要对比前后两次出现的刺激阵列是否有需要注意的元素发生改变（即朝向旋转45&deg;），然后做出操作。根据不同的设备状态，操作有所不同：
 
 * **键鼠操作**。要求用户必须用键盘上的左右键反应，而不能使用鼠标点击屏幕下方的按钮。键盘的左右键分别对应屏幕下方的左右方按钮。
 * **触控屏操作**。触碰屏幕下方对应的按钮即可。
 
-### 序列配置 {#seq}
+### 序列配置
 
-## 配置参数 {#config}
+## 配置参数
 
 ```{r configs, echo=FALSE, message=FALSE, warning=FALSE}
 # knitr::kable(readr::read_csv(file.path("config", NAME_EN, "configs.csv")),
 #              caption = "配置参数总表")
 ```
 
-## 数据记录 {#rec}
+## 数据记录
 
 * 题目结果显示
     + 显示正确率和平均正确反应时间
@@ -106,7 +107,7 @@ knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "stimuli.csv"
 #              caption = "原始数据变量列表")
 ```
 
-## 试题算分 {#sdk}
+## 试题算分
 
 * 算分码：`r SDK`
 * 传入参数：
@@ -115,6 +116,6 @@ knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "stimuli.csv"
 # knitr::kable(readr::read_csv(file.path("config", NAME_EN, "sdk.csv")))
 ```
 
-## 修订历史 {#mod}
+## 修订历史
 
-## 参考文献 {#ref}
+## 参考文献

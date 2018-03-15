@@ -11,27 +11,28 @@ link-citations: true
 output:
   blogdown::html_page:
     toc: true
+    md_extensions: -ascii_identifiers
 ---
 
 
 <div id="TOC">
 <ul>
-<li><a href="#info">基本信息</a></li>
-<li><a href="#flow">交互界面</a></li>
-<li><a href="#detail">详细说明</a><ul>
-<li><a href="#stim">刺激</a></li>
-<li><a href="#oper">操作</a></li>
-<li><a href="#seq">序列配置</a></li>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#交互界面">交互界面</a></li>
+<li><a href="#详细说明">详细说明</a><ul>
+<li><a href="#刺激">刺激</a></li>
+<li><a href="#操作">操作</a></li>
+<li><a href="#序列配置">序列配置</a></li>
 </ul></li>
-<li><a href="#config">配置参数</a></li>
-<li><a href="#rec">数据记录</a></li>
-<li><a href="#sdk">试题算分</a></li>
-<li><a href="#mod">修订历史</a></li>
-<li><a href="#ref">参考文献</a></li>
+<li><a href="#配置参数">配置参数</a></li>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+<li><a href="#修订历史">修订历史</a></li>
+<li><a href="#参考文献">参考文献</a></li>
 </ul>
 </div>
 
-<div id="info" class="section level2">
+<div id="基本信息" class="section level2">
 <h2>基本信息</h2>
 <ul>
 <li><strong>显示名称</strong>：班务达人</li>
@@ -42,7 +43,7 @@ output:
 <li><strong>相关任务</strong>：科学达人（Filtering2，近期将修改名字）。</li>
 </ul>
 </div>
-<div id="flow" class="section level2">
+<div id="交互界面" class="section level2">
 <h2>交互界面</h2>
 <div class="figure" style="text-align: center"><span id="fig:taskflow-image"></span>
 <img src="/images/Filtering/taskflow.png" alt="基本流程"  />
@@ -53,7 +54,7 @@ output:
 <p>图<a href="#fig:taskflow-image">1</a>展示了基本流程<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>：</p>
 <ol style="list-style-type: decimal">
 <li>屏幕中间呈现一个<em>加号</em>（+，用于提醒用户注意的注视点）。</li>
-<li>200毫秒（此时间可由配置参数更改）后，加号消失，同时屏幕中央呈现一个<em>刺激阵列</em>（具体见<strong><a href="#stim">刺激</a></strong>）。</li>
+<li>200毫秒（此时间可由配置参数更改）后，加号消失，同时屏幕中央呈现一个<em>刺激阵列</em>（具体见<strong><a href="#刺激">刺激</a></strong>）。</li>
 <li>100毫秒（此时间可由配置参数更改）后，刺激阵列消失，屏幕变为空白。</li>
 <li>900毫秒（此时间可由配置参数更改）后，屏幕中央呈现另一个刺激阵列，同时屏幕下方左右侧分别呈现一个按钮：左侧按钮显示“变了”，右侧按钮显示“没变”。</li>
 <li>在第二个刺激阵列出现后，用户需要在2000毫秒（即<em>最长等待时间</em>，此时间可由配置参数更改）时间内做出判断和操作。刺激阵列会在用户按键后或者达到最长等待时间后消失<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>。</li>
@@ -62,12 +63,12 @@ output:
 <p>引导与练习：</p>
 <ul>
 <li>引导：由于本题目的面对的对象是年龄较小的孩子，所以引导需要更加丰富，即多使用<em>简单的文字</em>、<em>语音</em>和<em>动画</em>，使孩子明白题目的要求。</li>
-<li>练习：刺激总计有10种（具体见<strong><a href="#stim">刺激</a></strong>），有左右两种反应可能，因此，练习设置为20种，随机呈现。仅当正确率达到60%及以上才能进入正式测评。</li>
+<li>练习：刺激总计有10种（具体见<strong><a href="#刺激">刺激</a></strong>），有左右两种反应可能，因此，练习设置为20种，随机呈现。仅当正确率达到60%及以上才能进入正式测评。</li>
 </ul>
 </div>
-<div id="detail" class="section level2">
+<div id="详细说明" class="section level2">
 <h2>详细说明</h2>
-<div id="stim" class="section level3">
+<div id="刺激" class="section level3">
 <h3>刺激</h3>
 <p>本题目的刺激是刺激阵列，即由多个元素组成<span class="citation">(Ophir, Nass, and Wagner <a href="#ref-Ophir2009">2009</a>)</span>。其中包含两类元素：</p>
 <ol style="list-style-type: decimal">
@@ -146,7 +147,7 @@ output:
 <li>试次间空白屏。时间配置参数：试次间隔时间（<code>iti</code>），默认200毫秒。</li>
 </ol>
 </div>
-<div id="oper" class="section level3">
+<div id="操作" class="section level3">
 <h3>操作</h3>
 <p>用户需要对比前后两次出现的刺激阵列是否有需要注意的元素发生改变（即朝向旋转45°），然后做出操作。根据不同的设备状态，操作有所不同：</p>
 <ul>
@@ -154,14 +155,14 @@ output:
 <li><strong>触控屏操作</strong>。触碰屏幕下方对应的按钮即可。</li>
 </ul>
 </div>
-<div id="seq" class="section level3">
+<div id="序列配置" class="section level3">
 <h3>序列配置</h3>
 </div>
 </div>
-<div id="config" class="section level2">
+<div id="配置参数" class="section level2">
 <h2>配置参数</h2>
 </div>
-<div id="rec" class="section level2">
+<div id="数据记录" class="section level2">
 <h2>数据记录</h2>
 <ul>
 <li>题目结果显示
@@ -172,17 +173,17 @@ output:
 <li>提交原始数据如下表（参考“标准.html”文件中关于格式的说明）</li>
 </ul>
 </div>
-<div id="sdk" class="section level2">
+<div id="试题算分" class="section level2">
 <h2>试题算分</h2>
 <ul>
 <li>算分码：0</li>
 <li>传入参数：</li>
 </ul>
 </div>
-<div id="mod" class="section level2">
+<div id="修订历史" class="section level2">
 <h2>修订历史</h2>
 </div>
-<div id="ref" class="section level2 unnumbered">
+<div id="参考文献" class="section level2 unnumbered">
 <h2>参考文献</h2>
 <div id="refs" class="references">
 <div id="ref-Ophir2009">
