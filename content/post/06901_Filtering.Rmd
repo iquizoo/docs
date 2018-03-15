@@ -33,11 +33,11 @@ VER <- "V4"
 
 ## 交互界面
 
-```{r taskflow-image, fig.cap="基本流程", fig.align='center', echo=FALSE}
+```{r taskflow-image, fig.cap="基本流程[^1]", fig.align='center', echo=FALSE}
 knitr::include_graphics("/images/Filtering/taskflow.png")
 ```
 
-图\@ref(fig:taskflow-image)展示了基本流程[^1]：
+图\@ref(fig:taskflow-image)展示了基本流程：
 
 1. 屏幕中间呈现一个*加号*（+，用于提醒用户注意的注视点）。
 1. 200毫秒（此时间可由配置参数更改）后，加号消失，同时屏幕中央呈现一个*刺激阵列*（具体见**[刺激][]**）。
