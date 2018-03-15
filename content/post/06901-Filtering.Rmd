@@ -63,7 +63,7 @@ knitr::include_graphics("/images/Filtering/taskflow.png")
 1. 黄色糖果。这是需要用户**注意**的刺激元素。
 1. 绿色糖果。这是需要用户**忽略**的刺激元素。
 
-每一个刺激阵列都是由若干个（所有可能情况见表\@ref(tab:stimuli)）这两种元素*随机排列*而成。每一个元素的朝向都是*水平*、*垂直*、*左倾45&deg;*和*右倾45&deg;*中的一种，且*相互不重叠*。在一个试次中先后出现的刺激阵列里，需要用户忽略的元素不会发生变化，但需要用户注意的元素的朝向可能（顺时针或逆时针）旋转45&deg;。
+每一个刺激阵列都是由若干个（所有可能情况见表\@ref(tab:stimuli)）这两种元素*随机排列*而成。每一个元素的朝向是随机的，且不同元素之间*相互不重叠*。在一个试次中先后出现的刺激阵列里，需要用户忽略的元素不会发生变化，但需要用户注意的元素的朝向可能（顺时针或逆时针）旋转45&deg;。
 
 ```{r stimuli, echo=FALSE, warning=FALSE, message=FALSE}
 knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "stimuli.csv")),
