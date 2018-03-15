@@ -22,5 +22,7 @@ seqgen <- function(n_stim = 40, seed = n_stim) {
     # ensure the same conditions do not continue more than 3 times
     if (all(cresp_rle$lengths <= 3)) break
   }
+
+  # output
   seq_cand
 }
