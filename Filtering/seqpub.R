@@ -6,6 +6,7 @@ task_code <- "06901"
 task_name <- "Filtering"
 sep_inner <- ","
 sep_outer <- ";"
+stim_config <- read_csv(here::here("Filtering", "stimuli.csv"))
 
 # this is a sequence generation script used only for Filtering task
 seqgen <- function(n_stim = 40, seed = n_stim) {
@@ -17,7 +18,7 @@ seqgen <- function(n_stim = 40, seed = n_stim) {
 
   # set regular sequence
   seq_regular <- data.frame(
-    stim = rep(1:10, times = n_stim / 10),
+    id = rep(1:10, times = n_stim / 10),
     type = rep(c("Stay", "Stay", "Clockwise", "Counter"), each = n_stim / 4),
     cresp = rep(c("Right", "Right", "Left", "Left"), each = n_stim / 4),
     stringsAsFactors = FALSE
@@ -51,16 +52,11 @@ raw_seq_df <- tibble(
 # compose output data.frame
 seq_df <- raw_seq_df %>%
   unnest(seq) %>%
+  left_join(stim_config) %>%
   group_by(length, seed) %>%
-  summarise(
-    stim = paste(stim, collapse = sep_inner),
-    type = paste(type, collapse = sep_inner),
-    cresp = paste(cresp, collapse = sep_inner)
-  ) %>%
+  summarise_all(funs(paste(., collapse = sep_inner))) %>%
+  select(length, id, target, distractor, type, cresp) %>%
   group_by(length) %>%
-  summarise(
-    stim = paste(stim, collapse = sep_outer),
-    type = paste(type, collapse = sep_outer),
-    cresp = paste(cresp, collapse = sep_outer)
-  )
+  summarise_all(funs(paste(., collapse = sep_inner)))
+
 jsonlite::write_json(seq_df, here::here(task_name, paste0(task_code, "_", task_name, ".json")))
