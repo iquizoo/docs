@@ -27,7 +27,7 @@ VER <- "V4"
 ## 交互界面
 
 ```{r task-flow, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-DiagrammeR::grViz(here::here("data", "scripts", NAME_EN, "taskflow.gv"),
+DiagrammeR::grViz(here::here("data", "config", NAME_EN, "taskflow.gv"),
                   width = 900, height = 100)
 ```
 
