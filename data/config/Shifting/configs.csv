@@ -6,7 +6,6 @@
 刺激序列,`duration`,`int`,30000,题目整体持续时间（`endMethod`=1时生效，单位毫秒）
 刺激序列,`quantity`,`int`,128,刺激总个数（`endMethod`=2时需全部做完）
 刺激序列,`round`,`int`,4,总轮数
-刺激序列,`seq`,`char`,`json`,刺激呈现序列，请见序列部分的说明
 操作反馈,`feedbackCorrectError`,`bool`,0,控制正式测评时候是（1）否（0）需要反馈正确与错误
 操作反馈,`feedbackNoResponse`,`bool`,1,控制正式测评时候是（1）否（0）需要提示用户未操作
 操作反馈,`feedbackSound`,`bool`,1,控制正式测评时候是（1）否（0）给出声音反馈

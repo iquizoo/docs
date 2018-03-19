@@ -117,7 +117,7 @@ tasknames: "侧抑制任务"
 <th align="left">参数类别</th>
 <th align="left">参数名称</th>
 <th align="left">类型</th>
-<th align="left">默认值</th>
+<th align="center">默认值</th>
 <th align="left">说明</th>
 </tr>
 </thead>
@@ -126,84 +126,77 @@ tasknames: "侧抑制任务"
 <td align="left">刺激呈现</td>
 <td align="left"><code>isi</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">500</td>
+<td align="center">500</td>
 <td align="left">刺激呈现间隔，即<code>+</code>符号的呈现时间，单位毫秒</td>
 </tr>
 <tr class="even">
 <td align="left">刺激呈现</td>
 <td align="left"><code>maxSt</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">2000</td>
+<td align="center">2000</td>
 <td align="left">单个刺激最大展示时间，单位毫秒</td>
 </tr>
 <tr class="odd">
 <td align="left">刺激呈现</td>
 <td align="left"><code>iti</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">1000</td>
+<td align="center">1000</td>
 <td align="left">试次间隔时间，即上一个刺激消失到下一个试次开始之间的间隔时间</td>
 </tr>
 <tr class="even">
 <td align="left">刺激序列</td>
 <td align="left"><code>endMethod</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">2</td>
+<td align="center">2</td>
 <td align="left">题目的结束方式（1=按时间结束，2=按刺激个数结束）</td>
 </tr>
 <tr class="odd">
 <td align="left">刺激序列</td>
 <td align="left"><code>duration</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">30000</td>
+<td align="center">30000</td>
 <td align="left">题目整体持续时间（<code>endMethod</code>=1时生效，单位毫秒）</td>
 </tr>
 <tr class="even">
 <td align="left">刺激序列</td>
 <td align="left"><code>quantity</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">128</td>
+<td align="center">128</td>
 <td align="left">刺激总个数（<code>endMethod</code>=2时需全部做完）</td>
 </tr>
 <tr class="odd">
 <td align="left">刺激序列</td>
 <td align="left"><code>round</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">4</td>
+<td align="center">4</td>
 <td align="left">总轮数</td>
 </tr>
 <tr class="even">
-<td align="left">刺激序列</td>
-<td align="left"><code>seq</code></td>
-<td align="left"><code>char</code></td>
-<td align="left"><code>json</code></td>
-<td align="left">刺激呈现序列，请见序列部分的说明</td>
-</tr>
-<tr class="odd">
 <td align="left">操作反馈</td>
 <td align="left"><code>feedbackCorrectError</code></td>
 <td align="left"><code>bool</code></td>
-<td align="left">0</td>
+<td align="center">0</td>
 <td align="left">控制正式测评时候是（1）否（0）需要反馈正确与错误</td>
-</tr>
-<tr class="even">
-<td align="left">操作反馈</td>
-<td align="left"><code>feedbackNoResponse</code></td>
-<td align="left"><code>bool</code></td>
-<td align="left">1</td>
-<td align="left">控制正式测评时候是（1）否（0）需要提示用户未操作</td>
 </tr>
 <tr class="odd">
 <td align="left">操作反馈</td>
-<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>feedbackNoResponse</code></td>
 <td align="left"><code>bool</code></td>
-<td align="left">1</td>
-<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）需要提示用户未操作</td>
 </tr>
 <tr class="even">
 <td align="left">操作反馈</td>
+<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
 <td align="left"><code>feedbackVisual</code></td>
 <td align="left"><code>bool</code></td>
-<td align="left">1</td>
+<td align="center">1</td>
 <td align="left">控制正式测评时候是（1）否（0）给出视觉反馈</td>
 </tr>
 </tbody>
@@ -252,7 +245,7 @@ tasknames: "侧抑制任务"
 <tr class="odd">
 <td align="left"><code>Resp</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">用户的实际反应(Response)，包含两种可能：‘Left’, ‘Right’</td>
+<td align="left">用户的实际反应(Response)，包含三种种可能：‘Left’, ‘Right’, ‘None’（未操作）</td>
 </tr>
 <tr class="even">
 <td align="left"><code>ACC</code></td>
