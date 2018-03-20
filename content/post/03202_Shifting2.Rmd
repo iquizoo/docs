@@ -81,7 +81,7 @@ knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "stimuli.csv"
     + 数组中每一个元素都是一个`json`对象，包含六个`名称/值(name/value)`配对，分别是
         - `length`：表示序列的长度
         - `stim`：包含了由**刺激编号**（和*“动物图片及其属性一览表”*一致）组成的多个序列
-        - `task`：包含了由**子任务名称**组成的多个序列，其中`Habituation`表示判断`动物的生活环境`，`Weight`表示判断`动物的体重大小`
+        - `task`：包含了由**子任务名称**组成的多个序列，其中`Life`表示判断`是否有生命`，`Size`表示判断`是否能放入鞋盒`
         - `cond`：包含了由**任务条件**，即任务是否切换，组成的多个序列，且每个序列中，第一个注明为`Filler`，其余为`Repeat`和`Switch`中的一个
         - `cresp`：包含了由**正确答案**组成的多个序列，可能值为`Left`和`Right`
 
