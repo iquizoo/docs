@@ -1,15 +1,15 @@
 ---
-title: 班务达人（Filtering）
+title: 彩条达人（Filtering）
 author: 张亮
-date: '2018-03-07'
+date: '2018-03-21'
 slug: 06901-filtering
 code: "06901"
-tasknames: "干扰排除范式"
-bibliography: "refs/MyFullResearch.bib"
-link-citations: true
+tasknames: 干扰排除范式
+bibliography: refs/MyFullResearch.bib
+link-citations: yes
 output:
   blogdown::html_page:
-    toc: true
+    toc: yes
     md_extensions: -ascii_identifiers
 ---
 
@@ -34,12 +34,12 @@ output:
 <div id="基本信息" class="section level2">
 <h2>基本信息</h2>
 <ul>
-<li><strong>显示名称</strong>：班务达人</li>
+<li><strong>显示名称</strong>：彩条达人</li>
 <li><strong>英文名称</strong>：Filtering</li>
 <li><strong>题目编号</strong>：06901</li>
 <li><strong>任务描述</strong>：测查注意力，特别是个体的注意选择的能力和注意广度的高低。</li>
 <li><strong>测查能力</strong>：注意力-选择注意</li>
-<li><strong>相关任务</strong>：<a href="{{% relref "06902_Filtering2.html" %}}">彩条达人（Filtering2）</a>。本题目是彩条达人的低年龄（6-10岁）版本。</li>
+<li><strong>相关任务</strong>：<a href="{{% relref "06902_Filtering2.html" %}}">班务达人（Filtering2）</a>。本题目版本推荐用于10岁以上人群。</li>
 </ul>
 </div>
 <div id="交互界面" class="section level2">
@@ -61,7 +61,7 @@ output:
 </ol>
 <p>引导与练习：</p>
 <ul>
-<li>引导：由于本题目的面对的对象是年龄较小的孩子，所以引导需要更加丰富，即多使用<em>简单的文字</em>、<em>语音</em>和<em>动画</em>，使孩子明白题目的要求。</li>
+<li>引导：由于本题目的面对的对象是年龄较大的人群，所以引导可以使用<em>文字</em>、<em>语音</em>和<em>动画</em>，不要太过幼稚，保证用户能理解。</li>
 <li>练习：刺激总计有10种（具体见<strong><a href="#刺激">刺激</a></strong>），有左右两种反应可能，因此，练习设置为20种，随机呈现。仅当正确率达到60%及以上才能进入正式测评。</li>
 </ul>
 </div>
@@ -71,8 +71,8 @@ output:
 <h3>刺激</h3>
 <p>本题目的刺激是刺激阵列，即由多个元素组成<span class="citation">(Ophir, Nass, and Wagner <a href="#ref-Ophir2009">2009</a>)</span>。其中包含两类元素：</p>
 <ol style="list-style-type: decimal">
-<li><strong>黄色糖果</strong>。这是需要用户<strong>注意</strong>的刺激元素。</li>
-<li><strong>绿色糖果</strong>。这是需要用户<strong>忽略</strong>的刺激元素。</li>
+<li><strong>红色条形</strong>。这是需要用户<strong>注意</strong>的刺激元素。</li>
+<li><strong>蓝色条形</strong>。这是需要用户<strong>忽略</strong>的刺激元素。</li>
 </ol>
 <p>每一个刺激阵列都是由若干个（所有可能情况见表<a href="#tab:stimuli">1</a>）这两种元素<em>随机排列</em>而成。每一个元素的朝向是随机的，且不同元素之间<em>相互不重叠</em>。在一个试次中先后出现的刺激阵列里，需要用户忽略的元素不会发生变化，但需要用户注意的元素的朝向可能（顺时针或逆时针）旋转45°。</p>
 <table>
@@ -80,8 +80,8 @@ output:
 <thead>
 <tr class="header">
 <th align="center">编号</th>
-<th align="center">黄色糖果数目</th>
-<th align="center">绿色糖果数目</th>
+<th align="center">红色条形数目</th>
+<th align="center">蓝色条形数目</th>
 </tr>
 </thead>
 <tbody>
@@ -160,8 +160,8 @@ output:
 <ul>
 <li><code>length</code>：序列的长度</li>
 <li><code>id</code>：刺激阵列（参考表<a href="#tab:stimuli">1</a>）的编号（1-10）。</li>
-<li><code>target</code>：与<code>id</code>对应，是当前刺激包含的需要用户注意的元素（即黄色糖果）的个数。</li>
-<li><code>distractor</code>：与<code>id</code>对应，是当前刺激包含的需要用户忽略的元素（即绿色糖果）的个数。</li>
+<li><code>target</code>：与<code>id</code>对应，是当前刺激包含的需要用户注意的元素（即红色条形）的个数。</li>
+<li><code>distractor</code>：与<code>id</code>对应，是当前刺激包含的需要用户忽略的元素（即蓝色条形）的个数。</li>
 <li><code>type</code>：刺激阵列第二次出现时的变化。<code>Stay</code>表示不旋转，<code>Clockwise</code>表示顺时针旋转45°，<code>Counter</code>表示逆时针旋转45°。</li>
 <li><code>cresp</code>：正确答案。<code>Left</code>表示左侧，<code>Right</code>表示右侧。</li>
 </ul>
@@ -308,12 +308,12 @@ output:
 <tr class="odd">
 <td align="left"><code>Target</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">黄色糖果个数</td>
+<td align="left">红色条形个数</td>
 </tr>
 <tr class="even">
 <td align="left"><code>Distractor</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">绿色糖果个数</td>
+<td align="left">蓝色条形个数</td>
 </tr>
 <tr class="odd">
 <td align="left"><code>Type</code></td>
@@ -382,7 +382,7 @@ output:
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>注意该图仅为样例，实际使用的<a href="#刺激">图形元素</a>（本题目采用的是糖果）与图中不完全一致。<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>注意该图仅为样例，实际使用的<a href="#刺激">图形元素</a>需要重新设计。<a href="#fnref1" class="footnote-back">↩</a></p></li>
 <li id="fn2"><p>刺激阵列消失后需注意给用户的反馈信息。<a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
