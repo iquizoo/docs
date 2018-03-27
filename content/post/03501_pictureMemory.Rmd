@@ -1,0 +1,82 @@
+---
+title: 图片记忆（pictureMemory）
+author: 张亮
+date: '2018-03-26'
+slug: 03501-picturememory
+code: "03501"
+tasknames: "模式分离范式"
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r basic settings, include=FALSE}
+NAME_CN <- "图片记忆"
+NAME_EN <- "pictureMemory"
+CODE <- "03501"
+SDK <- 102
+VER <- "V4"
+```
+
+## 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：测查记忆力，特别是个体记住各种图片信息的能力。
+* **测查能力**：记忆力-语义记忆
+
+## 交互界面
+
+<!--本题目的交互方式需要修改-->
+
+本题目分为**学习**和**测试**两个连续的阶段。
+
+**学习阶段**。本阶段要求用户对（注意**不要**告诉用户记忆图片的要求）一系列图片刺激（每张图片都是一件日常物体）做判断。判断任务是确定自己是否**触摸**过该物体。
+
+1. 图片呈现在屏幕中央，同时下方呈现两个按钮，左侧为`是`，右侧为`否`。图片呈现时间为*2秒*。用户操作后，**按钮消失，但图片不消失**。
+1. 图片消失后，屏幕保持*0.5秒*长的空白。之后进入下一个试次。
+
+**测试阶段**。本阶段要求用户判断自己是否在学习阶段见过屏幕上呈现的图片刺激。判断的选项有`见过`，`相似`和`没见过`三种。
+
+1. 图片呈现在屏幕中央，同时下方呈现三个按钮，按钮上的文字从左到右依次为`见过`，`相似`和`没见过`。图片最长呈现时间为*2秒*。用户操作后，**按钮和图片均消失**。
+1. 图片消失后，屏幕保持*0.5秒*长的空白。之后进入下一个试次。
+
+**引导**。本题目在学习阶段前有对学习阶段的引导练习，需要保证用户熟悉对学习阶段的流程和操作方法。由于此处的判断没有正误之分，所以练习3次就开始正式进入学习阶段。
+
+## 详细说明
+
+### 序列配置
+
+序列配置规则请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。序列中各个元素的意义：
+
+## 配置参数
+
+```{r configs, echo=FALSE, message=FALSE, warning=FALSE}
+# knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "configs.csv")),
+#              caption = "配置参数总表")
+```
+
+## 数据记录
+
+* 题目结果显示
+    + 显示正确率和平均正确反应时间
+    + 展示标准分数和超越百分比
+* 提交原始数据如下表（请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)）
+
+```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
+# knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "recs.csv")),
+#              caption = "原始数据变量列表")
+```
+
+## 试题算分
+
+```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "sdk.csv")),
+#              caption = paste0("传入参数（算分码：`", SDK, "`）"))
+```
+
+## 修订历史
+
+## 参考文献
