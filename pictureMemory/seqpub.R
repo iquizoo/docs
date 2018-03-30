@@ -14,12 +14,21 @@ lrn_list <- stims %>%
   sample_frac() %>%
   select(nid, ver, sim) %>%
   rename(id = nid) %>%
-  summarise_all(funs(paste0(., collapse = ",")))
+  summarise_all(funs(paste0(., collapse = ","))) %>%
+  add_column(phase = "Learn", .before = 1)
 tst_list <- stims %>%
-  mutate(ver = recode(type, lure = "b", .default = "a")) %>%
+  mutate(
+    ver = recode(type, lure = "b", .default = "a"),
+    cresp = recode(type, target = "old", lure = "similar", foil = "new")
+  ) %>%
   sample_frac() %>%
-  select(nid, ver, sim, type) %>%
+  select(nid, ver, sim, type, cresp) %>%
   rename(id = nid) %>%
-  summarise_all(funs(paste0(., collapse = ",")))
-jsonlite::write_json(lrn_list, here::here("pictureMemory", "pictureMemory.lrn.json"))
-jsonlite::write_json(tst_list, here::here("pictureMemory", "pictureMemory.tst.json"))
+  summarise_all(funs(paste0(., collapse = ","))) %>%
+  add_column(phase = "Test", .before = 1)
+seq_list <- list(as.list(lrn_list), as.list(tst_list))
+jsonlite::write_json(
+  seq_list,
+  here::here("pictureMemory", "03501_pictureMemory.json"),
+  auto_unbox = TRUE
+)
