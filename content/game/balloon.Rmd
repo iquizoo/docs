@@ -5,8 +5,6 @@ date: '2018-04-01'
 slug: balloon
 code: 78
 tasknames: 数学计算
-bibliography: refs/MyFullResearch.bib
-link-citations: yes
 output:
   blogdown::html_page:
     toc: yes
