@@ -5,7 +5,7 @@ date: '2018-03-07'
 slug: 06902-filtering2
 code: "06902"
 tasknames: "干扰排除范式"
-bibliography: "refs/MyFullResearch.bib"
+bibliography: ../../data/refs/MyFullResearch.bib
 link-citations: true
 output:
   blogdown::html_page:
