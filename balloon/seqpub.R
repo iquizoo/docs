@@ -45,14 +45,15 @@ stims <- expand.grid(left = 10:99, right = 10:99) %>%
   separate(option, c("type", "opt")) %>%
   mutate(
     type = factor(type),
+    score = ifelse(type == "add", add_lvl, minus_lvl),
     level = factor(
-      ifelse(type == "add", add_lvl, minus_lvl),
-      levels = 1:3, labels = c("easy", "medium", "difficult")
+      score, levels = 1:3,
+      labels = c("easy", "medium", "difficult")
     )
   ) %>%
   spread(opt, value) %>%
   filter(type == "add" | (type == "minus" & correct > 0)) %>%
-  select(left, right, type, level, correct, opt1, opt2, opt3)
+  select(left, right, type, level, score, correct, opt1, opt2, opt3)
 write_csv(stims, here("balloon", "stim_pool.csv"))
 set.seed(1)
 write_csv(sample_n(stims, 10), here("balloon", "stimuli.csv"))
