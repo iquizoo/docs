@@ -1,0 +1,27 @@
+---
+title: 小动物找家（homing）
+author: 张亮
+date: '2018-04-03'
+slug: 80-homing
+code: "80"
+tasknames: "联系记忆"
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r basic settings, include=FALSE}
+NAME_CN <- "小动物找家"
+NAME_EN <- "homing"
+CODE <- "80"
+VER <- "C2游戏"
+```
+
+## 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：帮助小动物找到自己的家，训练记忆力。
+* **测查能力**：记忆力-联系记忆
