@@ -44,11 +44,6 @@ VER <- "C2"
         - 正式测评中总计15次，每种情况3次
         - 练习总计5次，每种情况1次
 
-```{r stimuli, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "stimuli.csv")),
-             caption = "刺激列表")
-
-
 * 操作
     + **操作方式**
         - **`Android/iOS`**：点击触摸屏下方的<kbd>&larr;</kbd>和<kbd>&rarr;</kbd>按钮进行反应，即箭头朝左则点击按钮<kbd>&larr;</kbd>，箭头朝右则点击按钮<kbd>&rarr;</kbd>。
