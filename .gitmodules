@@ -5,5 +5,5 @@
 	path = themes/hugo-xmin
 	url = https://github.com/iquizoo/hugo-xmin
 [submodule "content/post/refs"]
-	path = content/post/refs
+	path = data/refs
 	url = https://github.com/psychelzh/lit-refs
