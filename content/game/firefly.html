@@ -1,0 +1,107 @@
+---
+title: 森林中的萤火虫（VSTM）
+author: 申宇杏
+date: 2018-04-02
+slug: 79-VSTM
+code: "79"
+tasknames: "视觉短时记忆任务"
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#交互界面">交互界面</a></li>
+<li><a href="#详细说明">详细说明</a><ul>
+<li><a href="#刺激">刺激</a></li>
+<li><a href="#操作">操作</a></li>
+<li><a href="#序列配置参考标准中关于格式的说明">序列配置（参考<a href="{{% relref "standard.html" %}}">标准</a>中关于格式的说明）</a></li>
+</ul></li>
+<li><a href="#配置参数">配置参数</a></li>
+<li><a href="#数据记录">数据记录</a></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level2">
+<h2>基本信息</h2>
+<ul>
+<li><strong>显示名称</strong>：森林中的萤火虫</li>
+<li><strong>英文名称</strong>：VSTM</li>
+<li><strong>题目编号</strong>：79</li>
+<li><strong>任务描述</strong>：测查记忆力，特别是个体视觉的短时记忆</li>
+<li><strong>测查能力</strong>：视觉短时记忆</li>
+<li><strong>相关任务</strong>：雷达追踪</li>
+</ul>
+</div>
+<div id="交互界面" class="section level2">
+<h2>交互界面</h2>
+<p>夜晚森林的背景屏幕中随机位置出现几个萤火虫，其中有些会发光有些不发光（发光的个数3、4、5、6、7），闪烁一定时间后萤火虫的亮光消失并且开始飞舞，最后停在新的位置，用户需要点击刚刚闪烁的萤火虫，用触摸（Android/iOS）或鼠标点击（PC）的方式。 注意：记录用户按对的个数，但按错之后，游戏不会直接终止，而是要等用户选完了再反馈。</p>
+<div class="figure" style="text-align: center"><span id="fig:taskflow-image"></span>
+<img src="/images/VSTM/firefly.png" alt="基本界面"  />
+<p class="caption">
+图1: 基本界面
+</p>
+</div>
+<p>图<a href="#fig:taskflow-image">1</a>展示了基本界面。</p>
+<p><strong>引导与练习</strong>：让被试理解要追踪发光的萤火虫</p>
+</div>
+<div id="详细说明" class="section level2">
+<h2>详细说明</h2>
+<div id="刺激" class="section level3">
+<h3>刺激</h3>
+<ul>
+<li><strong>刺激配置</strong>：由若干萤火虫的图片组成。其中：发光的萤火虫为<strong>目标刺激</strong>，不发光的为<strong>干扰刺激</strong>，详细请看下方<strong>刺激列表</strong>。</li>
+<li><strong>刺激呈现</strong>
+<ul>
+<li>出现若干萤火虫（不同的目标刺激对应不同的干扰刺激），其中目标开始闪烁，闪烁次数默认值为3次，每次闪烁时间默认值为<code>300 ms</code>。</li>
+<li>闪烁结束，所有萤火虫开始飞舞，默认值为<code>3000 ms</code>，速度为30。</li>
+<li>飞舞结束，所有萤火虫停到新的位置，用户开始判断，哪些是之前闪烁过的萤火虫，用户点击次数需与目标个数一致，方可开始下一轮。</li>
+<li>刺激消失后到下一个刺激呈现的时间间隔（试次间隔时间）默认值为<code>500 ms</code>。</li>
+</ul></li>
+</ul>
+</div>
+<div id="操作" class="section level3">
+<h3>操作</h3>
+<ul>
+<li><strong>操作方式</strong>
+<ul>
+<li><strong><code>Android/iOS</code></strong>：点击触摸上的目标刺激，感应区域要比目标刺激本身大，但不能重合。</li>
+<li><strong><code>PC/Web</code></strong>：若<code>PC</code>拥有触摸屏，则用户可以使用<code>Android/iOS</code>的操作方式；若<code>PC</code>没有触摸屏，则要求用户使用标准输入设备鼠标点击进行操作。</li>
+</ul></li>
+<li><strong>判断正误</strong>：所有试次都需要操作，没有操作则使用<code>-1</code>表示正确与否。当用户操作后，如果点击的目标和目标刺激重合，则为正确；若点击与目标刺激不符，则为错；与点击顺序无关。</li>
+<li><strong>反馈</strong>
+<ul>
+<li>引导练习：需要对<em>正确</em>和<em>错误</em>给出听觉和视觉反馈。</li>
+<li>正式测试：不需要对<em>正确</em>和<em>错误</em>给出听觉和视觉反馈，需要对用户是否操作给出视觉反馈（即用户点击的地方就变亮）</li>
+</ul></li>
+</ul>
+</div>
+<div id="序列配置参考标准中关于格式的说明" class="section level3">
+<h3>序列配置（参考<a href="{{% relref "standard.html" %}}">标准</a>中关于格式的说明）</h3>
+<!--
++ **序列**
+    - 单个试次要呈现的闪烁的萤火虫个数有5种情况，3~7个，干扰的不发光的萤火虫数量比发光的多两个，总共2n+2
+    - 正式测评中总计15次，每种情况3次（待定）
+    - 做对了加一个目标刺激，做错两次减一个，错一次不变
+    - 练习2个萤火虫的情况，1次
+-->
+</div>
+</div>
+<div id="配置参数" class="section level2">
+<h2>配置参数</h2>
+</div>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<ul>
+<li>题目结果显示
+<ul>
+<li>显示正确率和平均正确反应时间</li>
+<li>展示标准分数和超越百分比</li>
+</ul></li>
+<li>提交原始数据如下表（参考<a href="{{% relref "standard.html" %}}">标准</a>中关于格式的说明）</li>
+</ul>
+</div>
