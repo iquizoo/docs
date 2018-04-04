@@ -4,7 +4,7 @@ library(jsonlite)
 library(here)
 
 # get all the possible pairs of stimuli
-stims <- expand.grid(left = 10:99, right = 10:99) %>%
+itembank <- expand.grid(left = 10:99, right = 10:99) %>%
   mutate(
     add_correct = left + right,
     minus_correct = left - right
@@ -45,15 +45,12 @@ stims <- expand.grid(left = 10:99, right = 10:99) %>%
   separate(option, c("type", "opt")) %>%
   mutate(
     type = factor(type),
-    score = ifelse(type == "add", add_lvl, minus_lvl),
-    level = factor(
-      score, levels = 1:3,
-      labels = c("easy", "medium", "difficult")
-    )
+    difficulty = ifelse(type == "add", add_lvl, minus_lvl)
   ) %>%
   spread(opt, value) %>%
   filter(type == "add" | (type == "minus" & correct > 0)) %>%
-  select(left, right, type, level, score, correct, opt1, opt2, opt3)
-write_csv(stims, here("balloon", "stim_pool.csv"))
+  mutate(title = paste(left, recode(type, add = "+", minus = "-"), right)) %>%
+  select(title, type, difficulty, correct, opt1, opt2, opt3)
+write_csv(itembank, here("calculator", "itembank.csv"))
 set.seed(1)
-write_csv(sample_n(stims, 10), here("balloon", "stimuli.csv"))
+write_csv(sample_n(itembank, 10), here("calculator", "stimuli.csv"))
