@@ -1,0 +1,236 @@
+---
+title: 速算师（calculator）
+author: 张亮
+date: '2018-04-01'
+slug: calculator
+code: 78
+tasknames: 数学计算
+output:
+  blogdown::html_page:
+    toc: yes
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#交互界面">交互界面</a></li>
+<li><a href="#详细说明">详细说明</a><ul>
+<li><a href="#题库配置">题库配置</a></li>
+<li><a href="#流程">流程</a></li>
+<li><a href="#计分规则">计分规则</a></li>
+</ul></li>
+<li><a href="#数据记录">数据记录</a></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：速算师</li>
+<li><strong>英文名称</strong>：calculator</li>
+<li><strong>题目编号</strong>：78</li>
+<li><strong>任务描述</strong>：根据算术法则快速计算，训练工作记忆能力。</li>
+<li><strong>相关任务</strong>：一站到底（C2游戏）。</li>
+</ul>
+</div>
+<div id="交互界面" class="section level1">
+<h1>交互界面</h1>
+<p>以现有的C2游戏<strong>一站到底</strong>为准。需作如下<strong>调整</strong>：</p>
+<ol style="list-style-type: decimal">
+<li>去掉“选择角色过程”和“竞争对手”。</li>
+<li>针对四选一的选择题优化题目展示的界面。</li>
+<li>增加计分牌，显示目前得了多少分。（详情见<a href="#计分规则">计分规则</a>）</li>
+</ol>
+</div>
+<div id="详细说明" class="section level1">
+<h1>详细说明</h1>
+<div id="题库配置" class="section level2">
+<h2>题库配置</h2>
+<p>本题目提供一个<a href="/seq/calculator/itembank.csv">题库文件</a>，其中包含了所有可能的题目（参考样例表<a href="#tab:stimuli">1</a>）。其中：</p>
+<ul>
+<li><code>title</code>：题面</li>
+<li><code>type</code>：计算法则。<code>add</code>：加法，<code>minus</code>：减法</li>
+<li><code>difficulty</code>：难度系数（1-3，可优化）</li>
+<li><code>correct</code>, <code>opt1</code>, <code>opt2</code>, <code>opt3</code>：备选选项。注意<code>correct</code>是正确答案，其他三个都是混淆的错误选项。实际呈现的时候，四个选项的位置是随机的。</li>
+</ul>
+<table>
+<caption><span id="tab:stimuli">表1: </span>题库样例</caption>
+<thead>
+<tr class="header">
+<th align="left">title</th>
+<th align="left">type</th>
+<th align="right">difficulty</th>
+<th align="right">correct</th>
+<th align="right">opt1</th>
+<th align="right">opt2</th>
+<th align="right">opt3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">73 + 45</td>
+<td align="left">add</td>
+<td align="right">2</td>
+<td align="right">118</td>
+<td align="right">117</td>
+<td align="right">128</td>
+<td align="right">108</td>
+</tr>
+<tr class="even">
+<td align="left">14 + 60</td>
+<td align="left">add</td>
+<td align="right">1</td>
+<td align="right">74</td>
+<td align="right">75</td>
+<td align="right">84</td>
+<td align="right">64</td>
+</tr>
+<tr class="odd">
+<td align="left">13 + 87</td>
+<td align="left">add</td>
+<td align="right">2</td>
+<td align="right">100</td>
+<td align="right">99</td>
+<td align="right">110</td>
+<td align="right">90</td>
+</tr>
+<tr class="even">
+<td align="left">67 - 52</td>
+<td align="left">minus</td>
+<td align="right">2</td>
+<td align="right">15</td>
+<td align="right">14</td>
+<td align="right">25</td>
+<td align="right">15</td>
+</tr>
+<tr class="odd">
+<td align="left">20 + 37</td>
+<td align="left">add</td>
+<td align="right">1</td>
+<td align="right">57</td>
+<td align="right">56</td>
+<td align="right">67</td>
+<td align="right">47</td>
+</tr>
+<tr class="even">
+<td align="left">90 - 49</td>
+<td align="left">minus</td>
+<td align="right">3</td>
+<td align="right">41</td>
+<td align="right">42</td>
+<td align="right">51</td>
+<td align="right">51</td>
+</tr>
+<tr class="odd">
+<td align="left">90 - 62</td>
+<td align="left">minus</td>
+<td align="right">3</td>
+<td align="right">28</td>
+<td align="right">27</td>
+<td align="right">38</td>
+<td align="right">38</td>
+</tr>
+<tr class="even">
+<td align="left">84 + 98</td>
+<td align="left">add</td>
+<td align="right">3</td>
+<td align="right">182</td>
+<td align="right">181</td>
+<td align="right">192</td>
+<td align="right">172</td>
+</tr>
+<tr class="odd">
+<td align="left">60 + 94</td>
+<td align="left">add</td>
+<td align="right">2</td>
+<td align="right">154</td>
+<td align="right">155</td>
+<td align="right">164</td>
+<td align="right">144</td>
+</tr>
+<tr class="even">
+<td align="left">37 + 18</td>
+<td align="left">add</td>
+<td align="right">2</td>
+<td align="right">55</td>
+<td align="right">54</td>
+<td align="right">65</td>
+<td align="right">45</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="流程" class="section level2">
+<h2>流程</h2>
+<p>本题目可以有<strong>测评</strong>或<strong>训练</strong>两种目的。</p>
+<p><strong>测评</strong>。一共完成三轮，刺激顺序和提供的<a href="/seq/calculator/sequence.csv">序列文件</a>一致。序列文件表中相对于题库而言多出一列字段<code>run</code>，其中<code>R1``R2``R3</code>分别表示三个轮次；每个伦茨根据序列中一行一行地依次进行，总限时2分钟。</p>
+<p><strong>训练</strong>。分为3种关卡：</p>
+<ul>
+<li>只做<strong>加法</strong>；</li>
+<li>只做<strong>减法</strong>；</li>
+<li>按照“<strong>加法-减法-加法-减法-…</strong>”的顺序来做。</li>
+</ul>
+<p>每一种关卡都限时2分钟，同时每一组新的数字都是根据对应的计算法则从<a href="#题库配置">题库</a>里面<strong>不重复地随机</strong>取出。</p>
+</div>
+<div id="计分规则" class="section level2">
+<h2>计分规则</h2>
+<p>用户起始时都为100分。每道题目没有答题时间限制，而且</p>
+<ul>
+<li>若用户回答正确，则获得1分。</li>
+<li>若用户回答错误，则扣除1分。</li>
+</ul>
+</div>
+</div>
+<div id="数据记录" class="section level1">
+<h1>数据记录</h1>
+<p>表<a href="#tab:recording-variables">2</a>说明了对于每一对数字需要记录的数据（请参考<a href="{{% relref "standard.html" %}}">标准</a>）。</p>
+<table>
+<caption><span id="tab:recording-variables">表2: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>title</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">题面</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Type</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">计算法则。同题库配置</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Difficulty</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">计算难度。同题库配置</td>
+</tr>
+<tr class="even">
+<td align="left"><code>CResp</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确答案</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户选择的选项。若未选择，则记为0</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">是否正确。正确为1，错误为0，未作答为-1</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">作答时间。以毫秒为单位</td>
+</tr>
+</tbody>
+</table>
+</div>
