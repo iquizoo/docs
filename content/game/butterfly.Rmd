@@ -29,4 +29,4 @@ CODE <- "80"
 
 # 交互流程
 
-[点击此处](/generated/butterfly/start.html)查看初步的交互流程设计。
+[点击此处](/axure-rp-design/butterfly/start.html){target="_blank"}查看初步的交互流程设计。
