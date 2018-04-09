@@ -1,0 +1,239 @@
+---
+title: 图片记忆（pictureMemory）
+author: 张亮
+date: '2018-03-26'
+slug: 03501-picturememory
+code: "03501"
+tasknames: "模式分离范式"
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#交互界面">交互界面</a></li>
+<li><a href="#详细说明">详细说明</a><ul>
+<li><a href="#刺激">刺激</a></li>
+<li><a href="#操作">操作</a></li>
+<li><a href="#序列配置">序列配置</a></li>
+</ul></li>
+<li><a href="#配置参数">配置参数</a></li>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分待定">试题算分（待定）</a></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level2">
+<h2>基本信息</h2>
+<ul>
+<li><strong>显示名称</strong>：图片记忆</li>
+<li><strong>英文名称</strong>：pictureMemory</li>
+<li><strong>题目编号</strong>：03501</li>
+<li><strong>任务描述</strong>：测查记忆力，特别是个体记住各种图片信息的能力。</li>
+<li><strong>测查能力</strong>：记忆力-语义记忆</li>
+</ul>
+</div>
+<div id="交互界面" class="section level2">
+<h2>交互界面</h2>
+<!--本题目的交互方式需要修改-->
+<p>本题目分为<strong>学习</strong>和<strong>测试</strong>两个连续的阶段。</p>
+<p><strong>学习阶段</strong>。本阶段要求用户对（注意<strong>不要</strong>告诉用户记忆图片的要求）一系列图片刺激（每张图片都是一件日常物体）做判断。判断任务是确定自己是否<strong>触摸</strong>过该物体。</p>
+<ol style="list-style-type: decimal">
+<li>图片呈现在屏幕中央，同时下方呈现两个按钮，左侧为<code>是</code>，右侧为<code>否</code>。图片呈现时间为<em>2秒</em>。用户操作后，<strong>按钮消失，但图片不消失</strong>。</li>
+<li>图片消失后，屏幕保持<em>0.5秒</em>长的空白。之后进入下一个试次。</li>
+</ol>
+<p><strong>测试阶段</strong>。本阶段要求用户判断自己是否在学习阶段见过屏幕上呈现的图片刺激。判断的选项有<code>旧的</code>，<code>相似</code>和<code>新的</code>三种。</p>
+<ol style="list-style-type: decimal">
+<li>图片呈现在屏幕中央，同时下方呈现三个按钮，按钮上的文字从左到右依次为<code>旧的</code>，<code>相似</code>和<code>新的</code>。图片最长呈现时间为<em>2秒</em>。用户操作后，<strong>按钮和图片均消失</strong>。</li>
+<li>图片消失后，屏幕保持<em>0.5秒</em>长的空白。之后进入下一个试次。</li>
+</ol>
+<p><strong>引导</strong>。本题目在学习和测试阶段分别有引导。</p>
+<p><strong>学习阶段的引导和练习</strong>。保证用户熟悉学习阶段的流程和操作方法。由于此处的判断没有正误之分，所以练习3次就开始正式的学习阶段。</p>
+<p><strong>测试阶段的引导和练习</strong>。保证用户理解<code>旧的</code>，<code>相似</code>和<code>新的</code>三个选择的意义，可以使用样例图片（非学习阶段学习过的图片）分别说明。</p>
+</div>
+<div id="详细说明" class="section level2">
+<h2>详细说明</h2>
+<div id="刺激" class="section level3">
+<h3>刺激</h3>
+<p>本题目的所有用作刺激的图片都是日常生活中常见的物体。图片都有相似的两个版本（分别记为<code>a</code>和<code>b</code>）。图片材料的名称由刺激编号后跟上图片的版本构成，如<code>1a.jpg</code>。每一编号对应图片的两个版本的相似程度由1-5表示，数字越小则越相似。</p>
+<p><strong>刺激的呈现</strong>。本题目分为学习和测试两个阶段。</p>
+<p>在学习阶段，每个试次由两部分组成。</p>
+<ol style="list-style-type: decimal">
+<li>刺激呈现。时间配置参数：最大呈现时间（<code>maxStLrn</code>），默认为2秒。注意用户操作后刺激也不消失。</li>
+<li>空白屏幕。时间配置参数：试次间隔时间（<code>itiLrn</code>），默认0.5秒。</li>
+</ol>
+<p>在测试阶段，每个试次也由两部分组成。</p>
+<ol style="list-style-type: decimal">
+<li>刺激呈现。时间配置参数：最大呈现时间（<code>maxStTst</code>），默认为2秒。注意用户操作后刺激将消失。</li>
+<li>空白屏幕。时间配置参数：试次间隔时间（<code>itiTst</code>），默认0.5秒。</li>
+</ol>
+</div>
+<div id="操作" class="section level3">
+<h3>操作</h3>
+<p>根据不同的设备状态，操作有所不同：</p>
+<ul>
+<li><strong>键鼠操作</strong>。学习阶段：要求用户必须用键盘上的左右键反应，而不能使用鼠标点击屏幕下方的按钮。键盘的左右键分别对应屏幕上的左右按钮。测试阶段：使用鼠标点击屏幕上的三个按钮进行操作。</li>
+<li><strong>触控屏操作</strong>。触碰屏幕下方对应的按钮即可。</li>
+</ul>
+</div>
+<div id="序列配置" class="section level3">
+<h3>序列配置</h3>
+<p>序列配置规则请参考<a href="{{% relref "standard.html" %}}">标准</a>。序列中各个元素的意义：</p>
+<ul>
+<li><code>phase</code>：阶段。即此序列属于学习阶段（<code>Learn</code>）还是测试阶段（<code>Test</code>）。</li>
+<li><code>id</code>：图片的编号。请注意本题目图片的命名方式是三位数编号加上字母a或者b（a，b的意义即在<a href="#刺激">刺激</a>一节里提到的单个图片的不同版本）。所有不足三位数的编号均在前面加了相应数目的0，如编号为<code>1</code>则命名时采用<code>001</code>。<code>id</code>和<code>ver</code>共同决定了实际应该选择哪张图片。</li>
+<li><code>ver</code>：图片的版本。即<a href="#刺激">刺激</a>一节里提到的单个图片的不同版本。每一张图片命名中已包含了此信息。<code>id</code>和<code>ver</code>共同决定了实际应该选择哪张图片。</li>
+<li><code>sim</code>：图片两版本的相似程度。<a href="#刺激">刺激</a>一节里已提及使用1-5刻画同一编号的两个不同版本图片的相似程度，此元素记录了这个数字。</li>
+<li><code>type</code>：测试阶段专有。该图片出现在测试阶段时的类型。<code>target</code>表示该图片在学习阶段出现过，<code>lure</code>表示该图片的另一个类似的版本在学习阶段出现过，<code>foil</code>表示该图片是全新的图片。</li>
+<li><code>cresp</code>：测试阶段专有。正确答案。<code>old</code>（和<code>target</code>对应）表示正确答案是<code>旧的</code>，<code>similar</code>（和<code>lure</code>对应）表示正确答案是<code>相似</code>，<code>new</code>（和<code>foil</code>对应）表示正确答案是<code>新的</code>。</li>
+</ul>
+</div>
+</div>
+<div id="配置参数" class="section level2">
+<h2>配置参数</h2>
+<table>
+<caption><span id="tab:configs">表1: </span>配置参数总表</caption>
+<thead>
+<tr class="header">
+<th align="left">参数类别</th>
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="center">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>maxStLrn</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">2000</td>
+<td align="left">学习阶段刺激呈现时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>itiLrn</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">500</td>
+<td align="left">学习阶段不同刺激之间的间隔时间，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>maxStTst</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">2000</td>
+<td align="left">测试阶段刺激最大呈现时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>itiTst</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">500</td>
+<td align="left">测试阶段不同刺激之间的间隔时间，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackCorrectError</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">控制正式测评时候是（1）否（0）需要反馈正确与错误</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackNoResponse</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）需要提示用户未操作</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackVisual</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出视觉反馈</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<ul>
+<li>题目结果显示
+<ul>
+<li>显示正确率和平均正确反应时间</li>
+<li>展示标准分数和超越百分比</li>
+</ul></li>
+<li>提交原始数据如下表（请参考<a href="{{% relref "standard.html" %}}">标准</a>）</li>
+</ul>
+<table>
+<caption><span id="tab:recording-variables">表2: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Phase</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">阶段。<code>Learn</code>或<code>Test</code>，和序列中一致。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>id</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">刺激编号，和序列中一致。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Ver</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">刺激版本，包括2种可能：‘a’、‘b’，和序列中一致。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Sim</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">当前刺激两个版本的相似程度，可能取值1-5，和序列中一致。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Type</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">图片的类型。学习（<code>Learn</code>）阶段为空文本。测试阶段和序列一致。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>CResp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">正确答案。学习（<code>Learn</code>）阶段为空文本。测试阶段和序列一致。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户的实际反应(Response)。学习阶段有三种可能，测试阶段有四种种可能：‘Old’、‘Similar’、‘New’、‘None’（未操作）</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误(ACCuracy)。学习阶段为空文本。测试阶段：0=错误，1=正确，-1=未完成操作。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（单位：毫秒）(Response Time)，若未完成操作，则记为0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="试题算分待定" class="section level2">
+<h2>试题算分（待定）</h2>
+</div>
