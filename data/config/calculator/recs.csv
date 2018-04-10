@@ -1,7 +1,7 @@
 ﻿名称,类型,说明
 `title`,`char`,题面
-`Type`,`char`,计算法则。同题库配置
-`Difficulty`,`char`,计算难度。同题库配置
+`Type`,`char`,计算法则。同序列配置
+`Difficulty`,`char`,计算难度。同序列配置
 `CResp`,`int`,正确答案
 `Resp`,`int`,用户选择的选项。若未选择，则记为0
 `ACC`,`int`,是否正确。正确为1，错误为0，未作答为-1
