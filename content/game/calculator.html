@@ -18,6 +18,10 @@ output:
 <li><a href="#交互界面">交互界面</a></li>
 <li><a href="#详细说明">详细说明</a><ul>
 <li><a href="#题目配置">题目配置</a></li>
+<li><a href="#选项配置">选项配置</a><ul>
+<li><a href="#加法干扰选项">加法干扰选项</a></li>
+<li><a href="#减法干扰选项">减法干扰选项</a></li>
+</ul></li>
 <li><a href="#流程">流程</a></li>
 <li><a href="#计分规则">计分规则</a></li>
 </ul></li>
@@ -60,9 +64,43 @@ output:
 <li><code>run</code>：表示轮次（请查看<a href="#流程">流程</a>）。序列文件中专有。</li>
 <li><code>title</code>：题面</li>
 <li><code>type</code>：计算法则。<code>add</code>：加法，<code>minus</code>：减法</li>
-<li><code>difficulty</code>：难度系数（1-3，可优化）</li>
-<li><code>correct</code>, <code>opt1</code>, <code>opt2</code>, <code>opt3</code>：备选选项。注意<code>correct</code>是正确答案，其他三个都是混淆的错误选项。实际呈现的时候，四个选项的位置是随机的。</li>
 </ul>
+</div>
+<div id="选项配置" class="section level2">
+<h2>选项配置</h2>
+<p>本游戏所有题目都配置四个选项，其中一个为正确选项，其余三个为干扰选项。实际呈现时，所有选项都是随机排列的。干扰选项的生成规则如下：</p>
+<div id="加法干扰选项" class="section level3">
+<h3>加法干扰选项</h3>
+<ul>
+<li><p>选项1：根据两数之和的个位数来确定。</p>
+<ul>
+<li>若两数之和的个位数为0-4，则选项1为正确答案+1；</li>
+<li>若两数之和的个位数为5-9，则选项1为正确答案-1。</li>
+</ul></li>
+<li><p>选项2：正确答案+10。</p></li>
+<li><p>选项3：正确答案-10。</p></li>
+</ul>
+</div>
+<div id="减法干扰选项" class="section level3">
+<h3>减法干扰选项</h3>
+<ul>
+<li><p>选项1：设被减数和减数的十位数之差为<span class="math inline">\(X\)</span>，被减数和减数的个位数之差为<span class="math inline">\(Y\)</span>（注意可能为负数），正确答案为<span class="math inline">\(Z\)</span>。</p>
+<ul>
+<li>若<span class="math inline">\(X = 0\)</span>且<span class="math inline">\(Y &gt; 0\)</span><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>，则选项1为<span class="math inline">\(10 - Y\)</span>。</li>
+<li>若<span class="math inline">\(X &gt; 0\)</span>且<span class="math inline">\(Y \neq 0\)</span>，则选项1为<span class="math inline">\(Z - 2Y\)</span>。</li>
+<li>若<span class="math inline">\(X &gt; 0\)</span>且<span class="math inline">\(Y = 0\)</span>，则选项1为<span class="math inline">\(Z + [Z / 10]\)</span><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>。</li>
+</ul></li>
+</ul>
+<ul>
+<li><p>选项2：正确答案+10。</p></li>
+<li><p>选项3：设被减数和减数的十位数之差为<span class="math inline">\(X\)</span>，被减数和减数的个位数之差为<span class="math inline">\(Y\)</span>（注意可能为负数），正确答案为<span class="math inline">\(Z\)</span>。</p>
+<ul>
+<li>若<span class="math inline">\(Z\)</span>是两位数，则选项3为<span class="math inline">\(Z - 10\)</span>。</li>
+<li>若<span class="math inline">\(Z\)</span>是一位数且<span class="math inline">\(Y &gt; 0\)</span>，则选项3为<span class="math inline">\(20 - Y\)</span>。</li>
+<li>若<span class="math inline">\(Z\)</span>是一位数且<span class="math inline">\(Y &lt; 0\)</span>，则选项3为<span class="math inline">\(10 - Z\)</span>。</li>
+</ul></li>
+</ul>
+</div>
 </div>
 <div id="流程" class="section level2">
 <h2>流程</h2>
@@ -100,62 +138,41 @@ output:
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">刺激呈现</td>
-<td align="left"><code>maxSt</code></td>
-<td align="left"><code>int</code></td>
-<td align="center">200</td>
-<td align="left">单个刺激最大展示时间，单位毫秒</td>
-</tr>
-<tr class="even">
-<td align="left">刺激呈现</td>
-<td align="left"><code>isi</code></td>
-<td align="left"><code>int</code></td>
-<td align="center">1000</td>
-<td align="left">刺激间隔时间，单位毫秒</td>
-</tr>
-<tr class="odd">
 <td align="left">刺激序列</td>
 <td align="left"><code>endMethod</code></td>
 <td align="left"><code>int</code></td>
-<td align="center">2</td>
+<td align="center">1</td>
 <td align="left">题目的结束方式（1=按时间结束，2=按刺激个数结束）</td>
 </tr>
 <tr class="even">
 <td align="left">刺激序列</td>
 <td align="left"><code>duration</code></td>
 <td align="left"><code>int</code></td>
-<td align="center">30000</td>
-<td align="left">题目整体持续时间（<code>endMethod</code>=1时生效，单位毫秒）</td>
+<td align="center">120000</td>
+<td align="left">单个轮次的最长持续时间（<code>endMethod</code>=1时生效，单位毫秒）</td>
 </tr>
 <tr class="odd">
-<td align="left">刺激序列</td>
-<td align="left"><code>quantity</code></td>
-<td align="left"><code>int</code></td>
-<td align="center">100</td>
-<td align="left">刺激总个数（<code>endMethod</code>=2时需全部做完）</td>
-</tr>
-<tr class="even">
 <td align="left">操作反馈</td>
 <td align="left"><code>feedbackCorrectError</code></td>
 <td align="left"><code>bool</code></td>
-<td align="center">0</td>
+<td align="center">1</td>
 <td align="left">控制正式测评时候是（1）否（0）需要反馈正确与错误</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">操作反馈</td>
 <td align="left"><code>feedbackNoResponse</code></td>
 <td align="left"><code>bool</code></td>
 <td align="center">0</td>
 <td align="left">控制正式测评时候是（1）否（0）需要提示用户未操作</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">操作反馈</td>
 <td align="left"><code>feedbackSound</code></td>
 <td align="left"><code>bool</code></td>
 <td align="center">1</td>
 <td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">操作反馈</td>
 <td align="left"><code>feedbackVisual</code></td>
 <td align="left"><code>bool</code></td>
@@ -192,12 +209,12 @@ output:
 <tr class="even">
 <td align="left"><code>Type</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">计算法则。同题库配置</td>
+<td align="left">计算法则。同序列配置</td>
 </tr>
 <tr class="odd">
 <td align="left"><code>Difficulty</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">计算难度。同题库配置</td>
+<td align="left">计算难度。同序列配置</td>
 </tr>
 <tr class="even">
 <td align="left"><code>CResp</code></td>
@@ -235,16 +252,18 @@ output:
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><code>hitRate</code></td>
-<td align="left"><code>float</code></td>
-<td align="left">用户在对所有需要操作的刺激中正确操作的比例</td>
-</tr>
-<tr class="even">
-<td align="left"><code>FARate</code></td>
-<td align="left"><code>float</code></td>
-<td align="left">用户在对所有不需要操作的刺激中错误操作的比例</td>
+<td align="left"><code>score</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户的三轮结束后的得分总和</td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>注意此时<span class="math inline">\(Y\)</span>必然比0大。<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>注意<span class="math inline">\([]\)</span>表示取整，例如<span class="math inline">\([2.6] = 2\)</span>，那么<span class="math inline">\([Z / 10]\)</span>实际上就是<span class="math inline">\(Z\)</span>的十位数。<a href="#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
