@@ -202,36 +202,41 @@ output:
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><code>title</code></td>
+<td align="left"><code>Run</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">题面</td>
+<td align="left">轮数，即<code>R1</code>、<code>R2</code>或<code>R3</code>，同序列配置</td>
 </tr>
 <tr class="even">
 <td align="left"><code>Type</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">计算法则。同序列配置</td>
+<td align="left">规则，即<code>add</code>或<code>minus</code>，同序列配置</td>
 </tr>
 <tr class="odd">
-<td align="left"><code>Difficulty</code></td>
-<td align="left"><code>char</code></td>
-<td align="left">计算难度。同序列配置</td>
+<td align="left"><code>Left</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">左侧数字，同序列配置</td>
 </tr>
 <tr class="even">
+<td align="left"><code>Right</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">右侧侧数字，同序列配置</td>
+</tr>
+<tr class="odd">
 <td align="left"><code>CResp</code></td>
 <td align="left"><code>int</code></td>
 <td align="left">正确答案</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>Resp</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">用户选择的选项。若未选择，则记为0</td>
-</tr>
-<tr class="even">
-<td align="left"><code>ACC</code></td>
-<td align="left"><code>int</code></td>
-<td align="left">是否正确。正确为1，错误为0，未作答为-1</td>
+<td align="left">用户选择的选项</td>
 </tr>
 <tr class="odd">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">是否正确。正确为1，错误为0</td>
+</tr>
+<tr class="even">
 <td align="left"><code>RT</code></td>
 <td align="left"><code>int</code></td>
 <td align="left">作答时间。以毫秒为单位</td>
