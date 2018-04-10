@@ -48,19 +48,15 @@ itembank <- expand.grid(left = 10:99, right = 10:99) %>%
   spread(opt, value) %>%
   filter(type == "add" | (type == "minus" & correct > 0)) %>%
   mutate(title = paste(left, recode(type, add = "+", minus = "-"), right))
-# output itembank and sample
-set.seed(1)
+# output itembank
 itembank %>%
-  select(title, type, difficulty, correct, opt1, opt2, opt3) %>%
+  select(type, left, right) %>%
   write_csv(here("calculator", "itembank.csv"))
-itembank %>%
-  sample_n(10) %>%
-  select(title, type, difficulty, correct, opt1, opt2, opt3) %>%
-  write_csv(here("calculator", "itembank_sample.csv"))
 
 # sequence generation
 n_elem <- 50
-seq_assess <- itembank %>%
+# get the assess items
+assess_items <- itembank %>%
   group_by(type, difficulty) %>%
   nest() %>%
   mutate(
@@ -80,17 +76,28 @@ seq_assess <- itembank %>%
   ) %>%
   select(run, type, difficulty, seqtbl) %>%
   arrange(run) %>%
-  unnest(seqtbl) %>%
+  unnest(seqtbl)
+# randomise
+set.seed(1)
+run_length <- 6 * n_elem
+run_order <- vector(length = run_length)
+run_order[c(seq(1, run_length, 2), seq(2, run_length, 2))] <- 1:run_length
+assess_seq <- assess_items %>%
+  group_by(run, type) %>%
+  nest() %>%
+  mutate(rnd = map(data, sample_frac)) %>%
+  select(-data) %>%
+  unnest(rnd) %>%
   group_by(run) %>%
   nest() %>%
   mutate(
-    rnd = map(
+    seq_char = map(
       data,
-      ~ sample_frac(.x) %>%
-        select(left, right, type, title, correct, opt1, opt2, opt3) %>%
+      ~ .x[run_order, ] %>%
+        select(type, left, right) %>%
         summarise_all(~ paste(., collapse = ","))
     )
   ) %>%
   select(-data) %>%
-  unnest(rnd)
-jsonlite::write_json(seq_assess, here("calculator", "sequence.json"))
+  unnest(seq_char)
+jsonlite::write_json(assess_seq, here("calculator", "sequence.json"))
