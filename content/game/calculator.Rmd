@@ -45,8 +45,8 @@ SDK <- 999
 其中（参考[标准](`r blogdown::shortcode("relref", "standard.html")`)中关于序列格式的说明）：
 
 * `run`：表示轮次（请查看[流程][]）。序列文件中专有。
-* `title`：题面
-* `type`：计算法则。`add`：加法，`minus`：减法
+* `type`：计算法则。`add`：加法，`minus`：减法。
+* `left`、`right`：分别对应于生成题目时运算符号左侧（`left`）和右侧（`right`）的数字。
 
 ## 选项配置
 
