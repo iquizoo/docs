@@ -17,18 +17,16 @@ itembank <- expand.grid(left = 10:99, right = 10:99) %>%
     add_opt1 = ifelse(add_ones < 5, add_correct + 1, add_correct - 1),
     add_opt2 = add_correct + 10,
     add_opt3 = add_correct - 10,
-    minus_opt1 = ifelse(
-      (minus_ones >= 0 & minus_ones < 5) | (minus_ones < 0 & 10 + minus_ones < 5),
-      minus_correct + 1, minus_correct - 1
+    minus_opt1 = case_when(
+      minus_tens > 0 & minus_ones != 0 ~ minus_correct - 2 * minus_ones,
+      minus_tens == 0 & minus_ones > 0 ~ 10 - minus_ones,
+      minus_tens > 0 & minus_ones == 0 ~ minus_correct + minus_correct %/% 10
     ),
-    minus_opt2 = ifelse(
-      (minus_ones >= 0 & minus_tens < 5) | (minus_ones < 0 & minus_tens < 6),
-      minus_correct + 10, minus_correct - 10
-    ),
+    minus_opt2 = minus_correct + 10,
     minus_opt3 = case_when(
-      minus_ones == 0 ~ minus_correct - 10 ,
-      minus_ones > 0 ~ minus_tens * 10 + 10 - minus_ones,
-      minus_ones < 0 ~ minus_tens * 10 + 10 + minus_ones
+      minus_correct %/% 10 > 0 ~ minus_correct - 10,
+      minus_correct %/% 10 == 0 & minus_ones > 0 ~ 20 - minus_ones,
+      minus_correct %/% 10 == 0 & minus_ones < 0 ~ 10 - minus_correct
     ),
     add_lvl = case_when(
       add_tens < 10 & add_ones < 10 ~ 1,
@@ -49,11 +47,16 @@ itembank <- expand.grid(left = 10:99, right = 10:99) %>%
   ) %>%
   spread(opt, value) %>%
   filter(type == "add" | (type == "minus" & correct > 0)) %>%
-  mutate(title = paste(left, recode(type, add = "+", minus = "-"), right)) %>%
-  select(title, type, difficulty, correct, opt1, opt2, opt3)
-write_csv(itembank, here("calculator", "itembank.csv"))
+  mutate(title = paste(left, recode(type, add = "+", minus = "-"), right))
+# output itembank and sample
 set.seed(1)
-write_csv(sample_n(itembank, 10), here("calculator", "itembank_sample.csv"))
+itembank %>%
+  select(title, type, difficulty, correct, opt1, opt2, opt3) %>%
+  write_csv(here("calculator", "itembank.csv"))
+itembank %>%
+  sample_n(10) %>%
+  select(title, type, difficulty, correct, opt1, opt2, opt3) %>%
+  write_csv(here("calculator", "itembank_sample.csv"))
 
 # sequence generation
 n_elem <- 50
@@ -80,7 +83,14 @@ seq_assess <- itembank %>%
   unnest(seqtbl) %>%
   group_by(run) %>%
   nest() %>%
-  mutate(rnd = map(data, sample_frac)) %>%
+  mutate(
+    rnd = map(
+      data,
+      ~ sample_frac(.x) %>%
+        select(left, right, type, title, correct, opt1, opt2, opt3) %>%
+        summarise_all(~ paste(., collapse = ","))
+    )
+  ) %>%
   select(-data) %>%
   unnest(rnd)
-write_csv(seq_assess, here("calculator", "sequence.csv"))
+jsonlite::write_json(seq_assess, here("calculator", "sequence.json"))
