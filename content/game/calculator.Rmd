@@ -15,6 +15,7 @@ output:
 NAME_CN <- "速算师"
 NAME_EN <- "calculator"
 CODE <- "78"
+SDK <- 999
 ```
 
 # 基本信息
@@ -35,25 +36,57 @@ CODE <- "78"
 
 # 详细说明
 
-## 题库配置
+## 题目配置
 
-本题目提供一个[题库文件](/seq/calculator/itembank.csv)，其中包含了所有可能的题目（样例参考表\@ref(tab:stimuli)）。其中：
+本游戏配置了一个**序列文件**（`.json`，主要是在测评时候用以确定测评序列）和一个**题库文件**（`.csv`，以后用于训练时候可用）。点击下表中相应链接可以查看。
 
-* `title`：题面
-* `type`：计算法则。`add`：加法，`minus`：减法
-* `difficulty`：难度系数（1-3，可优化）
-* `correct`, `opt1`, `opt2`, `opt3`：备选选项。注意`correct`是正确答案，其他三个都是混淆的错误选项。实际呈现的时候，四个选项的位置是随机的。
+`r blogdown::shortcode("directoryindex", path = "/static/seq/calculator", pathURL = "/seq/calculator")`
 
-```{r stimuli, echo=FALSE, message=FALSE, warning=FALSE}
-knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "itembank_sample.csv")),
-             caption = "题库样例")
-```
+其中（参考[标准](`r blogdown::shortcode("relref", "standard.html")`)中关于序列格式的说明）：
+
+* `run`：表示轮次（请查看[流程][]）。序列文件中专有。
+* `type`：计算法则。`add`：加法，`minus`：减法。
+* `left`、`right`：分别对应于生成题目时运算符号左侧（`left`）和右侧（`right`）的数字。
+
+## 选项配置
+
+本游戏所有题目都配置四个选项，其中一个为正确选项，其余三个为干扰选项。实际呈现时，所有选项都是**随机排列**的。干扰选项的生成规则如下：
+
+### 加法干扰选项
+
+* 选项1：根据两数之和的个位数来确定。
+
+    + 若两数之和的个位数为0-4，则选项1为正确答案+1；
+    + 若两数之和的个位数为5-9，则选项1为正确答案-1。
+
+* 选项2：正确答案+10。
+
+* 选项3：正确答案-10。
+
+### 减法干扰选项
+
+* 选项1：设被减数和减数的十位数之差为$X$，被减数和减数的个位数之差为$Y$（注意可能为负数），正确答案为$Z$。
+
+    + 若$X = 0$且$Y > 0$[^1]，则选项1为$10 - Y$。
+    + 若$X > 0$且$Y \neq 0$，则选项1为$Z - 2Y$。
+    + 若$X > 0$且$Y = 0$，则选项1为$Z + [Z / 10]$[^2]。
+
+[^1]: 注意此时$Y$必然比0大。
+[^2]: 注意$[]$表示取整，例如$[2.6] = 2$，那么$[Z / 10]$实际上就是$Z$的十位数。
+
+* 选项2：正确答案+10。
+
+* 选项3：设被减数和减数的十位数之差为$X$，被减数和减数的个位数之差为$Y$（注意可能为负数），正确答案为$Z$。
+
+    + 若$Z$是两位数，则选项3为$Z - 10$。
+    + 若$Z$是一位数且$Y > 0$，则选项3为$20 - Y$。
+    + 若$Z$是一位数且$Y < 0$，则选项3为$10 - Z$。
 
 ## 流程
 
 本题目可以有**测评**或**训练**两种目的。
 
-**测评**。一共完成三轮，刺激顺序和提供的[序列文件](/seq/calculator/sequence.csv)一致。序列文件表中相对于题库而言多出一列字段`run`，其中`R1``R2``R3`分别表示三个轮次；每个伦茨根据序列中一行一行地依次进行，总限时2分钟。
+**测评**。一共完成三轮，刺激顺序和提供的[序列文件](/seq/calculator/sequence.json){target="_blank"}一致。序列文件表中包含3个对象，其中`run`的三个取值`R1`、`R2`、`R3`分别表示三个轮次；每个轮次总限时为配置参数，默认为2分钟。
 
 **训练**。分为3种关卡：
 
@@ -70,11 +103,31 @@ knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "itembank_sam
 * 若用户回答正确，则获得1分。
 * 若用户回答错误，则扣除1分。
 
+# 配置参数
+
+```{r configs, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "configs.csv")),
+             caption = "配置参数总表")
+```
+
 # 数据记录
+
+## 结果显示
+
+用户的分数会实时更新，一轮结束后会在屏幕中央显示总得分，并在下方显示超越了多大比例的人。
+
+## 提交数据
 
 表\@ref(tab:recording-variables)说明了对于每一对数字需要记录的数据（请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)）。
 
 ```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "recs.csv")),
              caption = "原始数据变量列表")
+```
+
+## 试题算分
+
+```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "sdk.csv")),
+             caption = paste0("传入参数（算分码：`", SDK, "`）"))
 ```
