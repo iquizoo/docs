@@ -26,21 +26,6 @@ SDK <- 200
 * **任务描述**：测查反应力，特别是指个体对外界信号做出快速反应的能力
 * **测查能力**：反应力-反应速度
 
-## 交互界面
-
-目前已完善，后续有时间在完成文档化工作。
-
-## 详细说明
-
-敬请期待。
-
-## 配置参数
-
-```{r configs, echo=FALSE, message=FALSE, warning=FALSE}
-# knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "configs.csv")),
-#              caption = "配置参数总表")
-```
-
 ## 数据记录
 
 ### 结果显示
@@ -55,11 +40,4 @@ SDK <- 200
 ```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "recs.csv")),
              caption = "原始数据变量列表")
-```
-
-## 试题算分
-
-```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "sdk.csv")),
-             caption = paste0("传入参数（算分码：`", SDK, "`）"))
 ```
