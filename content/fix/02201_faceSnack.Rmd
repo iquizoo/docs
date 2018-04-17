@@ -1,0 +1,43 @@
+---
+title: 联系记忆（faceSnack）
+author: 张亮
+date: '2018-04-12'
+slug: 02201-faceSnack
+code: "02201"
+tasknames: "联系记忆"
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r basic settings, include=FALSE}
+NAME_CN <- "联系记忆"
+NAME_EN <- "faceSnack"
+CODE <- "02201"
+SDK <- 100
+```
+
+## 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：测查记忆力，特别是个体记住事物之间的联系（如人脸和名字）的能力。
+* **测查能力**：记忆力-联系记忆
+
+## 数据记录
+
+### 结果显示
+
++ 显示正确记忆出来的配对数目
++ 展示标准分数和超越百分比
+
+### 数据提交
+
+表\@ref(tab:recording-variables)说明了对于每一个试次需要记录的数据（请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)）。
+
+```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "recs.csv")),
+             caption = "原始数据变量列表")
+```

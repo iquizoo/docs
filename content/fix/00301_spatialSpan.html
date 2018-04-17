@@ -1,10 +1,10 @@
 ---
-title: 倒背数（digital-desc）
+title: 位置记忆（spatialSpan）
 author: 张亮
 date: '2018-04-12'
-slug: 00202-digital-desc
-code: "00202"
-tasknames: "数字记忆广度"
+slug: 00301-spatialSpan
+code: "00301"
+tasknames: "短时记忆"
 output:
   blogdown::html_page:
     toc: true
@@ -25,11 +25,11 @@ output:
 <div id="基本信息" class="section level2">
 <h2>基本信息</h2>
 <ul>
-<li><strong>显示名称</strong>：倒背数</li>
-<li><strong>英文名称</strong>：digital-desc</li>
-<li><strong>题目编号</strong>：00202</li>
-<li><strong>任务描述</strong>：测查自控力，特别是根据需要操纵头脑中存储的信息的能力</li>
-<li><strong>测查能力</strong>：自控力-信息更新</li>
+<li><strong>显示名称</strong>：位置记忆</li>
+<li><strong>英文名称</strong>：spatialSpan</li>
+<li><strong>题目编号</strong>：00301</li>
+<li><strong>任务描述</strong>：测查记忆力，特别是个体的空间短时记忆力</li>
+<li><strong>测查能力</strong>：记忆力-短时记忆</li>
 </ul>
 </div>
 <div id="数据记录" class="section level2">
@@ -37,7 +37,7 @@ output:
 <div id="结果显示" class="section level3">
 <h3>结果显示</h3>
 <ul>
-<li>显示最多能正确倒背出来的数字数目</li>
+<li>显示最多能正确回忆出来的方块位置数目</li>
 <li>展示标准分数和超越百分比</li>
 </ul>
 </div>
@@ -57,17 +57,17 @@ output:
 <tr class="odd">
 <td align="left"><code>SLen</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">当前试次的数字个数。</td>
+<td align="left">当前试次需要记忆的方块位置个数。</td>
 </tr>
 <tr class="even">
 <td align="left"><code>CResp</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">正确的数字顺序（Correct Response），也就是把呈现的数字按倒序直接拼在一起组成的字符串</td>
+<td align="left">正确的方块位置顺序（Correct Response），也就是把呈现的位置编号拼在一起组成的字符串（16个位置使用十六进制数字表示）</td>
 </tr>
 <tr class="odd">
 <td align="left"><code>Resp</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">用户的实际反应（Response），即把用户实际点击的数字直接拼在一起组成的字符串</td>
+<td align="left">用户的实际反应（Response），即把用户实际点击的位置直接拼在一起组成的字符串</td>
 </tr>
 <tr class="even">
 <td align="left"><code>ACC</code></td>
