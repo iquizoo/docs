@@ -1,0 +1,43 @@
+---
+title: 数感（numerosity）
+author: 张亮
+date: '2018-04-12'
+slug: 02701-numerosity
+code: "02701"
+tasknames: "数量感知"
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r basic settings, include=FALSE}
+NAME_CN <- "数感"
+NAME_EN <- "numerosity"
+CODE <- "02701"
+SDK <- 999
+```
+
+## 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：测查大脑的数量感知能力。
+* **测查能力**：数学-数量加工
+
+## 数据记录
+
+### 结果显示
+
++ 显示正确判断的个数
++ 展示标准分数和超越百分比
+
+### 数据提交
+
+表\@ref(tab:recording-variables)说明了对于每一个试次需要记录的数据（请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)）。
+
+```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "recs.csv")),
+             caption = "原始数据变量列表")
+```
