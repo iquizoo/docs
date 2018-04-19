@@ -20,6 +20,10 @@ output:
 <li><a href="#刺激">刺激</a></li>
 <li><a href="#序列">序列</a></li>
 </ul></li>
+<li><a href="#配置参数">配置参数</a></li>
+<li><a href="#数据记录">数据记录</a><ul>
+<li><a href="#试题算分">试题算分</a></li>
+</ul></li>
 </ul>
 </div>
 
@@ -54,5 +58,139 @@ output:
 <li>引导和练习都只需要呈现2张（1张对称、1张不对称）蝴蝶图片进行记忆。</li>
 <li>正式测评按随机顺序分别呈现3、4、5、6张蝴蝶图片进行记忆。实际的序列将在后面给出。</li>
 </ul>
+</div>
+</div>
+<div id="配置参数" class="section level1">
+<h1>配置参数</h1>
+<table>
+<caption><span id="tab:configs">表1: </span>配置参数总表</caption>
+<thead>
+<tr class="header">
+<th align="left">参数类别</th>
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="center">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>maxSt1</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">3000</td>
+<td align="left">做对称判断时蝴蝶的呈现时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>hideTime</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">500</td>
+<td align="left">蝴蝶飞入其中一个格子的时间，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>maxSt2</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">1000</td>
+<td align="left">蝴蝶飞入格子后停留在格子中的时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>iti</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">500</td>
+<td align="left">用户作答完成并反馈后到第二轮蝴蝶出现的间隔时间，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackCorrectError</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">控制正式测评时候是（1）否（0）需要反馈正确与错误</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackNoResponse</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）需要提示用户未操作</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackVisual</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出视觉反馈</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="数据记录" class="section level1">
+<h1>数据记录</h1>
+<p>提交原始数据如表<a href="#tab:recording-variables">2</a>（请参考<a href="{{% relref "standard.html" %}}">标准</a>）</p>
+<table>
+<caption><span id="tab:recording-variables">表2: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>SLen</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">当前试次需要记忆的蝴蝶隐藏位置个数。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>CResp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">正确的蝴蝶隐藏位置顺序（Correct Response），也就是把呈现的位置编号拼在一起组成的字符串（16个位置使用十六进制数字表示）。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户的实际反应（Response），即把用户实际点击的位置直接拼在一起组成的字符串，其中选择“忘记”的使用符号“-”表示，例如“0-f”就表示第二次用户选择了“忘记”。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">记录每个隐藏位置是否选择正确或错误(ACCuracy)，0=错误（选择“忘记”的也记为错误），1=正确。例如“110”表示前两个对了，最后一个错了。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所用时间（单位：毫秒）(Response Time)。</td>
+</tr>
+</tbody>
+</table>
+<div id="试题算分" class="section level2">
+<h2>试题算分</h2>
+<table>
+<caption><span id="tab:sdk-score">表3: </span>传入参数（算分码：<code>999</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>score</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户的最终得分，即用户累计正确找出的蝴蝶个数</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>

@@ -15,6 +15,7 @@ output:
 NAME_CN <- "蝴蝶照相机"
 NAME_EN <- "butterfly"
 CODE <- "80"
+SDK <- 999
 ```
 
 # 基本信息
@@ -44,3 +45,26 @@ CODE <- "80"
 
 * 引导和练习都只需要呈现2张（1张对称、1张不对称）蝴蝶图片进行记忆。
 * 正式测评按随机顺序分别呈现3、4、5、6张蝴蝶图片进行记忆。实际的序列将在后面给出。
+
+# 配置参数
+
+```{r configs, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "configs.csv")),
+             caption = "配置参数总表")
+```
+
+# 数据记录
+
+提交原始数据如表\@ref(tab:recording-variables)（请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)）
+
+```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "recs.csv")),
+             caption = "原始数据变量列表")
+```
+
+## 试题算分
+
+```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "sdk.csv")),
+             caption = paste0("传入参数（算分码：`", SDK, "`）"))
+```
