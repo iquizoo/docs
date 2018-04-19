@@ -1,0 +1,73 @@
+---
+title: 蝴蝶照相机（butterfly）
+author: 张亮
+date: '2018-04-06'
+slug: butterfly
+code: "80"
+tasknames: "复杂广度任务"
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r basic settings, include=FALSE}
+NAME_CN <- "蝴蝶照相机"
+NAME_EN <- "butterfly"
+CODE <- "80"
+SDK <- 999
+```
+
+# 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：找出蝴蝶隐藏的位置，训练工作记忆
+* **测查能力**：自控力-信息更新
+
+# 交互流程
+
+[点击此处](/axure-rp-design/butterfly/start.html){target="_blank"}查看交互流程设计。
+
+# 详细说明
+
+## 刺激
+
+使用**蝴蝶**作为基本的刺激材料。蝴蝶的形状简单一点，使得用户可以很容易地判断是否对称。
+
+总计需设计`40`张张不同的蝴蝶图片，其中
+
+* 引导和练习部分需要设计`4`（2张引导，2张练习）张不同的蝴蝶图片，对称的和不对称的各占一半。对称的编号为`ps01`--`ps02`，不对称的编号为`pn01`--`pn02`。
+* 正式测评部分需要设计`36`张不同的蝴蝶图片，对称的和不对称的各占一半。对称的18张蝴蝶图片编号为`s01`--`s18`，不对称的18张图片编号为`n01`--`n18`。
+
+## 序列
+
+* 引导和练习都只需要呈现2张（1张对称、1张不对称）蝴蝶图片进行记忆。
+* 正式测评按随机顺序分别呈现3、4、5、6张蝴蝶图片进行记忆。[序列文件](/seq/butterfly.json)中包含以下值：
+    + `slen`：当前轮次需要呈现的蝴蝶个数（3-6中的一个）。
+    + `sym`：当前轮次先后呈现的蝴蝶是否对称，其中`s`代表对称，`n`代表不对称。例如`nsn`就表示现后呈现的三张蝴蝶照片依次是**不对称**、**对称**、**不对称**。
+    + `loc`：当前轮次先后呈现的蝴蝶飞入网格后停留的位置，使用16进制数字表示（参考设计中的图）。例如`148`就表示先后呈现的蝴蝶位置分别为1号、4号、8号网格。
+
+# 配置参数
+
+```{r configs, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "configs.csv")),
+             caption = "配置参数总表")
+```
+
+# 数据记录
+
+提交原始数据如表\@ref(tab:recording-variables)（请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)）
+
+```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "recs.csv")),
+             caption = "原始数据变量列表")
+```
+
+## 试题算分
+
+```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "sdk.csv")),
+             caption = paste0("传入参数（算分码：`", SDK, "`）"))
+```
