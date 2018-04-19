@@ -5,8 +5,6 @@ date: '2018-04-06'
 slug: butterfly
 code: "80"
 tasknames: "复杂广度任务"
-bibliography: ../../data/refs/MyFullResearch.bib
-link-citations: true
 output:
   blogdown::html_page:
     toc: true
