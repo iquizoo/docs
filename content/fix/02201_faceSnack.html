@@ -1,0 +1,90 @@
+---
+title: 联系记忆（faceSnack）
+author: 张亮
+date: '2018-04-12'
+slug: 02201-faceSnack
+code: "02201"
+tasknames: "联系记忆"
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#数据记录">数据记录</a><ul>
+<li><a href="#结果显示">结果显示</a></li>
+<li><a href="#数据提交">数据提交</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level2">
+<h2>基本信息</h2>
+<ul>
+<li><strong>显示名称</strong>：联系记忆</li>
+<li><strong>英文名称</strong>：faceSnack</li>
+<li><strong>题目编号</strong>：02201</li>
+<li><strong>任务描述</strong>：测查记忆力，特别是个体记住事物之间的联系（如人脸和名字）的能力。</li>
+<li><strong>测查能力</strong>：记忆力-联系记忆</li>
+</ul>
+</div>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<div id="结果显示" class="section level3">
+<h3>结果显示</h3>
+<ul>
+<li>显示正确记忆出来的配对数目</li>
+<li>展示标准分数和超越百分比</li>
+</ul>
+</div>
+<div id="数据提交" class="section level3">
+<h3>数据提交</h3>
+<p>表<a href="#tab:recording-variables">1</a>说明了对于每一个试次需要记录的数据（请参考<a href="{{% relref "standard.html" %}}">标准</a>）。</p>
+<table>
+<caption><span id="tab:recording-variables">表1: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Face</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">人脸的编号。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Food</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">备选零食的编号。使用“|”分隔不同零食，例如“12|3|9|16”。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>CResp</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确零食的编号。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户的实际选择的零食的编号。若用户未完成操作，则记为-1。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误(ACCuracy)。0=错误，1=正确，-1=未完成操作。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（单位：毫秒）(Response Time)，若未完成操作，则记为0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

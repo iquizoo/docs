@@ -49,6 +49,10 @@ footnotereturnlinkcontents = "↩"
     name = "C2游戏文档"
     url = "/game/"
     weight = 6
+[[menu.main]]
+    name = "修复"
+    url = "/fix/"
+    weight = 7
 
 [params]
     description = "A website built through Hugo and blogdown."
