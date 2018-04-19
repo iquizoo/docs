@@ -154,24 +154,39 @@ output:
 <tr class="odd">
 <td align="left"><code>SLen</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">当前试次需要记忆的蝴蝶隐藏位置个数。</td>
+<td align="left">当前轮次需要记忆的蝴蝶隐藏位置个数。</td>
 </tr>
 <tr class="even">
-<td align="left"><code>CResp</code></td>
+<td align="left"><code>Sym</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">正确的蝴蝶隐藏位置顺序（Correct Response），也就是把呈现的位置编号拼在一起组成的字符串（16个位置使用十六进制数字表示）。</td>
+<td align="left">当前轮次先后出现的蝴蝶是否对称，和序列中的<code>sym</code>保持一致。</td>
 </tr>
 <tr class="odd">
-<td align="left"><code>Resp</code></td>
+<td align="left"><code>Loc</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">用户的实际反应（Response），即把用户实际点击的位置直接拼在一起组成的字符串，其中选择“忘记”的使用符号“-”表示，例如“0-f”就表示第二次用户选择了“忘记”。</td>
+<td align="left">当前轮次正确的蝴蝶隐藏位置顺序，也就是把呈现的位置编号拼在一起组成的字符串（16个位置使用十六进制数字表示）。和序列中的<code>loc</code>保持一致。</td>
 </tr>
 <tr class="even">
-<td align="left"><code>ACC</code></td>
+<td align="left"><code>RespSym</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">记录每个隐藏位置是否选择正确或错误(ACCuracy)，0=错误（选择“忘记”的也记为错误），1=正确。例如“110”表示前两个对了，最后一个错了。</td>
+<td align="left">用户对称判断的实际反应，使用由<code>n</code>（不对称），<code>s</code>（对称）或<code>-</code>（未操作）拼在一起的字符串表示。</td>
 </tr>
 <tr class="odd">
+<td align="left"><code>RespLoc</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户对蝴蝶位置的实际反应，即把用户实际点击的位置直接拼在一起组成的字符串，其中选择“忘记”的使用符号“-”表示，例如“1f-”就表示第三次用户选择了“忘记”。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>AccSym</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户对称判断是否正确，0=错误（未作答也记为错误），1=正确。例如“110”表示前两个对了，最后一个错了。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>AccLoc</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">记录每个隐藏位置是否选择正确或错误，0=错误（选择“忘记”的也记为错误），1=正确。例如“110”表示前两个对了，最后一个错了。</td>
+</tr>
+<tr class="even">
 <td align="left"><code>RT</code></td>
 <td align="left"><code>int</code></td>
 <td align="left">用户完成操作所用时间（单位：毫秒）(Response Time)。</td>
