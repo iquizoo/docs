@@ -15,6 +15,7 @@ output:
 <div id="TOC">
 <ul>
 <li><a href="#基本信息">基本信息</a></li>
+<li><a href="#详细说明">详细说明</a></li>
 <li><a href="#数据记录">数据记录</a><ul>
 <li><a href="#结果显示">结果显示</a></li>
 <li><a href="#数据提交">数据提交</a></li>
@@ -32,12 +33,20 @@ output:
 <li><strong>测查能力</strong>：记忆力-联系记忆</li>
 </ul>
 </div>
+<div id="详细说明" class="section level1">
+<h1>详细说明</h1>
+<p>正式测评需要修改为两轮，即把现在的学习和测试重复一次，要求：</p>
+<ul>
+<li>和现有的轮次学习相同的15个配对，但是出现顺序重新随机；</li>
+<li>测试时顺序也重新随机，并且修改选项。</li>
+</ul>
+</div>
 <div id="数据记录" class="section level1">
 <h1>数据记录</h1>
 <div id="结果显示" class="section level2">
 <h2>结果显示</h2>
 <ul>
-<li>显示正确记忆出来的配对数目</li>
+<li>显示两轮测试总共正确记忆出来的配对数目</li>
 <li>展示标准分数和超越百分比</li>
 </ul>
 </div>
@@ -55,31 +64,36 @@ output:
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left"><code>Round</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">当前的轮次数目，1或者2。</td>
+</tr>
+<tr class="even">
 <td align="left"><code>Face</code></td>
 <td align="left"><code>int</code></td>
 <td align="left">人脸的编号。</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>Food</code></td>
 <td align="left"><code>char</code></td>
 <td align="left">备选零食的编号。使用“|”分隔不同零食，例如“12|3|9|16”。</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>CResp</code></td>
 <td align="left"><code>int</code></td>
 <td align="left">正确零食的编号。</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>Resp</code></td>
 <td align="left"><code>int</code></td>
 <td align="left">用户的实际选择的零食的编号。若用户未完成操作，则记为-1。</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>ACC</code></td>
 <td align="left"><code>int</code></td>
 <td align="left">正确或错误(ACCuracy)。0=错误，1=正确，-1=未完成操作。</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>RT</code></td>
 <td align="left"><code>int</code></td>
 <td align="left">用户完成操作所需时间（单位：毫秒）(Response Time)，若未完成操作，则记为0</td>
