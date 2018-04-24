@@ -13,8 +13,8 @@ tasknames: "任务转换范式"
 <script src="/rmarkdown-libs/grViz-binding/grViz.js"></script>
 
 
-<div class="section level2">
-<h2>基本信息</h2>
+<div class="section level1">
+<h1>基本信息</h1>
 <ul>
 <li><strong>显示名称</strong>：反应转换</li>
 <li><strong>英文名称</strong>：Shifting2</li>
@@ -24,8 +24,8 @@ tasknames: "任务转换范式"
 <li><strong>相关任务</strong>：<a href="{{% relref "03201_Shifting.html" %}}">思维转换</a>。本题目适用于5年级（10岁）以上儿童，低年级请使用思维转换任务。</li>
 </ul>
 </div>
-<div class="section level2">
-<h2>交互界面</h2>
+<div class="section level1">
+<h1>交互界面</h1>
 <div id="htmlwidget-1" style="width:900px;height:100px;" class="grViz html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"diagram":"digraph task_flow{\n    # atr_list\n    # graph properties\n    graph [rankdir = LR, fontname = \"YouYuan\"]\n    # node properties\n    node [shape = box, fontname = \"YouYuan\"]\n    # edge properties\n    edge [fontname = \"YouYuan\"]\n\n    # node_stmt\n    ETC0 [label = \"...\", shape = plaintext]\n    R0 [label = \"用户操作\", color = \"blue\"]\n    C1 [label = \"线索符号\n（&hearts;/<）\", color = \"green\"]\n    T1 [label = \"目标词语\", color = \"red\"]\n    R1 [label = \"用户操作\", color = \"blue\"]\n    C2 [label = \"线索符号\n（&hearts;/<）\", color = \"green\"]\n    ETC2 [label = \"...\", shape = plaintext]\n\n    # subgraphs\n    subgraph cluster_trial {\n      # edge_stmt in subgraph\n      C1 -> T1 [label = \"500ms\", labeltooltip = \"线索目标间隔（CTI）\"]\n      T1 -> R1 [label = \"反应时间/3000ms\", labeltooltip = \"反应时间，注意用户须在最长等待时间（maxSt，默认3000ms）结束前操作\"]\n      label = \"一个试次\"\n    }\n\n    # edge_stmt in root graph\n    ETC0 -> R0\n    R0 -> C1 [label = \"500ms\", labeltooltip = \"反应线索间隔（RCI）\"]\n    R1 -> C2 [label = \"500ms\", labeltooltip = \"反应线索间隔（RCI）\"]\n    C2 -> ETC2\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>每一个试次中，<em>屏幕上方</em>呈现一个<strong>线索符号</strong>（<span class="math inline">\(\heartsuit\)</span>/&lt;），一定时间（<em>线索目标间隔</em>）后<em>屏幕中央</em>呈现一个<strong>目标词语</strong>（中文具象名词），线索符号和目标词语会同时停留在屏幕上，直到用户需根据线索对目标做出操作（或达到最大展示时间）后一起消失。最后，屏幕保持一定时间（<em>反应线索间隔</em>）的空白后进入下一个试次。</p>
@@ -36,8 +36,8 @@ tasknames: "任务转换范式"
 <li>指引和练习在两个子任务混合起来（实际测试时候的形式）的时候如何操作。</li>
 </ol>
 </div>
-<div class="section level2">
-<h2>详细说明</h2>
+<div class="section level1">
+<h1>详细说明</h1>
 <ul>
 <li>刺激
 <ul>
@@ -160,8 +160,8 @@ tasknames: "任务转换范式"
 </ul></li>
 </ul>
 </div>
-<div class="section level2">
-<h2>配置参数</h2>
+<div class="section level1">
+<h1>配置参数</h1>
 <table>
 <caption><span id="tab:configs">表2: </span>配置参数总表</caption>
 <thead>
@@ -254,8 +254,8 @@ tasknames: "任务转换范式"
 </tbody>
 </table>
 </div>
-<div class="section level2">
-<h2>数据记录</h2>
+<div class="section level1">
+<h1>数据记录</h1>
 <ul>
 <li>题目结果显示
 <ul>
@@ -317,8 +317,8 @@ tasknames: "任务转换范式"
 </tbody>
 </table>
 </div>
-<div class="section level2">
-<h2>试题算分</h2>
+<div class="section level1">
+<h1>试题算分</h1>
 <ul>
 <li>算分码：201</li>
 <li>传入参数：</li>
@@ -345,6 +345,6 @@ tasknames: "任务转换范式"
 </tbody>
 </table>
 </div>
-<div class="section level2">
-<h2>修订历史</h2>
+<div class="section level1">
+<h1>修订历史</h1>
 </div>
