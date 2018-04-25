@@ -13,14 +13,13 @@ theme = "hugo-xmin"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "\\.csv$", "\\.R$", "\\.gv$", "README.md", "_bookdown.yml", "\\.bib", "LICENSE", "/static/.*/\\.git$"]
 # enable gitinfo for publish date
 enableGitInfo = true
-# disable "taxonomyTerm" because there is no need for a separated term page
-disableKinds = "taxonomyTerm"
 # misc settings
 preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
 
 [taxonomies]
     taskname = "tasknames"
+    category = "categories"
 
 [permalinks]
     post = "/post/:slug/"
@@ -46,12 +45,12 @@ footnotereturnlinkcontents = "↩"
     url = "/post/"
     weight = 5
 [[menu.main]]
-    name = "C2游戏文档"
-    url = "/game/"
+    name = "类别"
+    url = "/categories/"
     weight = 6
 [[menu.main]]
-    name = "修复"
-    url = "/fix/"
+    name = "任务列表"
+    url = "/tasknames/"
     weight = 7
 
 [params]
