@@ -29,28 +29,28 @@ footnotereturnlinkcontents = "↩"
     url = "/"
     weight = 1
 [[menu.main]]
-    name = "关于"
-    url = "/about/"
-    weight = 2
-[[menu.main]]
-    name = "术语表"
-    url = "/glossary/"
-    weight = 3
-[[menu.main]]
-    name = "标准"
-    url = "/standard/"
-    weight = 4
-[[menu.main]]
-    name = "文档"
+    name = "所有文档"
     url = "/post/"
-    weight = 5
+    weight = 2
 [[menu.main]]
     name = "类别"
     url = "/categories/"
-    weight = 6
+    weight = 3
 [[menu.main]]
     name = "任务列表"
     url = "/tasknames/"
+    weight = 4
+[[menu.main]]
+    name = "术语"
+    url = "/glossary/"
+    weight = 5
+[[menu.main]]
+    name = "标准"
+    url = "/standard/"
+    weight = 6
+[[menu.main]]
+    name = "关于"
+    url = "/about/"
     weight = 7
 
 [params]
