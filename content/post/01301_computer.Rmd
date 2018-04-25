@@ -1,10 +1,13 @@
 ---
-title: 雷达追踪（itemTracking）
+title: 速算师（初级）（computer）
 author: 张亮
-date: '2018-04-12'
-slug: 02101-itemTracking
-code: "02101"
-tasknames: "多目标追踪范式"
+date: '2018-04-23'
+slug: 01301-computer
+code: "01301"
+tasknames: "数学计算"
+categories:
+- 文档
+- 修复
 output:
   blogdown::html_page:
     toc: true
@@ -12,10 +15,10 @@ output:
 ---
 
 ```{r basic settings, include=FALSE}
-NAME_CN <- "雷达追踪"
-NAME_EN <- "itemTracking"
-CODE <- "02101"
-SDK <- 301
+NAME_CN <- "速算师（初级）"
+NAME_EN <- "computer"
+CODE <- "01301"
+SDK <- 203
 ```
 
 # 基本信息
@@ -23,14 +26,14 @@ SDK <- 301
 * **显示名称**：`r NAME_CN`
 * **英文名称**：`r NAME_EN`
 * **题目编号**：`r CODE`
-* **任务描述**：测查注意力，特别是个体在一定时间内，将注意稳定地保持在指定对象上的能力。
-* **测查能力**：注意力-选择注意
+* **任务描述**：测查大脑的数学计算能力。
+* **测查能力**：数学-数学计算
 
 # 数据记录
 
 ## 结果显示
 
-+ 显示最多能正确选择出来的追踪点数
++ 显示正确判断的个数
 + 展示标准分数和超越百分比
 
 ## 数据提交

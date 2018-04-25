@@ -1,10 +1,13 @@
 ---
-title: 速算师（初级）（computer）
+title: 位置记忆（spatialSpan）
 author: 张亮
-date: '2018-04-23'
-slug: 01301-computer
-code: "01301"
-tasknames: "数学计算"
+date: '2018-04-12'
+slug: 00301-spatialSpan
+code: "00301"
+tasknames: "短时记忆"
+categories:
+- 文档
+- 修复
 output:
   blogdown::html_page:
     toc: true
@@ -12,10 +15,10 @@ output:
 ---
 
 ```{r basic settings, include=FALSE}
-NAME_CN <- "速算师（初级）"
-NAME_EN <- "computer"
-CODE <- "01301"
-SDK <- 203
+NAME_CN <- "位置记忆"
+NAME_EN <- "spatialSpan"
+CODE <- "00301"
+SDK <- 301
 ```
 
 # 基本信息
@@ -23,14 +26,14 @@ SDK <- 203
 * **显示名称**：`r NAME_CN`
 * **英文名称**：`r NAME_EN`
 * **题目编号**：`r CODE`
-* **任务描述**：测查大脑的数学计算能力。
-* **测查能力**：数学-数学计算
+* **任务描述**：测查记忆力，特别是个体的空间短时记忆力
+* **测查能力**：记忆力-短时记忆
 
 # 数据记录
 
 ## 结果显示
 
-+ 显示正确判断的个数
++ 显示最多能正确回忆出来的方块位置数目
 + 展示标准分数和超越百分比
 
 ## 数据提交

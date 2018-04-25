@@ -5,6 +5,7 @@ date: 2018-03-03
 slug: 03201-shifting
 code: "03201"
 tasknames: "任务转换范式"
+categories: "文档"
 ---
 
 ```{r basic-settings, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}

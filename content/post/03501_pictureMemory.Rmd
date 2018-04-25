@@ -5,6 +5,7 @@ date: '2018-03-26'
 slug: 03501-picturememory
 code: "03501"
 tasknames: "模式分离范式"
+categories: "文档"
 output:
   blogdown::html_page:
     toc: true

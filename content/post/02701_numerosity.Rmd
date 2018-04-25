@@ -5,6 +5,9 @@ date: '2018-04-12'
 slug: 02701-numerosity
 code: "02701"
 tasknames: "数量感知"
+categories:
+- 文档
+- 修复
 output:
   blogdown::html_page:
     toc: true

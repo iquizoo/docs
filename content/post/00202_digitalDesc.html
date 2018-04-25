@@ -1,10 +1,13 @@
 ---
-title: 速算师（初级）（computer）
+title: 倒背数（digital-desc）
 author: 张亮
-date: '2018-04-23'
-slug: 01301-computer
-code: "01301"
-tasknames: "数学计算"
+date: '2018-04-12'
+slug: 00202-digital-desc
+code: "00202"
+tasknames: "数字记忆广度"
+categories:
+- 文档
+- 修复
 output:
   blogdown::html_page:
     toc: true
@@ -25,11 +28,11 @@ output:
 <div id="基本信息" class="section level1">
 <h1>基本信息</h1>
 <ul>
-<li><strong>显示名称</strong>：速算师（初级）</li>
-<li><strong>英文名称</strong>：computer</li>
-<li><strong>题目编号</strong>：01301</li>
-<li><strong>任务描述</strong>：测查大脑的数学计算能力。</li>
-<li><strong>测查能力</strong>：数学-数学计算</li>
+<li><strong>显示名称</strong>：倒背数</li>
+<li><strong>英文名称</strong>：digital-desc</li>
+<li><strong>题目编号</strong>：00202</li>
+<li><strong>任务描述</strong>：测查自控力，特别是根据需要操纵头脑中存储的信息的能力</li>
+<li><strong>测查能力</strong>：自控力-信息更新</li>
 </ul>
 </div>
 <div id="数据记录" class="section level1">
@@ -37,7 +40,7 @@ output:
 <div id="结果显示" class="section level2">
 <h2>结果显示</h2>
 <ul>
-<li>显示正确判断的个数</li>
+<li>显示最多能正确倒背出来的数字数目</li>
 <li>展示标准分数和超越百分比</li>
 </ul>
 </div>
@@ -55,34 +58,29 @@ output:
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><code>NL</code></td>
+<td align="left"><code>SLen</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">左侧呈现的数字</td>
+<td align="left">当前试次的数字个数。</td>
 </tr>
 <tr class="even">
-<td align="left"><code>NR</code></td>
-<td align="left"><code>int</code></td>
-<td align="left">右侧呈现的数字</td>
-</tr>
-<tr class="odd">
 <td align="left"><code>CResp</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">正确答案，<code>Left</code>（左侧）、<code>Right</code>（右侧）</td>
-</tr>
-<tr class="even">
-<td align="left"><code>Resp</code></td>
-<td align="left"><code>char</code></td>
-<td align="left">用户的实际反应(Response)。三种可能，即<code>Left</code>（左侧）、<code>Right</code>（右侧）、<code>None</code>（用户未操作）。</td>
+<td align="left">正确的数字顺序（Correct Response），也就是把呈现的数字按倒序直接拼在一起组成的字符串</td>
 </tr>
 <tr class="odd">
-<td align="left"><code>ACC</code></td>
-<td align="left"><code>int</code></td>
-<td align="left">正确或错误(ACCuracy)。0=错误，1=正确，-1=未完成操作。</td>
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户的实际反应（Response），即把用户实际点击的数字直接拼在一起组成的字符串</td>
 </tr>
 <tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误(ACCuracy)，0=错误，1=正确。</td>
+</tr>
+<tr class="odd">
 <td align="left"><code>RT</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">用户完成操作所用时间（单位：毫秒）(Response Time)，若未完成操作，则记为0</td>
+<td align="left">用户完成操作所需时间（单位：毫秒）(Response Time)</td>
 </tr>
 </tbody>
 </table>

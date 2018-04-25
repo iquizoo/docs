@@ -5,6 +5,7 @@ date: 2018-03-02
 slug: 00102-flanker2
 code: "00102"
 tasknames: "侧抑制任务"
+categories: "文档"
 ---
 
 ```{r basic settings, include=FALSE}
