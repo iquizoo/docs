@@ -1,10 +1,13 @@
 ---
-title: 倒背数（digital-desc）
+title: 联系记忆（faceSnack）
 author: 张亮
 date: '2018-04-12'
-slug: 00202-digital-desc
-code: "00202"
-tasknames: "数字记忆广度"
+slug: 02201-faceSnack
+code: "02201"
+tasknames: "联系记忆"
+categories:
+- 文档
+- 修复
 output:
   blogdown::html_page:
     toc: true
@@ -12,10 +15,10 @@ output:
 ---
 
 ```{r basic settings, include=FALSE}
-NAME_CN <- "倒背数"
-NAME_EN <- "digital-desc"
-CODE <- "00202"
-SDK <- 301
+NAME_CN <- "联系记忆"
+NAME_EN <- "faceSnack"
+CODE <- "02201"
+SDK <- 100
 ```
 
 # 基本信息
@@ -23,14 +26,21 @@ SDK <- 301
 * **显示名称**：`r NAME_CN`
 * **英文名称**：`r NAME_EN`
 * **题目编号**：`r CODE`
-* **任务描述**：测查自控力，特别是根据需要操纵头脑中存储的信息的能力
-* **测查能力**：自控力-信息更新
+* **任务描述**：测查记忆力，特别是个体记住事物之间的联系（如人脸和名字）的能力。
+* **测查能力**：记忆力-联系记忆
+
+# 详细说明
+
+正式测评需要修改为两轮，即把现在的学习和测试重复一次，要求：
+
+* 和现有的轮次学习相同的15个配对，但是出现顺序重新随机；
+* 测试时顺序也重新随机，并且修改选项。
 
 # 数据记录
 
 ## 结果显示
 
-+ 显示最多能正确倒背出来的数字数目
++ 显示两轮测试总共正确记忆出来的配对数目
 + 展示标准分数和超越百分比
 
 ## 数据提交

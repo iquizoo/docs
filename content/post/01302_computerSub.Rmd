@@ -5,6 +5,9 @@ date: '2018-04-23'
 slug: 01302-computerSub
 code: "01302"
 tasknames: "数学计算"
+categories:
+- 文档
+- 修复
 output:
   blogdown::html_page:
     toc: true

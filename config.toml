@@ -10,17 +10,16 @@ theme = "hugo-xmin"
 # googleAnalytics = ""
 # disqusShortname = ""
 # ignore blogdown related files
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "\\.csv$", "\\.R$", "\\.gv$", "README.md", "_bookdown.yml", "\\.bib", "LICENSE", "\\.git"]
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "\\.csv$", "\\.R$", "\\.gv$", "README.md", "_bookdown.yml", "\\.bib", "LICENSE", "/static/.*/\\.git$"]
 # enable gitinfo for publish date
 enableGitInfo = true
-# disable "taxonomyTerm" because there is no need for a separated term page
-disableKinds = "taxonomyTerm"
 # misc settings
 preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
 
 [taxonomies]
     taskname = "tasknames"
+    category = "categories"
 
 [permalinks]
     post = "/post/:slug/"
@@ -30,28 +29,28 @@ footnotereturnlinkcontents = "↩"
     url = "/"
     weight = 1
 [[menu.main]]
-    name = "关于"
-    url = "/about/"
+    name = "所有文档"
+    url = "/post/"
     weight = 2
 [[menu.main]]
-    name = "术语表"
-    url = "/glossary/"
+    name = "类别"
+    url = "/categories/"
     weight = 3
+[[menu.main]]
+    name = "任务列表"
+    url = "/tasknames/"
+    weight = 4
+[[menu.main]]
+    name = "术语"
+    url = "/glossary/"
+    weight = 5
 [[menu.main]]
     name = "标准"
     url = "/standard/"
-    weight = 4
-[[menu.main]]
-    name = "文档"
-    url = "/post/"
-    weight = 5
-[[menu.main]]
-    name = "C2游戏文档"
-    url = "/game/"
     weight = 6
 [[menu.main]]
-    name = "修复"
-    url = "/fix/"
+    name = "关于"
+    url = "/about/"
     weight = 7
 
 [params]
