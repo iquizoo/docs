@@ -3,7 +3,7 @@ title: 蝴蝶照相机（butterfly）
 author: 张亮
 date: '2018-04-06'
 slug: butterfly
-code: "80"
+code: "05803"
 tasknames: "复杂广度任务"
 categories:
 - 文档
@@ -17,7 +17,7 @@ output:
 ```{r basic settings, include=FALSE}
 NAME_CN <- "蝴蝶照相机"
 NAME_EN <- "butterfly"
-CODE <- "80"
+CODE <- "05803"
 SDK <- 999
 ```
 
