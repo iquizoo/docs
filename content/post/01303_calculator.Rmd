@@ -3,7 +3,7 @@ title: 速算师（calculator）
 author: 张亮
 date: '2018-04-01'
 slug: calculator
-code: 78
+code: "01303"
 tasknames: 数学计算
 categories:
 - 文档
@@ -17,7 +17,7 @@ output:
 ```{r basic settings, include=FALSE}
 NAME_CN <- "速算师"
 NAME_EN <- "calculator"
-CODE <- "78"
+CODE <- "01303"
 SDK <- 999
 ```
 
