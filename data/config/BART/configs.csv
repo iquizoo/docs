@@ -1,0 +1,7 @@
+﻿参数类别,参数名称,类型,默认值,说明
+刺激序列,`quantity`,`int`,30,气球总个数
+刺激序列,`maxBlow`,`int`,64,单个气球最大打气次数
+操作反馈,`feedbackCorrectError`,`bool`,0,注意本任务没有正确错误之分，也就不需要反馈正误了
+操作反馈,`feedbackNoResponse`,`bool`,0,注意本任务不会出现没有操作的试次
+操作反馈,`feedbackSound`,`bool`,1,控制正式测评时候是（1）否（0）给出声音反馈
+操作反馈,`feedbackVisual`,`bool`,1,控制正式测评时候是（1）否（0）给出声音反馈
