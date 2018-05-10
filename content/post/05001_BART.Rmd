@@ -6,6 +6,10 @@ slug: 05001-bart
 code: "05001"
 tasknames: "仿真气球模拟范式"
 categories: "文档"
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
 ---
 
 ```{r basic settings, include=FALSE}
