@@ -6,6 +6,10 @@ slug: 05001-bart
 code: "05001"
 tasknames: "仿真气球模拟范式"
 categories: "文档"
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
 ---
 
 ```{r basic settings, include=FALSE}
@@ -42,48 +46,36 @@ knitr::include_graphics("/images/BART/界面.png")
 
 # 详细说明
 
-* 气球爆炸几率
-    + 假设气球最大打气次数为 $N$ （参数配置），那么，用户第 $K$ 次打气时的气球爆炸的概率为 $\frac{1}{N - K + 1}$ 。例如：
-        - 若气球最大打气次数为`5`。
-        - 用户执行第1次打气时，则从[1, 2, 3, 4, 5]的数组中随机取一个数字：若取到1，则打气后气球爆炸；若未取到1，则气球增大，同时奖金池增大5。
-        - 若用户执行第2次打气，则从[1, 2, 3, 4]的数组中随机取一个数字：若取到1，则打气后气球爆炸；若未取到1，则气球增大，同时奖金池增大5。
-        - 依此类推。
+**气球爆炸几率**。假设气球最大打气次数为 $N$ （参数配置），那么，用户第 $K$ 次打气时的气球爆炸的概率为 $\frac{1}{N - K + 1}$ 。例如：若气球最大打气次数为`5`，那么
+
+1. 用户执行第1次打气时，则从[1, 2, 3, 4, 5]的数组中随机取一个数字：若取到1，则打气后气球爆炸；若未取到1，则气球增大，同时奖金池增大5。
+1. 若用户执行第2次打气，则从[1, 2, 3, 4]的数组中随机取一个数字：若取到1，则打气后气球爆炸；若未取到1，则气球增大，同时奖金池增大5。
+1. 依此类推。
+
+**实际测评**。实际测评时会保证气球个数是最大打气次数的倍数。例如最大打气次数为10，气球个数设置为10，20，30，……。假如这个倍数是 $M$ ，那么实际测评时候就有 $M \times N$ 个气球。测评时候随机设定这些气球的爆炸次数为1，2，3，……，N，且每种爆炸次数的气球个数都为 $M$ 个。
 
 # 配置参数
 
-: 配置参数总表
-
-| 参数类型 | 参数名称               | 类型   | 默认值 | 说明                                             |
-|----------|------------------------|--------|--------|--------------------------------------------------|
-| 刺激序列 | `quantity`             | `int`  | 30     | 气球总个数                                       |
-| 刺激序列 | `maxBlow`              | `int`  | 64     | 单个气球最大打气次数                             |
-| 操作反馈 | `feedbackCorrectError` | `bool` | 0      | 注意本任务没有正确错误之分，也就不需要反馈正误了 |
-| 操作反馈 | `feedbackNoResponse`   | `bool` | 0      | 注意本任务不会出现没有操作的试次                 |
-| 操作反馈 | `feedbackSound`        | `bool` | 1      | 控制正式测评时候是（1）否（0）给出声音反馈       |
-| 操作反馈 | `feedbackVisual`       | `bool` | 1      | 控制正式测评时候是（1）否（0）给出声音反馈       |
+```{r configs, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "configs.csv")),
+             caption = "配置参数总表")
+```
 
 # 数据记录
 
 * 题目结果显示
     + 显示获得的奖励分数和成功兑换奖励的气球个数
     + 展示标准分数和超越百分比
-* 提交原始数据变量表（统一使用`;`分割不同试次；使用`,`分割单个试次中记录的不同变量。）
+* 提交原始数据如下表（请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)）
 
-| 名称         | 类型   | 说明                   |
-|--------------|--------|------------------------|
-| `balloon`    | `int`  | 气球编号，即第几个气球 |
-| `NHit`       | `int`  | 打气次数               |
-| `Feedback`   | `bool` | 气球是否爆炸           |
-| `CurUtility` | `int`  | 当前气球的奖励         |
-| `CumUtility` | `int`  | 累计奖励               |
+```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "recs.csv")),
+             caption = "原始数据变量列表")
+```
 
 # 试题算分
 
-* 算分码：`r SDK`
-* 传入参数：
-
-| 参数名称 | 类型        | 说明                     |
-|----------|-------------|--------------------------|
-| `hits`   | `int array` | 所有未爆炸气球的打气次数 |
-
-# 修订历史
+```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "sdk.csv")),
+             caption = paste0("传入参数（算分码：`", SDK, "`）"))
+```
