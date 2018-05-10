@@ -65,7 +65,7 @@ output:
 <li>若用户执行第2次打气，则从[1, 2, 3, 4]的数组中随机取一个数字：若取到1，则打气后气球爆炸；若未取到1，则气球增大，同时奖金池增大5。</li>
 <li>依此类推。</li>
 </ol>
-<p><strong>实际测评</strong>。实际测评时会保证气球个数是最大打气次数的倍数。例如最大打气次数为10，气球个数设置为10，20，30，……。假如这个倍数是 <span class="math inline">\(M\)</span> ，那么实际测评时候就有 <span class="math inline">\(M \times N\)</span> 个气球。测评时候随机设定这些气球的爆炸次数为1，2，3，……，N，且每种爆炸次数的气球个数都为 <span class="math inline">\(M\)</span> 个。</p>
+<p><strong>实际测评</strong>。实际测评时会保证气球个数（<code>quantity</code>）是最大打气次数（<code>maxBlow</code>）的倍数。例如最大打气次数为10，气球个数设置为10，20，30，……。假如这个倍数是 <span class="math inline">\(M\)</span> ，则 <span class="math inline">\(M = \frac{quantity}{maxBlow}\)</span> 。测评时候随机设定每个气球的爆炸次数为1，2，3，……，<code>maxBlow</code>，且每种爆炸次数的气球个数都为 <span class="math inline">\(M\)</span> 个。</p>
 </div>
 <div id="配置参数" class="section level1">
 <h1>配置参数</h1>
