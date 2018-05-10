@@ -45,74 +45,69 @@ categories: "文档"
 </div>
 <div class="section level1">
 <h1>详细说明</h1>
-<ul>
-<li>气球爆炸几率
-<ul>
-<li>假设气球最大打气次数为 <span class="math inline">\(N\)</span> （参数配置），那么，用户第 <span class="math inline">\(K\)</span> 次打气时的气球爆炸的概率为 <span class="math inline">\(\frac{1}{N - K + 1}\)</span> 。例如：
-<ul>
-<li>若气球最大打气次数为<code>5</code>。</li>
+<p><strong>气球爆炸几率</strong>。假设气球最大打气次数为 <span class="math inline">\(N\)</span> （参数配置），那么，用户第 <span class="math inline">\(K\)</span> 次打气时的气球爆炸的概率为 <span class="math inline">\(\frac{1}{N - K + 1}\)</span> 。例如：若气球最大打气次数为<code>5</code>，那么</p>
+<ol style="list-style-type: decimal">
 <li>用户执行第1次打气时，则从[1, 2, 3, 4, 5]的数组中随机取一个数字：若取到1，则打气后气球爆炸；若未取到1，则气球增大，同时奖金池增大5。</li>
 <li>若用户执行第2次打气，则从[1, 2, 3, 4]的数组中随机取一个数字：若取到1，则打气后气球爆炸；若未取到1，则气球增大，同时奖金池增大5。</li>
 <li>依此类推。</li>
-</ul></li>
-</ul></li>
-</ul>
+</ol>
+<p><strong>实际测评</strong>。实际测评时会保证气球个数是最大打气次数的倍数。例如最大打气次数为10，气球个数设置为10，20，30，……。假如这个倍数是 <span class="math inline">\(M\)</span> ，那么实际测评时候就有 <span class="math inline">\(M \times N\)</span> 个气球。测评时候随机设定这些气球的爆炸次数为1，2，3，……，N，且每种爆炸次数的气球个数都为 <span class="math inline">\(M\)</span> 个。</p>
 </div>
 <div class="section level1">
 <h1>配置参数</h1>
 <table>
-<caption>配置参数总表</caption>
+<caption><span id="tab:configs">表1: </span>配置参数总表</caption>
 <thead>
 <tr class="header">
-<th>参数类型</th>
-<th>参数名称</th>
-<th>类型</th>
-<th>默认值</th>
-<th>说明</th>
+<th align="left">参数类别</th>
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="center">默认值</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>刺激序列</td>
-<td><code>quantity</code></td>
-<td><code>int</code></td>
-<td>30</td>
-<td>气球总个数</td>
+<td align="left">刺激序列</td>
+<td align="left"><code>quantity</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">30</td>
+<td align="left">气球总个数</td>
 </tr>
 <tr class="even">
-<td>刺激序列</td>
-<td><code>maxBlow</code></td>
-<td><code>int</code></td>
-<td>64</td>
-<td>单个气球最大打气次数</td>
+<td align="left">刺激序列</td>
+<td align="left"><code>maxBlow</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">64</td>
+<td align="left">单个气球最大打气次数</td>
 </tr>
 <tr class="odd">
-<td>操作反馈</td>
-<td><code>feedbackCorrectError</code></td>
-<td><code>bool</code></td>
-<td>0</td>
-<td>注意本任务没有正确错误之分，也就不需要反馈正误了</td>
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackCorrectError</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">注意本任务没有正确错误之分，也就不需要反馈正误了</td>
 </tr>
 <tr class="even">
-<td>操作反馈</td>
-<td><code>feedbackNoResponse</code></td>
-<td><code>bool</code></td>
-<td>0</td>
-<td>注意本任务不会出现没有操作的试次</td>
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackNoResponse</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">注意本任务不会出现没有操作的试次</td>
 </tr>
 <tr class="odd">
-<td>操作反馈</td>
-<td><code>feedbackSound</code></td>
-<td><code>bool</code></td>
-<td>1</td>
-<td>控制正式测评时候是（1）否（0）给出声音反馈</td>
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
 </tr>
 <tr class="even">
-<td>操作反馈</td>
-<td><code>feedbackVisual</code></td>
-<td><code>bool</code></td>
-<td>1</td>
-<td>控制正式测评时候是（1）否（0）给出声音反馈</td>
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackVisual</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
 </tr>
 </tbody>
 </table>
@@ -125,68 +120,63 @@ categories: "文档"
 <li>显示获得的奖励分数和成功兑换奖励的气球个数</li>
 <li>展示标准分数和超越百分比</li>
 </ul></li>
-<li>提交原始数据变量表（统一使用<code>;</code>分割不同试次；使用<code>,</code>分割单个试次中记录的不同变量。）</li>
+<li>提交原始数据如下表（请参考<a href="{{% relref "standard.html" %}}">标准</a>）</li>
 </ul>
 <table>
+<caption><span id="tab:recording-variables">表2: </span>原始数据变量列表</caption>
 <thead>
 <tr class="header">
-<th>名称</th>
-<th>类型</th>
-<th>说明</th>
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>balloon</code></td>
-<td><code>int</code></td>
-<td>气球编号，即第几个气球</td>
+<td align="left"><code>balloon</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">气球编号，即第几个气球</td>
 </tr>
 <tr class="even">
-<td><code>NHit</code></td>
-<td><code>int</code></td>
-<td>打气次数</td>
+<td align="left"><code>NHit</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">打气次数</td>
 </tr>
 <tr class="odd">
-<td><code>Feedback</code></td>
-<td><code>bool</code></td>
-<td>气球是否爆炸</td>
+<td align="left"><code>Feedback</code></td>
+<td align="left"><code>bool</code></td>
+<td align="left">气球是否爆炸</td>
 </tr>
 <tr class="even">
-<td><code>CurUtility</code></td>
-<td><code>int</code></td>
-<td>当前气球的奖励</td>
+<td align="left"><code>CurUtility</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">当前气球的奖励</td>
 </tr>
 <tr class="odd">
-<td><code>CumUtility</code></td>
-<td><code>int</code></td>
-<td>累计奖励</td>
+<td align="left"><code>CumUtility</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">累计奖励</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section level1">
 <h1>试题算分</h1>
-<ul>
-<li>算分码：300</li>
-<li>传入参数：</li>
-</ul>
 <table>
+<caption><span id="tab:sdk-score">表3: </span>传入参数（算分码：<code>300</code>）</caption>
 <thead>
 <tr class="header">
-<th>参数名称</th>
-<th>类型</th>
-<th>说明</th>
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>hits</code></td>
-<td><code>int array</code></td>
-<td>所有未爆炸气球的打气次数</td>
+<td align="left"><code>hits</code></td>
+<td align="left"><code>int array</code></td>
+<td align="left">所有未爆炸气球的打气次数</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section level1">
-<h1>修订历史</h1>
 </div>
