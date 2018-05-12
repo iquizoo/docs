@@ -1,6 +1,6 @@
-名称,类型,说明
-`STIM`,`char`,单个试次的数字序列，用逗号分隔不同数字
-`CResp`,`char`,呈现序列的最后四个数字，即正确的答案(Correct Response)，用逗号分隔不同数字
-`Resp`,`char`,用户的实际反应(Response)，用逗号分隔不同数字
-`ACC`,`char`,正确与否(ACCuracy)，使用逗号分隔不同的位置
-`RT`,`int`,用户完成操作所需时间(Response Time)（单位：毫秒）
+﻿名称,类型,说明
+`STIM`,`char`,单个试次的数字序列，即把所有呈现的数字直接拼接成一个字符串，如'76521'
+`CResp`,`char`,呈现序列的最后四个数字，即正确的答案(Correct Response)，如'6521'
+`Resp`,`char`,用户的实际反应(Response)，如'6532'
+`ACC`,`char`,正确与否(ACCuracy)，0（错误）和1（正确）组成的字符串，如'1100'
+`RT`,`int`,用户完成操作所用时间(Response Time)（单位：毫秒）
