@@ -2,7 +2,7 @@
 title: 蝴蝶照相机（butterfly）
 author: 张亮
 date: '2018-04-06'
-slug: butterfly
+slug: 05803-butterfly
 code: "05803"
 tasknames: "复杂广度任务"
 categories:
