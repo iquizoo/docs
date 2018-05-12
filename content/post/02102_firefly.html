@@ -1,10 +1,13 @@
 ---
-title: 森林中的萤火虫（VSTM）
+title: 森林中的萤火虫（firefly）
 author: 申宇杏
 date: 2018-04-02
-slug: 79-VSTM
-code: "79"
+slug: 02102-firefly
+code: "02102"
 tasknames: "视觉短时记忆任务"
+categories:
+- 文档
+- C2游戏
 output:
   blogdown::html_page:
     toc: true
@@ -19,7 +22,7 @@ output:
 <li><a href="#详细说明">详细说明</a><ul>
 <li><a href="#刺激">刺激</a></li>
 <li><a href="#操作">操作</a></li>
-<li><a href="#序列配置参考标准中关于格式的说明">序列配置（参考<a href="{{% relref "standard.html" %}}">标准</a>中关于格式的说明）</a></li>
+<li><a href="#序列配置">序列配置</a></li>
 </ul></li>
 <li><a href="#配置参数">配置参数</a></li>
 <li><a href="#数据记录">数据记录</a><ul>
@@ -34,8 +37,8 @@ output:
 <h1>基本信息</h1>
 <ul>
 <li><strong>显示名称</strong>：森林中的萤火虫</li>
-<li><strong>英文名称</strong>：VSTM</li>
-<li><strong>题目编号</strong>：79</li>
+<li><strong>英文名称</strong>：firefly</li>
+<li><strong>题目编号</strong>：02102</li>
 <li><strong>任务描述</strong>：测查记忆力，特别是个体视觉的短时记忆</li>
 <li><strong>测查能力</strong>：视觉短时记忆</li>
 <li><strong>相关任务</strong>：雷达追踪</li>
@@ -83,15 +86,9 @@ output:
 </ul></li>
 </ul>
 </div>
-<div id="序列配置参考标准中关于格式的说明" class="section level2">
-<h2>序列配置（参考<a href="{{% relref "standard.html" %}}">标准</a>中关于格式的说明）</h2>
-<!--
-+ **序列**
-    - 单个试次要呈现的闪烁的萤火虫个数有5种情况，3~7个，干扰的不发光的萤火虫数量比发光的多两个，总共2n+2
-    - 正式测评中总计15次，每种情况3次（待定）
-    - 做对了加一个目标刺激，做错两次减一个，错一次不变
-    - 练习2个萤火虫的情况，1次
--->
+<div id="序列配置" class="section level2">
+<h2>序列配置</h2>
+<p>每次需要追踪的萤火虫数目有5种可能（即3、4、5、6、7），不跟踪的萤火虫数目则始终为7个。每种可能的跟踪萤火虫情况分别出现2次，因而每个用户都累计会完成10次判断，同时保证10次判断的跟踪萤火虫数目是随机打乱了的。</p>
 </div>
 </div>
 <div id="配置参数" class="section level1">
@@ -223,7 +220,7 @@ output:
 <tr class="even">
 <td align="left"><code>RT</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">用户完成操作所需时间（单位：毫秒）(Response Time）</td>
+<td align="left">用户完成操作所用时间（单位：毫秒）(Response Time）</td>
 </tr>
 </tbody>
 </table>

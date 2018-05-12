@@ -5,6 +5,9 @@ date: 2018-04-02
 slug: 02102-firefly
 code: "02102"
 tasknames: "视觉短时记忆任务"
+categories:
+- 文档
+- C2游戏
 output:
   blogdown::html_page:
     toc: true
