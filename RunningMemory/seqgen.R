@@ -20,7 +20,7 @@ for (icond in 1:ncond){
       }
       stim[i_stim] <- stim_cand
     }
-    stims[icond, i_trl] <- paste(stim, collapse = ",")
+    stims[icond, i_trl] <- paste(stim, collapse = "")
   }
 }
 
@@ -28,7 +28,7 @@ for (icond in 1:ncond){
 prac_stims <- stims[1:3]
 test_stims <- stims[sample(4:15)]
 stims_seq <- data.frame(
-  prac = paste(prac_stims, collapse = ";"),
-  test = paste(test_stims, collapse = ";")
+  prac = paste(prac_stims, collapse = ","),
+  test = paste(test_stims, collapse = ",")
 )
-jsonlite::write_json(stims_seq, "seq.json")
+jsonlite::write_json(stims_seq, here::here("RunningMemory", "05201_RunningMemory.json"))
