@@ -43,7 +43,7 @@ SDK <- 999
 
 本游戏配置了一个**序列文件**（`.json`，主要是在测评时候用以确定测评序列）和一个**题库文件**（`.csv`，以后用于训练时候可用）。点击下表中相应链接可以查看。
 
-`r blogdown::shortcode("directoryindex", path = "/static/seq/calculator", pathURL = "/seq/calculator")`
+`r blogdown::shortcode("directoryindex", path = "/static/seq/01303_calculator", pathURL = "/seq/01303_calculator")`
 
 其中（参考[标准](`r blogdown::shortcode("relref", "standard.html")`)中关于序列格式的说明）：
 
