@@ -1,0 +1,98 @@
+---
+title: 森林中的萤火虫（firefly）
+author: 申宇杏
+date: 2018-04-02
+slug: 02102-firefly
+code: "02102"
+tasknames: "视觉短时记忆任务"
+categories:
+- 文档
+- C2游戏
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r basic settings, include=FALSE}
+NAME_CN <- "森林中的萤火虫"
+NAME_EN <- "firefly"
+CODE <- "02102"
+SDK <- 999
+```
+
+# 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：测查记忆力，特别是个体视觉的短时记忆
+* **测查能力**：视觉短时记忆
+* **相关任务**：雷达追踪
+
+# 交互界面
+
+夜晚森林的背景屏幕中随机位置出现几个萤火虫，其中有些会发光有些不发光（发光的个数3、4、5、6、7），闪烁一定时间后萤火虫的亮光消失并且开始飞舞，最后停在新的位置，用户需要点击刚刚闪烁的萤火虫，用触摸（Android/iOS）或鼠标点击（PC）的方式（如图\@ref(fig:taskflow-image)）。
+
+```{r taskflow-image, fig.cap="基本界面", fig.align='center', echo=FALSE, out.width="80%"}
+knitr::include_graphics("/images/VSTM/firefly.png")
+```
+
+**引导与练习**：让被试理解要追踪发光的萤火虫
+
+# 详细说明
+
+## 刺激
+
++ **刺激配置**：由若干萤火虫的图片组成。其中：发光的萤火虫为**目标刺激**，不发光的为**干扰刺激**，详细请看下方**刺激列表**。
++ **刺激呈现**
+    - 出现若干萤火虫（不同的目标刺激对应不同的干扰刺激），其中目标开始闪烁，闪烁次数默认值为3次，每次闪烁时间默认值为`300 ms`。
+    - 闪烁结束，所有萤火虫开始飞舞，默认值为`3000 ms`，速度为30。
+    - 飞舞结束，所有萤火虫停到新的位置，用户开始判断，哪些是之前闪烁过的萤火虫，用户点击次数需与目标个数一致，方可开始下一轮。
+    - 刺激消失后到下一个刺激呈现的时间间隔（试次间隔时间）默认值为`500 ms`。
+
+## 操作
+
++ **操作方式**
+    - **`Android/iOS`**：点击触摸上的目标刺激，感应区域要比目标刺激本身大，但不能重合。
+    - **`PC/Web`**：若`PC`拥有触摸屏，则用户可以使用`Android/iOS`的操作方式；若`PC`没有触摸屏，则要求用户使用标准输入设备鼠标点击进行操作。
++ **判断正误**：所有试次都需要操作，没有操作则使用`-1`表示正确与否。当用户操作后，如果点击的目标和目标刺激重合，则为正确；若点击与目标刺激不符，则为错；与点击顺序无关。
++ **反馈**
+    - 引导练习：需要对*正确*和*错误*给出听觉和视觉反馈。
+    - 正式测试：不需要对*正确*和*错误*给出听觉和视觉反馈，需要对用户是否操作给出视觉反馈（即用户点击的地方就变亮）
+
+## 序列配置
+
+每次需要追踪的萤火虫数目有5种可能（即3、4、5、6、7），不跟踪的萤火虫数目则始终为7个。每种可能的跟踪萤火虫情况分别出现2次，因而每个用户都累计会完成10次判断，同时保证10次判断的跟踪萤火虫数目是随机打乱了的。
+
+# 配置参数
+
+```{r configs, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "configs.csv")),
+             caption = "配置参数总表")
+```
+
+# 数据记录
+
+## 结果显示
+
+* 显示用户得分
+* 展示标准分数和超越百分比
+
+## 提交数据
+
+* 提交原始数据如下表（参考[标准](`r blogdown::shortcode("relref", "standard.html")`)中关于格式的说明）
+
+```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "recs.csv")),
+             caption = "原始数据变量列表")
+```
+
+# 试题算分
+
+* 算分码：`r SDK`
+* 传入参数：
+
+```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+knitr::kable(readr::read_csv(here::here("data", "config", NAME_EN, "sdk.csv")))
+```
