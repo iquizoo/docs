@@ -152,27 +152,27 @@ categories: "文档"
 <tr class="odd">
 <td align="left"><code>STIM</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">单个试次的数字序列，用逗号分隔不同数字</td>
+<td align="left">单个试次的数字序列，即把所有呈现的数字直接拼接成一个字符串，如’76521’</td>
 </tr>
 <tr class="even">
 <td align="left"><code>CResp</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">呈现序列的最后四个数字，即正确的答案(Correct Response)，用逗号分隔不同数字</td>
+<td align="left">呈现序列的最后四个数字，即正确的答案(Correct Response)，如’6521’</td>
 </tr>
 <tr class="odd">
 <td align="left"><code>Resp</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">用户的实际反应(Response)，用逗号分隔不同数字</td>
+<td align="left">用户的实际反应(Response)，如’6532’</td>
 </tr>
 <tr class="even">
 <td align="left"><code>ACC</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">正确与否(ACCuracy)，使用逗号分隔不同的位置</td>
+<td align="left">正确与否(ACCuracy)，0（错误）和1（正确）组成的字符串，如’1100’</td>
 </tr>
 <tr class="odd">
 <td align="left"><code>RT</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">用户完成操作所需时间(Response Time)（单位：毫秒）</td>
+<td align="left">用户完成操作所用时间(Response Time)（单位：毫秒）</td>
 </tr>
 </tbody>
 </table>
@@ -199,7 +199,4 @@ categories: "文档"
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section level1">
-<h1>修订历史</h1>
 </div>
