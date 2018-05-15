@@ -4,9 +4,6 @@
 [submodule "themes/hugo-xmin"]
 	path = themes/hugo-xmin
 	url = https://github.com/iquizoo/hugo-xmin
-[submodule "content/post/refs"]
+[submodule "data/refs"]
 	path = data/refs
 	url = https://github.com/psychelzh/lit-refs
-[submodule "static/axure-rp-design"]
-	path = static/axure-rp-design
-	url = https://github.com/iquizoo/axure-rp-design
