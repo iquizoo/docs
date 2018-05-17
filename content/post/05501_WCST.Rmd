@@ -1,0 +1,73 @@
+---
+# heading of document
+title: 卡片分类（WCST） # Chinese name（English name）
+author: 张亮
+date: 2018-05-17
+# slug
+slug: 05501-WCST # code-English name
+# specific parameters for current task
+code: "05501"
+sdk: 999
+# hugo taxonomy related
+tasknames: "威斯康辛卡片分类"
+categories:
+- C2游戏
+- 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r parse-meta, include=FALSE}
+NAMES <- strsplit(rmarkdown::metadata$title, "（|）")[[1]]
+NAME_CN <- NAMES[1]
+NAME_EN <- NAMES[2]
+CODE <- rmarkdown::metadata$code
+SDK <- rmarkdown::metadata$sdk
+```
+
+# 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：根据规则选择正确的卡片，测查思维灵活性
+* **测查能力**：思维力-思维灵活性
+
+# 交互界面
+
+# 详细说明
+
+# 配置参数
+
+```{r configs, echo=FALSE, message=FALSE, warning=FALSE}
+# knitr::kable(
+#   readr::read_csv(
+#     here::here("data", "config", NAME_EN, "configs.csv")
+#   ),
+#   caption = "配置参数总表")
+```
+
+# 数据记录
+
+提交原始数据如表\@ref(tab:recording-variables)（请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)）
+
+```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
+# knitr::kable(
+#   readr::read_csv(
+#     here::here("data", "config", NAME_EN, "recs.csv")
+#   ),
+#   caption = "原始数据变量列表")
+```
+
+# 试题算分
+
+```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# knitr::kable(
+#   readr::read_csv(
+#     here::here("data", "config", NAME_EN, "sdk.csv")
+#   ),
+#   caption = paste0("传入参数（算分码：`", SDK, "`）"))
+```
