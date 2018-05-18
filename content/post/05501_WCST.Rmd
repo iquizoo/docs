@@ -36,13 +36,21 @@ SDK <- rmarkdown::metadata$sdk
 * **任务描述**：根据规则选择正确的卡片，测查思维灵活性
 * **测查能力**：思维力-思维灵活性
 
-# 交互界面
+# 前端交互
 
-目前题库里面已经有一个初步完成的题目（`id: 97990, path: /v2/WCST`），目前需要将本题目做得更加规范、更加顺畅。
+## 基本逻辑
 
-# 详细说明
+目前题库里面已经有一个初步完成的题目（`id: 97990`，`path: /v2/WCST`），基本界面如图\@ref(fig:interface)。目前需要将本题目做得更加规范、更加顺畅。
 
-# 配置参数
+```{r interface, fig.align="center", fig.cap="基本界面", echo=FALSE}
+knitr::include_graphics("/images/WCST/interface.png")
+```
+
+## 详细说明
+
+# 后台配置
+
+## 游戏参数
 
 ```{r configs, echo=FALSE, message=FALSE, warning=FALSE}
 # knitr::kable(
@@ -52,19 +60,19 @@ SDK <- rmarkdown::metadata$sdk
 #   caption = "配置参数总表")
 ```
 
-# 数据记录
-
-提交原始数据如表\@ref(tab:recording-variables)（请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)）
+## 数据记录
 
 ```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
 # knitr::kable(
 #   readr::read_csv(
 #     here::here("data", "config", NAME_EN, "recs.csv")
 #   ),
-#   caption = "原始数据变量列表")
+#   caption = "原始数据变量列表[^std]")
 ```
 
-# 试题算分
+[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。
+
+## 试题算分
 
 ```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 # knitr::kable(
