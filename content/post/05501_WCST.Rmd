@@ -46,48 +46,74 @@ SDK <- rmarkdown::metadata$sdk
 knitr::include_graphics("/images/WCST/interface.png")
 ```
 
-每个试次中，页面上方都有一张卡片（称为**测试卡片**）出现，并要求用户从下方的四张**备选卡片**中选择和该卡片具有相同**特征**的卡片。
+每个试次中，页面上方都有一张卡片（称为**测试卡片**）出现，并要求用户从下方的四张**备选卡片**（见图\@ref(fig:interface)及表\@ref(tab:stim-opts)）中选择和该卡片具有相同**特征**的卡片。
+
+```{r stim-opts, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("data", "config", NAME_EN, "stim_opts.csv")
+  ),
+  caption = "备选卡片特征列表"
+)
+```
 
 ## 详细说明
 
 ### 卡片特征
 
-每一张卡片都以三种特征来刻画，即**颜色**、**形状**和**数目**。每种特征都恰好有4种可能情形（从图\@ref(fig:interface)可以看出来），其中：颜色包括红色、绿色、蓝色和黄色；形状包括圆形、星形、方形和三角形；数目包括1、2、3和4。
+每一张卡片都以三种特征来刻画（见表\@ref(tab:stim-test)查看所有的测试卡片，已编号），即**颜色**、**形状**和**数目**。每种特征都恰好有4种可能情形，其中：颜色包括红色、绿色、蓝色和黄色；形状包括圆形、星形、方形和三角形；数目包括1、2、3和4。实际测评时候每张卡片最多出现2次，即最多有48张卡片。
+
+```{r stim-test, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("data", "config", NAME_EN, "stim_test.csv")
+  ),
+  caption = "测试卡片特征一览表"
+)
+```
+
 
 ### 测评规则
 
-对于每一张测试卡片而言，都存在多张备选卡片在某个特征上与之相同（如图\@ref(fig:interface)中第一、三、四张备选卡片分别与测试卡片有相同的形状、颜色、数目）。但是每次选择都会要求根据某个确定好的特征（即颜色、形状或数目中的一个，称为**当前匹配特征**）进行判断，因此实际只有一张卡片是正确的。而测评中当前匹配特征需要用户根据反馈自己判断，而不是在界面上显示出来。
+对于每一张测试卡片而言，都存在多张备选卡片在某个特征上与之相同（如图\@ref(fig:interface)中第一、三、四张备选卡片分别与测试卡片有相同的形状、颜色、数目）。但是每次选择都会要求根据某个确定好的特征（即颜色、形状或数目中的一个，称为**当前匹配特征**）进行判断，因此实际只有一张卡片是正确的。
+
+正式测评时候，**不会**提示当前匹配特征是什么，只需要直接反馈用户每次选择是否正确即可——这样用户就要根据这个反馈来确定当前匹配特征。每当用户在当前匹配特征下累计正确完成6次后，当前匹配特征就要改变，但是仍然**不会**提示用户当前匹配特征已改变。当用户正确完成“**颜色-形状-数目-颜色-形状-数目**”的六轮测评后，或者所有的48张卡片已经用完时，测评结束。
+
+所有的卡片都按相同的伪随机顺序呈现，见[序列文件](seq/05501_WCST.json){target="_blank"}。序列文件仅包含了由`id`字段，说明了先后呈现的48张卡片的编号（使用逗号`,`分割）。
 
 # 后台配置
 
 ## 游戏参数
 
-```{r configs, echo=FALSE, message=FALSE, warning=FALSE}
+```{r configs, echo=FALSE, message=FALSE}
 # knitr::kable(
 #   readr::read_csv(
 #     here::here("data", "config", NAME_EN, "configs.csv")
 #   ),
-#   caption = "配置参数总表")
+#   caption = "配置参数总表"
+# )
 ```
 
 ## 数据记录
 
-```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
+```{r recording-variables, echo=FALSE, message=FALSE}
 # knitr::kable(
 #   readr::read_csv(
 #     here::here("data", "config", NAME_EN, "recs.csv")
 #   ),
-#   caption = "原始数据变量列表[^std]")
+#   caption = "原始数据变量列表[^std]"
+# )
 ```
 
 [^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。
 
 ## 试题算分
 
-```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r sdk-score, echo=FALSE, message=FALSE}
 # knitr::kable(
 #   readr::read_csv(
 #     here::here("data", "config", NAME_EN, "sdk.csv")
 #   ),
-#   caption = paste0("传入参数（算分码：`", SDK, "`）"))
+#   caption = paste0("传入参数（算分码：`", SDK, "`）")
+# )
 ```
