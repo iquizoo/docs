@@ -1,0 +1,284 @@
+---
+# heading of document
+title: 卡片分类（WCST） # Chinese name（English name）
+author: 张亮
+date: 2018-05-17
+# slug
+slug: 05501-WCST # code-English name
+# specific parameters for current task
+code: "05501"
+sdk: 999
+# hugo taxonomy related
+tasknames: "威斯康辛卡片分类"
+categories:
+- C2游戏
+- 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#前端交互">前端交互</a><ul>
+<li><a href="#基本逻辑">基本逻辑</a></li>
+<li><a href="#详细说明">详细说明</a><ul>
+<li><a href="#卡片特征">卡片特征</a></li>
+<li><a href="#测评规则">测评规则</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#后台配置">后台配置</a><ul>
+<li><a href="#游戏参数">游戏参数</a></li>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：卡片分类</li>
+<li><strong>英文名称</strong>：WCST</li>
+<li><strong>题目编号</strong>：05501</li>
+<li><strong>任务描述</strong>：根据规则选择正确的卡片，测查思维灵活性</li>
+<li><strong>测查能力</strong>：思维力-思维灵活性</li>
+</ul>
+</div>
+<div id="前端交互" class="section level1">
+<h1>前端交互</h1>
+<div id="基本逻辑" class="section level2">
+<h2>基本逻辑</h2>
+<p>目前题库里面已经有一个初步完成的题目（<code>id: 97990</code>，<code>path: /v2/WCST</code>），基本界面如图<a href="#fig:interface">1</a>。目前需要将本题目做得更加规范、更加顺畅。</p>
+<div class="figure" style="text-align: center"><span id="fig:interface"></span>
+<img src="/images/WCST/interface.png" alt="基本界面" width="80%" />
+<p class="caption">
+图1: 基本界面
+</p>
+</div>
+<p>每个试次中，页面上方都有一张卡片（称为<strong>测试卡片</strong>）出现，并要求用户从下方的四张<strong>备选卡片</strong>（见图<a href="#fig:interface">1</a>及表<a href="#tab:stim-opts">1</a>）中选择和该卡片具有相同<strong>特征</strong>的卡片。</p>
+<table>
+<caption><span id="tab:stim-opts">表1: </span>备选卡片特征列表</caption>
+<thead>
+<tr class="header">
+<th align="left">编号</th>
+<th align="left">颜色</th>
+<th align="left">形状</th>
+<th align="center">数目</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A</td>
+<td align="left">红色</td>
+<td align="left">圆形</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="left">B</td>
+<td align="left">绿色</td>
+<td align="left">星形</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="left">C</td>
+<td align="left">蓝色</td>
+<td align="left">方形</td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td align="left">D</td>
+<td align="left">黄色</td>
+<td align="left">三角形</td>
+<td align="center">4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="详细说明" class="section level2">
+<h2>详细说明</h2>
+<div id="卡片特征" class="section level3">
+<h3>卡片特征</h3>
+<p>每一张卡片都以三种特征来刻画（见表<a href="#tab:stim-test">2</a>查看所有的测试卡片，已编号），即<strong>颜色</strong>、<strong>形状</strong>和<strong>数目</strong>。每种特征都恰好有4种可能情形，其中：颜色包括红色、绿色、蓝色和黄色；形状包括圆形、星形、方形和三角形；数目包括1、2、3和4。实际测评时候每张卡片最多出现2次，即最多有48张卡片。</p>
+<table>
+<caption><span id="tab:stim-test">表2: </span>测试卡片特征一览表</caption>
+<thead>
+<tr class="header">
+<th align="center">编号</th>
+<th align="left">颜色</th>
+<th align="left">形状</th>
+<th align="center">数目</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="left">红色</td>
+<td align="left">星形</td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="left">红色</td>
+<td align="left">星形</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="left">红色</td>
+<td align="left">方形</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="left">红色</td>
+<td align="left">方形</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="left">红色</td>
+<td align="left">三角形</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="left">红色</td>
+<td align="left">三角形</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="left">绿色</td>
+<td align="left">圆形</td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="left">绿色</td>
+<td align="left">圆形</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="left">绿色</td>
+<td align="left">方形</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="left">绿色</td>
+<td align="left">方形</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="center">11</td>
+<td align="left">绿色</td>
+<td align="left">三角形</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">12</td>
+<td align="left">绿色</td>
+<td align="left">三角形</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td align="center">13</td>
+<td align="left">蓝色</td>
+<td align="left">圆形</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">14</td>
+<td align="left">蓝色</td>
+<td align="left">圆形</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="center">15</td>
+<td align="left">蓝色</td>
+<td align="left">星形</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">16</td>
+<td align="left">蓝色</td>
+<td align="left">星形</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="center">17</td>
+<td align="left">蓝色</td>
+<td align="left">三角形</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">蓝色</td>
+<td align="left">三角形</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">19</td>
+<td align="left">黄色</td>
+<td align="left">圆形</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">20</td>
+<td align="left">黄色</td>
+<td align="left">圆形</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td align="center">21</td>
+<td align="left">黄色</td>
+<td align="left">星形</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">22</td>
+<td align="left">黄色</td>
+<td align="left">星形</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td align="center">23</td>
+<td align="left">黄色</td>
+<td align="left">方形</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">24</td>
+<td align="left">黄色</td>
+<td align="left">方形</td>
+<td align="center">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="测评规则" class="section level3">
+<h3>测评规则</h3>
+<p>对于每一张测试卡片而言，都存在多张备选卡片在某个特征上与之相同（如图<a href="#fig:interface">1</a>中第一、三、四张备选卡片分别与测试卡片有相同的形状、颜色、数目）。但是每次选择都会要求根据某个确定好的特征（即颜色、形状或数目中的一个，称为<strong>当前匹配特征</strong>）进行判断，因此实际只有一张卡片是正确的。</p>
+<p>正式测评时候，<strong>不会</strong>提示当前匹配特征是什么，只需要直接反馈用户每次选择是否正确即可——这样用户就要根据这个反馈来确定当前匹配特征。每当用户在当前匹配特征下累计正确完成6次后，当前匹配特征就要改变，但是仍然<strong>不会</strong>提示用户当前匹配特征已改变。当用户正确完成“<strong>颜色-形状-数目-颜色-形状-数目</strong>”的六轮测评后，或者所有的48张卡片已经用完时，测评结束。</p>
+<p>所有的卡片都按相同的伪随机顺序呈现，见<a href="seq/05501_WCST.json" target="_blank">序列文件</a>。序列文件仅包含了由<code>id</code>字段，说明了先后呈现的48张卡片的编号（使用逗号<code>,</code>分割）。</p>
+</div>
+</div>
+</div>
+<div id="后台配置" class="section level1">
+<h1>后台配置</h1>
+<div id="游戏参数" class="section level2">
+<h2>游戏参数</h2>
+</div>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+</div>
+<div id="试题算分" class="section level2">
+<h2>试题算分</h2>
+</div>
+</div>
