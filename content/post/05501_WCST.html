@@ -7,7 +7,7 @@ date: 2018-05-17
 slug: 05501-WCST # code-English name
 # specific parameters for current task
 code: "05501"
-sdk: 999
+sdk: 304
 # hugo taxonomy related
 tasknames: "威斯康辛卡片分类"
 categories:
@@ -284,11 +284,163 @@ output:
 <h1>后台配置</h1>
 <div id="游戏参数" class="section level2">
 <h2>游戏参数</h2>
+<table>
+<caption><span id="tab:configs">表3: </span>配置参数总表</caption>
+<thead>
+<tr class="header">
+<th align="left">参数类别</th>
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="center">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>maxSt</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">5000</td>
+<td align="left">单个刺激最大展示时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>fbTime</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">1000</td>
+<td align="left">作答反馈持续时间，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>iti</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">500</td>
+<td align="left">试次间隔时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激序列</td>
+<td align="left"><code>endMethod</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">2</td>
+<td align="left">题目的结束方式（1=按时间结束，2=按刺激个数结束）</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激序列</td>
+<td align="left"><code>duration</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">30000</td>
+<td align="left">题目整体持续时间（<code>endMethod</code>=1时生效，单位毫秒）</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackCorrectError</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）需要反馈正确与错误</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackNoResponse</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）需要提示用户未操作</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackVisual</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出视觉反馈</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="数据记录" class="section level2">
 <h2>数据记录</h2>
+<table>
+<caption><span id="tab:recording-variables">表4: </span>原始数据变量列表<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>SID</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">卡片编号（Stimulus IDentity），跟序列中一致，请参考表<a href="#tab:stim-test">2</a></td>
+</tr>
+<tr class="even">
+<td align="left"><code>SColor</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">卡片颜色，参考表<a href="#tab:stim-test">2</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>SShape</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">卡片形状，参考表<a href="#tab:stim-test">2</a></td>
+</tr>
+<tr class="even">
+<td align="left"><code>SNumber</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">卡片项目数目，参考表<a href="#tab:stim-test">2</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Rule</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">当前匹配特征，即“颜色”、“形状”或“数目”</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误（ACCuracy），0=错误，1=正确，-1=未操作</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（单位：毫秒）（Response Time），若未完成操作，则记为0</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="试题算分" class="section level2">
 <h2>试题算分</h2>
+<table>
+<caption><span id="tab:sdk-score">表5: </span>传入参数（算分码：<code>304</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>TE</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户累计犯错次数</td>
+</tr>
+<tr class="even">
+<td align="left"><code>PE</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">固着错误次数，即在规则修改后，用户仍然使用前一个规则进行判断的次数</td>
+</tr>
+</tbody>
+</table>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>请参考<a href="{{% relref "standard.html" %}}">标准</a>。<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
