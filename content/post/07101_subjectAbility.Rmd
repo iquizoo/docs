@@ -6,7 +6,7 @@ date: 2018-05-31 # format 2006-01-01
 # slug
 slug: 07101-subjectAbility # code-English name
 # specific parameters for current task
-code: 07101
+code: "07101"
 sdk: 100
 # hugo taxonomy related
 tasknames: 题目壳
