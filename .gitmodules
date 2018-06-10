@@ -1,6 +1,0 @@
-[submodule "themes/hugo-xmin"]
-	path = themes/hugo-xmin
-	url = https://github.com/iquizoo/hugo-xmin
-[submodule "data/refs"]
-	path = content/resources/refs
-	url = https://github.com/psychelzh/lit-refs
