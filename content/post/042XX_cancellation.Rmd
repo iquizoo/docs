@@ -50,7 +50,7 @@ SDK <- rmarkdown::metadata$sdk
 <!-- ```{r configs, echo=FALSE, message=FALSE} -->
 <!-- # knitr::kable( -->
 <!-- #   readr::read_csv( -->
-<!-- #     here::here("data", "config", NAME_EN, "configs.csv") -->
+<!-- #     here::here("content", "resources", "config", NAME_EN, "configs.csv") -->
 <!-- #   ), -->
 <!-- #   caption = "配置参数总表" -->
 <!-- # ) -->
@@ -61,7 +61,7 @@ SDK <- rmarkdown::metadata$sdk
 ```{r recording-variables, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("data", "config", NAME_EN, "recs.csv")
+    here::here("content", "resources", "config", NAME_EN, "recs.csv")
   ),
   caption = "原始数据变量列表[^std]"
 )
@@ -74,7 +74,7 @@ knitr::kable(
 ```{r sdk-score, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("data", "config", NAME_EN, "sdk.csv")
+    here::here("content", "resources", "config", NAME_EN, "sdk.csv")
   ),
   caption = paste0("传入参数（算分码：`", SDK, "`）")
 )
