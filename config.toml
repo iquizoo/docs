@@ -10,7 +10,7 @@ theme = "hugo-xmin"
 # googleAnalytics = ""
 # disqusShortname = ""
 # ignore blogdown related files
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "\\.csv$", "\\.R$", "\\.gv$", "README\\.md", "_bookdown\\.yml", "\\.bib", "LICENSE"]
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "resources", "_bookdown\\.yml"]
 # enable gitinfo for publish date
 enableGitInfo = true
 # misc settings
