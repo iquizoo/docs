@@ -2,6 +2,9 @@
 publish = "public"
 command = "hugo"
 
+[build.environment]
+TZ = "Asia/Shanghai"
+
 [context.production.environment]
 HUGO_VERSION = "0.41"
 HUGO_ENV = "production"
