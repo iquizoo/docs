@@ -1,6 +1,3 @@
-[submodule "public"]
-	path = public
-	url = https://github.com/iquizoo/iquizoo.github.io
 [submodule "themes/hugo-xmin"]
 	path = themes/hugo-xmin
 	url = https://github.com/iquizoo/hugo-xmin
