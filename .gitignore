@@ -1,11 +1,49 @@
-# rstudio project related
-.Rproj.user
+# Created by https://www.gitignore.io/api/r,hugo
+
+### Hugo ###
+# Hugo binary
+hugo*
+
+# Generated files at default location
+/public/
+/resources/_gen
+### R ###
+# History files
 .Rhistory
+.Rapp.history
+
+# Session Data files
 .RData
-.Ruserdata
 
-# vs code related
-.vscode
+# Example code in package build process
+*-Ex.R
 
-# temporary files
+# Output files from R CMD build
+/*.tar.gz
+
+# Output files from R CMD check
+/*.Rcheck/
+
+# RStudio files
+.Rproj.user
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+# knitr and R markdown default cache directories
+/*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+
+
+# End of https://www.gitignore.io/api/r,hugo
+
+# temporary directories
 tmp/

@@ -1,9 +1,6 @@
-[submodule "public"]
-	path = public
-	url = https://github.com/iquizoo/iquizoo.github.io
-[submodule "themes/hugo-xmin"]
+[submodule "hugo-xmin"]
 	path = themes/hugo-xmin
 	url = https://github.com/iquizoo/hugo-xmin
-[submodule "data/refs"]
-	path = data/refs
+[submodule "refs"]
+	path = content/resources/refs
 	url = https://github.com/psychelzh/lit-refs
