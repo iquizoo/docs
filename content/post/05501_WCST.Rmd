@@ -1,0 +1,126 @@
+---
+# heading of document
+title: 卡片分类（WCST） # Chinese name（English name）
+author: 张亮
+date: 2018-05-17
+# slug
+slug: 05501-WCST # code-English name
+# specific parameters for current task
+code: "05501"
+sdk: 304
+# hugo taxonomy related
+tasknames: "威斯康辛卡片分类"
+categories:
+- C2游戏
+- 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r parse-meta, include=FALSE}
+NAMES <- strsplit(rmarkdown::metadata$title, "（|）")[[1]]
+NAME_CN <- NAMES[1]
+NAME_EN <- NAMES[2]
+CODE <- rmarkdown::metadata$code
+SDK <- rmarkdown::metadata$sdk
+```
+
+# 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：根据规则选择正确的卡片，测查思维灵活性
+* **测查能力**：思维力-思维灵活性
+
+# 前端交互
+
+## 基本逻辑
+
+目前题库里面已经有一个初步完成的题目（`id: 97990`，`path: /v2/WCST`），基本界面如图\@ref(fig:interface)。目前需要将本题目做得更加规范、更加顺畅。
+
+```{r interface, echo=FALSE, fig.align="center", fig.cap="基本界面", out.width="80%"}
+knitr::include_graphics("/images/WCST/interface.png")
+```
+
+每个试次中，页面上方都有一张卡片（称为**测试卡片**）出现，并要求用户从下方的四张**备选卡片**（见图\@ref(fig:interface)及表\@ref(tab:stim-opts)）中选择和该卡片具有相同**特征**的卡片。
+
+```{r stim-opts, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "stim_opts.csv")
+  ),
+  caption = "备选卡片特征列表"
+)
+```
+
+## 详细说明
+
+### 卡片特征
+
+每一张卡片都以三种特征来刻画（见表\@ref(tab:stim-test)查看所有的测试卡片，已编号），即**颜色**、**形状**和**数目**。每种特征都恰好有4种可能情形，其中：颜色包括红色、绿色、蓝色和黄色；形状包括圆形、星形、方形和三角形；数目包括1、2、3和4。实际测评时候每张卡片最多出现2次，即最多有48张卡片。
+
+```{r stim-test, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "stim_test.csv")
+  ),
+  caption = "测试卡片特征一览表"
+)
+```
+
+### 测评规则
+
+对于每一张测试卡片而言，都存在多张备选卡片在某个特征上与之相同（如图\@ref(fig:interface)中第一、三、四张备选卡片分别与测试卡片有相同的形状、颜色、数目）。但是每次选择都会要求根据某个确定好的特征（即颜色、形状或数目中的一个，称为**当前匹配特征**）进行判断，因此实际只有一张卡片是正确的。
+
+正式测评时候，**不会**提示当前匹配特征是什么，只需要直接反馈用户每次选择是否正确即可——这样用户就要根据这个反馈来确定当前匹配特征。每当用户在当前匹配特征下累计正确完成6次后，当前匹配特征就要改变，但是仍然**不会**提示用户当前匹配特征已改变。当用户正确完成“**颜色-形状-数目-颜色-形状-数目**”的六轮测评后，或者所有的48张卡片已经用完时，测评结束。
+
+所有的卡片都按相同的伪随机顺序呈现，见[序列文件](/seq/05501_WCST.json){target="_blank"}。序列文件仅包含了由`id`字段，说明了先后呈现的48张卡片的编号（使用逗号`,`分割）。
+
+### 卡片呈现
+
+整个测评过程中，四张备选卡片始终呈现在页面下方。单个试次的卡片呈现过程如下：
+
+1. **卡片出现**。但张卡片的**最大呈现时间**为`5`秒，用户必须在卡片出现后的`5`秒内尽快作答（使用鼠标点击或触碰所要选择的卡片）。
+1. **反馈**。用户作答或达到最大呈现时间后，卡片立即消失，进入长达`1`秒的反馈时间，告诉用户回答正确还是错误，伴有声音反馈和视觉反馈。
+1. **空白**。反馈结束后，界面上只留下备选卡片（此时不允许对备选卡片进行操作），经过`500`毫秒后，进入下一个试次。
+
+# 后台配置
+
+## 游戏参数
+
+```{r configs, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "configs.csv")
+  ),
+  caption = "配置参数总表"
+)
+```
+
+## 数据记录
+
+```{r recording-variables, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "recs.csv")
+  ),
+  caption = "原始数据变量列表[^std]"
+)
+```
+
+[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。
+
+## 试题算分
+
+```{r sdk-score, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "sdk.csv")
+  ),
+  caption = paste0("传入参数（算分码：`", SDK, "`）")
+)
+```
