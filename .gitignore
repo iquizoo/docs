@@ -44,6 +44,3 @@ vignettes/*.pdf
 
 
 # End of https://www.gitignore.io/api/r,hugo
-
-# temporary directories
-tmp/
