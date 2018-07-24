@@ -1,0 +1,94 @@
+---
+title: 汉诺塔（TOH）
+author: 张亮
+date: '2018-05-16'
+slug: 08101-toh
+code: "08101"
+tasknames: "汉诺塔"
+categories:
+- 文档
+- C2游戏
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r basic settings, include=FALSE}
+NAME_CN <- "汉诺塔"
+NAME_EN <- "TOH"
+CODE <- "08101"
+SDK <- 303
+```
+
+# 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：以最少的步数将圆盘移动到最右边的柱子。
+* **测查能力**：思维力-思维深刻性
+
+# 交互流程
+
+**汉诺塔**[^1]是根据一个传说形成的数学问题：
+
+[^1]: 以下说明摘录自[维基百科](https://zh.wikipedia.org/wiki/汉诺塔)，有改动。
+
+从左至右有三根杆子$A$，$B$，$C$。$A$杆上有$N$个（$N>1$）穿孔圆盘，盘的尺寸由下到上依次变小（如图\@ref(fig:interface)）。要求按下列规则将所有圆盘移至$C$杆（如图\@ref(fig:steps)）：
+
+1. 每次只能移动一个圆盘；
+1. 每次只能移动柱子最上面的盘子；
+1. 大盘不能叠在小盘上面。
+
+注意：
+
+1. 实际游戏界面不要显示$A$，$B$，$C$这三个字母，此处仅用作展示用。
+1. 实际游戏界面上需呈现目标状态（即所有圆盘都按大小顺序放在$C$杆上）的图片，建议放在页面右上方。
+1. 移动圆盘的操作通过鼠标或触摸拖拽完成。
+
+```{r interface, fig.cap="示例图-起始界面", fig.align="center", echo=FALSE}
+knitr::include_graphics(path = "/images/TOH/interface.jpg")
+```
+
+```{r steps, fig.cap="示例图-移动步骤", fig.align="center", echo=FALSE}
+knitr::include_graphics(path = "/images/TOH/steps.jpg")
+```
+
+**引导与练习**。
+
+引导部分需要让用户理解：如何移动圆盘、移动圆盘的规则、要达成的目标等，建议做出动画来展示。
+
+练习部分让用户完成一个包含两个圆盘的题目，且每当用户在5秒内没有操作时，就用动画提示用户如何进行下一次移动，直到最后完成目标。
+
+# 详细说明
+
+练习部分需要完成一个包含2个圆盘的题目。正式测评部分依次完成3、4、5个（即3轮）圆盘的题目。
+
+单个轮次中，需设定用户可以移动的最大次数。当达到最大移动次数（具体配置见表\@ref(tab:stimuli)）后，若题目仍然未解答成功，该轮题目直接结束。但需要注意：
+
+1. 在练习部分，若用户在最大次数后仍未成功解答题目，需重新做包含2个圆盘的练习。最多重复做3次。
+1. 无效的移动（即大圆盘被放到小圆盘之上）不计入移动次数，但要计入无效移动次数（需记录下来），并且给出声音和视觉反馈说明该次移动无效，被移动的圆盘也自动回到移动前的位置。
+1. 界面上需显示**有效移动次数**、**无效移动次数**和**剩余移动次数**，建议放在界面的右下方。
+1. 在正式测评部分，若用户在最大次数后未成功解答题目，立即计算从最终状态到完成解答所需的最小步数，这个步数需要作为数据记录参数的一部分。
+
+```{r stimuli, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_EN, "stimuli.csv")),
+             caption = "题目参数配置")
+```
+
+# 数据记录
+
+提交原始数据如表\@ref(tab:recording-variables)（请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)）
+
+```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_EN, "recs.csv")),
+             caption = "原始数据变量列表")
+```
+
+# 试题算分
+
+```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_EN, "sdk.csv")),
+             caption = paste0("传入参数（算分码：`", SDK, "`）"))
+```
