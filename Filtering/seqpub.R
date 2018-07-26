@@ -57,6 +57,6 @@ seq_df <- raw_seq_df %>%
   summarise_all(funs(paste(., collapse = sep_inner))) %>%
   select(length, id, target, distractor, type, cresp) %>%
   group_by(length) %>%
-  summarise_all(funs(paste(., collapse = sep_inner)))
+  summarise_all(funs(paste(., collapse = sep_outer)))
 
 jsonlite::write_json(seq_df, here::here(task_name, paste0(task_code, "_", task_name, ".json")))
