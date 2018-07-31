@@ -1,12 +1,12 @@
 ---
 # heading of document
-title: 数字魔法师中级（digitalWorkTwo） # Chinese name（English name）
+title: 数字魔法师初级（digitalWorkOne） # Chinese name（English name）
 author: 张亮
 date: 2018-07-31 # format 2006-01-01
 # slug
-slug: 02001-digitalWorkTwo # code-English name
+slug: 02002-digitalWorkOne # code-English name
 # specific parameters for current task
-code: "02001"
+code: "02002"
 sdk: 100
 # hugo taxonomy related
 tasknames: n-back范式
@@ -35,7 +35,7 @@ SDK <- rmarkdown::metadata$sdk
 * **题目编号**：`r CODE`
 * **任务描述**：测查自控力，特别是个体连续更新头脑中的信息的能力
 * **测查能力**：自控力-信息更新
-* **相关任务**：[数字魔法师初级](`r blogdown::shortcode("relref", "02002_digitalWorkOne.html")`)。
+* **相关任务**：[数字魔法师中级](`r blogdown::shortcode("relref", "02001_digitalWorkTwo.html")`)。
 
 # 前端交互
 
