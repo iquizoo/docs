@@ -7,7 +7,7 @@ code: "01302"
 tasknames: "数学计算"
 categories:
 - 文档
-- 修复
+- 数据记录优化
 output:
   blogdown::html_page:
     toc: true
