@@ -39,7 +39,11 @@ SDK <- rmarkdown::metadata$sdk
 
 ## 基本逻辑
 
+待完善。
+
 ## 详细说明
+
+待完善。
 
 # 后台配置
 
@@ -65,7 +69,7 @@ SDK <- rmarkdown::metadata$sdk
 # )
 ```
 
-[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。
+<!-- [^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。 -->
 
 ## 试题算分
 
