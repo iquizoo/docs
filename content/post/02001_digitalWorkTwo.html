@@ -1,0 +1,125 @@
+---
+# heading of document
+title: 数字魔法师中级（digitalWorkTwo） # Chinese name（English name）
+author: 张亮
+date: 2018-07-31 # format 2006-01-01
+# slug
+slug: 02001-digitalWorkTwo # code-English name
+# specific parameters for current task
+code: "02001"
+sdk: 100
+# hugo taxonomy related
+tasknames: n-back范式
+categories:
+  - 文档
+  - 数据记录优化
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#前端交互">前端交互</a><ul>
+<li><a href="#基本逻辑">基本逻辑</a></li>
+<li><a href="#详细说明">详细说明</a></li>
+</ul></li>
+<li><a href="#后台配置">后台配置</a><ul>
+<li><a href="#游戏参数">游戏参数</a></li>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：数字魔法师中级</li>
+<li><strong>英文名称</strong>：digitalWorkTwo</li>
+<li><strong>题目编号</strong>：02001</li>
+<li><strong>任务描述</strong>：测查自控力，特别是个体连续更新头脑中的信息的能力</li>
+<li><strong>测查能力</strong>：自控力-信息更新</li>
+<li><strong>相关任务</strong>：<a href="{{% relref "02002_digitalWorkOne.html" %}}">数字魔法师初级</a>。</li>
+</ul>
+</div>
+<div id="前端交互" class="section level1">
+<h1>前端交互</h1>
+<div id="基本逻辑" class="section level2">
+<h2>基本逻辑</h2>
+<p>待完善。</p>
+</div>
+<div id="详细说明" class="section level2">
+<h2>详细说明</h2>
+<p>待完善。</p>
+</div>
+</div>
+<div id="后台配置" class="section level1">
+<h1>后台配置</h1>
+<div id="游戏参数" class="section level2">
+<h2>游戏参数</h2>
+</div>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<table>
+<caption><span id="tab:recording-variables">表1: </span>原始数据变量列表<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Round</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">本任务有轮次的概念，此处记录当前在第几个轮次。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>STIM</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">当前试次呈现的数字（STIMulus）。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Type</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">刺激的类型，有两种可能，即<code>Filler</code>（每轮的前两个试次）或者<code>Target</code>（每轮前两次之后的试次）。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>CResp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">正确的反应（Correct Response），有两种可能，即<code>Stay</code>（不变）或者<code>Change</code>（变了）。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户的实际反应（Response），有三种可能，即<code>Stay</code>（不变）、<code>Change</code>（变了）或者<code>None</code>（未操作）。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误（ACCuracy），0=错误，1=正确，-1=未操作。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（Response Time，单位：毫秒）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="试题算分" class="section level2">
+<h2>试题算分</h2>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>请参考<a href="{{% relref "standard.html" %}}">标准</a>。<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
