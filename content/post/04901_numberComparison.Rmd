@@ -1,15 +1,15 @@
 ---
 # heading of document
-title: 学科能力（subjectAbility） # Chinese name（English name）
+title: 数字大小比较（numberComparison） # Chinese name（English name）
 author: 张亮
-date: 2018-05-31 # format 2006-01-01
+date: 2018-07-31 # format 2006-01-01
 # slug
-slug: 07101-subjectAbility # code-English name
+slug: 04901-numberComparison # code-English name
 # specific parameters for current task
-code: "07101"
-sdk: 100
+code: "04901"
+sdk: 202
 # hugo taxonomy related
-tasknames: 题目壳
+tasknames: 心理数轴
 categories:
   - 文档
   - 数据记录优化
@@ -33,28 +33,32 @@ SDK <- rmarkdown::metadata$sdk
 * **显示名称**：`r NAME_CN`
 * **英文名称**：`r NAME_EN`
 * **题目编号**：`r CODE`
-* **任务描述**：学科能力是一个抽象的题目壳，拥有多个实现，但是都是单选题目。
-<!-- * **测查能力**： -->
-<!-- * **相关任务**： -->
+* **任务描述**：
+* **测查能力**：
+* **相关任务**：
 
-<!-- # 前端交互 -->
+# 前端交互
 
-<!-- ## 基本逻辑 -->
+## 基本逻辑
 
-<!-- ## 详细说明 -->
+待完善。
+
+## 详细说明
+
+待完善。
 
 # 后台配置
 
-<!-- ## 游戏参数 -->
+## 游戏参数
 
-<!-- ```{r configs, echo=FALSE, message=FALSE} -->
-<!-- # knitr::kable( -->
-<!-- #   readr::read_csv( -->
-<!-- #     here::here("content", "resources", "config", NAME_EN, "configs.csv") -->
-<!-- #   ), -->
-<!-- #   caption = "配置参数总表" -->
-<!-- # ) -->
-<!-- ``` -->
+```{r configs, echo=FALSE, message=FALSE}
+# knitr::kable(
+#   readr::read_csv(
+#     here::here("content", "resources", "config", NAME_EN, "configs.csv")
+#   ),
+#   caption = "配置参数总表"
+# )
+```
 
 ## 数据记录
 
@@ -72,10 +76,10 @@ knitr::kable(
 ## 试题算分
 
 ```{r sdk-score, echo=FALSE, message=FALSE}
-knitr::kable(
-  readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "sdk.csv")
-  ),
-  caption = paste0("传入参数（算分码：`", SDK, "`）")
-)
+# knitr::kable(
+#   readr::read_csv(
+#     here::here("content", "resources", "config", NAME_EN, "sdk.csv")
+#   ),
+#   caption = paste0("传入参数（算分码：`", SDK, "`）")
+# )
 ```
