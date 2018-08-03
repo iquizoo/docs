@@ -76,26 +76,31 @@ output:
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left"><code>Round</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">当前的轮次数目，1（第一次学习）或者2（重复学习）。</td>
+</tr>
+<tr class="even">
 <td align="left"><code>STIM</code></td>
 <td align="left"><code>char</code></td>
 <td align="left">当前刺激（STIMulus）符号。</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>CResp</code></td>
 <td align="left"><code>char</code></td>
 <td align="left">图片的类型。‘Old’（学习时出现过）、‘New’（学习时未出现过）二者之一。</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>Resp</code></td>
 <td align="left"><code>char</code></td>
 <td align="left">用户的实际反应（Response）。有三种可能：‘Old’、‘New’、‘None’（未操作）</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>ACC</code></td>
 <td align="left"><code>int</code></td>
 <td align="left">正确或错误（ACCuracy）。学习阶段为空文本。测试阶段：0=错误，1=正确，-1=未完成操作。</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>RT</code></td>
 <td align="left"><code>int</code></td>
 <td align="left">用户完成操作所需时间（单位：毫秒）(Response Time)，若未完成操作，则记为0</td>
