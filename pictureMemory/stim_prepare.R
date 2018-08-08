@@ -22,12 +22,28 @@ stim_selection <- stims %>%
 # rename pictures
 stim_rename <- stim_selection %>%
   mutate(nid = row_number())
-orig_dir <- here::here("pictureMemory", "pictureMemory")
-dest_dir <- here::here("pictureMemory", "renamed")
+orig_dir <- here::here("pictureMemory", "rawPics")
+dest_dir <- here::here("pictureMemory", "pictureMemory")
 orig_files <- file.path(orig_dir, c(sprintf("%03da.jpg", stim_rename$id), sprintf("%03db.jpg", stim_rename$id)))
 dest_files <- file.path(dest_dir, c(sprintf("%03da.jpg", stim_rename$nid), sprintf("%03db.jpg", stim_rename$nid)))
 if (dir.exists(dest_dir))
   (unlink(dest_dir, recursive = TRUE, force = TRUE))
 dir.create(dest_dir)
 file.copy(orig_files, dest_files)
+# output modifications
 write_csv(stim_rename, here::here("pictureMemory", "stim_rename.csv"))
+# set practice pictures
+prac_dest_files <- here::here("pictureMemory", "pracPictureMemory")
+if (dir.exists(prac_dest_files))
+  (unlink(prac_dest_files, recursive = TRUE, force = TRUE))
+dir.create(prac_dest_files)
+prac_items <- sample(setdiff(stims$id, stim_rename$id), 3)
+prac_orig_names <- file.path(orig_dir, c(sprintf("%03da.jpg", prac_items), sprintf("%03db.jpg", prac_items)))
+prac_dest_names <- file.path(
+  prac_dest_files,
+  paste0(
+    "prac",
+    c(sprintf("%03da.jpg", 1:3), sprintf("%03db.jpg", 1:3))
+  )
+)
+file.copy(prac_orig_names, prac_dest_names)
