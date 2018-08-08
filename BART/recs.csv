@@ -1,0 +1,6 @@
+﻿名称,类型,说明
+`balloon`,`int`,气球编号，即第几个气球
+`NHit`,`int`,打气次数
+`Feedback`,`boolean`,气球是（1）否（0）爆炸
+`CurUtility`,`int`,当前气球的奖励
+`CumUtility`,`int`,累计奖励

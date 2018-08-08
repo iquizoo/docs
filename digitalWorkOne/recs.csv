@@ -1,0 +1,8 @@
+﻿名称,类型,说明
+`Round`,`int`,本任务有轮次的概念，此处记录当前在第几个轮次。
+`STIM`,`int`,当前试次呈现的数字（STIMulus）。
+`Type`,`char`,刺激的类型，有两种可能，即`Filler`（每轮的第一个试次）或者`Target`（每轮第一个试次之后的试次）。
+`CResp`,`char`,正确的反应（Correct Response），有两种可能，即`Stay`（不变）或者`Change`（变了）。
+`Resp`,`char`,用户的实际反应（Response），有三种可能，即`Stay`（不变）、`Change`（变了）或者`None`（未操作）。
+`ACC`,`int`,正确或错误（ACCuracy），0=错误，1=正确，-1=未操作。
+`RT`,`int`,用户完成操作所需时间（Response Time，单位：毫秒）

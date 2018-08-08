@@ -1,0 +1,8 @@
+﻿名称,类型,说明
+`SID`,`int`,卡片编号（Stimulus IDentity），跟序列中一致，请参考表\@ref(tab:stim-test)
+`SColor`,`char`,卡片颜色，参考表\@ref(tab:stim-test)
+`SShape`,`char`,卡片形状，参考表\@ref(tab:stim-test)
+`SNumber`,`int`,卡片项目数目，参考表\@ref(tab:stim-test)
+`Rule`,`char`,当前匹配特征，即“颜色”、“形状”或“数目”
+`ACC`,`int`,正确或错误（ACCuracy），0=错误，1=正确，-1=未操作
+`RT`,`int`,用户完成操作所需时间（单位：毫秒）（Response Time），若未完成操作，则记为0

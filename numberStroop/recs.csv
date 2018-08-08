@@ -1,0 +1,10 @@
+名称,类型,说明
+`NL`,`int`,左侧呈现的数字，跟序列中的`nleft`一致
+`NR`,`int`,右侧呈现的数字，跟序列中的`nright`一致
+`SL`,`char`,左侧数字的字号大小，跟序列中的`sleft`一致
+`SR`,`char`,右侧数字的字号大小，跟序列中的`sright`一致
+`Type`,`char`,刺激类型，跟序列中的`type`一致
+`CResp`,`char`,正确答案，跟序列中的`cresp`一致
+`Resp`,`char`,用户的实际反应(Response)。三种可能，即`Left`（左侧）、`Right`（右侧）、`None`（用户未操作）。
+`ACC`,`int`,正确或错误(ACCuracy)。0=错误，1=正确，-1=未完成操作。
+`RT`,`int`,用户完成操作所用时间（单位：毫秒）(Response Time)，若未完成操作，则记为0
