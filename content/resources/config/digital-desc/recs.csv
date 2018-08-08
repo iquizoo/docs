@@ -1,6 +1,0 @@
-﻿名称,类型,说明
-`SLen`,`int`,当前试次的数字个数。
-`CResp`,`char`,正确的数字顺序（Correct Response），也就是把呈现的数字按倒序直接拼在一起组成的字符串
-`Resp`,`char`,用户的实际反应（Response），即把用户实际点击的数字直接拼在一起组成的字符串
-`ACC`,`int`,正确或错误(ACCuracy)，0=错误，1=正确。
-`RT`,`int`,用户完成操作所需时间（单位：毫秒）(Response Time)

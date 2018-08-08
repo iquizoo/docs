@@ -1,9 +1,0 @@
-﻿名称,类型,说明
-`Side`,`char`,记录刺激所在一侧，`Left`表示左侧，`Right`表示右侧。
-`Task`,`char`,当前试次的作答要求，`Color`表示判断颜色是否为红色，`Digit`表示判断数字是否为偶数。
-`SDigit`,`int`,当前试次呈现的数字（Stimulus Digit）。
-`SColor`,`char`,当前试次呈现数字的颜色（Stimulus Color）。
-`SCat`,`char`,刺激的类型（Stimulus Category），用户需要按键（即判断颜色时数字为红色，判断奇偶性时数字为偶数）时记录为`Target`，否则记录为`Non-target`。
-`Resp`,`int`,用户的实际反应（Response），0=未操作，1=操作。
-`ACC`,`int`,正确或错误（ACCuracy），0=错误，1=正确。
-`RT`,`int`,用户完成操作所需时间（Response Time，单位：毫秒）。
