@@ -1,0 +1,6 @@
+﻿名称,类型,说明
+`STIM`,`char`,刺激名称（STIMulus），`Moon`（月亮）或者`Sun`（太阳）。
+`CResp`,`char`,正确反应（Correct Response），`Left`（左）或者`Right`（右）。
+`Resp`,`char`,用户的实际反应（Response），`Left`（左）、`Right`（右）或者`None`（未操作）。
+`ACC`,`int`,正确或错误(ACCuracy)，0=错误，1=正确，-1=未完成操作。
+`RT`,`int`,用户完成操作所需时间（Response Time，单位：毫秒），若未完成操作，则记为0

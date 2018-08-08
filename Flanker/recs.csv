@@ -1,0 +1,8 @@
+﻿名称,类型,说明
+`Round`,`int`,本任务有轮次的概念，此处记录当前在第几个轮次
+`STIM`,`int`,刺激编号(STIMulus)，1-4中的一个
+`Type`,`char`,"刺激类型，包括2种可能：'Congruent', 'Incongruent'"
+`CResp`,`char`,"正确的反应(Correct Response），包含两种可能：'Left', 'Right'"
+`Resp`,`char`,"用户的实际反应(Response)，包含两种可能：'Left', 'Right', 'None'（未操作）"
+`ACC`,`int`,正确或错误(ACCuracy)，0=错误，1=正确，-1=未完成操作。
+`RT`,`int`,用户完成操作所需时间（单位：毫秒）(Response Time)，若未完成操作，则记为0

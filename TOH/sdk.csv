@@ -1,0 +1,5 @@
+﻿参数名称,类型,说明
+`bestMov`,`int array`,包含各轮次的最佳移动次数的数组
+`actMov`,`int array`,包含各轮次的实际移动次数的数组
+`errMov`,`int array`,包含各轮次的无效移动次数的数组
+`remMov`,`int array`,各轮次中，结束状态时，解答题目所需最少步数的数组
