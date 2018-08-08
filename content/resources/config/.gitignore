@@ -1,9 +1,0 @@
-# rstudio project related
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-
-# some types of binary files
-*.jpg
-*.xlsx

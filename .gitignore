@@ -44,3 +44,6 @@ vignettes/*.pdf
 
 
 # End of https://www.gitignore.io/api/r,hugo
+
+# resources files unnecessary for version control
+*.jpg
