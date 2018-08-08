@@ -1,0 +1,7 @@
+﻿名称,类型,说明
+`NL`,`int`,左侧呈现的数字
+`NR`,`int`,右侧呈现的数字
+`CResp`,`char`,正确答案，`Left`（左侧）、`Right`（右侧）
+`Resp`,`char`,用户的实际反应(Response)。三种可能，即`Left`（左侧）、`Right`（右侧）、`None`（用户未操作）。
+`ACC`,`int`,正确或错误(ACCuracy)。0=错误，1=正确，-1=未完成操作。
+`RT`,`int`,用户完成操作所用时间（单位：毫秒）(Response Time)，若未完成操作，则记为0
