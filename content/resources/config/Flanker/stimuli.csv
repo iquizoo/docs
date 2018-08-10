@@ -1,5 +1,5 @@
-stim,target,flanker,cresp,type
-1,Left,Left,Left,Congruent
-2,Right,Left,Right,Incongruent
-3,Left,Right,Left,Incongruent
-4,Right,Right,Right,Congruent
+﻿编号,目标刺激,干扰刺激,类型
+1,左,左,一致
+2,右,左,不一致
+3,左,右,不一致
+4,右,右,一致

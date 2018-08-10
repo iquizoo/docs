@@ -9,7 +9,7 @@ main <- function(n_trial = 80, seed = n_trial){
   set.seed(seed)
 
   # read the stimuli properties table
-  stimuli <- read.csv(file.path(config_dir, "stimuli.csv"))
+  stimuli <- read.csv(file.path(config_dir, "stimuli-seq.csv"))
 
   # three types of run length are used, i.e., 1, 2
   # the ratio of three types of run length is 2:1

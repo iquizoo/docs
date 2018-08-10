@@ -46,7 +46,7 @@ main <- function(n_trial = 128, seed = n_trial){
   }
 
   # read in all the properties of stimuli
-  stim <- read.csv(file.path(config_dir, "stimuli.csv"), stringsAsFactors = FALSE)
+  stim <- read.csv(file.path(config_dir, "stimuli-seq.csv"), stringsAsFactors = FALSE)
   # preallocate stimuli sequence
   stim_seq <- rep(NA_integer_, n_trial)
   # get the unique combined conditions

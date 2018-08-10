@@ -6,7 +6,7 @@ task_code <- "06901"
 task_name <- "Filtering"
 sep_inner <- ","
 sep_outer <- ";"
-stim_config <- read_csv(here::here("Filtering", "stimuli.csv"))
+stim_config <- read_csv(here::here("Filtering", "stimuli-seq.csv"))
 
 # this is a sequence generation script used only for Filtering task
 seqgen <- function(n_stim = 40, seed = n_stim) {
