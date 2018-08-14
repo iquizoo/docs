@@ -201,16 +201,21 @@ output:
 <td align="left">绿色小人是否变成红色，<code>Go</code>表示不变红色，<code>Stop</code>表示变红色（同序列）</td>
 </tr>
 <tr class="even">
+<td align="left"><code>SSD</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">当前绿色小人从出现到变成红色的间隔时间（Stop Signal Delay），以毫秒为单位</td>
+</tr>
+<tr class="odd">
 <td align="left"><code>Resp</code></td>
 <td align="left"><code>char</code></td>
 <td align="left">用户的实际反应（Response），包含三种可能：<code>Left</code>，<code>Right</code>或<code>None</code>（未操作）</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>ACC</code></td>
 <td align="left"><code>int</code></td>
 <td align="left">正确或错误（ACCuracy）：如果小人未变成红色，则0=错误，1=正确，-1=未操作；否则，1=未操作，0=已操作</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>RT</code></td>
 <td align="left"><code>int</code></td>
 <td align="left">用户完成操作所需时间（单位：毫秒）（Response Time），若未操作，则记为0</td>

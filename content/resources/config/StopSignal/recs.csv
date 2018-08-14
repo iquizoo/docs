@@ -2,6 +2,7 @@
 `Round`,`int`,本任务有轮次的概念，此处记录当前在第几个轮次
 `STIM`,`char`,绿色小人的朝向，`Left`表示朝左，`Right`表示朝右（同序列）
 `Type`,`char`,绿色小人是否变成红色，`Go`表示不变红色，`Stop`表示变红色（同序列）
+`SSD`,`int`,当前绿色小人从出现到变成红色的间隔时间（Stop Signal Delay），以毫秒为单位
 `Resp`,`char`,用户的实际反应（Response），包含三种可能：`Left`，`Right`或`None`（未操作）
 `ACC`,`int`,正确或错误（ACCuracy）：如果小人未变成红色，则0=错误，1=正确，-1=未操作；否则，1=未操作，0=已操作
 `RT`,`int`,用户完成操作所需时间（单位：毫秒）（Response Time），若未操作，则记为0
