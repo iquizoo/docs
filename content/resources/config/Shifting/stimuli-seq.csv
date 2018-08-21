@@ -1,0 +1,17 @@
+id,name,task,cresp
+1,Tiger,Habituation,Right
+2,Lion,Habituation,Right
+3,Cock,Habituation,Right
+4,Hedgehog,Habituation,Right
+5,Whale,Habituation,Left
+6,Shark,Habituation,Left
+7,Shrimp,Habituation,Left
+8,Fish,Habituation,Left
+1,Tiger,Weight,Left
+2,Lion,Weight,Left
+3,Cock,Weight,Right
+4,Hedgehog,Weight,Right
+5,Whale,Weight,Left
+6,Shark,Weight,Left
+7,Shrimp,Weight,Right
+8,Fish,Weight,Right

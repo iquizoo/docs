@@ -1,8 +1,8 @@
 ﻿名称,类型,说明
 `Round`,`int`,本任务有轮次的概念，此处记录当前在第几个轮次
 `ID`,`int`,刺激编号(IDentity)，1-4中的一个
-`Target`,`int`,红色条形个数
-`Distractor`,`int`,蓝色条形个数
+`Target`,`int`,黄色糖果个数
+`Distractor`,`int`,绿色糖果个数
 `Type`,`char`,"刺激阵列第二次出现时的变化，三种可能：`Stay`, `Clockwise`, `Counter`"
 `CResp`,`char`,"正确的反应(Correct Response），包含两种可能：`Left`, `Right`"
 `Resp`,`char`,"用户的实际反应(Response)，包含三种可能：`Left`, `Right`, `None`（未操作）"

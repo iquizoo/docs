@@ -1,0 +1,101 @@
+---
+# heading of document
+title: 红绿灯（StopSignal） # Chinese name（English name）
+author: 张亮
+date: 2018-08-06 # format 2006-01-01
+# slug
+slug: 06301-stopsignal # code-English name
+# specific parameters for current task
+code: "06301"
+sdk: 204
+# hugo taxonomy related
+tasknames: 停止信号范式
+categories: 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r parse-meta, include=FALSE}
+NAMES <- strsplit(rmarkdown::metadata$title, "（|）")[[1]]
+NAME_CN <- NAMES[1]
+NAME_EN <- NAMES[2]
+CODE <- rmarkdown::metadata$code
+SDK <- rmarkdown::metadata$sdk
+```
+
+# 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：考察自控力，特别是个体克服冲动的想法和行为的能力。
+* **测查能力**：自控力-控制冲动
+
+# 前端交互
+
+## 基本逻辑
+
+在每一个试次中，界面中出现一个类似红绿灯中的绿色小人的图片，小人或者朝左、或者朝右，用户需要快速判断小人的朝向，并做出相应的操作。但是，在小部分的试次中，绿色小人会变成红色小人，用户需要在这些试次避免做出任何操作。
+
+## 详细说明
+
+### 测评规则
+
+在每一个试次中，依次有以下事件：
+
+1. 注视点（+号）出现，显示时间为从1秒到2秒内随机（注意不要固定）。
+1. 注视点消失，同时绿色小人出现，朝向为随机朝左或朝右。
+1. 根据[序列](/seq/06301_StopSignal.json){target="_blank"}中[`type`][序列说明]字段确定绿色小人是否会变成红色，并且：
+    * 如果不需要变成红色，那么等待用户做出判断；
+    * 如果需要变成红色，那么设置一个变量`ssd`来确定变红的时间，即绿色小人出现后`ssd`毫秒后变成红色。`ssd`的具体设置如下：
+        + 如果是第一次变成红色，则设置`ssd`与配置参数`ssdInit`（默认为250，单位毫秒）相同；
+        + 如果不是第一次变成红色，则`ssd`根据上一次是否成功抑制进行调整，如果上次绿色小人变红时用户成功抑制操作，则`ssd`减少50；否则增加50。
+1. 用户完成操作或小人显示时间达到1秒（配置参数`maxSt`可以配置此参数）后，小人消失。
+1. 对用户的操作进行反馈，反馈显示时间为200毫秒。
+
+### 序列说明
+
+[序列](/seq/06301_StopSignal.json){target="_blank"}包含两个字段：
+
+* `stim`：绿色小人的朝向，`Left`表示朝左，`Right`表示朝右。
+* `type`：绿色小人是否变成红色，`Go`表示不变红色，`Stop`表示变红色。
+
+# 后台配置
+
+## 游戏参数
+
+```{r configs, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "configs.csv")
+  ),
+  caption = "配置参数总表"
+)
+```
+
+## 数据记录
+
+```{r recording-variables, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "recs.csv")
+  ),
+  caption = "原始数据变量列表[^std]"
+)
+```
+
+[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。
+
+## 试题算分
+
+```{r sdk-score, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "sdk.csv")
+  ),
+  caption = paste0("传入参数（算分码：`", SDK, "`）")
+)
+```
