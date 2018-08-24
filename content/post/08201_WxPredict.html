@@ -7,7 +7,7 @@ date: 2018-08-22 # format 2006-01-01
 slug: 08201-wxpredict # code-English name
 # specific parameters for current task
 code: "08201"
-sdk:
+sdk: 100
 # hugo taxonomy related
 tasknames: 概率分类学习范式
 categories: 文档
@@ -205,12 +205,173 @@ output:
 <h1>后台配置</h1>
 <div id="游戏参数" class="section level2">
 <h2>游戏参数</h2>
+<table>
+<caption><span id="tab:configs">表2: </span>配置参数总表</caption>
+<thead>
+<tr class="header">
+<th align="left">参数类别</th>
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="center">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>maxSt</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">5000</td>
+<td align="left">单个刺激最大展示时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>hintTime</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">2000</td>
+<td align="left">刺激出现后提醒用户作答的时间，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>feedbackTime</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">2000</td>
+<td align="left">反馈显示时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>iti</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">500</td>
+<td align="left">试次间间隔时间，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激序列</td>
+<td align="left"><code>endMethod</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">2</td>
+<td align="left">题目的结束方式（1=按时间结束，2=按刺激个数结束）</td>
+</tr>
+<tr class="even">
+<td align="left">刺激序列</td>
+<td align="left"><code>duration</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">30000</td>
+<td align="left">题目整体持续时间（<code>endMethod</code>=1时生效，单位毫秒）</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激序列</td>
+<td align="left"><code>quantity</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">200</td>
+<td align="left">刺激总个数（<code>endMethod</code>=2时需全部做完）</td>
+</tr>
+<tr class="even">
+<td align="left">刺激序列</td>
+<td align="left"><code>round</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">4</td>
+<td align="left">总轮数</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackCorrectError</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）需要反馈正确与错误</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackNoResponse</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">控制正式测评时候是（1）否（0）需要提示用户未操作</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackVisual</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出视觉反馈</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="数据记录" class="section level2">
 <h2>数据记录</h2>
-<!-- [^std]: 请参考[标准]({{% relref "standard.html" %}})。 -->
+<table>
+<caption><span id="tab:recording-variables">表3: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Round</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">本任务有轮次的概念，此处记录当前在第几个轮次</td>
+</tr>
+<tr class="even">
+<td align="left"><code>SID</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">刺激模式的编号，和序列中的<code>stim</code>一致</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Outcome</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">对应的天气情况，和序列中的<code>outcome</code>一致</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户的实际反应（Response），包含三种可能：<code>Rain</code>，<code>Sunshine</code>或<code>None</code>（未操作）</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户是否预测正确（ACCuracy），且0=错误，1=正确，-1=未操作</td>
+</tr>
+<tr class="even">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（单位：毫秒）（Response Time），若未操作，则记为0</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="试题算分" class="section level2">
 <h2>试题算分</h2>
+<table>
+<caption><span id="tab:sdk-score">表4: </span>传入参数（算分码：<code>100</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>rate</code></td>
+<td align="left"><code>float</code></td>
+<td align="left">整个游戏过程的正确率</td>
+</tr>
+<tr class="even">
+<td align="left"><code>average</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确试次的平均反应时</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>

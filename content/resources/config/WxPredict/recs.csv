@@ -1,0 +1,7 @@
+﻿名称,类型,说明
+`Round`,`int`,本任务有轮次的概念，此处记录当前在第几个轮次
+`SID`,`int`,刺激模式的编号，和序列中的`stim`一致
+`Outcome`,`char`,对应的天气情况，和序列中的`outcome`一致
+`Resp`,`char`,用户的实际反应（Response），包含三种可能：`Rain`，`Sunshine`或`None`（未操作）
+`ACC`,`int`,用户是否预测正确（ACCuracy），且0=错误，1=正确，-1=未操作
+`RT`,`int`,用户完成操作所需时间（单位：毫秒）（Response Time），若未操作，则记为0
