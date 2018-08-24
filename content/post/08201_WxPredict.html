@@ -1,0 +1,216 @@
+---
+# heading of document
+title: 天气预报员（WxPredict） # Chinese name（English name）
+author: 张亮
+date: 2018-08-22 # format 2006-01-01
+# slug
+slug: 08201-wxpredict # code-English name
+# specific parameters for current task
+code: "08201"
+sdk:
+# hugo taxonomy related
+tasknames: 概率分类学习范式
+categories: 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#前端交互">前端交互</a><ul>
+<li><a href="#基本逻辑">基本逻辑</a></li>
+<li><a href="#详细说明">详细说明</a><ul>
+<li><a href="#测评流程">测评流程</a></li>
+<li><a href="#卡片规则">卡片规则</a></li>
+<li><a href="#序列说明">序列说明</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#后台配置">后台配置</a><ul>
+<li><a href="#游戏参数">游戏参数</a></li>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：天气预报员</li>
+<li><strong>英文名称</strong>：WxPredict</li>
+<li><strong>题目编号</strong>：08201</li>
+<li><strong>任务描述</strong>：测查记忆力，特别是程序性记忆能力。</li>
+<li><strong>测查能力</strong>：记忆力-程序记忆</li>
+<li><strong>相关任务</strong>：</li>
+</ul>
+</div>
+<div id="前端交互" class="section level1">
+<h1>前端交互</h1>
+<div id="基本逻辑" class="section level2">
+<h2>基本逻辑</h2>
+<p>用户被告知屏幕上将要呈现的卡片可以预测天气是下雨还是晴朗，但是这个规则需要用户自己去根据反馈来探索。因此需要告诉用户一开始仅仅根据感觉猜测即可，后面会表现得越来越好。</p>
+<p>在每一个试次中，如图<a href="#fig:interface">1</a>所示（注意编号1-4是为了展示用，实际中不要显示），屏幕中央四个卡片可能出现的位置编号为1-4，同时卡片也编号为1-4，每张卡片只能出现在相同编号的位置上。用户需要根据卡片的呈现情况（表<a href="#tab:stimuli">1</a>中列出了所有可能的情况及其编号）来预测天气是下雨还是晴朗（使用键盘或触摸屏幕上的按钮进行操作），用户操作后需要呈现反馈信息。</p>
+<div class="figure" style="text-align: center"><span id="fig:interface"></span>
+<img src="/images/WxPredict/interface.png" alt="基本界面"  />
+<p class="caption">
+图1: 基本界面
+</p>
+</div>
+</div>
+<div id="详细说明" class="section level2">
+<h2>详细说明</h2>
+<div id="测评流程" class="section level3">
+<h3>测评流程</h3>
+<p>在每一个试次中，依次有以下事件：</p>
+<ol style="list-style-type: decimal">
+<li>屏幕中央呈现卡片。卡片的形式由序列确定。卡片一直呈现在屏幕中央，并等待用户做出操作。若卡片呈现2秒后用户仍然没有操作，屏幕上方提示用户“请尽快操作”；卡片的最长呈现时间为5秒。</li>
+<li>卡片消失。用户做出操作或者卡片达到最大呈现时间后卡片消失。</li>
+<li>操作反馈。卡片消失后立即呈现反馈。如果用户预测正确，则反馈一张笑脸；否则，反馈一张皱眉的脸；若未操作，则反馈一张带有问号的脸。反馈呈现时间为2秒。</li>
+<li>试次间间隔。在下一个试次开始前，有0.5秒的空白屏幕时间。</li>
+</ol>
+</div>
+<div id="卡片规则" class="section level3">
+<h3>卡片规则</h3>
+<p>表<a href="#tab:stimuli">1</a>中说明了所有可能出现的卡片呈现情况的编号。0表示该卡片不呈现，1表示该卡片呈现。</p>
+<table>
+<caption><span id="tab:stimuli">表1: </span>卡片模式编号</caption>
+<thead>
+<tr class="header">
+<th align="center">编号</th>
+<th align="right">1</th>
+<th align="right">2</th>
+<th align="right">3</th>
+<th align="right">4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="center">11</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="center">12</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="center">13</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="center">14</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="序列说明" class="section level3">
+<h3>序列说明</h3>
+<p><a href="/seq/08201_WxPredict.json">序列</a>包含两个字段：</p>
+<ul>
+<li><code>stim</code>：卡片呈现模式的编号。请参照表<a href="#tab:stimuli">1</a>。</li>
+<li><code>outcome</code>：当前卡片呈现模式代表的天气情况。其中：<code>Rain</code>表示下雨（🌧），<code>Sunshine</code>表示晴朗（🌞）。</li>
+</ul>
+<p>总计有200个试次，默认情况下将分成4个阶段完成，每个阶段完成50个。</p>
+</div>
+</div>
+</div>
+<div id="后台配置" class="section level1">
+<h1>后台配置</h1>
+<div id="游戏参数" class="section level2">
+<h2>游戏参数</h2>
+</div>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<!-- [^std]: 请参考[标准]({{% relref "standard.html" %}})。 -->
+</div>
+<div id="试题算分" class="section level2">
+<h2>试题算分</h2>
+</div>
+</div>
