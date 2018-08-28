@@ -4,9 +4,9 @@ title: 龟兔赛跑（MotionPrediction） # Chinese name（English name）
 author: 张亮
 date: 2018-08-27 # format 2006-01-01
 # slug
-slug: 08201-motionprediction # code-English name
+slug: 08301-motionprediction # code-English name
 # specific parameters for current task
-code: "08201"
+code: "08301"
 sdk:
 # hugo taxonomy related
 tasknames: 运动预测
