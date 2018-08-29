@@ -40,7 +40,7 @@ SDK <- rmarkdown::metadata$sdk
 
 测评的设定是让用户预测在赛跑的乌龟和兔子谁会获胜。如图\@ref(fig:interface)（注意上方的0-1000辅助线仅用于说明，实际测评时不要展示），屏幕右侧有一条竖线是终点线，左侧有兔子和乌龟。由于兔子比乌龟跑得快，所以赛跑开始时乌龟都会比兔子更靠近终点线。每个试次中用户都会有一定的时间观察兔子和乌龟最初的赛跑过程，不等到赛跑结果出来前就要用户预测谁先跑到终点。
 
-```{r interface, echo=FALSE, message=FALSE}
+```{r interface, echo=FALSE, message=FALSE, fig.cap="基本界面", fig.align="center", out.width="80%"}
 knitr::include_graphics("/images/MotionPrediction/interface.png")
 ```
 
