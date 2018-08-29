@@ -13,7 +13,7 @@ winner_rle$lengths <- as.vector(t(replicate(2, sample(rep(c(1, 2, 2, 3), n_trial
 winner_rle$values <- rep(sample(c("Rabbit", "Tortoise")), n_trials / 2 / 2)
 winner <- inverse.rle(winner_rle)
 # generate sequence of durations of arrival for the winner: random range from 2.5 to 3.5
-time_winner <- round(runif(n_trials, 2.5, 3.5), 1)
+time_winner <- round(runif(n_trials, 2500, 3500), -2)
 # write sequence as a json file
 jsonlite::write_json(
   list(
