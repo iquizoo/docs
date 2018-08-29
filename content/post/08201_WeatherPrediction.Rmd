@@ -1,10 +1,10 @@
 ---
 # heading of document
-title: 天气预报员（WxPredict） # Chinese name（English name）
+title: 天气预报员（WeatherPrediction） # Chinese name（English name）
 author: 张亮
 date: 2018-08-22 # format 2006-01-01
 # slug
-slug: 08201-wxpredict # code-English name
+slug: 08201-weatherprediction # code-English name
 # specific parameters for current task
 code: "08201"
 sdk: 100
@@ -44,7 +44,7 @@ SDK <- rmarkdown::metadata$sdk
 在每一个试次中，如图\@ref(fig:interface)所示（注意编号1-4是为了展示用，实际中不要显示），屏幕中央四个卡片可能出现的位置编号为1-4，同时卡片也编号为1-4，每张卡片只能出现在相同编号的位置上。用户需要根据卡片的呈现情况（表\@ref(tab:stimuli)中列出了所有可能的情况及其编号）来预测天气是下雨还是晴朗（使用键盘或触摸屏幕上的按钮进行操作），用户操作后需要呈现反馈信息。
 
 ```{r interface, echo=FALSE, fig.align="center", fig.cap="基本界面"}
-knitr::include_graphics("/images/WxPredict/interface.png")
+knitr::include_graphics("/images/WeatherPrediction/interface.png")
 ```
 
 ## 详细说明
