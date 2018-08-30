@@ -1,6 +1,9 @@
 language: r
 dist: trusty
 cache: packages
+env:
+  global:
+    secure: CUPgVYvOIDikOCsuvQxboibAH9nsxiRwqiEhMPMvutmxD5zae7eXTfRL5UYjRUs6lj5QUrMzW3MsXrci9j84ZelBy6zY/BJ4azEV5i4NKNeZ72i/NcJ3yDWnGL16JLaT2ACPCbE22vn/XLokVv5W9JMIs0uiPiiNyxGQWW8kprQ9/rJyGbEZRm4pfi3aeSH1hmn7MG3XEmHJpj54RoRcX2oaCtMb3kAIlnnDf4Z31cVrgdAqqrPONtlWF3KnH/DlukY/t2nmMGbvVyemMfF0k50vpEuOw9XhiDNoKzdSvRkn/CQRewW26PbStLB+svlNpTYPffVErKbSiMMlPJoZiqbROlQdjJEI7C/50x28d4xuqmy3YCqMLeEEIKYUY9bREoksM5YwyAxSXZkmKFKj8undPe4/jWgYrsR/DjwrOqdM1QQs0ouLNqX+9643v51u6wHMoHk62NdOxr1TBvzphaWl1oabJHM9ZDx50AlszShlZQLys/kthpQPErlxlvtPUI+Mw5NlBz3fYwrdU/y/ySzp3xLZjBu2wy8O/wLCx2brC2vUVEgt3ZMkyLwdTUbqsnjL+xfKA2pLnDK2+Ykxp8MuNZklxX5dnZudDP7xHbpuS9r0rrCBFTmyzDM2Hzc1s0RlpJeeiorQlmO9Zyzr/qmNNqV7uUiQVwmwjCy2xP0=
 before_script:
 - Rscript -e 'blogdown::install_hugo()'
 script:
@@ -8,8 +11,7 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token:
-    secure: ADokg8ulgzFba6vDeyvfjXEmEuYd/jAtY0nwGq6pqErdz5KjVXl1Q2bHqXWQ70qlqMSUofCSXPFAwxo+RD9fTUXXwvInIpIu5n+6QqQX9jKp8Crm/x6E/ppkkVPsYSb+UsdFQiq93G8J8emWenBVi34iYcWMpbSlN9oDpb/oj5VHylfsSLAAntc6qso/diE7PCJmqa4ScaNrUMMGCXU1t9GFpgUbNnBGPVyGxILv4nDl7k83hyw0vz6E0+9lCXdgvP37G6Ft5rMvlDRUatZlrKDOJaWfbC1ek7FZFpUpKSxRpCejrqOIUYWaeWfU4IZKycTBMwD0piRWNaAB9Sf5w1F+XHyE5kKH2snPR0dlbi1MiIHRyIay8ldsHCs67M4dFIIPxxy1HG1Q+05O3lw0qlpS2Z52xVoyA4PB995X/r48tqTkwL6ZLcCLLII2m0nZALsPATlo+JlQdYhJuWljhxB7rvyF6VtmlpDJuGSS2f7lxjUwHpU3dUq3nle4fgKuVfBHgtCV/0Yu1i+CWmAAh0SDZwKqP8xixWETti/orJJQ2JWLIjJShARqgpdbzYHCb88ynEpKNzYBmV6NvEIGn50Nl+v08wT4mt/s5Y9pzJQW09wMGjxYr7anMoe7pHqviLpOpugh9JOXLufRtbNJL96HrBhe3TfGR1p9XWwN8ks=
+  github-token: "$GITHUB_TOKEN"
   local-dir: public
   keep-history: true
   on:
