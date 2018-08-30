@@ -1,0 +1,9 @@
+Package: placeholder
+Type: Website
+Title: Does not matter.
+Version: 0.0.7
+Imports:
+    readr,
+    blogdown,
+    here,
+    DiagrammeR

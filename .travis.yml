@@ -1,0 +1,13 @@
+language: r
+dist: trusty
+cache: packages
+before_script:
+- Rscript -e 'blogdown::install_hugo()'
+script:
+- Rscript -e 'blogdown::build_site()'
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token:
+    secure: ADokg8ulgzFba6vDeyvfjXEmEuYd/jAtY0nwGq6pqErdz5KjVXl1Q2bHqXWQ70qlqMSUofCSXPFAwxo+RD9fTUXXwvInIpIu5n+6QqQX9jKp8Crm/x6E/ppkkVPsYSb+UsdFQiq93G8J8emWenBVi34iYcWMpbSlN9oDpb/oj5VHylfsSLAAntc6qso/diE7PCJmqa4ScaNrUMMGCXU1t9GFpgUbNnBGPVyGxILv4nDl7k83hyw0vz6E0+9lCXdgvP37G6Ft5rMvlDRUatZlrKDOJaWfbC1ek7FZFpUpKSxRpCejrqOIUYWaeWfU4IZKycTBMwD0piRWNaAB9Sf5w1F+XHyE5kKH2snPR0dlbi1MiIHRyIay8ldsHCs67M4dFIIPxxy1HG1Q+05O3lw0qlpS2Z52xVoyA4PB995X/r48tqTkwL6ZLcCLLII2m0nZALsPATlo+JlQdYhJuWljhxB7rvyF6VtmlpDJuGSS2f7lxjUwHpU3dUq3nle4fgKuVfBHgtCV/0Yu1i+CWmAAh0SDZwKqP8xixWETti/orJJQ2JWLIjJShARqgpdbzYHCb88ynEpKNzYBmV6NvEIGn50Nl+v08wT4mt/s5Y9pzJQW09wMGjxYr7anMoe7pHqviLpOpugh9JOXLufRtbNJL96HrBhe3TfGR1p9XWwN8ks=
+  local_dir: public
