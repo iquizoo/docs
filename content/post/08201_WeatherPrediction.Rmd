@@ -1,0 +1,116 @@
+---
+# heading of document
+title: 天气预报员（WeatherPrediction） # Chinese name（English name）
+author: 张亮
+date: 2018-08-22 # format 2006-01-01
+# slug
+slug: 08201-weatherprediction # code-English name
+# specific parameters for current task
+code: "08201"
+sdk: 100
+# hugo taxonomy related
+tasknames: 概率分类学习范式
+categories: 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r parse-meta, include=FALSE}
+NAMES <- strsplit(rmarkdown::metadata$title, "（|）")[[1]]
+NAME_CN <- NAMES[1]
+NAME_EN <- NAMES[2]
+CODE <- rmarkdown::metadata$code
+SDK <- rmarkdown::metadata$sdk
+```
+
+# 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：测查记忆力，特别是程序性记忆能力。
+* **测查能力**：记忆力-程序记忆
+* **相关任务**：
+
+# 前端交互
+
+## 基本逻辑
+
+用户被告知屏幕上将要呈现的卡片可以预测天气是下雨还是晴朗，但是这个规则需要用户自己去根据反馈来探索。因此需要告诉用户一开始仅仅根据感觉猜测即可，后面会表现得越来越好。
+
+在每一个试次中，如图\@ref(fig:interface)所示（注意编号1-4是为了展示用，实际中不要显示），屏幕中央四个卡片可能出现的位置编号为1-4，同时卡片也编号为1-4，每张卡片只能出现在相同编号的位置上。用户需要根据卡片的呈现情况（表\@ref(tab:stimuli)中列出了所有可能的情况及其编号）来预测天气是下雨还是晴朗（使用键盘或触摸屏幕上的按钮进行操作），用户操作后需要呈现反馈信息。
+
+```{r interface, echo=FALSE, fig.align="center", fig.cap="基本界面"}
+knitr::include_graphics("/images/WeatherPrediction/interface.png")
+```
+
+## 详细说明
+
+### 测评流程
+
+在每一个试次中，依次有以下事件：
+
+1. 屏幕中央呈现卡片。卡片的形式由序列确定。卡片一直呈现在屏幕中央，并等待用户做出操作。若卡片呈现2秒后用户仍然没有操作，屏幕上方提示用户“请尽快操作”；卡片的最长呈现时间为5秒。
+1. 卡片消失。用户做出操作或者卡片达到最大呈现时间后卡片消失。
+1. 操作反馈。卡片消失后立即呈现反馈。如果用户预测正确，则反馈一张笑脸；否则，反馈一张皱眉的脸；若未操作，则反馈一张带有问号的脸。反馈呈现时间为2秒。
+1. 试次间间隔。在下一个试次开始前，有0.5秒的空白屏幕时间。
+
+### 卡片规则
+
+表\@ref(tab:stimuli)中说明了所有可能出现的卡片呈现情况的编号。0表示该卡片不呈现，1表示该卡片呈现。
+
+```{r stimuli, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "stimuli.csv")
+  ),
+  caption = "卡片模式编号"
+)
+```
+
+### 序列说明
+
+[序列](/seq/08201_WxPredict.json)包含两个字段：
+
+* `stim`：卡片呈现模式的编号。请参照表\@ref(tab:stimuli)。
+* `outcome`：当前卡片呈现模式代表的天气情况。其中：`Rain`表示下雨（&#127783;），`Sunshine`表示晴朗（&#127774;）。
+
+总计有200个试次，默认情况下将分成4个阶段完成，每个阶段完成50个。
+
+# 后台配置
+
+## 游戏参数
+
+```{r configs, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "configs.csv")
+  ),
+  caption = "配置参数总表"
+)
+```
+
+## 数据记录
+
+```{r recording-variables, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "recs.csv")
+  ),
+  caption = "原始数据变量列表"
+)
+```
+
+## 试题算分
+
+```{r sdk-score, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "sdk.csv")
+  ),
+  caption = paste0("传入参数（算分码：`", SDK, "`）")
+)
+```

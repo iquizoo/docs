@@ -65,11 +65,9 @@ SDK <- rmarkdown::metadata$sdk
 #   readr::read_csv(
 #     here::here("content", "resources", "config", NAME_EN, "recs.csv")
 #   ),
-#   caption = "原始数据变量列表[^std]"
+#   caption = "原始数据变量列表"
 # )
 ```
-
-<!-- [^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。 -->
 
 ## 试题算分
 
