@@ -1,0 +1,110 @@
+---
+# heading of document
+title: 龟兔赛跑（MotionPrediction） # Chinese name（English name）
+author: 张亮
+date: 2018-08-27 # format 2006-01-01
+# slug
+slug: 08301-motionprediction # code-English name
+# specific parameters for current task
+code: "08301"
+sdk: 205
+# hugo taxonomy related
+tasknames: 运动预测
+categories: 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r parse-meta, include=FALSE}
+NAMES <- strsplit(rmarkdown::metadata$title, "（|）")[[1]]
+NAME_CN <- NAMES[1]
+NAME_EN <- NAMES[2]
+CODE <- rmarkdown::metadata$code
+SDK <- rmarkdown::metadata$sdk
+```
+
+# 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：测查感知觉能力，特别是对运动的知觉能力。
+* **测查能力**：感知觉-运动知觉
+
+# 前端交互
+
+## 基本逻辑
+
+测评的设定是让用户预测在赛跑的乌龟和兔子谁会获胜。如图\@ref(fig:interface)（注意上方的0-1000辅助线仅用于说明，实际测评时不要展示），屏幕右侧有一条竖线是终点线，左侧有兔子和乌龟。由于兔子比乌龟跑得快，所以赛跑开始时乌龟都会比兔子更靠近终点线。每个试次中用户都会有一定的时间观察兔子和乌龟最初的赛跑过程，不等到赛跑结果出来前就要用户预测谁先跑到终点。
+
+```{r interface, echo=FALSE, message=FALSE, fig.cap="基本界面", fig.align="center", out.width="80%"}
+knitr::include_graphics("/images/MotionPrediction/interface.png")
+```
+
+## 详细说明
+
+### 流程细节
+
+每一个试次中都包含以下流程：
+
+1. 乌龟和兔子出现并开始赛跑，移动时间为1.5秒。此时屏幕右侧供选择用的按钮不出现。
+1. 乌龟和兔子消失，同时屏幕右侧供选择用的按钮出现。用户需要触摸或按键盘上对应按键（上下键）确定赛跑的胜者。最长等待用户选择的时间为1.5秒。
+1. 用户做出操作或达到最长等待时间后，呈现反馈。若用户判断正确，则呈现一张笑脸；若错误，则呈现一张皱眉的脸；若未选择，则呈现带问号的脸。呈现时间为1秒。
+1. 试次间间隔时间0.5秒内呈现空白屏幕。
+
+### 序列规则
+
+[序列](/seq/08301_MotionPrediction.json){target="_blank"}中包含以下字段：
+
+* `dist_rabbit`：起始时兔子与终点的距离。注意此处把离终点最远的位置定义为1000（如图\@ref(fig:interface)），下同。
+* `dist_tortoise`：起始时乌龟与终点的距离。
+* `winner`：本次比赛的胜者。`Rabbit`表示兔子，`Tortoise`表示乌龟。
+* `time_winner`：本次比赛胜者到达终点所需时间，单位为毫秒。
+
+在序列中只给出了胜者到达终点所需时间，所以需要注意的有两点：
+
+1. 需要根据胜者到达终点所需时间和对应的胜者来计算胜者的移动速度。
+1. 需要根据输者到达终点所需时间和对应的输者来计算输者的移动速度。输者到达终点所需时间遵循以下规则：
+    * 第一个试次输者到达终点所需时间为第一个试次的`time_winner`加上配置参数`timeInit`（默认为`500`，单位毫秒）的值。此处的`timeInit`即为输者与胜者的时间差。
+    * 从第二个试次开始，输者到达终点所需时间需根据上一个试次是否正确来确定。
+        + 若回答正确，就把上一次输者与胜者的时间差**减少100毫秒**作为本次的时间差（即难度增加）；
+        + 若回答错误，就把上一次输者与胜者的时间差**增加100毫秒**作为本次的时间差（即难度降低）；
+        + 若未作答，就把上一次输者与胜者的时间差直接作为本次的时间差（即难度不改变）。
+
+# 后台配置
+
+## 游戏参数
+
+```{r configs, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "configs.csv")
+  ),
+  caption = "配置参数总表"
+)
+```
+
+## 数据记录
+
+```{r recording-variables, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "recs.csv")
+  ),
+  caption = "原始数据变量列表"
+)
+```
+
+## 试题算分
+
+```{r sdk-score, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "sdk.csv")
+  ),
+  caption = paste0("传入参数（算分码：`", SDK, "`）")
+)
+```
