@@ -1,0 +1,226 @@
+---
+# heading of document
+title: 方向临摹（JLO） # Chinese name（English name）
+author: 张亮
+date: 2018-09-10 # format 2006-01-01
+# slug
+slug: 08401-jlo # code-English name
+# specific parameters for current task
+code: "08401"
+sdk:
+# hugo taxonomy related
+tasknames: 朝向判断
+categories: 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#前端交互">前端交互</a><ul>
+<li><a href="#基本逻辑">基本逻辑</a></li>
+<li><a href="#详细说明">详细说明</a></li>
+</ul></li>
+<li><a href="#后台配置">后台配置</a><ul>
+<li><a href="#游戏参数">游戏参数</a></li>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：方向临摹</li>
+<li><strong>英文名称</strong>：JLO</li>
+<li><strong>题目编号</strong>：08401</li>
+<li><strong>任务描述</strong>：测查感知力，特别是视觉感知方向角度的能力。</li>
+<li><strong>测查能力</strong>：感知力-视知觉</li>
+<li><strong>相关任务</strong>：</li>
+</ul>
+</div>
+<div id="前端交互" class="section level1">
+<h1>前端交互</h1>
+<div id="基本逻辑" class="section level2">
+<h2>基本逻辑</h2>
+<p>基本界面如图<a href="#fig:interface">1</a>：屏幕上有两条线段，每个试次中，用户都需要调节其中一条线段（红色线段）的朝向使其和另一条线段（黑色线段）保持一致。</p>
+<div class="figure" style="text-align: center"><span id="fig:interface"></span>
+<img src="/images/JLO/interface.png" alt="基本界面"  />
+<p class="caption">
+图1: 基本界面
+</p>
+</div>
+</div>
+<div id="详细说明" class="section level2">
+<h2>详细说明</h2>
+<p>每一个试次中，都包含以下流程：</p>
+<ol style="list-style-type: decimal">
+<li>两条线段出现，同时下方呈现左旋转和右旋转按钮，分别表示逆时针旋转和顺时针旋转（见图<a href="#fig:interface">1</a>）。两条线段中一条为黑色，另一条为红色。其中，
+<ul>
+<li>两条线段位置随机，但是中点的距离不变（界面设计时设置一个合适的值）。</li>
+<li>黑色线段不能旋转，而红色线段可以操作旋转。</li>
+<li>黑色线段长度固定（界面设计时设置一个合适的值），而红色线段的长度可变（由序列设置）。</li>
+</ul></li>
+<li>用户使用鼠标点击（或者触摸）下方的按钮以旋转红色线段。用户每次操作都会将线段旋转6°。旋转过一次之后下方就会出现“完成”按钮，且当用户确定自己旋转到两条线段平行的位置时，需单击（或者触摸）“完成”按钮方可结束本试次。注意两条线段的夹角和相对方向由序列设置。</li>
+<li>用户点击“完成”后，0.5秒的短暂空白屏幕后，进入下一个试次。</li>
+</ol>
+<p><a href="/seq/08401_JLO.json" target="_blank">序列</a>中包含以下信息：</p>
+<ul>
+<li><code>rotation</code>：用户实际需要旋转的次数。注意线段<strong>每次旋转6°</strong>。例如：假设需要旋转9次，则线段间的夹角则为<span class="math inline">\(6^{\circ}\times9=54^{\circ}\)</span>。</li>
+<li><code>direction</code>：用户实际需要旋转的方向。使用<code>Left</code>和<code>Right</code>分别表示左、右按钮，且左按钮表示逆时针旋转，右按钮表示顺时针旋转（见图<a href="#fig:interface">1</a>）。结合<code>rotation</code>共同决定了红色线段和黑色线段的实际相对方向。</li>
+<li><code>length</code>：红色线段相对黑色线段的长度。注意黑色线段的长度不会变化。</li>
+</ul>
+</div>
+</div>
+<div id="后台配置" class="section level1">
+<h1>后台配置</h1>
+<div id="游戏参数" class="section level2">
+<h2>游戏参数</h2>
+<table>
+<caption><span id="tab:configs">表1: </span>配置参数总表</caption>
+<thead>
+<tr class="header">
+<th align="left">参数类别</th>
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="center">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>iti</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">500</td>
+<td align="left">试次间间隔时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激序列</td>
+<td align="left"><code>endMethod</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">2</td>
+<td align="left">题目的结束方式（1=按时间结束，2=按刺激个数结束）</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激序列</td>
+<td align="left"><code>duration</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">30000</td>
+<td align="left">题目整体持续时间（<code>endMethod</code>=1时生效，单位毫秒）</td>
+</tr>
+<tr class="even">
+<td align="left">刺激序列</td>
+<td align="left"><code>quantity</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">32</td>
+<td align="left">刺激总个数（<code>endMethod</code>=2时需全部做完）</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackCorrectError</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">控制正式测评时候是（1）否（0）需要反馈正确与错误</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackNoResponse</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">控制正式测评时候是（1）否（0）需要提示用户未操作</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackVisual</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出视觉反馈</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<table>
+<caption><span id="tab:recording-variables">表2: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Rotation</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">实际所需旋转次数，和序列中<code>rotation</code>一致。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Direction</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">实际所需旋转方向，<code>Left</code>表示左，<code>Right</code>表示右，和序列中<code>direction</code>一致。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Length</code></td>
+<td align="left"><code>float</code></td>
+<td align="left">红色线段相对黑色线段的长度，和序列中<code>length</code>一致。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户的实际操作（Response），记录用户每一次的操作，使用<code>Left</code>和<code>Right</code>，且用逗号分隔不同操作，例如<code>'Left,Right,Left'</code>。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误（ACCuracy）：1=正确，0=错误。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（单位：毫秒）（Response Time），若未操作，则记为0。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="试题算分" class="section level2">
+<h2>试题算分</h2>
+<table>
+<caption><span id="tab:sdk-score">表3: </span>传入参数（算分码：``）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>average</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确试次的平均反应时间</td>
+</tr>
+<tr class="even">
+<td align="left"><code>rate</code></td>
+<td align="left"><code>float</code></td>
+<td align="left">整个游戏的正确率</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
