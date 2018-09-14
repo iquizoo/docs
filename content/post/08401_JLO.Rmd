@@ -39,7 +39,11 @@ SDK <- rmarkdown::metadata$sdk
 
 ## 基本逻辑
 
-待完善。
+基本界面如图\@ref(fig:interface)：屏幕上有两条线段，每个试次中，用户都需要调节其中一条线段（红色线段）的朝向使其和另一条线段（黑色线段）保持一致。
+
+```{r interface, fig.cap="基本界面", fig.align="center", echo=FALSE}
+knitr::include_graphics(path = "/images/JLO/interface.png")
+```
 
 ## 详细说明
 
