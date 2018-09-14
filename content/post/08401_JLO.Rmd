@@ -1,6 +1,6 @@
 ---
 # heading of document
-title: 方向测试仪（JLO） # Chinese name（English name）
+title: 方向临摹（JLO） # Chinese name（English name）
 author: 张亮
 date: 2018-09-10 # format 2006-01-01
 # slug
