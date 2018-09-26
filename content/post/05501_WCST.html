@@ -273,7 +273,7 @@ output:
 <h3>卡片呈现</h3>
 <p>整个测评过程中，四张备选卡片始终呈现在页面下方。单个试次的卡片呈现过程如下：</p>
 <ol style="list-style-type: decimal">
-<li><strong>卡片出现</strong>。但张卡片的<strong>最大呈现时间</strong>为<code>5</code>秒，用户必须在卡片出现后的<code>5</code>秒内尽快作答（使用鼠标点击或触碰所要选择的卡片）。</li>
+<li><strong>卡片出现</strong>。单张卡片的<strong>最大呈现时间</strong>为<code>5</code>秒，用户必须在卡片出现后的<code>5</code>秒内尽快作答（使用鼠标点击或触碰所要选择的卡片）。</li>
 <li><strong>反馈</strong>。用户作答或达到最大呈现时间后，卡片立即消失，进入长达<code>1</code>秒的反馈时间，告诉用户回答正确还是错误，伴有声音反馈和视觉反馈。</li>
 <li><strong>空白</strong>。反馈结束后，界面上只留下备选卡片（此时不允许对备选卡片进行操作），经过<code>500</code>毫秒后，进入下一个试次。</li>
 </ol>
@@ -427,12 +427,17 @@ output:
 <tr class="odd">
 <td align="left"><code>TE</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">用户累计犯错次数</td>
+<td align="left">用户累计犯错次数（Total Errors）</td>
 </tr>
 <tr class="even">
+<td align="left"><code>NC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户最终完成的类别数目（Number of Categories）</td>
+</tr>
+<tr class="odd">
 <td align="left"><code>PE</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">固着错误次数，即在规则修改后，用户仍然使用前一个规则进行判断的次数</td>
+<td align="left">在规则修改后，用户仍然使用前一个规则进行判断的次数（转换规则后的第一次判断除外，Perserverative Errors）</td>
 </tr>
 </tbody>
 </table>
