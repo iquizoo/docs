@@ -1,4 +1,4 @@
 ﻿参数名称,类型,说明
 `TE`,`int`,用户累计犯错次数（Total Errors）
 `NC`,`int`,用户最终完成的类别数目（Number of Categories）
-`PE`,`int`,在规则修改后，用户仍然使用前一个规则进行判断的次数（转换规则后的第一次判断除外，Perserverative Errors）
+`PE`,`int`,在规则修改后，用户仍然使用前一个规则进行判断的次数，即固着错误（Perserverative Errors）
