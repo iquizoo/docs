@@ -384,22 +384,22 @@ output:
 <tr class="odd">
 <td align="left"><code>SID</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">卡片编号（Stimulus IDentity），跟序列中一致，请参考表<a href="#tab:stim-test">2</a></td>
+<td align="left">测试卡片编号（Stimulus IDentity），跟序列中一致，请参考表<a href="#tab:stim-test">2</a></td>
 </tr>
 <tr class="even">
 <td align="left"><code>SColor</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">卡片颜色，参考表<a href="#tab:stim-test">2</a></td>
+<td align="left">测试卡片颜色，参考表<a href="#tab:stim-test">2</a></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>SShape</code></td>
 <td align="left"><code>char</code></td>
-<td align="left">卡片形状，参考表<a href="#tab:stim-test">2</a></td>
+<td align="left">测试卡片形状，参考表<a href="#tab:stim-test">2</a></td>
 </tr>
 <tr class="even">
 <td align="left"><code>SNumber</code></td>
 <td align="left"><code>int</code></td>
-<td align="left">卡片项目数目，参考表<a href="#tab:stim-test">2</a></td>
+<td align="left">测试卡片项目数目，参考表<a href="#tab:stim-test">2</a></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>Rule</code></td>
@@ -407,11 +407,16 @@ output:
 <td align="left">当前匹配特征，即“颜色”、“形状”或“数目”</td>
 </tr>
 <tr class="even">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户实际选择的卡片（Response），<code>A</code>-<code>D</code>中的一个，参考表<a href="#tab:stim-opts">1</a></td>
+</tr>
+<tr class="odd">
 <td align="left"><code>ACC</code></td>
 <td align="left"><code>int</code></td>
 <td align="left">正确或错误（ACCuracy），0=错误，1=正确，-1=未操作</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>RT</code></td>
 <td align="left"><code>int</code></td>
 <td align="left">用户完成操作所需时间（单位：毫秒）（Response Time），若未完成操作，则记为0</td>
