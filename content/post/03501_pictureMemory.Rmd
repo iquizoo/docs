@@ -16,7 +16,7 @@ output:
 NAME_CN <- "图片记忆"
 NAME_EN <- "pictureMemory"
 CODE <- "03501"
-SDK <- 102
+SDK <- 105
 VER <- "V4"
 ```
 
@@ -105,9 +105,9 @@ knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_E
              caption = "原始数据变量列表")
 ```
 
-# 试题算分（待定）
+# 试题算分
 
 ```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-# knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_EN, "sdk.csv")),
-#              caption = paste0("传入参数（算分码：`", SDK, "`）"))
+knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_EN, "sdk.csv")),
+             caption = paste0("传入参数（算分码：`", SDK, "`）"))
 ```
