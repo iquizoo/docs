@@ -7,7 +7,7 @@ date: 2018-09-10 # format 2006-01-01
 slug: 08401-jlo # code-English name
 # specific parameters for current task
 code: "08401"
-sdk:
+sdk: 100
 # hugo taxonomy related
 tasknames: 朝向判断
 categories: 文档
