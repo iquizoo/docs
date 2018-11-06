@@ -13,6 +13,7 @@ tasknames: "选择反应时"
 categories:
 - 文档
 - C2框架
+- 幼儿
 # blogdown output
 output:
   blogdown::html_page:
