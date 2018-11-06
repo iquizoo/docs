@@ -2,7 +2,7 @@
 # heading of document
 title: 寻找物体（SearchObject） # Chinese name（English name）
 author: 张亮
-date: 2018-11-6 # format 2006-01-01
+date: 2018-11-06 # format 2006-01-01
 # slug
 slug: 03703-searchobject # code-English name
 # specific parameters for current task
