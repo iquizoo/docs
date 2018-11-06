@@ -1,0 +1,3 @@
+﻿参数名称,类型,说明
+`length`,`int array`,用户做过的所有长度
+`ACC`,`float array`,对应长度的正确率

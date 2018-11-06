@@ -1,0 +1,123 @@
+---
+# heading of document
+title: 分门别类（Classification） # Chinese name（English name）
+author: 张亮
+date: 2018-11-06 # format 2006-01-01
+# slug
+slug: 00603-classification # code-English name
+# specific parameters for current task
+code: "00603"
+sdk: 200
+# hugo taxonomy related
+tasknames: "选择反应时"
+categories:
+- 文档
+- C2框架
+- 幼儿
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#前端交互">前端交互</a></li>
+<li><a href="#后台配置">后台配置</a><ul>
+<li><a href="#游戏参数">游戏参数</a></li>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：分门别类</li>
+<li><strong>英文名称</strong>：Classification</li>
+<li><strong>题目编号</strong>：00603</li>
+<li><strong>任务描述</strong>：</li>
+<li><strong>测查能力</strong>：</li>
+<li><strong>相关任务</strong>：</li>
+</ul>
+</div>
+<div id="前端交互" class="section level1">
+<h1>前端交互</h1>
+<p>以梅鹏提供的玩法为准。</p>
+</div>
+<div id="后台配置" class="section level1">
+<h1>后台配置</h1>
+<div id="游戏参数" class="section level2">
+<h2>游戏参数</h2>
+<p>目前不设置配置参数。</p>
+</div>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<table>
+<caption><span id="tab:recording-variables">表1: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>STIM</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">刺激名称（STIMulus）。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>CResp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">正确反应（Correct Response），<code>Left</code>（左）或者<code>Right</code>（右）。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户的实际反应（Response），<code>Left</code>（左）、<code>Right</code>（右）或者<code>None</code>（未操作）。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误(ACCuracy)，0=错误，1=正确，-1=未完成操作。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（Response Time，单位：毫秒），若未完成操作，则记为0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="试题算分" class="section level2">
+<h2>试题算分</h2>
+<table>
+<caption><span id="tab:sdk-score">表2: </span>传入参数（算分码：<code>200</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>average</code></td>
+<td align="left"><code>int</code></td>
+<td align="left"><strong>正确</strong>操作试次的平均反应时间，单位：毫秒</td>
+</tr>
+<tr class="even">
+<td align="left"><code>rate</code></td>
+<td align="left"><code>float</code></td>
+<td align="left">整体作答正确率，未作答算作错误</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
