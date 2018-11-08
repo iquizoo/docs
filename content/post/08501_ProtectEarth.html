@@ -1,0 +1,119 @@
+---
+# heading of document
+title: 保卫地球（ProtectEarth） # Chinese name（English name）
+author: 张亮
+date: 2018-11-06 # format 2006-01-01
+# slug
+slug: 08501-protectearth # code-English name
+# specific parameters for current task
+code: "08501"
+sdk: 203
+# hugo taxonomy related
+tasknames: 问题解决
+categories:
+  - 文档
+  - C2框架
+  - 幼儿
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#前端交互">前端交互</a></li>
+<li><a href="#后台配置">后台配置</a><ul>
+<li><a href="#游戏参数">游戏参数</a></li>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：保卫地球</li>
+<li><strong>英文名称</strong>：ProtectEarth</li>
+<li><strong>题目编号</strong>：08501</li>
+<li><strong>任务描述</strong>：测查思维力，特别是面对复杂问题进行深入思考并作出解答的能力。</li>
+<li><strong>测查能力</strong>：思维力-思维深刻性</li>
+<li><strong>相关任务</strong>：暂无</li>
+</ul>
+</div>
+<div id="前端交互" class="section level1">
+<h1>前端交互</h1>
+<p>以<strong>Peak</strong>的玩法为准。</p>
+</div>
+<div id="后台配置" class="section level1">
+<h1>后台配置</h1>
+<div id="游戏参数" class="section level2">
+<h2>游戏参数</h2>
+<p>目前不设置配置参数。</p>
+</div>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<p>对于每一次陨石对地球的冲击，需记录以下数据：</p>
+<table>
+<caption><span id="tab:recording-variables">表1: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Number</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">当前陨石的顺序</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Hit</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">当前陨石是（1）否（0）会击中地球</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户是（1）否（0）成功避免当前陨石集中地球</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="试题算分" class="section level2">
+<h2>试题算分</h2>
+<table>
+<caption><span id="tab:sdk-score">表2: </span>传入参数（算分码：<code>203</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>rightCnt</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">作答正确的个数</td>
+</tr>
+<tr class="even">
+<td align="left"><code>wrongCnt</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">作答错误的个数</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>allTime</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">完成测评的累计消耗时间，单位：毫秒</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

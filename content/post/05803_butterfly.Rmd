@@ -7,7 +7,7 @@ code: "05803"
 tasknames: "复杂广度任务"
 categories:
 - 文档
-- C2游戏
+- C2框架
 output:
   blogdown::html_page:
     toc: true

@@ -1,18 +1,19 @@
 ---
 # heading of document
-title: 选择速度（discernReactiveChild） # Chinese name（English name）
+title: 分门别类（Classification） # Chinese name（English name）
 author: 张亮
-date: 2018-07-31 # format 2006-01-01
+date: 2018-11-06 # format 2006-01-01
 # slug
-slug: 00602-discernReactiveChild # code-English name
+slug: 00603-classification # code-English name
 # specific parameters for current task
-code: "00602"
+code: "00603"
 sdk: 200
 # hugo taxonomy related
-tasknames: 选择反应时
+tasknames: "选择反应时"
 categories:
-  - 文档
-  - 数据记录优化
+- 文档
+- C2框架
+- 幼儿
 # blogdown output
 output:
   blogdown::html_page:
@@ -33,23 +34,19 @@ SDK <- rmarkdown::metadata$sdk
 * **显示名称**：`r NAME_CN`
 * **英文名称**：`r NAME_EN`
 * **题目编号**：`r CODE`
-* **任务描述**：测查反应力，特别是指个体对外界和头脑内部的不同信号快速做出相应反应的能力。
-* **测查能力**：反应力-反应速度
-* **相关任务**：[超级秒表](`r blogdown::shortcode("relref", "01201_PVTAdult.html")`)
+* **任务描述**：
+* **测查能力**：
+* **相关任务**：
 
 # 前端交互
 
-## 基本逻辑
-
-待完善。
-
-## 详细说明
-
-待完善。
+以梅鹏提供的玩法为准。
 
 # 后台配置
 
 ## 游戏参数
+
+目前不设置配置参数。
 
 ```{r configs, echo=FALSE, message=FALSE}
 # knitr::kable(
@@ -67,19 +64,17 @@ knitr::kable(
   readr::read_csv(
     here::here("content", "resources", "config", NAME_EN, "recs.csv")
   ),
-  caption = "原始数据变量列表[^std]"
+  caption = "原始数据变量列表"
 )
 ```
-
-[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。
 
 ## 试题算分
 
 ```{r sdk-score, echo=FALSE, message=FALSE}
-# knitr::kable(
-#   readr::read_csv(
-#     here::here("content", "resources", "config", NAME_EN, "sdk.csv")
-#   ),
-#   caption = paste0("传入参数（算分码：`", SDK, "`）")
-# )
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "sdk.csv")
+  ),
+  caption = paste0("传入参数（算分码：`", SDK, "`）")
+)
 ```
