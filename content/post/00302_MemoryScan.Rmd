@@ -7,7 +7,7 @@ date: 2018-11-05 # format 2006-01-01
 slug: 00302-memoryscan # code-English name
 # specific parameters for current task
 code: '00302'
-sdk: 301
+sdk: 999
 # hugo taxonomy related
 tasknames: "短时记忆"
 categories:
