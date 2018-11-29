@@ -1,0 +1,7 @@
+﻿名称,类型,说明
+`Rotation`,`int`,实际所需旋转次数，和序列中`rotation`一致。
+`Direction`,`char`,实际所需旋转方向，`Left`表示左，`Right`表示右，和序列中`direction`一致。
+`Length`,`float`,红色线段相对黑色线段的长度，和序列中`length`一致。
+`Resp`,`char`,"用户的实际操作（Response），记录用户每一次的操作，使用`Left`和`Right`，且用逗号分隔不同操作，例如`'Left,Right,Left'`。"
+`ACC`,`int`,正确或错误（ACCuracy）：1=正确，0=错误。
+`RT`,`int`,用户完成操作所需时间（单位：毫秒）（Response Time），若未操作，则记为0。
