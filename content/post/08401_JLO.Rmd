@@ -1,0 +1,97 @@
+---
+# heading of document
+title: 方向临摹（JLO） # Chinese name（English name）
+author: 张亮
+date: 2018-09-10 # format 2006-01-01
+# slug
+slug: 08401-jlo # code-English name
+# specific parameters for current task
+code: "08401"
+sdk: 100
+# hugo taxonomy related
+tasknames: 朝向判断
+categories: 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r parse-meta, include=FALSE}
+NAMES <- strsplit(rmarkdown::metadata$title, "（|）")[[1]]
+NAME_CN <- NAMES[1]
+NAME_EN <- NAMES[2]
+CODE <- rmarkdown::metadata$code
+SDK <- rmarkdown::metadata$sdk
+```
+
+# 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：测查感知力，特别是视觉感知方向角度的能力。
+* **测查能力**：感知力-视知觉
+
+# 前端交互
+
+## 基本逻辑
+
+基本界面如图\@ref(fig:interface)：屏幕上有两条线段，每个试次中，用户都需要调节其中一条线段（红色线段）的朝向使其和另一条线段（黑色线段）保持一致。
+
+```{r interface, fig.cap="基本界面", fig.align="center", echo=FALSE}
+knitr::include_graphics(path = "/images/JLO/interface.png")
+```
+
+## 详细说明
+
+每一个试次中，都包含以下流程：
+
+1. 两条线段出现，同时下方呈现左旋转和右旋转按钮，分别表示逆时针旋转和顺时针旋转（见图\@ref(fig:interface)）。两条线段中一条为黑色，另一条为红色。其中，
+    * 两条线段位置随机，但是中点的距离不变（界面设计时设置一个合适的值）。
+    * 黑色线段不能旋转，而红色线段可以操作旋转。
+    * 黑色线段长度固定（界面设计时设置一个合适的值），而红色线段的长度可变（由序列设置）。
+1. 用户使用鼠标点击（或者触摸）下方的按钮以旋转红色线段。用户每次操作都会将线段旋转6&deg;。旋转过一次之后下方就会出现“完成”按钮，且当用户确定自己旋转到两条线段平行的位置时，需单击（或者触摸）“完成”按钮方可结束本试次。注意两条线段的夹角和相对方向由序列设置。
+1. 用户点击“完成”后，0.5秒的短暂空白屏幕后，进入下一个试次。
+
+[序列](`r stringr::str_glue("/seq/{CODE}_{NAME_EN}.json")`){target="_blank"}中包含以下信息：
+
+* `rotation`：用户实际需要旋转的次数。注意线段**每次旋转6&deg;**。例如：假设需要旋转9次，则线段间的夹角则为$6^{\circ}\times9=54^{\circ}$。
+* `direction`：用户实际需要旋转的方向。使用`Left`和`Right`分别表示左、右按钮，且左按钮表示逆时针旋转，右按钮表示顺时针旋转（见图\@ref(fig:interface)）。结合`rotation`共同决定了红色线段和黑色线段的实际相对方向。
+* `length`：红色线段相对黑色线段的长度。注意黑色线段的长度不会变化。
+
+# 后台配置
+
+## 游戏参数
+
+```{r configs, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "configs.csv")
+  ),
+  caption = "配置参数总表"
+)
+```
+
+## 数据记录
+
+```{r recording-variables, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "recs.csv")
+  ),
+  caption = "原始数据变量列表"
+)
+```
+
+## 试题算分
+
+```{r sdk-score, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("content", "resources", "config", NAME_EN, "sdk.csv")
+  ),
+  caption = paste0("传入参数（算分码：`", SDK, "`）")
+)
+```
