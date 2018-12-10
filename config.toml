@@ -41,17 +41,21 @@ footnotereturnlinkcontents = "↩"
     url = "/tasknames/"
     weight = 4
 [[menu.main]]
+    name = "算分说明"
+    url = "/scoring/"
+    weight = 5
+[[menu.main]]
     name = "术语"
     url = "/glossary/"
-    weight = 5
+    weight = 6
 [[menu.main]]
     name = "标准"
     url = "/standard/"
-    weight = 6
+    weight = 7
 [[menu.main]]
     name = "关于"
     url = "/about/"
-    weight = 7
+    weight = 8
 
 [params]
     description = "A website built through Hugo and blogdown."

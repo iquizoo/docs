@@ -1,0 +1,35 @@
+digraph scoring {
+    /* attributes */
+    node [shape = box]
+
+    /* nodes */
+    S [label = "总分"]
+    A [label = "能力1"]
+    B [label = "能力2"]
+    C [label = "能力3"]
+    A1 [label = "子能力1"]
+    A2 [label = "子能力2"]
+    B1 [label = "子能力3"]
+    B2 [label = "子能力4"]
+    C1 [label = "子能力5"]
+    C2 [label = "子能力6"]
+    T1 [label = "题1"]
+    T2 [label = "题2"]
+    T3 [label = "题3"]
+    T4 [label = "题4"]
+    T5 [label = "题5"]
+    T6 [label = "题6"]
+    T7 [label = "题7"]
+    T8 [label = "题8"]
+
+    S -> A, B, C [label = "能力权重"]
+    A -> A1, A2 [label = "子能力权重"]
+    B -> B1, B2 [label = "子能力权重"]
+    C -> C1, C2 [label = "子能力权重"]
+    A1 -> T1, T2 [label = "题目权重"]
+    A2 -> T3 [label = "题目权重"]
+    B1 -> T4, T5 [label = "题目权重"]
+    B2 -> T6 [label = "题目权重"]
+    C1 -> T7 [label = "题目权重"]
+    C2 -> T8 [label = "题目权重"]
+}
