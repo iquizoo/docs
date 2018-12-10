@@ -35,7 +35,7 @@ SDK <- rmarkdown::metadata$sdk
 * **题目编号**：`r CODE`
 * **任务描述**：测查反应力，特别是指个体对外界和头脑内部的不同信号快速做出相应反应的能力。
 * **测查能力**：反应力-反应速度
-* **相关任务**：[超级秒表](`r blogdown::shortcode("relref", "01201_PVTAdult.html")`)
+* **相关任务**：[超级秒表](`r blogdown::shortcode("relref", "01201_PVTAdult")`)
 
 # 前端交互
 
@@ -71,7 +71,7 @@ knitr::kable(
 )
 ```
 
-[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。
+[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard")`)。
 
 ## 试题算分
 

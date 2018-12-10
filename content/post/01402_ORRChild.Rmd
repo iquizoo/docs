@@ -35,7 +35,7 @@ SDK <- rmarkdown::metadata$sdk
 * **题目编号**：`r CODE`
 * **任务描述**：测查注意力，特别是个体把注意分配在两种或者两种以上活动的能力。
 * **测查能力**：注意力-分配注意
-* **相关任务**：[分配注意初级](`r blogdown::shortcode("relref", "01401_DRRChild.html")`)
+* **相关任务**：[分配注意初级](`r blogdown::shortcode("relref", "01401_DRRChild")`)
 
 # 前端交互
 
@@ -71,7 +71,7 @@ knitr::kable(
 )
 ```
 
-[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。
+[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard")`)。
 
 ## 试题算分
 

@@ -87,7 +87,7 @@ knitr::kable(
 )
 ```
 
-[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。
+[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard")`)。
 
 ## 试题算分
 

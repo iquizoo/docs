@@ -35,7 +35,7 @@ SDK <- rmarkdown::metadata$sdk
 * **题目编号**：`r CODE`
 * **任务描述**：测查自控力，特别是个体连续更新头脑中的信息的能力
 * **测查能力**：自控力-信息更新
-* **相关任务**：[数字魔法师初级](`r blogdown::shortcode("relref", "02002_digitalWorkOne.html")`)。
+* **相关任务**：[数字魔法师初级](`r blogdown::shortcode("relref", "02002_digitalWorkOne")`)。
 
 # 前端交互
 
@@ -71,7 +71,7 @@ knitr::kable(
 )
 ```
 
-[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。
+[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard")`)。
 
 ## 试题算分
 

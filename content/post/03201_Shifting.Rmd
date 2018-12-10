@@ -23,7 +23,7 @@ VER <- "V4"
 * **题目编号**：`r CODE`
 * **任务描述**：测查思维力，特别是灵活切换思维方式的能力。
 * **测查能力**：思维力-思维灵活性
-* **相关任务**：[反应转换](`r blogdown::shortcode("relref", "03202_Shifting2.html")`)。本题目是反应转换的简化版本，推荐应用于1-4年级。
+* **相关任务**：[反应转换](`r blogdown::shortcode("relref", "03202_Shifting2")`)。本题目是反应转换的简化版本，推荐应用于1-4年级。
 
 # 交互界面
 
@@ -77,7 +77,7 @@ knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_E
         - 保证任务类型、切换条件、正确操作相互均衡。
         - 保证刺激在不同的任务类型中比例一致。
 
-* 序列配置（参考[标准](`r blogdown::shortcode("relref", "standard.html")`)中关于格式的说明）
+* 序列配置（参考[标准](`r blogdown::shortcode("relref", "standard")`)中关于格式的说明）
     + **注意**：本题目的第一个试次是一个“填充”试次，因此若设试次数目为$n$时，实际需要完成的试次数目为$n + 1$。在序列的配置标准中也是如此，即`length`为$n$序列中，`stim`个数都是$n + 1$。
     + 数组中每一个元素都是一个`json`对象，包含六个`名称/值(name/value)`配对，分别是
         - `length`：表示序列的长度
@@ -98,7 +98,7 @@ knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_E
 * 题目结果显示
     + 显示正确率和平均正确反应时间
     + 展示标准分数和超越百分比
-* 提交原始数据如下表（参考[标准](`r blogdown::shortcode("relref", "standard.html")`)中关于格式的说明）
+* 提交原始数据如下表（参考[标准](`r blogdown::shortcode("relref", "standard")`)中关于格式的说明）
 
 ```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_EN, "recs.csv")),

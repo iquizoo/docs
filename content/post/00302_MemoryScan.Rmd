@@ -36,7 +36,7 @@ SDK <- rmarkdown::metadata$sdk
 * **题目编号**：`r CODE`
 * **任务描述**：测查记忆力，特别是个体的空间短时记忆力
 * **测查能力**：记忆力-短时记忆
-* **相关任务**：[位置记忆](`r blogdown::shortcode("relref", "00301_spatialSpan.html")`)
+* **相关任务**：[位置记忆](`r blogdown::shortcode("relref", "00301_spatialSpan")`)
 
 # 前端交互
 
