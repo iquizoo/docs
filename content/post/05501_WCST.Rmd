@@ -51,7 +51,7 @@ knitr::include_graphics("/images/WCST/interface.png")
 ```{r stim-opts, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "stim_opts.csv")
+    here::here("R", "config", NAME_EN, "stim_opts.csv")
   ),
   caption = "备选卡片特征列表"
 )
@@ -66,7 +66,7 @@ knitr::kable(
 ```{r stim-test, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "stim_test.csv")
+    here::here("R", "config", NAME_EN, "stim_test.csv")
   ),
   caption = "测试卡片特征一览表"
 )
@@ -102,7 +102,7 @@ knitr::kable(
 ```{r configs, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "configs.csv")
+    here::here("R", "config", NAME_EN, "configs.csv")
   ),
   caption = "配置参数总表"
 )
@@ -113,7 +113,7 @@ knitr::kable(
 ```{r recording-variables, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "recs.csv")
+    here::here("R", "config", NAME_EN, "recs.csv")
   ),
   caption = "原始数据变量列表[^std]"
 )
@@ -126,7 +126,7 @@ knitr::kable(
 ```{r sdk-score, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "sdk.csv")
+    here::here("R", "config", NAME_EN, "sdk.csv")
   ),
   caption = paste0("传入参数（算分码：`", SDK, "`）")
 )

@@ -34,7 +34,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```{r}
 DiagrammeR::grViz(
-  here::here("content", "resources", "config", "scoring.gv")
+  here::here("R", "config", "scoring.gv")
 )
 ```
 

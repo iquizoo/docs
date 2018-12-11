@@ -55,7 +55,7 @@ SDK <- 999
 # 配置参数
 
 ```{r configs, echo=FALSE, message=FALSE, warning=FALSE}
-knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_EN, "configs.csv")),
+knitr::kable(readr::read_csv(here::here("R", "config", NAME_EN, "configs.csv")),
              caption = "配置参数总表")
 ```
 
@@ -64,13 +64,13 @@ knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_E
 提交原始数据如表\@ref(tab:recording-variables)（请参考[标准](`r blogdown::shortcode("relref", "standard")`)）
 
 ```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
-knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_EN, "recs.csv")),
+knitr::kable(readr::read_csv(here::here("R", "config", NAME_EN, "recs.csv")),
              caption = "原始数据变量列表")
 ```
 
 # 试题算分
 
 ```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_EN, "sdk.csv")),
+knitr::kable(readr::read_csv(here::here("R", "config", NAME_EN, "sdk.csv")),
              caption = paste0("传入参数（算分码：`", SDK, "`）"))
 ```

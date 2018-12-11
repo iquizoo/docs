@@ -8,7 +8,7 @@ title: 算分流程
 <script src="/rmarkdown-libs/grViz-binding/grViz.js"></script>
 
 
-<div class="section level1">
+<div id="section" class="section level1">
 <h1>概述</h1>
 <p>需要区分两种算分：</p>
 <ol style="list-style-type: decimal">
@@ -16,7 +16,7 @@ title: 算分流程
 <li>能力和试卷的算分</li>
 </ol>
 <p>测评题目算分是能力和试卷算分的基础，它们有着完全不同的计算方式。下面详细说明。</p>
-<div class="section level2">
+<div id="section-1" class="section level2">
 <h2>测评题目算分</h2>
 <p>测评题目算分是所有算分的基础。单个题目有两个最终分数，即<strong>原始分</strong>和<strong>标准分</strong>。</p>
 <ul>
@@ -31,12 +31,12 @@ title: 算分流程
 </dd>
 </dl></li>
 </ul>
-<div class="section level3">
+<div id="section-2" class="section level3">
 <h3>注意</h3>
 <p>由于原始分将被引入报告中，而根据科学研究结果计算出的原始分有很大的变异性，所以需要将这个分数转变到一个标准的尺度上（目前定为0-1000）以便于用户的阅读。转换方式为：<strong>（原始分 - 题目最低分数）/（题目最高分数 - 题目最低分数） * 1000</strong>。</p>
 </div>
 </div>
-<div class="section level2">
+<div id="section-3" class="section level2">
 <h2>能力和试卷得分</h2>
 <p>简而言之，能力和试卷得分是试卷中对应题目的标准分的<a href="https://baike.baidu.com/item/加权平均值"><strong>加权平均</strong></a>。为了简单起见，下面我们以一个包含3个能力，每个能力包含2个子能力、每个子能力包含1-2个测评题目的试卷为例子（如下图为结构）进行说明。</p>
 <div id="htmlwidget-1" style="width:672px;height:480px;" class="grViz html-widget"></div>
@@ -44,7 +44,7 @@ title: 算分流程
 <p>从图中可以看出来，配置试卷的权重时会有三种权重，即<strong>能力权重</strong>、<strong>子能力权重</strong>和<strong>题目权重</strong>。子能力得分是相应子能力的题目得分的加权平均，例如：</p>
 <p><span class="math display">\[ 子能力1的得分 = \frac{题1\times题1的权重 + 题2\times题2的权重}{题1的权重 + 题2的权重} \]</span></p>
 <p>同样的能力得分则是相应子能力得分的加权平均，而试卷的总分则是试卷中所有能力得分的加权平均。</p>
-<div id="-1" class="section level3">
+<div id="section-4" class="section level3">
 <h3>注意</h3>
 <p>值得一提的是，如果部分题目、部分子能力或者部分能力有分数缺失的情况，计算分数时需要进行特殊处理。目前的方法是，在加权平均时直接去掉缺失的题目、子能力或者能力的得分（即修改权重为0），避免最后的分数过低。</p>
 </div>
