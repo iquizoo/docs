@@ -1,0 +1,115 @@
+---
+title: 太空飞船（Flanker）
+author: 张亮
+date: 2018-03-02
+slug: 00102-flanker
+code: "00102"
+tasknames: "侧抑制任务"
+categories:
+- 幼儿
+- C2框架
+---
+
+
+
+<div id="section" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：方向达人</li>
+<li><strong>英文名称</strong>：Flanker</li>
+<li><strong>题目编号</strong>：00102</li>
+<li><strong>任务描述</strong>：测查自控力，特别是排除干扰的能力。</li>
+<li><strong>测查能力</strong>：自控力-控制冲动</li>
+<li><strong>相关任务</strong>：<a href="{{% relref "00101_Flanker" %}}">方向达人</a>。本题目与该题目属于同种题目，且本题目适用于10岁及10岁以下儿童。</li>
+</ul>
+</div>
+<div id="section-1" class="section level1">
+<h1>前端交互</h1>
+<p>敬请期待。</p>
+</div>
+<div id="section-2" class="section level1">
+<h1>后台配置</h1>
+<div id="section-3" class="section level2">
+<h2>数据记录</h2>
+<p>对于每一个试次，需要提交以下数据：</p>
+<table>
+<caption><span id="tab:recording-variables">表1: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Round</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">本任务有轮次的概念，此处记录当前在第几个轮次</td>
+</tr>
+<tr class="even">
+<td align="left"><code>STIM</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">刺激编号(STIMulus)，1-4中的一个</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Type</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">刺激类型，包括2种可能：‘Congruent’, ‘Incongruent’</td>
+</tr>
+<tr class="even">
+<td align="left"><code>CResp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">正确的反应(Correct Response），包含两种可能：‘Left’, ‘Right’</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户的实际反应(Response)，包含两种可能：‘Left’, ‘Right’, ‘None’（未操作）</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误(ACCuracy)，0=错误，1=正确，-1=未完成操作。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（单位：毫秒）(Response Time)，若未完成操作，则记为0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="section-4" class="section level2">
+<h2>试题算分</h2>
+<table>
+<caption><span id="tab:sdk-score">表2: </span>传入参数（算分码：<code>201</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>medRT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户在“不一致条件”(<code>Incongruent</code>)下的反应时间的中位数</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>float</code></td>
+<td align="left">用户在整个题目中的正确率</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="section-5" class="section level2">
+<h2>算分方法</h2>
+<p>参考美国国立卫生院的<a href="www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Flanker_Inhibitory_Control_and_Attention_Test_Technical_Manual.pdf">做法</a>。规则：</p>
+<p><span class="math display">\[score = PC + \frac{log_{10}(3000) - log_{10}(RT_{inc})}{log_{10}(3000) - log_{10}(500)}\]</span></p>
+<p>其中<span class="math inline">\(PC\)</span>是用户整体的正确比例（未作答记为错误），<span class="math inline">\(RT_{inc}\)</span>是用户在<strong>不一致</strong>条件<strong>正确</strong>作答时的反应时间的<strong>中位数</strong>，且以毫秒为单位。</p>
+<p>原始分的取值范围为0~2。</p>
+</div>
+</div>

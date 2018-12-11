@@ -1,6 +1,6 @@
 ---
 # heading of document
-title: 寻找物体（SearchObject） # Chinese name（English name）
+title: 火眼金睛（SearchObject） # Chinese name（English name）
 author: 张亮
 date: 2018-11-06 # format 2006-01-01
 # slug
@@ -78,3 +78,11 @@ knitr::kable(
   caption = paste0("传入参数（算分码：`", SDK, "`）")
 )
 ```
+
+## 算分方法
+
+采用一个考虑了速度准确性权衡的指标。类似于`RCS`。规则：
+
+$$分数 = \frac{作答正确的个数}{整个测验的持续时间}$$
+
+注意整个测验的持续时间就是给用户的作答限时，且使用**分钟**作为单位。

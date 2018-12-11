@@ -1,6 +1,6 @@
 ---
 # heading of document
-title: 分门别类（Classification） # Chinese name（English name）
+title: 快速归类（Classification） # Chinese name（English name）
 author: 张亮
 date: 2018-11-06 # format 2006-01-01
 # slug
@@ -14,6 +14,7 @@ categories:
 - 文档
 - C2框架
 - 幼儿
+bibliography: "scoring.bib"
 # blogdown output
 output:
   blogdown::html_page:
@@ -30,14 +31,16 @@ output:
 <li><a href="#游戏参数">游戏参数</a></li>
 <li><a href="#数据记录">数据记录</a></li>
 <li><a href="#试题算分">试题算分</a></li>
+<li><a href="#算分方法">算分方法</a></li>
 </ul></li>
+<li><a href="#参考文献">参考文献</a></li>
 </ul>
 </div>
 
 <div id="基本信息" class="section level1">
 <h1>基本信息</h1>
 <ul>
-<li><strong>显示名称</strong>：分门别类</li>
+<li><strong>显示名称</strong>：快速归类</li>
 <li><strong>英文名称</strong>：Classification</li>
 <li><strong>题目编号</strong>：00603</li>
 <li><strong>任务描述</strong>：</li>
@@ -119,5 +122,23 @@ output:
 </tr>
 </tbody>
 </table>
+</div>
+<div id="算分方法" class="section level2">
+<h2>算分方法</h2>
+<p>采用一个考虑了速度准确性权衡的叫做<code>RCS</code><span class="citation">(Woltz and Was 2006; Vandierendonck 2017)</span>的指标作为原始分。规则：</p>
+<p><span class="math display">\[RCS = \frac{PC}{RT_c}\]</span></p>
+<p>其中<span class="math inline">\(PC\)</span>表示用户作答的正确比例（未作答记为错误），而<span class="math inline">\(RT_c\)</span>则表示用户所有作答正确情况下反应时的平均值。值得注意的是这里<span class="math inline">\(RT_c\)</span>采用的<strong>单位</strong>：在以前的版本中是毫秒，但是这会导致<span class="math inline">\(RCS\)</span>很小，因此新版本应当修改为以<strong>秒</strong>为单位。同时，<span class="math inline">\(RT_c\)</span>的可能范围需定在0.1-2.5秒之间。</p>
+<p>原始分的取值范围为0~100。</p>
+</div>
+</div>
+<div id="参考文献" class="section level1 unnumbered">
+<h1>参考文献</h1>
+<div id="refs" class="references">
+<div id="ref-vandierendonck_comparison_2017">
+<p>Vandierendonck, André. 2017. “A Comparison of Methods to Combine Speed and Accuracy Measures of Performance: A Rejoinder on the Binning Procedure.” <em>Behavior Research Methods</em> 49 (2): 653–73. <a href="https://doi.org/10.3758/s13428-016-0721-5">https://doi.org/10.3758/s13428-016-0721-5</a>.</p>
+</div>
+<div id="ref-woltz_availability_2006">
+<p>Woltz, Dan J., and Christopher A. Was. 2006. “Availability of Related Long-Term Memory During and After Attention Focus in Working Memory.” <em>Memory &amp; Cognition</em> 34 (3): 668–84. <a href="https://doi.org/10.3758/BF03193587">https://doi.org/10.3758/BF03193587</a>.</p>
+</div>
 </div>
 </div>
