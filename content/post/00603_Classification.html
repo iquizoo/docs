@@ -127,7 +127,7 @@ output:
 <h2>算分方法</h2>
 <p>采用一个考虑了速度准确性权衡的叫做<code>RCS</code><span class="citation">(Woltz and Was 2006; Vandierendonck 2017)</span>的指标作为原始分。规则：</p>
 <p><span class="math display">\[RCS = \frac{PC}{RT_c}\]</span></p>
-<p>其中<span class="math inline">\(PC\)</span>表示用户作答的正确比例（未作答记为错误），而<span class="math inline">\(RT_c\)</span>则表示用户所有作答正确情况下反应时的平均值。值得注意的是这里<span class="math inline">\(RT_c\)</span>采用的<strong>单位</strong>：在以前的版本中是毫秒，但是这会导致<span class="math inline">\(RCS\)</span>很小，因此新版本应当修改为以<strong>秒</strong>为单位。同时，<span class="math inline">\(RT_c\)</span>的可能范围需定在0.1-2.5秒之间。</p>
+<p>其中<span class="math inline">\(PC\)</span>表示用户作答的正确比例（未作答记为错误），而<span class="math inline">\(RT_c\)</span>则表示用户所有作答正确情况下反应时的平均值。值得注意的是这里<span class="math inline">\(RT_c\)</span>采用的<strong>单位</strong>：在以前的版本中是毫秒，但是这会导致<span class="math inline">\(RCS\)</span>很小，因此新版本应当修改为以<strong>秒</strong>为单位。同时，<span class="math inline">\(RT_c\)</span>的可能范围需定在0.1-3秒之间。</p>
 <p>原始分的取值范围为0~100。</p>
 </div>
 </div>
