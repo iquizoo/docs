@@ -63,6 +63,8 @@ knitr::include_graphics("/images/VSTM/firefly.png")
 
 ## 序列配置
 
+<!-- TODO: CHANGE THESE TO NEWER VERSION -->
+
 每次需要追踪的萤火虫数目有5种可能（即3、4、5、6、7），不跟踪的萤火虫数目则始终为7个。每种可能的跟踪萤火虫情况分别出现2次，因而每个用户都累计会完成10次判断，同时保证10次判断的跟踪萤火虫数目是随机打乱了的。
 
 # 配置参数
