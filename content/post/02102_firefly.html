@@ -46,7 +46,7 @@ output:
 </div>
 <div id="交互界面" class="section level1">
 <h1>交互界面</h1>
-<p>夜晚森林的背景屏幕中随机位置出现几个萤火虫，其中有些会发光有些不发光（发光的个数3、4、5、6、7），闪烁一定时间后萤火虫的亮光消失并且开始飞舞，最后停在新的位置，用户需要点击刚刚闪烁的萤火虫，用触摸（Android/iOS）或鼠标点击（PC）的方式（如图<a href="#fig:taskflow-image">1</a>）。</p>
+<p>夜晚森林的背景中随机位置出现一些萤火虫，一开始其中有些会发光（原地闪烁黄光）有些不发光（不发光的萤火虫个数始终比发光的<strong>多2个</strong>），发光的萤火虫闪烁一定时间后亮光消失（同不发光的萤火虫一模一样）同时所有萤火虫都开始飞舞，最后停在新的位置，用户需要点击刚刚闪烁过的萤火虫，用触摸（Android/iOS）或鼠标点击（PC）的方式（如图<a href="#fig:taskflow-image">1</a>）。</p>
 <div class="figure" style="text-align: center"><span id="fig:taskflow-image"></span>
 <img src="/images/VSTM/firefly.png" alt="基本界面" width="80%" />
 <p class="caption">
@@ -63,9 +63,9 @@ output:
 <li><strong>刺激配置</strong>：由若干萤火虫的图片组成。其中：发光的萤火虫为<strong>目标刺激</strong>，不发光的为<strong>干扰刺激</strong>，详细请看下方<strong>刺激列表</strong>。</li>
 <li><strong>刺激呈现</strong>
 <ul>
-<li>出现若干萤火虫（不同的目标刺激对应不同的干扰刺激），其中目标开始闪烁，闪烁次数默认值为3次，每次闪烁时间默认值为<code>300 ms</code>。</li>
-<li>闪烁结束，所有萤火虫开始飞舞，默认值为<code>3000 ms</code>，速度为30。</li>
-<li>飞舞结束，所有萤火虫停到新的位置，用户开始判断，哪些是之前闪烁过的萤火虫，用户点击次数需与目标个数一致，方可开始下一轮。</li>
+<li>出现若干萤火虫（不同的目标刺激对应不同的干扰刺激），其中目标刺激开始闪烁，闪烁次数默认值为3次，每次闪烁时间默认值为<code>300 ms</code>。首次出现目标刺激的个数定为3，目标刺激的下限为2，没有上限，即最少的闪烁萤火虫的个数为2。</li>
+<li>闪烁结束，目标刺激与干扰刺激变得相同，所有萤火虫开始飞舞，默认值为<code>3000 ms</code>，速度为30。</li>
+<li>飞舞结束，所有萤火虫停到新的位置，用户开始判断，哪些是目标刺激（之前闪烁过的萤火虫），用户点击次数需与目标个数一致，方可开始下一轮。</li>
 <li>刺激消失后到下一个刺激呈现的时间间隔（试次间隔时间）默认值为<code>500 ms</code>。</li>
 </ul></li>
 </ul>
@@ -78,17 +78,31 @@ output:
 <li><strong><code>Android/iOS</code></strong>：点击触摸上的目标刺激，感应区域要比目标刺激本身大，但不能重合。</li>
 <li><strong><code>PC/Web</code></strong>：若<code>PC</code>拥有触摸屏，则用户可以使用<code>Android/iOS</code>的操作方式；若<code>PC</code>没有触摸屏，则要求用户使用标准输入设备鼠标点击进行操作。</li>
 </ul></li>
-<li><strong>判断正误</strong>：所有试次都需要操作，没有操作则使用<code>-1</code>表示正确与否。当用户操作后，如果点击的目标和目标刺激重合，则为正确；若点击与目标刺激不符，则为错；与点击顺序无关。</li>
+<li><strong>判断正误</strong>：用户作答没有时间限制。当用户操作后，如果点击的目标和目标刺激重合，则为正确；若点击与目标刺激不符，则为错；与点击顺序无关。</li>
 <li><strong>反馈</strong>
 <ul>
-<li>引导练习：需要对<em>正确</em>和<em>错误</em>给出听觉和视觉反馈。</li>
-<li>正式测试：不需要对<em>正确</em>和<em>错误</em>给出听觉和视觉反馈，需要对用户是否操作给出视觉反馈（即用户点击的地方就变亮）</li>
+<li>引导练习：<code>需要</code>对<em>正确</em>和<em>错误</em>给出听觉和视觉反馈。</li>
+<li>正式测试：<code>不需要</code>对<em>正确</em>和<em>错误</em>给出听觉和视觉反馈，需要对用户是否操作给出视觉反馈（即用户点击的地方就变亮）；需要给用户做对个数的反馈，即正确点击的萤火虫的数量。</li>
 </ul></li>
 </ul>
+<div class="figure" style="text-align: center"><span id="fig:feedback-image"></span>
+<img src="/images/VSTM/fireflyfeedback.png" alt="反馈界面" width="80%" />
+<p class="caption">
+图2: 反馈界面
+</p>
+</div>
 </div>
 <div id="序列配置" class="section level2">
 <h2>序列配置</h2>
-<p>每次需要追踪的萤火虫数目有5种可能（即3、4、5、6、7），不跟踪的萤火虫数目则始终为7个。每种可能的跟踪萤火虫情况分别出现2次，因而每个用户都累计会完成10次判断，同时保证10次判断的跟踪萤火虫数目是随机打乱了的。</p>
+<p>每次目标刺激的数目根据用户之前的成绩进行自适应，干扰刺激数目保持目标刺激+2，遵循如下规则：当前试次做对，下一次目标刺激个数加一；当前试次做错，下一次目标刺激的数目不改变；当前做错，下一次也做错，再下次中目标刺激的个数减一。</p>
+<ul>
+<li>例：第1个试次中有3只发光萤火虫，即5只不发光萤火虫，总计8只
+<ul>
+<li>用户第1个试次做对，第2个试次中发光萤火虫的个数变为4；</li>
+<li>用户第1个试次做错，第2个试次中发光萤火虫的个数还是3，若第2个试次也做错，则第3个试次中发光萤火虫的个数变为2；若第2个试次做对，第3个试次中发光萤火虫的个数变为4。</li>
+</ul></li>
+</ul>
+<p>10个试次后，游戏停止。</p>
 </div>
 </div>
 <div id="配置参数" class="section level1">
@@ -228,11 +242,8 @@ output:
 </div>
 <div id="试题算分" class="section level1">
 <h1>试题算分</h1>
-<ul>
-<li>算分码：999</li>
-<li>传入参数：</li>
-</ul>
 <table>
+<caption><span id="tab:sdk-score">表3: </span>传入参数（算分码：<code>301</code>）</caption>
 <thead>
 <tr class="header">
 <th align="left">参数名称</th>
@@ -242,9 +253,14 @@ output:
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><code>score</code></td>
-<td align="left"><code>int</code></td>
-<td align="left">用户总分，即整个过程中答对的个数</td>
+<td align="left"><code>length</code></td>
+<td align="left"><code>int array</code></td>
+<td align="left">用户曾做过的试次中需要追踪的萤火虫数目的所有可能，升序排列，例如<code>[2, 3, 4, 5]</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>float array</code></td>
+<td align="left">对应每种可能的萤火虫的用户作答正确率，例如<code>[1, 1, 0.8, 0.6]</code></td>
 </tr>
 </tbody>
 </table>
