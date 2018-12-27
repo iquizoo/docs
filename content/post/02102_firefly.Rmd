@@ -61,7 +61,7 @@ knitr::include_graphics("/images/VSTM/firefly.png")
     - 引导练习：`需要`对*正确*和*错误*给出听觉和视觉反馈。
     - 正式测试：`不需要`对*正确*和*错误*给出听觉和视觉反馈，需要对用户是否操作给出视觉反馈（即用户点击的地方就变亮）；需要给用户做对个数的反馈，即正确点击的萤火虫的数量。
 
-```{r taskflow-image, fig.cap="反馈界面", fig.align='center', echo=FALSE, out.width="80%"}
+```{r feedback-image, fig.cap="反馈界面", fig.align='center', echo=FALSE, out.width="80%"}
 knitr::include_graphics("/images/VSTM/fireflyfeedback.png")
 ```
 
