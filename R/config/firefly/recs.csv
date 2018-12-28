@@ -1,5 +1,5 @@
 ﻿名称,类型,说明
 `Target`,`int`,发光萤火虫的个数
-`Distractor`,`int`,不发光萤火虫的个数 固定为7
+`Distractor`,`int`,不发光萤火虫的个数 `Target`+2
 `NAcc`,`int`,正确点击的次数
 `RT`,`int`,用户完成操作所用时间（单位：毫秒）(Response Time）
