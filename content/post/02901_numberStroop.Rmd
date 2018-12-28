@@ -4,7 +4,7 @@ author: 张亮
 date: '2018-04-21'
 slug: 02901-numberStroop
 code: "02901"
-tasknames: "数量感知"
+tags: "数量感知"
 categories:
 - 文档
 - 刺激序列优化

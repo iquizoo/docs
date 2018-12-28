@@ -9,7 +9,7 @@ slug: # code-English name
 code:
 sdk:
 # hugo taxonomy related
-tasknames:
+tags:
 categories:
 # blogdown output
 output:

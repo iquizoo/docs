@@ -9,7 +9,7 @@ slug: 06301-stopsignal # code-English name
 code: "06301"
 sdk: 204
 # hugo taxonomy related
-tasknames: 停止信号范式
+tags: 停止信号范式
 categories: 文档
 # blogdown output
 output:

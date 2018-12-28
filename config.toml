@@ -18,7 +18,7 @@ preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
 
 [taxonomies]
-    taskname = "tasknames"
+    tag = "tags"
     category = "categories"
 
 [permalinks]
@@ -38,7 +38,7 @@ footnotereturnlinkcontents = "↩"
     weight = 3
 [[menu.main]]
     name = "任务列表"
-    url = "/tasknames/"
+    url = "/tags/"
     weight = 4
 [[menu.main]]
     name = "算分说明"

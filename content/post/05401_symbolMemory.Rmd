@@ -9,7 +9,7 @@ slug: 05401-symbolMemory # code-English name
 code: "05401"
 sdk: 102
 # hugo taxonomy related
-tasknames: 情景记忆
+tags: 情景记忆
 categories:
 - 文档
 - 数据记录优化

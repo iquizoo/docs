@@ -9,7 +9,7 @@ slug: 08401-jlo # code-English name
 code: "08401"
 sdk: 100
 # hugo taxonomy related
-tasknames: 朝向判断
+tags: 朝向判断
 categories: 文档
 # blogdown output
 output:

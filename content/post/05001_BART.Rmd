@@ -4,7 +4,7 @@ author: 张亮
 date: 2018-03-03
 slug: 05001-bart
 code: "05001"
-tasknames: "仿真气球模拟范式"
+tags: "仿真气球模拟范式"
 categories: "文档"
 output:
   blogdown::html_page:

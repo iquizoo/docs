@@ -9,7 +9,7 @@ slug: 00603-classification # code-English name
 code: "00603"
 sdk: 200
 # hugo taxonomy related
-tasknames: "选择反应时"
+tags: "选择反应时"
 categories:
 - 文档
 - C2框架

@@ -9,7 +9,7 @@ slug: 042XX-cancellation # code-English name
 code: 042XX
 sdk: 203
 # hugo taxonomy related
-tasknames: 划消测验
+tags: 划消测验
 categories:
   - 文档
   - 数据记录优化

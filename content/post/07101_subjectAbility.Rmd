@@ -9,7 +9,7 @@ slug: 07101-subjectAbility # code-English name
 code: "07101"
 sdk: 100
 # hugo taxonomy related
-tasknames: 题目壳
+tags: 题目壳
 categories:
   - 文档
   - 数据记录优化

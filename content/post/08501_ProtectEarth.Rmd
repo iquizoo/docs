@@ -9,7 +9,7 @@ slug: 08501-protectearth # code-English name
 code: "08501"
 sdk: 203
 # hugo taxonomy related
-tasknames: 问题解决
+tags: 问题解决
 categories:
   - 文档
   - C2框架

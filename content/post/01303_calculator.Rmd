@@ -4,7 +4,7 @@ author: 张亮
 date: '2018-04-01'
 slug: 01303-calculator
 code: "01303"
-tasknames: 数学计算
+tags: 数学计算
 categories:
 - 文档
 - C2框架

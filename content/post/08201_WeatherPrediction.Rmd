@@ -9,7 +9,7 @@ slug: 08201-weatherprediction # code-English name
 code: "08201"
 sdk: 100
 # hugo taxonomy related
-tasknames: 概率分类学习范式
+tags: 概率分类学习范式
 categories: 文档
 # blogdown output
 output:
