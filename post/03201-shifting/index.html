@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>思维转换（Shifting） | 爱智游设计文档中心</title>
+    <link rel="stylesheet" href="/docs/css/style.css" />
+    <link rel="stylesheet" href="/docs/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/docs/docs/">主页</a></li>
+      
+      <li><a href="/docs/docs/post/">所有文档</a></li>
+      
+      <li><a href="/docs/docs/categories/">类别</a></li>
+      
+      <li><a href="/docs/docs/tags/">任务列表</a></li>
+      
+      <li><a href="/docs/docs/scoring/">算分说明</a></li>
+      
+      <li><a href="/docs/docs/glossary/">术语</a></li>
+      
+      <li><a href="/docs/docs/standard/">标准</a></li>
+      
+      <li><a href="/docs/docs/about/">关于</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">思维转换（Shifting）</span></h1>
+<h2 class="author">张亮</h2>
+<h2 class="date">2018/03/03</h2>
+</div>
+
+<main>
+
+<script src="/docs/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/docs/rmarkdown-libs/viz/viz.js"></script>
+<link href="/docs/rmarkdown-libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
+<script src="/docs/rmarkdown-libs/grViz-binding/grViz.js"></script>
+
+
+<div class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：思维转换</li>
+<li><strong>英文名称</strong>：Shifting</li>
+<li><strong>题目编号</strong>：03201</li>
+<li><strong>任务描述</strong>：测查思维力，特别是灵活切换思维方式的能力。</li>
+<li><strong>测查能力</strong>：思维力-思维灵活性</li>
+<li><strong>相关任务</strong>：<a href="/docs/post/03202-shifting2/">反应转换</a>。本题目是反应转换的简化版本，推荐应用于1-4年级。</li>
+</ul>
+</div>
+<div class="section level1">
+<h1>交互界面</h1>
+<div id="htmlwidget-1" style="width:900px;height:100px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"diagram":"digraph task_flow{\n    # atr_list\n    # graph properties\n    graph [rankdir = LR, fontname = \"YouYuan\"]\n    # node properties\n    node [shape = box, fontname = \"YouYuan\"]\n    # edge properties\n    edge [fontname = \"YouYuan\"]\n\n    # node_stmt\n    ETC0 [label = \"...\", shape = plaintext]\n    R0 [label = \"用户操作\", color = \"blue\"]\n    C1 [label = \"背景图片\n（线索）\", color = \"green\"]\n    T1 [label = \"动物图片\n（目标）\", color = \"red\"]\n    R1 [label = \"用户操作\", color = \"blue\"]\n    C2 [label = \"背景图片\n（线索）\", color = \"green\"]\n    ETC2 [label = \"...\", shape = plaintext]\n\n    # subgraphs\n    subgraph cluster_trial {\n      # edge_stmt in subgraph\n      C1 -> T1 [label = \"500ms\", labeltooltip = \"线索目标间隔（CTI）\"]\n      T1 -> R1 [label = \"反应时间/3000ms\", labeltooltip = \"反应时间，注意用户须在最长等待时间（maxSt，默认3000ms）结束前操作\"]\n      label = \"一个试次\"\n    }\n\n    # edge_stmt in root graph\n    ETC0 -> R0\n    R0 -> C1 [label = \"500ms\", labeltooltip = \"反应线索间隔（RCI）\"]\n    R1 -> C2 [label = \"500ms\", labeltooltip = \"反应线索间隔（RCI）\"]\n    C2 -> ETC2\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>每一个试次中，屏幕上呈现一张<strong>背景图片</strong>（即线索，背景图片中央有空白，用于显示动物图片），一定时间（<em>线索目标间隔</em>）后屏幕中央呈现一张<strong>动物图片</strong>（即目标），背景图片和动物图片会一直停留在屏幕上，直到用户需根据背景图片对屏幕中央的图片做出操作（或达到最大展示时间）后消失。最后，屏幕保持一定时间（<em>反应线索间隔</em>）的空白后进入下一个试次。</p>
+<p><strong>练习</strong>。本题目的背景图片有两种（参看<strong>详细说明</strong>部分），意味着实际上此题目包含了两个子任务，且每一个试次会要求用户根据程序<strong>给定的一个子任务</strong>进行反应（这也是思维转换名字的由来）。因此，练习由三部分组成（详细参看<strong>详细说明</strong>部分）：</p>
+<ol style="list-style-type: decimal">
+<li>指引和练习第1个子任务，并保证用户理解第1个子任务。</li>
+<li>指引和练习第2个子任务，并保证用户理解第2个子任务。</li>
+<li>指引和练习在两个子任务混合起来（实际测试时候的形式）的时候如何操作。</li>
+</ol>
+</div>
+<div class="section level1">
+<h1>详细说明</h1>
+<ul>
+<li>刺激
+<ul>
+<li><strong>背景图片</strong>两张：其意义在告知用户当前试次需要执行的子任务。
+<ul>
+<li>其一由<em>左侧海洋、右侧陆地</em>组成，此背景图片要求用户判断屏幕中央的图片所代表动物的<strong>生活环境</strong>(<strong>Habituation</strong>)。</li>
+<li>另一由<em>左侧猪、右侧老鼠的天平</em>组成，此背景图片要求用户判断屏幕中央的图片所代表动物的<strong>体重</strong>(<strong>Weight</strong>)跟猪还是老鼠更接近。</li>
+</ul></li>
+<li><strong>动物图片</strong>（见下表）</li>
+<li><strong>刺激呈现</strong>
+<ul>
+<li>背景图片先于动物图片呈现，间隔时间为<em>线索目标间隔</em>，由配置参数<code>cti</code>（默认为<code>500ms</code>）控制</li>
+<li>动物图片呈现后背景图片不消失</li>
+<li>动物图片的<em>最大展示时间</em>由配置参数<code>maxSt</code>（默认为<code>3000ms</code>）控制</li>
+<li>用户对图片做出操作反应或达到最大呈现时间后，屏幕需在下一个试次开始前（即下一张背景图片出现前）变成空屏状态，持续时间为<em>反应线索间隔</em>，由配置参数<code>rci</code>（默认为<code>500ms</code>）控制。</li>
+</ul></li>
+</ul></li>
+</ul>
+<table>
+<caption><span id="tab:stimuli">表1: </span>动物图片及其属性一览表</caption>
+<thead>
+<tr class="header">
+<th align="center">编号</th>
+<th align="left">名称</th>
+<th align="left">生活环境</th>
+<th align="left">体重跟谁接近</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="left">老虎</td>
+<td align="left">陆地</td>
+<td align="left">猪</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="left">狮子</td>
+<td align="left">陆地</td>
+<td align="left">猪</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="left">公鸡</td>
+<td align="left">陆地</td>
+<td align="left">老鼠</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="left">刺猬</td>
+<td align="left">陆地</td>
+<td align="left">老鼠</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="left">蓝鲸</td>
+<td align="left">海洋</td>
+<td align="left">猪</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="left">鲨鱼</td>
+<td align="left">海洋</td>
+<td align="left">猪</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="left">海虾</td>
+<td align="left">海洋</td>
+<td align="left">老鼠</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="left">海鱼</td>
+<td align="left">海洋</td>
+<td align="left">老鼠</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>操作
+<ul>
+<li><strong><code>Android/iOS</code></strong>：点击背景图片的左侧或右侧做出对应的反应。例如，在“左侧海洋右侧陆地”背景图片情况下，如出现“老虎”图片，用户需点击屏幕右侧（即“陆地”一侧）。</li>
+<li><strong><code>PC/Web</code></strong>：若<code>PC</code>拥有触摸屏，则用户可以使用<code>Android/iOS</code>的操作方式；若<code>PC</code>没有触摸屏，则要求用户使用标准输入设备键盘上的<kbd>←</kbd>和<kbd>→</kbd>进行操作，分别表示<em>左侧</em>和<em>右侧</em>。</li>
+</ul></li>
+<li>指引和练习
+<ul>
+<li><strong>指引和练习分为3个部分</strong>：
+<ol style="list-style-type: decimal">
+<li><strong>指引和练习<em>生活环境</em>子任务</strong>。背景图片依然呈现。至少完成8次，即至少每种目标词语做1次；8次后若正确率不高于80%，则继续练习至<em>正确率高于80%</em>或<em>总计练习16次</em>时结束。注意每个8次练习中都是将所有刺激按随机顺序呈现的（后面的练习也是如此）。</li>
+<li><strong>指引和练习<em>判断体重</em>子任务</strong>。背景图片依然呈现。至少完成8次，即至少每种目标词语做1次；8次后若正确率不高于80%，则继续练习至<em>正确率高于80%</em>或<em>总计练习16次</em>时结束。</li>
+<li><strong>指引和练习在<em>两个子任务混合</em>条件</strong>。提醒用户注意背景图片确定操作方式。此部分至少包含<strong>16个试次</strong>，保证<strong>所有刺激在两种子任务情况都分别练习1次</strong>，采用完全随机的顺序即可。16次后若正确率不高于80%，则继续练习至<em>正确率高于80%</em>或<em>总计练习32次</em>时结束。注意每个16次练习中都是将所有刺激在两种子任务情况都分别随机顺序地练习1次。</li>
+</ol></li>
+</ul></li>
+<li>序列
+<ul>
+<li><strong>一般要求</strong>
+<ul>
+<li>相同的刺激必须至少间隔两次才能出现。</li>
+</ul></li>
+<li><strong>特殊要求</strong>
+<ul>
+<li>切换和重复的条件最多连续3次，且连续出现次数<code>1, 2, 3</code>的比例为<code>1:2:1</code>。注意：当重复条件出现<span class="math inline">\(n\)</span>次时，会重复执行一个任务<span class="math inline">\(n + 1\)</span>次。</li>
+<li>正确操作的一侧最多连续3次，且连续出现次数<code>1, 2, 3</code>的比例为<code>1:2:1</code>。</li>
+<li>保证任务类型、切换条件、正确操作相互均衡。</li>
+<li>保证刺激在不同的任务类型中比例一致。</li>
+</ul></li>
+</ul></li>
+<li>序列配置
+<ul>
+<li>见<a href="/seq/03201_Shifting.json" target="_blank">序列文件</a>。</li>
+<li><strong>注意</strong>：本题目的第一个试次是一个“填充”试次，因此若设试次数目为<span class="math inline">\(n\)</span>时，实际需要完成的试次数目为<span class="math inline">\(n + 1\)</span>。在序列的配置标准中也是如此，即<code>length</code>为<span class="math inline">\(n\)</span>序列中，<code>stim</code>个数都是<span class="math inline">\(n + 1\)</span>。</li>
+<li>数组中每一个元素都是一个<code>json</code>对象，包含六个<code>名称/值(name/value)</code>配对，分别是
+<ul>
+<li><code>length</code>：表示序列的长度</li>
+<li><code>stim</code>：包含了由<strong>刺激编号</strong>（和<em>“动物图片及其属性一览表”</em>一致）组成的多个序列</li>
+<li><code>task</code>：包含了由<strong>子任务名称</strong>组成的多个序列，其中<code>Habituation</code>表示判断<code>动物的生活环境</code>，<code>Weight</code>表示判断<code>动物的体重大小</code></li>
+<li><code>cond</code>：包含了由<strong>任务条件</strong>，即任务是否切换，组成的多个序列，且每个序列中，第一个注明为<code>Filler</code>，其余为<code>Repeat</code>和<code>Switch</code>中的一个</li>
+<li><code>cresp</code>：包含了由<strong>正确答案</strong>组成的多个序列，可能值为<code>Left</code>和<code>Right</code></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div class="section level1">
+<h1>配置参数</h1>
+<table>
+<caption><span id="tab:configs">表2: </span>配置参数总表</caption>
+<thead>
+<tr class="header">
+<th align="left">参数类别</th>
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="center">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>maxSt</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">3000</td>
+<td align="left">单个刺激最大展示时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>cti</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">500</td>
+<td align="left">线索目标间隔，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>rci</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">500</td>
+<td align="left">反应线索间隔，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激序列</td>
+<td align="left"><code>endMethod</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">2</td>
+<td align="left">题目的结束方式（1=按时间结束，2=按刺激个数结束）</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激序列</td>
+<td align="left"><code>duration</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">30000</td>
+<td align="left">题目整体持续时间（<code>endMethod</code>=1时生效，单位毫秒）</td>
+</tr>
+<tr class="even">
+<td align="left">刺激序列</td>
+<td align="left"><code>quantity</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">128</td>
+<td align="left">刺激总个数（<code>endMethod</code>=2时需全部做完）</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激序列</td>
+<td align="left"><code>round</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">4</td>
+<td align="left">总轮数</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackCorrectError</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">控制正式测评时候是（1）否（0）需要反馈正确与错误</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackNoResponse</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）需要提示用户未操作</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackVisual</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出视觉反馈</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level1">
+<h1>数据记录</h1>
+<ul>
+<li>题目结果显示
+<ul>
+<li>显示正确率和平均正确反应时间</li>
+<li>展示标准分数和超越百分比</li>
+</ul></li>
+<li>提交原始数据如下表（参考<a href="/docs/standard/">标准</a>中关于格式的说明）</li>
+</ul>
+<table>
+<caption><span id="tab:recording-variables">表3: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Round</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">本任务有轮次的概念，此处记录当前在第几个轮次</td>
+</tr>
+<tr class="even">
+<td align="left"><code>STIM</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">刺激编号(STIMulus)，1-8中的一个</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Task</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">子任务，包括2种可能：‘Habituation’, ‘Weight’</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Cond</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">试次条件(Condition)，即子任务是否切换，包含三种可能：‘Filler’, ‘Repeat’, ‘Switch’</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>CResp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">正确的反应(Correct Response），包含两种可能：‘Left’, ‘Right’</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户的实际反应(Response)，包含两种可能：‘Left’, ‘Right’, ‘None’（未操作）</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误(ACCuracy)，0=错误，1=正确，-1=未操作</td>
+</tr>
+<tr class="even">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（单位：毫秒）(Response Time)，若未完成操作，则记为0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level1">
+<h1>试题算分</h1>
+<ul>
+<li>算分码：201</li>
+<li>传入参数：</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>medRT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户在切换条件(switch)下的反应时间的中位数</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>float</code></td>
+<td align="left">用户在整个题目中的正确率</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level1">
+<h1>修订历史</h1>
+</div>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
+最后部署时间（版本：0.0.10）：2018-12-28 14:07:42
+
+  
+  <hr/>
+  &copy; <a href="http://www.iquizoo.com/">爱智游</a> 2017 &ndash; 2018
+  
+  </footer>
+  </body>
+</html>
+

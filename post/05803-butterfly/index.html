@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>蝴蝶照相机（butterfly） | 爱智游设计文档中心</title>
+    <link rel="stylesheet" href="/docs/css/style.css" />
+    <link rel="stylesheet" href="/docs/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/docs/docs/">主页</a></li>
+      
+      <li><a href="/docs/docs/post/">所有文档</a></li>
+      
+      <li><a href="/docs/docs/categories/">类别</a></li>
+      
+      <li><a href="/docs/docs/tags/">任务列表</a></li>
+      
+      <li><a href="/docs/docs/scoring/">算分说明</a></li>
+      
+      <li><a href="/docs/docs/glossary/">术语</a></li>
+      
+      <li><a href="/docs/docs/standard/">标准</a></li>
+      
+      <li><a href="/docs/docs/about/">关于</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">蝴蝶照相机（butterfly）</span></h1>
+<h2 class="author">张亮</h2>
+<h2 class="date">2018/04/06</h2>
+</div>
+
+<main>
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#交互流程">交互流程</a></li>
+<li><a href="#详细说明">详细说明</a><ul>
+<li><a href="#刺激">刺激</a></li>
+<li><a href="#序列">序列</a></li>
+</ul></li>
+<li><a href="#配置参数">配置参数</a></li>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：蝴蝶照相机</li>
+<li><strong>英文名称</strong>：butterfly</li>
+<li><strong>题目编号</strong>：05803</li>
+<li><strong>任务描述</strong>：找出蝴蝶隐藏的位置，训练工作记忆</li>
+<li><strong>测查能力</strong>：自控力-信息更新</li>
+</ul>
+</div>
+<div id="交互流程" class="section level1">
+<h1>交互流程</h1>
+<p><a href="/axure-rp-design/butterfly/start.html" target="_blank">点击此处</a>查看交互流程设计。</p>
+</div>
+<div id="详细说明" class="section level1">
+<h1>详细说明</h1>
+<div id="刺激" class="section level2">
+<h2>刺激</h2>
+<p>使用<strong>蝴蝶</strong>作为基本的刺激材料。蝴蝶的形状简单一点，使得用户可以很容易地判断是否对称。</p>
+<p>总计需设计<code>40</code>张张不同的蝴蝶图片，其中</p>
+<ul>
+<li>引导和练习部分需要设计<code>4</code>（2张引导，2张练习）张不同的蝴蝶图片，对称的和不对称的各占一半。对称的编号为<code>ps01</code>–<code>ps02</code>，不对称的编号为<code>pn01</code>–<code>pn02</code>。</li>
+<li>正式测评部分需要设计<code>36</code>张不同的蝴蝶图片，对称的和不对称的各占一半。对称的18张蝴蝶图片编号为<code>s01</code>–<code>s18</code>，不对称的18张图片编号为<code>n01</code>–<code>n18</code>。</li>
+</ul>
+</div>
+<div id="序列" class="section level2">
+<h2>序列</h2>
+<ul>
+<li>引导和练习都只需要呈现2张（1张对称、1张不对称）蝴蝶图片进行记忆。</li>
+<li>正式测评按随机顺序分别呈现3、4、5、6张蝴蝶图片进行记忆。<a href="/seq/05803_butterfly.json">序列文件</a>中包含以下值：
+<ul>
+<li><code>slen</code>：当前轮次需要呈现的蝴蝶个数（3-6中的一个）。</li>
+<li><code>sym</code>：当前轮次先后呈现的蝴蝶是否对称，其中<code>s</code>代表对称，<code>n</code>代表不对称。例如<code>nsn</code>就表示现后呈现的三张蝴蝶照片依次是<strong>不对称</strong>、<strong>对称</strong>、<strong>不对称</strong>。</li>
+<li><code>loc</code>：当前轮次先后呈现的蝴蝶飞入网格后停留的位置，使用16进制数字表示（参考设计中的图）。例如<code>148</code>就表示先后呈现的蝴蝶位置分别为1号、4号、8号网格。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="配置参数" class="section level1">
+<h1>配置参数</h1>
+<table>
+<caption><span id="tab:configs">表1: </span>配置参数总表</caption>
+<thead>
+<tr class="header">
+<th align="left">参数类别</th>
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="center">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>maxSt1</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">3000</td>
+<td align="left">做对称判断时蝴蝶的呈现时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>hideTime</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">500</td>
+<td align="left">蝴蝶飞入其中一个格子的时间，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>maxSt2</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">1000</td>
+<td align="left">蝴蝶飞入格子后停留在格子中的时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>iti</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">500</td>
+<td align="left">用户作答完成并反馈后到第二轮蝴蝶出现的间隔时间，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackCorrectError</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">控制正式测评时候是（1）否（0）需要反馈正确与错误</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackNoResponse</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）需要提示用户未操作</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackVisual</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出视觉反馈</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="数据记录" class="section level1">
+<h1>数据记录</h1>
+<p>提交原始数据如表<a href="#tab:recording-variables">2</a>（请参考<a href="/docs/standard/">标准</a>）</p>
+<table>
+<caption><span id="tab:recording-variables">表2: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>SLen</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">当前轮次需要记忆的蝴蝶隐藏位置个数。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Sym</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">当前轮次先后出现的蝴蝶是否对称，和序列中的<code>sym</code>保持一致。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Loc</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">当前轮次正确的蝴蝶隐藏位置顺序，也就是把呈现的位置编号拼在一起组成的字符串（16个位置使用十六进制数字表示）。和序列中的<code>loc</code>保持一致。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>RespSym</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户对称判断的实际反应，使用由<code>n</code>（不对称），<code>s</code>（对称）或<code>-</code>（未操作）拼在一起的字符串表示。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RespLoc</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户对蝴蝶位置的实际反应，即把用户实际点击的位置直接拼在一起组成的字符串，其中选择“忘记”的使用符号“-”表示，例如“1f-”就表示第三次用户选择了“忘记”。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>AccSym</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户对称判断是否正确，0=错误（未作答也记为错误），1=正确。例如“110”表示前两个对了，最后一个错了。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>AccLoc</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">记录每个隐藏位置是否选择正确或错误，0=错误（选择“忘记”的也记为错误），1=正确。例如“110”表示前两个对了，最后一个错了。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所用时间（单位：毫秒）(Response Time)。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="试题算分" class="section level1">
+<h1>试题算分</h1>
+<table>
+<caption><span id="tab:sdk-score">表3: </span>传入参数（算分码：<code>999</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>score</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户的最终得分，即用户累计正确找出的蝴蝶个数</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
+最后部署时间（版本：0.0.10）：2018-12-28 14:07:42
+
+  
+  <hr/>
+  &copy; <a href="http://www.iquizoo.com/">爱智游</a> 2017 &ndash; 2018
+  
+  </footer>
+  </body>
+</html>
+

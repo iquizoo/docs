@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>捉虫（CPT2） | 爱智游设计文档中心</title>
+    <link rel="stylesheet" href="/docs/css/style.css" />
+    <link rel="stylesheet" href="/docs/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/docs/docs/">主页</a></li>
+      
+      <li><a href="/docs/docs/post/">所有文档</a></li>
+      
+      <li><a href="/docs/docs/categories/">类别</a></li>
+      
+      <li><a href="/docs/docs/tags/">任务列表</a></li>
+      
+      <li><a href="/docs/docs/scoring/">算分说明</a></li>
+      
+      <li><a href="/docs/docs/glossary/">术语</a></li>
+      
+      <li><a href="/docs/docs/standard/">标准</a></li>
+      
+      <li><a href="/docs/docs/about/">关于</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">捉虫（CPT2）</span></h1>
+<h2 class="author">张亮</h2>
+<h2 class="date">2018/03/03</h2>
+</div>
+
+<main>
+
+
+
+<div class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：捉虫</li>
+<li><strong>英文名称</strong>：CPT2</li>
+<li><strong>题目编号</strong>：00903</li>
+<li><strong>参考模板</strong>：捉虫-初级，数感</li>
+<li><strong>任务描述</strong>：测查注意力，特别是长时间注意目标的能力。</li>
+<li><strong>测查能力</strong>：注意力-持续注意</li>
+</ul>
+</div>
+<div class="section level1">
+<h1>交互界面</h1>
+<p>屏幕中央以<em>一次一张</em>的方式<strong>快速闪现</strong>一系列由<strong>四种动物</strong>组成的卡片。每张卡片闪现后，用户必须在下一张卡片出现前对<strong>目标卡片</strong>进行<strong>操作</strong>，之后程序会对其操作给出相应的<strong>反馈</strong>。在反馈或<strong>刺激间隔时间</strong>后，立即呈现下一张卡片。</p>
+<p><strong>练习</strong>。引导的第一屏不宜采用文字，最好制作一个短暂的示意动画来提示（特别是对于低年级儿童）。引导结束后的练习部分至少做20个刺激，保证正确率在80%以上。</p>
+</div>
+<div class="section level1">
+<h1>详细说明</h1>
+<ul>
+<li>刺激：虚拟卡片
+<ul>
+<li><strong>刺激配置</strong>：关键刺激<code>虫子(A)</code>、<code>小鸟(X)</code>。其他刺激：<code>兔子(B)</code>、<code>青蛙(C)</code>、<code>蜜蜂(D)</code>。</li>
+<li><strong>刺激呈现</strong>
+<ul>
+<li>单个刺激呈现时间由参数（<code>maxSt</code>）控制，默认值为<code>200ms</code>。</li>
+<li>刺激间隔时间由参数（<code>isi</code>）控制，默认值为<code>1000ms</code>。</li>
+</ul></li>
+</ul></li>
+<li>操作
+<ul>
+<li><strong>目标卡片</strong>：<code>A-X</code>，即在出现小鸟（<code>X</code>）时，需要立即回忆出之前的一张卡片是否是虫子（<code>A</code>），如果是虫子，则这张小鸟卡片就是目标卡片。</li>
+<li><strong>操作</strong>：在下一张卡片出现前，点击卡片（移动APP用户）或按键盘上的左键（PC端WEB用户）。</li>
+<li><strong>判断正误</strong>：若用户在目标卡片出现后直到下一张卡片出现时仍未完成<strong>操作</strong>，或者在不符合要求时完成<strong>操作</strong>，则记为<em>错误</em>；若用户在符合要求的时候完成<strong>操作</strong>，则记为<em>正确</em>。</li>
+<li><strong>反馈</strong>：听觉反馈和视觉反馈都需要。
+<ul>
+<li>引导练习：需要对<em>正确</em>和<em>错误</em>给出听觉和视觉反馈。</li>
+<li>正式测试：不需要对<em>正确</em>和<em>错误</em>给出听觉和视觉反馈，但是要对完成操作给出听觉和视觉反馈（无论是否错误）。</li>
+</ul></li>
+</ul></li>
+<li>序列
+<ul>
+<li><strong>一般要求</strong>
+<ul>
+<li>相同的刺激必须至少间隔两次才能出现。</li>
+</ul></li>
+<li><strong>特殊要求</strong>
+<ul>
+<li>本题目需要用户判断呈现的刺激序列中是否出现<code>A-X</code>配对，因此在序列中有一个很重要的设置是<code>A-X</code>出现的比例。同时，也要考虑到<code>A-(非X)</code>、<code>(非A)-X</code>这两种序列的比例。需要保证这三种序列比例一致。</li>
+<li>保证每个刺激出现的频率相等，即都为1/5。</li>
+</ul></li>
+</ul></li>
+<li>序列配置
+<ul>
+<li>见<a href="/seq/00903_CPT2.json" target="_blank">序列文件</a>。</li>
+<li>数组中每一个元素都是一个<code>json</code>对象，包含三个<code>名称/值(name/value)</code>配对，分别是
+<ul>
+<li><code>length</code>：表示序列的长度</li>
+<li><code>stim</code>：包含了由<strong>刺激名称</strong>组成的多个序列</li>
+<li><code>scat</code>：包含了由<strong>刺激类别</strong>组成的多个序列</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div class="section level1">
+<h1>配置参数</h1>
+<table>
+<caption><span id="tab:configs">表1: </span>配置参数总表</caption>
+<thead>
+<tr class="header">
+<th align="left">参数类别</th>
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="center">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>maxSt</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">200</td>
+<td align="left">单个刺激最大展示时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>isi</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">1000</td>
+<td align="left">刺激间隔时间，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激序列</td>
+<td align="left"><code>endMethod</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">2</td>
+<td align="left">题目的结束方式（1=按时间结束，2=按刺激个数结束）</td>
+</tr>
+<tr class="even">
+<td align="left">刺激序列</td>
+<td align="left"><code>duration</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">30000</td>
+<td align="left">题目整体持续时间（<code>endMethod</code>=1时生效，单位毫秒）</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激序列</td>
+<td align="left"><code>quantity</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">100</td>
+<td align="left">刺激总个数（<code>endMethod</code>=2时需全部做完）</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackCorrectError</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">控制正式测评时候是（1）否（0）需要反馈正确与错误</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackNoResponse</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">控制正式测评时候是（1）否（0）需要提示用户未操作</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackVisual</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出视觉反馈</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level1">
+<h1>数据记录</h1>
+<ul>
+<li>题目结果显示
+<ul>
+<li>显示正确率和平均正确反应时间</li>
+<li>展示标准分数和超越百分比</li>
+</ul></li>
+<li>提交原始数据如下表（参考<a href="/docs/standard/">标准</a>中关于格式的说明）</li>
+</ul>
+<table>
+<caption><span id="tab:recording-variables">表2: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>STIM</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">刺激名称(STIMulus)，即<code>A</code>、<code>B</code>、<code>C</code>、<code>D</code>或<code>X</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>SCat</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">刺激类型(Stimulus Category)，包括五种类型：‘Target’,‘AnotX’,‘Aonly’,‘Xonly’或’Random’</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户是否操作(Response)，0=未操作，1=操作。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误(ACCuracy)，0=错误，1=正确。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（单位：毫秒）(Response Time)，若未完成操作，则记为0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level1">
+<h1>试题算分</h1>
+<ul>
+<li>算分码：101</li>
+<li>传入参数：</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>hitRate</code></td>
+<td align="left"><code>float</code></td>
+<td align="left">用户在对所有需要操作的刺激中正确操作的比例</td>
+</tr>
+<tr class="even">
+<td align="left"><code>FARate</code></td>
+<td align="left"><code>float</code></td>
+<td align="left">用户在对所有不需要操作的刺激中错误操作的比例</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level1">
+<h1>修订历史</h1>
+<ol style="list-style-type: decimal">
+<li>（2017/10/25，张亮，潘世豪）变更数据记录方式：
+<ul>
+<li>修改前：统一使用<code>;</code>分割不同试次；使用<code>,</code>分割单个试次中记录的不同变量</li>
+<li>修改后：采用<code>json</code>字符串记录数据，不同的变量采用不同的字段</li>
+</ul></li>
+<li>（2017/11/02，张亮）变更序列传输方式：
+<ul>
+<li>修改前：将<code>stim</code>和<code>scat</code>分开传输</li>
+<li>修改后：合并为一个<code>seq</code>一起传输</li>
+</ul></li>
+</ol>
+</div>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
+最后部署时间（版本：0.0.10）：2018-12-28 14:07:42
+
+  
+  <hr/>
+  &copy; <a href="http://www.iquizoo.com/">爱智游</a> 2017 &ndash; 2018
+  
+  </footer>
+  </body>
+</html>
+

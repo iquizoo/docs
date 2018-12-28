@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>学科能力（subjectAbility） | 爱智游设计文档中心</title>
+    <link rel="stylesheet" href="/docs/css/style.css" />
+    <link rel="stylesheet" href="/docs/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/docs/docs/">主页</a></li>
+      
+      <li><a href="/docs/docs/post/">所有文档</a></li>
+      
+      <li><a href="/docs/docs/categories/">类别</a></li>
+      
+      <li><a href="/docs/docs/tags/">任务列表</a></li>
+      
+      <li><a href="/docs/docs/scoring/">算分说明</a></li>
+      
+      <li><a href="/docs/docs/glossary/">术语</a></li>
+      
+      <li><a href="/docs/docs/standard/">标准</a></li>
+      
+      <li><a href="/docs/docs/about/">关于</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">学科能力（subjectAbility）</span></h1>
+<h2 class="author">张亮</h2>
+<h2 class="date">2018/05/31</h2>
+</div>
+
+<main>
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#后台配置">后台配置</a><ul>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：学科能力</li>
+<li><strong>英文名称</strong>：subjectAbility</li>
+<li><strong>题目编号</strong>：07101</li>
+<li><strong>任务描述</strong>：学科能力是一个抽象的题目壳，拥有多个实现，但是都是单选题目。
+<!-- * **测查能力**： -->
+<!-- * **相关任务**： --></li>
+</ul>
+<!-- # 前端交互 -->
+<!-- ## 基本逻辑 -->
+<!-- ## 详细说明 -->
+</div>
+<div id="后台配置" class="section level1">
+<h1>后台配置</h1>
+<!-- ## 游戏参数 -->
+<!-- ```{r configs, echo=FALSE, message=FALSE} -->
+<!-- # knitr::kable( -->
+<!-- #   readr::read_csv( -->
+<!-- #     here::here("R", "config", NAME_EN, "configs.csv") -->
+<!-- #   ), -->
+<!-- #   caption = "配置参数总表" -->
+<!-- # ) -->
+<!-- ``` -->
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<table>
+<caption><span id="tab:recording-variables">表1: </span>原始数据变量列表<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>IID</code></td>
+<td align="left"><code>long int</code></td>
+<td align="left">题目的ID，跟题库里的保持一致</td>
+</tr>
+<tr class="even">
+<td align="left"><code>CResp</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确答案</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户的实际选择，若未作答记录为-1</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户作答是否正确，1=正确，0=错误，-1=未作答</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户作答所用时间（单位：毫秒）(Response Time）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="试题算分" class="section level2">
+<h2>试题算分</h2>
+<table>
+<caption><span id="tab:sdk-score">表2: </span>传入参数（算分码：<code>100</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>average</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确试次的平均反应时间</td>
+</tr>
+<tr class="even">
+<td align="left"><code>rate</code></td>
+<td align="left"><code>float</code></td>
+<td align="left">用户在整个题目中的正确率</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>请参考<a href="/docs/standard/">标准</a>。<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
+最后部署时间（版本：0.0.10）：2018-12-28 14:07:42
+
+  
+  <hr/>
+  &copy; <a href="http://www.iquizoo.com/">爱智游</a> 2017 &ndash; 2018
+  
+  </footer>
+  </body>
+</html>
+

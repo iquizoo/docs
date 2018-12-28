@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>汉诺塔（TOH） | 爱智游设计文档中心</title>
+    <link rel="stylesheet" href="/docs/css/style.css" />
+    <link rel="stylesheet" href="/docs/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/docs/docs/">主页</a></li>
+      
+      <li><a href="/docs/docs/post/">所有文档</a></li>
+      
+      <li><a href="/docs/docs/categories/">类别</a></li>
+      
+      <li><a href="/docs/docs/tags/">任务列表</a></li>
+      
+      <li><a href="/docs/docs/scoring/">算分说明</a></li>
+      
+      <li><a href="/docs/docs/glossary/">术语</a></li>
+      
+      <li><a href="/docs/docs/standard/">标准</a></li>
+      
+      <li><a href="/docs/docs/about/">关于</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">汉诺塔（TOH）</span></h1>
+<h2 class="author">张亮</h2>
+<h2 class="date">2018/05/16</h2>
+</div>
+
+<main>
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#交互流程">交互流程</a></li>
+<li><a href="#详细说明">详细说明</a></li>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：汉诺塔</li>
+<li><strong>英文名称</strong>：TOH</li>
+<li><strong>题目编号</strong>：08101</li>
+<li><strong>任务描述</strong>：以最少的步数将圆盘移动到最右边的柱子。</li>
+<li><strong>测查能力</strong>：思维力-思维深刻性</li>
+</ul>
+</div>
+<div id="交互流程" class="section level1">
+<h1>交互流程</h1>
+<p><strong>汉诺塔</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>是根据一个传说形成的数学问题：</p>
+<p>从左至右有三根杆子<span class="math inline">\(A\)</span>，<span class="math inline">\(B\)</span>，<span class="math inline">\(C\)</span>。<span class="math inline">\(A\)</span>杆上有<span class="math inline">\(N\)</span>个（<span class="math inline">\(N&gt;1\)</span>）穿孔圆盘，盘的尺寸由下到上依次变小（如图<a href="#fig:interface">1</a>）。要求按下列规则将所有圆盘移至<span class="math inline">\(C\)</span>杆（如图<a href="#fig:steps">2</a>）：</p>
+<ol style="list-style-type: decimal">
+<li>每次只能移动一个圆盘；</li>
+<li>每次只能移动柱子最上面的盘子；</li>
+<li>大盘不能叠在小盘上面。</li>
+</ol>
+<p>注意：</p>
+<ol style="list-style-type: decimal">
+<li>实际游戏界面不要显示<span class="math inline">\(A\)</span>，<span class="math inline">\(B\)</span>，<span class="math inline">\(C\)</span>这三个字母，此处仅用作展示用。</li>
+<li>实际游戏界面上需呈现目标状态（即所有圆盘都按大小顺序放在<span class="math inline">\(C\)</span>杆上）的图片，建议放在页面右上方。</li>
+<li>移动圆盘的操作通过鼠标或触摸拖拽完成。</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:interface"></span>
+<img src="/images/TOH/interface.jpg" alt="示例图-起始界面"  />
+<p class="caption">
+图1: 示例图-起始界面
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:steps"></span>
+<img src="/images/TOH/steps.jpg" alt="示例图-移动步骤"  />
+<p class="caption">
+图2: 示例图-移动步骤
+</p>
+</div>
+<p><strong>引导与练习</strong>。</p>
+<p>引导部分需要让用户理解：如何移动圆盘、移动圆盘的规则、要达成的目标等，建议做出动画来展示。</p>
+<p>练习部分让用户完成一个包含两个圆盘的题目，且每当用户在5秒内没有操作时，就用动画提示用户如何进行下一次移动，直到最后完成目标。</p>
+</div>
+<div id="详细说明" class="section level1">
+<h1>详细说明</h1>
+<p>练习部分需要完成一个包含2个圆盘的题目。正式测评部分依次完成3、4、5个（即3轮）圆盘的题目。</p>
+<p>单个轮次中，需设定用户可以移动的最大次数。当达到最大移动次数（具体配置见表<a href="#tab:stimuli">1</a>）后，若题目仍然未解答成功，该轮题目直接结束。但需要注意：</p>
+<ol style="list-style-type: decimal">
+<li>在练习部分，若用户在最大次数后仍未成功解答题目，需重新做包含2个圆盘的练习。最多重复做3次。</li>
+<li>无效的移动（即大圆盘被放到小圆盘之上）不计入移动次数，但要计入无效移动次数（需记录下来），并且给出声音和视觉反馈说明该次移动无效，被移动的圆盘也自动回到移动前的位置。</li>
+<li>界面上需显示<strong>有效移动次数</strong>、<strong>无效移动次数</strong>和<strong>剩余移动次数</strong>，建议放在界面的右下方。</li>
+<li>在正式测评部分，若用户在最大次数后未成功解答题目，立即计算从最终状态到完成解答所需的最小步数，这个步数需要作为数据记录参数的一部分。</li>
+</ol>
+<table>
+<caption><span id="tab:stimuli">表1: </span>题目参数配置</caption>
+<thead>
+<tr class="header">
+<th align="left">阶段</th>
+<th align="center">圆盘个数</th>
+<th align="center">最佳移动次数</th>
+<th align="center">最大移动次数</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">练习</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td align="left">正式测评</td>
+<td align="center">3</td>
+<td align="center">7</td>
+<td align="center">30</td>
+</tr>
+<tr class="odd">
+<td align="left">正式测评</td>
+<td align="center">4</td>
+<td align="center">15</td>
+<td align="center">50</td>
+</tr>
+<tr class="even">
+<td align="left">正式测评</td>
+<td align="center">5</td>
+<td align="center">31</td>
+<td align="center">100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="数据记录" class="section level1">
+<h1>数据记录</h1>
+<p>提交原始数据如表<a href="#tab:recording-variables">2</a>（请参考<a href="/docs/standard/">标准</a>）</p>
+<table>
+<caption><span id="tab:recording-variables">表2: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Round</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">第几轮游戏</td>
+</tr>
+<tr class="even">
+<td align="left"><code>CountPlate</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">圆盘个数，跟题目参数一致</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>CountBestMov</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">最佳移动次数，跟题目参数一致</td>
+</tr>
+<tr class="even">
+<td align="left"><code>CountActMov</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">实际移动次数</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>CountErrMov</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">无效移动次数</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">是否成功解答题目，成功记录为1，不成功记录为0</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>PlanTime</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">策略时间，即从题目展示到移动第一个圆盘所用时间，单位为毫秒</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Time</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">完成题目所用全部时间（包含策略时间），单位为毫秒</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="试题算分" class="section level1">
+<h1>试题算分</h1>
+<table>
+<caption><span id="tab:sdk-score">表3: </span>传入参数（算分码：<code>303</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>bestMov</code></td>
+<td align="left"><code>int array</code></td>
+<td align="left">包含各轮次的最佳移动次数的数组</td>
+</tr>
+<tr class="even">
+<td align="left"><code>actMov</code></td>
+<td align="left"><code>int array</code></td>
+<td align="left">包含各轮次的实际移动次数的数组</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>time</code></td>
+<td align="left"><code>int array</code></td>
+<td align="left">包含各轮次实际所花时间（单位为毫秒）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>以下说明摘录自<a href="https://zh.wikipedia.org/wiki/汉诺塔">维基百科</a>，有改动。<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
+最后部署时间（版本：0.0.10）：2018-12-28 14:07:42
+
+  
+  <hr/>
+  &copy; <a href="http://www.iquizoo.com/">爱智游</a> 2017 &ndash; 2018
+  
+  </footer>
+  </body>
+</html>
+

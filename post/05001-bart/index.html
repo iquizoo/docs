@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>吹气球（BART） | 爱智游设计文档中心</title>
+    <link rel="stylesheet" href="/docs/css/style.css" />
+    <link rel="stylesheet" href="/docs/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/docs/docs/">主页</a></li>
+      
+      <li><a href="/docs/docs/post/">所有文档</a></li>
+      
+      <li><a href="/docs/docs/categories/">类别</a></li>
+      
+      <li><a href="/docs/docs/tags/">任务列表</a></li>
+      
+      <li><a href="/docs/docs/scoring/">算分说明</a></li>
+      
+      <li><a href="/docs/docs/glossary/">术语</a></li>
+      
+      <li><a href="/docs/docs/standard/">标准</a></li>
+      
+      <li><a href="/docs/docs/about/">关于</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">吹气球（BART）</span></h1>
+<h2 class="author">张亮</h2>
+<h2 class="date">2018/03/03</h2>
+</div>
+
+<main>
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#交互界面">交互界面</a></li>
+<li><a href="#详细说明">详细说明</a></li>
+<li><a href="#配置参数">配置参数</a></li>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：吹气球</li>
+<li><strong>英文名称</strong>：BART</li>
+<li><strong>题目编号</strong>：05001</li>
+<li><strong>任务描述</strong>：测查自控力，特别是控制冲动的能力。</li>
+<li><strong>测查能力</strong>：自控力-控制冲动</li>
+</ul>
+</div>
+<div id="交互界面" class="section level1">
+<h1>交互界面</h1>
+<p>如下图，屏幕中央展示一个气球；下方有左右两个按钮，分别采用一个<strong>形状</strong>表示<strong>打气</strong>（左侧）和<strong>获取奖励</strong>（右侧）；按钮下方有上下两个计分板，分别用<strong>刻度</strong>表示累计获得的奖励（上）和最近一个未爆炸气球成功兑换的奖励（下）。用户可以通过触碰按钮（“移动APP”）或使用鼠标点击（“电脑WEB”）或使用键盘的左右键（“电脑WEB”，需要在练习时候提示）而做出选择。</p>
+<div class="figure" style="text-align: center"><span id="fig:include-image"></span>
+<img src="/images/BART/界面.png" alt="主界面"  />
+<p class="caption">
+图1: 主界面
+</p>
+</div>
+<p>选择结果（注意：选择结果没有正确与错误之分）：</p>
+<ul>
+<li><dl>
+<dt>选择“打气”</dt>
+<dd>气球的大小<strong>增大</strong>一定尺度并等待用户进一步选择，或者气球大小已经到了极限而<strong>爆炸</strong>。请注意，<strong>不要</strong>显示当前大小的气球可以兑换的奖励数目。
+</dd>
+</dl></li>
+<li><dl>
+<dt>选择“获取奖励”</dt>
+<dd>同时完成四个更新：气球消失；展示获得奖励分数：奖励分数 <span class="math inline">\(=\)</span> 打气次数 <span class="math inline">\(\times\)</span> 5；增加累计分数的<strong>刻度</strong>累加进新的分数；更新最近获得奖励分数。
+</dd>
+</dl></li>
+</ul>
+</div>
+<div id="详细说明" class="section level1">
+<h1>详细说明</h1>
+<!-- **气球爆炸几率**。假设气球最大打气次数为 $N$ （参数配置），那么，用户第 $K$ 次打气时的气球爆炸的概率为 $\frac{1}{N - K + 1}$ 。例如：若气球最大打气次数为`5`，那么 -->
+<!-- 1. 用户执行第1次打气时，则从[1, 2, 3, 4, 5]的数组中随机取一个数字：若取到1，则打气后气球爆炸；若未取到1，则气球增大，同时奖金池增大5。 -->
+<!-- 1. 若用户执行第2次打气，则从[1, 2, 3, 4]的数组中随机取一个数字：若取到1，则打气后气球爆炸；若未取到1，则气球增大，同时奖金池增大5。 -->
+<!-- 1. 依此类推。 -->
+<p><strong>气球爆炸前吹气次数设置</strong>。</p>
+<ul>
+<li>实际测评时会保证气球个数（配置参数：<code>quantity</code>）是最大打气次数（配置参数：<code>maxBlow</code>）的倍数。例如若最大打气次数为10，那么气球个数设置为10，20，30，……。假如这个倍数是 <span class="math inline">\(M\)</span> ，则 <span class="math inline">\(M = \frac{quantity}{maxBlow}\)</span> 。</li>
+<li>测评时候随机设定每个气球的爆炸次数为1，2，3，……，<code>maxBlow</code>，保证每种爆炸次数的气球个数都为 <span class="math inline">\(M\)</span> 个即可。</li>
+</ul>
+</div>
+<div id="配置参数" class="section level1">
+<h1>配置参数</h1>
+<table>
+<caption><span id="tab:configs">表1: </span>配置参数总表</caption>
+<thead>
+<tr class="header">
+<th align="left">参数类别</th>
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="center">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">刺激序列</td>
+<td align="left"><code>quantity</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">40</td>
+<td align="left">气球总个数</td>
+</tr>
+<tr class="even">
+<td align="left">刺激序列</td>
+<td align="left"><code>maxBlow</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">10</td>
+<td align="left">单个气球最大打气次数</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackCorrectError</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">注意本任务没有正确错误之分，也就不需要反馈正误了</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackNoResponse</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">注意本任务不会出现没有操作的试次</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackVisual</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="数据记录" class="section level1">
+<h1>数据记录</h1>
+<ul>
+<li>题目结果显示
+<ul>
+<li>显示获得的奖励分数和成功兑换奖励的气球个数</li>
+<li>展示标准分数和超越百分比</li>
+</ul></li>
+<li>提交原始数据如下表（请参考<a href="/docs/standard/">标准</a>）</li>
+</ul>
+<table>
+<caption><span id="tab:recording-variables">表2: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>balloon</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">气球编号，即第几个气球</td>
+</tr>
+<tr class="even">
+<td align="left"><code>NHit</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">打气次数</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Feedback</code></td>
+<td align="left"><code>boolean</code></td>
+<td align="left">气球是（1）否（0）爆炸</td>
+</tr>
+<tr class="even">
+<td align="left"><code>CurUtility</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">当前气球的奖励</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>CumUtility</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">累计奖励</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="试题算分" class="section level1">
+<h1>试题算分</h1>
+<table>
+<caption><span id="tab:sdk-score">表3: </span>传入参数（算分码：<code>300</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>hits</code></td>
+<td align="left"><code>int array</code></td>
+<td align="left">所有未爆炸气球的打气次数</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
+最后部署时间（版本：0.0.10）：2018-12-28 14:07:42
+
+  
+  <hr/>
+  &copy; <a href="http://www.iquizoo.com/">爱智游</a> 2017 &ndash; 2018
+  
+  </footer>
+  </body>
+</html>
+

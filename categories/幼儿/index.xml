@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>幼儿 on 爱智游设计文档中心</title>
+    <link>https://iquizoo.github.io/docs/categories/%E5%B9%BC%E5%84%BF/</link>
+    <description>Recent content in 幼儿 on 爱智游设计文档中心</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 06 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://iquizoo.github.io/docs/categories/%E5%B9%BC%E5%84%BF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>保卫地球（ProtectEarth）</title>
+      <link>https://iquizoo.github.io/docs/post/08501-protectearth/</link>
+      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/08501-protectearth/</guid>
+      <description>基本信息 前端交互 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：保卫地球 英文名称：ProtectEarth 题目编号：08501 任务描述：测</description>
+    </item>
+    
+    <item>
+      <title>分门别类（Classification）</title>
+      <link>https://iquizoo.github.io/docs/post/00603-classification/</link>
+      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/00603-classification/</guid>
+      <description>基本信息 前端交互 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：分门别类 英文名称：Classification 题目编号：00603 任务描述</description>
+    </item>
+    
+    <item>
+      <title>寻找物体（SearchObject）</title>
+      <link>https://iquizoo.github.io/docs/post/03703-searchobject/</link>
+      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/03703-searchobject/</guid>
+      <description>基本信息 前端交互 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：寻找物体 英文名称：SearchObject 题目编号：03703 任务描述：测</description>
+    </item>
+    
+    <item>
+      <title>记忆扫描（MemoryScan）</title>
+      <link>https://iquizoo.github.io/docs/post/00302-memoryscan/</link>
+      <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/00302-memoryscan/</guid>
+      <description>基本信息 前端交互 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：记忆扫描 英文名称：MemoryScan 题目编号：00302 任务描述：测查记</description>
+    </item>
+    
+  </channel>
+</rss>

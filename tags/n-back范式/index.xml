@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>n-back范式 on 爱智游设计文档中心</title>
+    <link>https://iquizoo.github.io/docs/tags/n-back%E8%8C%83%E5%BC%8F/</link>
+    <description>Recent content in n-back范式 on 爱智游设计文档中心</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 31 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://iquizoo.github.io/docs/tags/n-back%E8%8C%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数字魔法师中级（digitalWorkTwo）</title>
+      <link>https://iquizoo.github.io/docs/post/02001-digitalworktwo/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/02001-digitalworktwo/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：数字魔法师中级 英文名称：digitalWorkTwo 题目编</description>
+    </item>
+    
+    <item>
+      <title>数字魔法师初级（digitalWorkOne）</title>
+      <link>https://iquizoo.github.io/docs/post/02002-digitalworkone/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/02002-digitalworkone/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：数字魔法师初级 英文名称：digitalWorkOne 题目编</description>
+    </item>
+    
+  </channel>
+</rss>

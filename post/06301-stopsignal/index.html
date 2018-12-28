@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>红绿灯（StopSignal） | 爱智游设计文档中心</title>
+    <link rel="stylesheet" href="/docs/css/style.css" />
+    <link rel="stylesheet" href="/docs/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/docs/docs/">主页</a></li>
+      
+      <li><a href="/docs/docs/post/">所有文档</a></li>
+      
+      <li><a href="/docs/docs/categories/">类别</a></li>
+      
+      <li><a href="/docs/docs/tags/">任务列表</a></li>
+      
+      <li><a href="/docs/docs/scoring/">算分说明</a></li>
+      
+      <li><a href="/docs/docs/glossary/">术语</a></li>
+      
+      <li><a href="/docs/docs/standard/">标准</a></li>
+      
+      <li><a href="/docs/docs/about/">关于</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">红绿灯（StopSignal）</span></h1>
+<h2 class="author">张亮</h2>
+<h2 class="date">2018/08/06</h2>
+</div>
+
+<main>
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#前端交互">前端交互</a><ul>
+<li><a href="#基本逻辑">基本逻辑</a></li>
+<li><a href="#详细说明">详细说明</a><ul>
+<li><a href="#测评规则">测评规则</a></li>
+<li><a href="#序列说明">序列说明</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#后台配置">后台配置</a><ul>
+<li><a href="#游戏参数">游戏参数</a></li>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：红绿灯</li>
+<li><strong>英文名称</strong>：StopSignal</li>
+<li><strong>题目编号</strong>：06301</li>
+<li><strong>任务描述</strong>：考察自控力，特别是个体克服冲动的想法和行为的能力。</li>
+<li><strong>测查能力</strong>：自控力-控制冲动</li>
+</ul>
+</div>
+<div id="前端交互" class="section level1">
+<h1>前端交互</h1>
+<div id="基本逻辑" class="section level2">
+<h2>基本逻辑</h2>
+<p>在每一个试次中，界面中出现一个类似红绿灯中的绿色小人的图片，小人或者朝左、或者朝右，用户需要快速判断小人的朝向，并做出相应的操作。但是，在小部分的试次中，绿色小人会变成红色小人，用户需要在这些试次避免做出任何操作。</p>
+</div>
+<div id="详细说明" class="section level2">
+<h2>详细说明</h2>
+<div id="测评规则" class="section level3">
+<h3>测评规则</h3>
+<p>在每一个试次中，依次有以下事件：</p>
+<ol style="list-style-type: decimal">
+<li>注视点（+号）出现，显示时间为从1秒到2秒内随机（注意不要固定）。</li>
+<li>注视点消失，同时绿色小人出现，朝向为随机朝左或朝右。</li>
+<li>根据<a href="/seq/06301_StopSignal.json" target="_blank">序列</a>中<a href="#序列说明"><code>type</code></a>字段确定绿色小人是否会变成红色，并且：
+<ul>
+<li>如果不需要变成红色，那么等待用户做出判断；</li>
+<li>如果需要变成红色，那么设置一个变量<code>ssd</code>来确定变红的时间，即绿色小人出现后<code>ssd</code>毫秒后变成红色。<code>ssd</code>的具体设置如下：
+<ul>
+<li>如果是第一次变成红色，则设置<code>ssd</code>与配置参数<code>ssdInit</code>（默认为250，单位毫秒）相同；</li>
+<li>如果不是第一次变成红色，则<code>ssd</code>根据上一次是否成功抑制进行调整，如果上次绿色小人变红时用户成功抑制操作，则<code>ssd</code>增加50；否则减少50。</li>
+</ul></li>
+</ul></li>
+<li>用户完成操作或小人显示时间达到1秒（配置参数<code>maxSt</code>可以配置此参数）后，小人消失。</li>
+<li>对用户的操作进行反馈，反馈显示时间为200毫秒。</li>
+</ol>
+</div>
+<div id="序列说明" class="section level3">
+<h3>序列说明</h3>
+<p><a href="/seq/06301_StopSignal.json" target="_blank">序列</a>包含两个字段：</p>
+<ul>
+<li><code>stim</code>：绿色小人的朝向，<code>Left</code>表示朝左，<code>Right</code>表示朝右。</li>
+<li><code>type</code>：绿色小人是否变成红色，<code>Go</code>表示不变红色，<code>Stop</code>表示变红色。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="后台配置" class="section level1">
+<h1>后台配置</h1>
+<div id="游戏参数" class="section level2">
+<h2>游戏参数</h2>
+<table>
+<caption><span id="tab:configs">表1: </span>配置参数总表</caption>
+<thead>
+<tr class="header">
+<th align="left">参数类别</th>
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="center">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>maxSt</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">1000</td>
+<td align="left">单个刺激最大展示时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>ssdInit</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">250</td>
+<td align="left">绿色小人从出现到变成红色的初始间隔时间，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激序列</td>
+<td align="left"><code>endMethod</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">2</td>
+<td align="left">题目的结束方式（1=按时间结束，2=按刺激个数结束）</td>
+</tr>
+<tr class="even">
+<td align="left">刺激序列</td>
+<td align="left"><code>duration</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">30000</td>
+<td align="left">题目整体持续时间（<code>endMethod</code>=1时生效，单位毫秒）</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激序列</td>
+<td align="left"><code>quantity</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">128</td>
+<td align="left">刺激总个数（<code>endMethod</code>=2时需全部做完）</td>
+</tr>
+<tr class="even">
+<td align="left">刺激序列</td>
+<td align="left"><code>round</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">4</td>
+<td align="left">总轮数</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackCorrectError</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）需要反馈正确与错误</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackNoResponse</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">控制正式测评时候是（1）否（0）需要提示用户未操作</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackVisual</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出视觉反馈</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<table>
+<caption><span id="tab:recording-variables">表2: </span>原始数据变量列表<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Round</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">本任务有轮次的概念，此处记录当前在第几个轮次</td>
+</tr>
+<tr class="even">
+<td align="left"><code>STIM</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">绿色小人的朝向，<code>Left</code>表示朝左，<code>Right</code>表示朝右（同序列）</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Type</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">绿色小人是否变成红色，<code>Go</code>表示不变红色，<code>Stop</code>表示变红色（同序列）</td>
+</tr>
+<tr class="even">
+<td align="left"><code>SSD</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">当前绿色小人从出现到变成红色的间隔时间（Stop Signal Delay），以毫秒为单位</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户的实际反应（Response），包含三种可能：<code>Left</code>，<code>Right</code>或<code>None</code>（未操作）</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误（ACCuracy）：如果小人未变成红色，则0=错误，1=正确，-1=未操作；否则，1=未操作（即正确），0=已操作（即错误）</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（单位：毫秒）（Response Time），若未操作，则记为0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="试题算分" class="section level2">
+<h2>试题算分</h2>
+<table>
+<caption><span id="tab:sdk-score">表3: </span>传入参数（算分码：<code>204</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>SSD</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">整个游戏过程中小人出现到变成红色的时间间隔平均</td>
+</tr>
+<tr class="even">
+<td align="left"><code>MedGoRT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">整个游戏过程中小人未变成红色情况下，用户正确操作的试次的反应时中位数</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>请参考<a href="/docs/standard/">标准</a>。<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
+最后部署时间（版本：0.0.10）：2018-12-28 14:07:42
+
+  
+  <hr/>
+  &copy; <a href="http://www.iquizoo.com/">爱智游</a> 2017 &ndash; 2018
+  
+  </footer>
+  </body>
+</html>
+

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C2框架 on 爱智游设计文档中心</title>
+    <link>https://iquizoo.github.io/docs/categories/c2%E6%A1%86%E6%9E%B6/</link>
+    <description>Recent content in C2框架 on 爱智游设计文档中心</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 06 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://iquizoo.github.io/docs/categories/c2%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>保卫地球（ProtectEarth）</title>
+      <link>https://iquizoo.github.io/docs/post/08501-protectearth/</link>
+      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/08501-protectearth/</guid>
+      <description>基本信息 前端交互 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：保卫地球 英文名称：ProtectEarth 题目编号：08501 任务描述：测</description>
+    </item>
+    
+    <item>
+      <title>分门别类（Classification）</title>
+      <link>https://iquizoo.github.io/docs/post/00603-classification/</link>
+      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/00603-classification/</guid>
+      <description>基本信息 前端交互 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：分门别类 英文名称：Classification 题目编号：00603 任务描述</description>
+    </item>
+    
+    <item>
+      <title>寻找物体（SearchObject）</title>
+      <link>https://iquizoo.github.io/docs/post/03703-searchobject/</link>
+      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/03703-searchobject/</guid>
+      <description>基本信息 前端交互 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：寻找物体 英文名称：SearchObject 题目编号：03703 任务描述：测</description>
+    </item>
+    
+    <item>
+      <title>记忆扫描（MemoryScan）</title>
+      <link>https://iquizoo.github.io/docs/post/00302-memoryscan/</link>
+      <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/00302-memoryscan/</guid>
+      <description>基本信息 前端交互 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：记忆扫描 英文名称：MemoryScan 题目编号：00302 任务描述：测查记</description>
+    </item>
+    
+    <item>
+      <title>卡片分类（WCST）</title>
+      <link>https://iquizoo.github.io/docs/post/05501-wcst/</link>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/05501-wcst/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 卡片特征 测评规则 卡片呈现 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：卡片分类 英文名称：WCST 题目编号</description>
+    </item>
+    
+    <item>
+      <title>汉诺塔（TOH）</title>
+      <link>https://iquizoo.github.io/docs/post/08101-toh/</link>
+      <pubDate>Wed, 16 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/08101-toh/</guid>
+      <description>基本信息 交互流程 详细说明 数据记录 试题算分 基本信息 显示名称：汉诺塔 英文名称：TOH 题目编号：08101 任务描述：以最少的步数将圆盘移动到最右边</description>
+    </item>
+    
+    <item>
+      <title>蝴蝶照相机（butterfly）</title>
+      <link>https://iquizoo.github.io/docs/post/05803-butterfly/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/05803-butterfly/</guid>
+      <description>基本信息 交互流程 详细说明 刺激 序列 配置参数 数据记录 试题算分 基本信息 显示名称：蝴蝶照相机 英文名称：butterfly 题目编号：05803 任务描述</description>
+    </item>
+    
+    <item>
+      <title>森林中的萤火虫（firefly）</title>
+      <link>https://iquizoo.github.io/docs/post/02102-firefly/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/02102-firefly/</guid>
+      <description>基本信息 交互界面 详细说明 刺激 操作 序列配置 配置参数 数据记录 结果显示 提交数据 试题算分 基本信息 显示名称：森林中的萤火虫 英文名称：firefly 题目</description>
+    </item>
+    
+    <item>
+      <title>速算师（calculator）</title>
+      <link>https://iquizoo.github.io/docs/post/01303-calculator/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/01303-calculator/</guid>
+      <description>基本信息 交互界面 详细说明 题目配置 选项配置 加法干扰选项 减法干扰选项 流程 计分规则 配置参数 数据记录 结果显示 提交数据 试题算分 基本信息 显示名称：速算师</description>
+    </item>
+    
+  </channel>
+</rss>

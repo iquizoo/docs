@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>心理数轴 on 爱智游设计文档中心</title>
+    <link>https://iquizoo.github.io/docs/tags/%E5%BF%83%E7%90%86%E6%95%B0%E8%BD%B4/</link>
+    <description>Recent content in 心理数轴 on 爱智游设计文档中心</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 31 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://iquizoo.github.io/docs/tags/%E5%BF%83%E7%90%86%E6%95%B0%E8%BD%B4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数字大小比较（numberComparison）</title>
+      <link>https://iquizoo.github.io/docs/post/04901-numbercomparison/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/04901-numbercomparison/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：数字大小比较 英文名称：numberComparison 题目</description>
+    </item>
+    
+  </channel>
+</rss>

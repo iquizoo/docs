@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>记忆尾巴（RunningMemory） | 爱智游设计文档中心</title>
+    <link rel="stylesheet" href="/docs/css/style.css" />
+    <link rel="stylesheet" href="/docs/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/docs/docs/">主页</a></li>
+      
+      <li><a href="/docs/docs/post/">所有文档</a></li>
+      
+      <li><a href="/docs/docs/categories/">类别</a></li>
+      
+      <li><a href="/docs/docs/tags/">任务列表</a></li>
+      
+      <li><a href="/docs/docs/scoring/">算分说明</a></li>
+      
+      <li><a href="/docs/docs/glossary/">术语</a></li>
+      
+      <li><a href="/docs/docs/standard/">标准</a></li>
+      
+      <li><a href="/docs/docs/about/">关于</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">记忆尾巴（RunningMemory）</span></h1>
+<h2 class="author">张亮</h2>
+<h2 class="date">2018/03/03</h2>
+</div>
+
+<main>
+
+
+
+<div class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：记忆尾巴</li>
+<li><strong>英文名称</strong>：RunningMemory</li>
+<li><strong>题目编号</strong>：05201</li>
+<li><strong>任务描述</strong>：测查自控力，特别是更新记忆内容的能力。</li>
+<li><strong>测查能力</strong>：自控力-信息更新</li>
+<li><strong>参考模板</strong>：倒背数，顺背数</li>
+</ul>
+</div>
+<div class="section level1">
+<h1>交互界面</h1>
+<p>屏幕中央以<strong>一次一个</strong>的方式呈现一系列数字，用户需要不断更新记忆以记住序列中<strong>最后呈现的四个数字</strong>。待所有数字呈现完毕后，屏幕上方显示出与呈现数字个数相同的方框，但仅有最后四个显示为可填入数字的样式（如，将前面数个的样式改为灰色框）。用户此时使用<strong>鼠标点击</strong>（<code>PC</code>）或<strong>触摸</strong>（<code>Android/iOS</code>）屏幕下方呈现的数字键盘以输入所记住的最后四个数字。每输入一个，上方那四个可填入数字的方框的相应位置就显示出所输入的数字。直到四个数字输入完毕后，屏幕显示一定时间（试次间隔时间）的空白，之后进入下一个试次。</p>
+<p><strong>练习</strong>。练习时候需要让用户了解到作答时候顺序的重要性，即必须按原来的顺序点击最后出现的四个数字。</p>
+</div>
+<div class="section level1">
+<h1>详细说明</h1>
+<ul>
+<li>刺激
+<ul>
+<li>每个试次中会呈现一系列数字，单个数字呈现时间由参数<code>maxSt</code>（默认300ms）控制，数字呈现时间间隔由参数<code>isi</code>（默认1000ms）控制。</li>
+</ul></li>
+<li>序列
+<ul>
+<li>本题目中单个试次要呈现的数字个数有三种，即5，7，9个。</li>
+<li>正式测评总计12个试次，即每种4个试次。</li>
+<li>练习总计3次，即每种1次。</li>
+</ul></li>
+<li>序列配置
+<ul>
+<li>见<a href="/seq/05201_RunningMemory.json" target="_blank">序列文件</a>。</li>
+<li>本题目只有一种序列，因此传输序列的<a href="http://json.org/"><code>json</code></a>字符串仅包含一个由两个<code>名称/值</code>配对组成的对象。
+<ul>
+<li><code>prac</code>: 练习阶段的3个序列。</li>
+<li><code>test</code>: 正式测试阶段的12个序列。</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div class="section level1">
+<h1>配置参数</h1>
+<table>
+<caption><span id="tab:configs">表1: </span>配置参数总表</caption>
+<thead>
+<tr class="header">
+<th align="left">参数类别</th>
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="center">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>maxSt</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">300</td>
+<td align="left">单个数字最大展示时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>isi</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">1000</td>
+<td align="left">数字呈现之间的间隔时间，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>iti</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">1000</td>
+<td align="left">试次间隔时间，即用户操作完成到下一个试次开始之间的间隔时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激序列</td>
+<td align="left"><code>endMethod</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">2</td>
+<td align="left">题目的结束方式（1=按时间结束，2=按刺激个数结束）</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激序列</td>
+<td align="left"><code>duration</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">30000</td>
+<td align="left">题目整体持续时间（<code>endMethod</code>=1时生效，单位毫秒）</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackCorrectError</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">控制正式测评时候是（1）否（0）需要反馈正确与错误</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackNoResponse</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">本题目将会一直等待用户操作，但是用户操作完成时需要给一个提示。</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackVisual</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出视觉反馈</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level1">
+<h1>数据记录</h1>
+<ul>
+<li>题目结果显示
+<ul>
+<li>显示正确率和平均正确反应时间</li>
+<li>展示标准分数和超越百分比</li>
+</ul></li>
+<li>提交原始数据如下表（参考<a href="/docs/standard/">标准</a>中关于格式的说明）</li>
+</ul>
+<table>
+<caption><span id="tab:recording-variables">表2: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>STIM</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">单个试次的数字序列，即把所有呈现的数字直接拼接成一个字符串，如’76521’</td>
+</tr>
+<tr class="even">
+<td align="left"><code>CResp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">呈现序列的最后四个数字，即正确的答案(Correct Response)，如’6521’</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户的实际反应(Response)，如’6532’</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">正确与否(ACCuracy)，0（错误）和1（正确）组成的字符串，如’1100’</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所用时间(Response Time)（单位：毫秒）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level1">
+<h1>试题算分</h1>
+<ul>
+<li>算分码：100</li>
+<li>传入参数：</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>rate</code></td>
+<td align="left"><code>float</code></td>
+<td align="left">用户在整个题目中的正确率</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
+最后部署时间（版本：0.0.10）：2018-12-28 14:07:42
+
+  
+  <hr/>
+  &copy; <a href="http://www.iquizoo.com/">爱智游</a> 2017 &ndash; 2018
+  
+  </footer>
+  </body>
+</html>
+

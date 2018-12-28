@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>分配注意 on 爱智游设计文档中心</title>
+    <link>https://iquizoo.github.io/docs/tags/%E5%88%86%E9%85%8D%E6%B3%A8%E6%84%8F/</link>
+    <description>Recent content in 分配注意 on 爱智游设计文档中心</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://iquizoo.github.io/docs/tags/%E5%88%86%E9%85%8D%E6%B3%A8%E6%84%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>分配注意中级（ORRChild）</title>
+      <link>https://iquizoo.github.io/docs/post/01402-orrchild/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/01402-orrchild/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：分配注意中级 英文名称：ORRChild 题目编号：01402</description>
+    </item>
+    
+    <item>
+      <title>分配注意初级（DRRChild）</title>
+      <link>https://iquizoo.github.io/docs/post/01401-drrchild/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/01401-drrchild/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：分配注意初级 英文名称：DRRChild 题目编号：01401</description>
+    </item>
+    
+  </channel>
+</rss>

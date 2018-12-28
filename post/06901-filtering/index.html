@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>班务达人（Filtering） | 爱智游设计文档中心</title>
+    <link rel="stylesheet" href="/docs/css/style.css" />
+    <link rel="stylesheet" href="/docs/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/docs/docs/">主页</a></li>
+      
+      <li><a href="/docs/docs/post/">所有文档</a></li>
+      
+      <li><a href="/docs/docs/categories/">类别</a></li>
+      
+      <li><a href="/docs/docs/tags/">任务列表</a></li>
+      
+      <li><a href="/docs/docs/scoring/">算分说明</a></li>
+      
+      <li><a href="/docs/docs/glossary/">术语</a></li>
+      
+      <li><a href="/docs/docs/standard/">标准</a></li>
+      
+      <li><a href="/docs/docs/about/">关于</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">班务达人（Filtering）</span></h1>
+<h2 class="author">张亮</h2>
+<h2 class="date">2018/03/07</h2>
+</div>
+
+<main>
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#交互界面">交互界面</a></li>
+<li><a href="#详细说明">详细说明</a><ul>
+<li><a href="#刺激">刺激</a></li>
+<li><a href="#操作">操作</a></li>
+<li><a href="#序列配置">序列配置</a></li>
+</ul></li>
+<li><a href="#配置参数">配置参数</a></li>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+<li><a href="#修订历史">修订历史</a></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：班务达人</li>
+<li><strong>英文名称</strong>：Filtering</li>
+<li><strong>题目编号</strong>：06901</li>
+<li><strong>任务描述</strong>：测查注意力，特别是个体的注意选择的能力和注意广度的高低。</li>
+<li><strong>测查能力</strong>：注意力-选择注意</li>
+</ul>
+</div>
+<div id="交互界面" class="section level1">
+<h1>交互界面</h1>
+<div class="figure" style="text-align: center"><span id="fig:taskflow-image"></span>
+<img src="/images/Filtering/taskflow.png" alt="基本流程[^1]"  />
+<p class="caption">
+图1: 基本流程<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+</p>
+</div>
+<p>图<a href="#fig:taskflow-image">1</a>展示了基本流程：</p>
+<ol style="list-style-type: decimal">
+<li>屏幕中间呈现一个<em>加号</em>（+，用于提醒用户注意的注视点）。</li>
+<li>200毫秒（此时间可由配置参数更改）后，加号消失，同时屏幕中央呈现一个<em>刺激阵列</em>（具体见<strong><a href="#刺激">刺激</a></strong>）。</li>
+<li>100毫秒（此时间可由配置参数更改）后，刺激阵列消失，屏幕变为空白。</li>
+<li>900毫秒（此时间可由配置参数更改）后，屏幕中央呈现另一个刺激阵列，同时屏幕下方左右侧分别呈现一个按钮：左侧按钮显示“变了”，右侧按钮显示“没变”。</li>
+<li>在第二个刺激阵列出现后，用户需要在2000毫秒（即<em>最长等待时间</em>，此时间可由配置参数更改）时间内做出判断和操作。刺激阵列会在用户按键后或者达到最长等待时间后消失<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>。</li>
+<li>第二个刺激阵列消失后，屏幕进入空白状态。200毫秒（此时间可由配置参数更改）后，重新进入第一步。</li>
+</ol>
+<p>引导与练习：</p>
+<ul>
+<li>引导：由于本题目的面对的对象是年龄较小的孩子，所以引导需要更加丰富，即多使用<em>简单的文字</em>、<em>语音</em>和<em>动画</em>，使孩子明白题目的要求。</li>
+<li>练习：刺激总计有10种（具体见<strong><a href="#刺激">刺激</a></strong>），有左右两种反应可能，因此，练习设置为20种，随机呈现。仅当正确率达到60%及以上才能进入正式测评。</li>
+</ul>
+</div>
+<div id="详细说明" class="section level1">
+<h1>详细说明</h1>
+<div id="刺激" class="section level2">
+<h2>刺激</h2>
+<p>本题目的刺激是刺激阵列，即由多个元素组成。其中包含两类元素：</p>
+<ol style="list-style-type: decimal">
+<li><strong>黄色糖果</strong>。这是需要用户<strong>注意</strong>的刺激元素。</li>
+<li><strong>绿色糖果</strong>。这是需要用户<strong>忽略</strong>的刺激元素。</li>
+</ol>
+<p>每一个刺激阵列都是由若干个（所有可能情况见表<a href="#tab:stimuli">1</a>）这两种元素<em>随机排列</em>而成。每一个元素的朝向是随机的，且不同元素之间<em>相互不重叠</em>。在一个试次中先后出现的刺激阵列里，需要用户忽略的元素不会发生变化，但需要用户注意的元素的朝向可能（顺时针或逆时针）旋转45°。</p>
+<table>
+<caption><span id="tab:stimuli">表1: </span>所有可能的刺激阵列</caption>
+<thead>
+<tr class="header">
+<th align="center">编号</th>
+<th align="center">黄色糖果数目</th>
+<th align="center">绿色糖果数目</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">4</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">2</td>
+<td align="center">6</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">4</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">4</td>
+<td align="center">4</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="center">6</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="center">6</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="center">8</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>刺激的呈现</strong>。每一个试次都包含5个部分（进一步内容参考表<a href="#tab:configs">2</a>）：</p>
+<ol style="list-style-type: decimal">
+<li>注视点呈现。时间配置参数：线索刺激间隔（<code>csi</code>），默认200毫秒。</li>
+<li>刺激阵列1呈现。时间配置参数：最大呈现时间1（<code>maxSt1</code>），默认100毫秒。</li>
+<li>刺激间空白屏。时间配置参数：刺激间隔时间（<code>isi</code>），默认900毫秒。</li>
+<li>刺激阵列2呈现。时间配置参数：最大呈现时间2（<code>maxSt2</code>），默认2000毫秒。注意在用户操作后刺激也会立即消失。</li>
+<li>试次间空白屏。时间配置参数：试次间隔时间（<code>iti</code>），默认200毫秒。</li>
+</ol>
+</div>
+<div id="操作" class="section level2">
+<h2>操作</h2>
+<p>用户需要根据前后两次出现的刺激阵列是否有需要注意的元素发生改变（即朝向旋转45°）进行操作。若刺激阵列中有元素没有改变，则按“没变”按钮；反之，则按“变了”按钮。根据不同的设备状态，操作有所不同：</p>
+<ul>
+<li><strong>键鼠操作</strong>。要求用户必须用键盘上的左右键反应，而不能使用鼠标点击屏幕下方的按钮。键盘的左右键分别对应屏幕下方的左右按钮。</li>
+<li><strong>触控屏操作</strong>。触碰屏幕下方对应的按钮即可。</li>
+</ul>
+</div>
+<div id="序列配置" class="section level2">
+<h2>序列配置</h2>
+<p><a href="/seq/06901_Filtering.json" target="_blank">序列文件</a>中各个元素的意义：</p>
+<ul>
+<li><code>length</code>：序列的长度</li>
+<li><code>id</code>：刺激阵列（参考表<a href="#tab:stimuli">1</a>）的编号（1-10）。</li>
+<li><code>target</code>：与<code>id</code>对应，是当前刺激包含的需要用户注意的元素（即黄色糖果）的个数。</li>
+<li><code>distractor</code>：与<code>id</code>对应，是当前刺激包含的需要用户忽略的元素（即绿色糖果）的个数。</li>
+<li><code>type</code>：刺激阵列第二次出现时的变化。<code>Stay</code>表示不旋转，<code>Clockwise</code>表示顺时针旋转45°，<code>Counter</code>表示逆时针旋转45°。</li>
+<li><code>cresp</code>：正确答案。<code>Left</code>表示左侧，<code>Right</code>表示右侧。</li>
+</ul>
+</div>
+</div>
+<div id="配置参数" class="section level1">
+<h1>配置参数</h1>
+<table>
+<caption><span id="tab:configs">表2: </span>配置参数总表</caption>
+<thead>
+<tr class="header">
+<th align="left">参数类别</th>
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="center">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>csi</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">200</td>
+<td align="left">线索刺激间隔，即<code>+</code>符号的呈现时间，单位毫秒</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>maxSt1</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">100</td>
+<td align="left">最大呈现时间1，即刺激阵列1的呈现时间，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>isi</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">900</td>
+<td align="left">刺激间隔时间，即刺激阵列1消失和刺激阵列2呈现之间的间隔</td>
+</tr>
+<tr class="even">
+<td align="left">刺激呈现</td>
+<td align="left"><code>maxSt2</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">2000</td>
+<td align="left">最大呈现时间2，即刺激阵列2的呈现时间，单位毫秒</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激呈现</td>
+<td align="left"><code>iti</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">200</td>
+<td align="left">试次间隔时间，即用户操作后（或刺激阵列2达到最大显示时间后）到下一试次开始的间隔</td>
+</tr>
+<tr class="even">
+<td align="left">刺激序列</td>
+<td align="left"><code>endMethod</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">2</td>
+<td align="left">题目的结束方式（1=按时间结束，2=按刺激个数结束）</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激序列</td>
+<td align="left"><code>duration</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">30000</td>
+<td align="left">题目整体持续时间（<code>endMethod</code>=1时生效，单位毫秒）</td>
+</tr>
+<tr class="even">
+<td align="left">刺激序列</td>
+<td align="left"><code>quantity</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">200</td>
+<td align="left">刺激总个数（<code>endMethod</code>=2时需全部做完）</td>
+</tr>
+<tr class="odd">
+<td align="left">刺激序列</td>
+<td align="left"><code>round</code></td>
+<td align="left"><code>int</code></td>
+<td align="center">5</td>
+<td align="left">总轮数</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackCorrectError</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">0</td>
+<td align="left">控制正式测评时候是（1）否（0）需要反馈正确与错误</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackNoResponse</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）需要提示用户未操作</td>
+</tr>
+<tr class="even">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackSound</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
+</tr>
+<tr class="odd">
+<td align="left">操作反馈</td>
+<td align="left"><code>feedbackVisual</code></td>
+<td align="left"><code>bool</code></td>
+<td align="center">1</td>
+<td align="left">控制正式测评时候是（1）否（0）给出视觉反馈</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="数据记录" class="section level1">
+<h1>数据记录</h1>
+<ul>
+<li>题目结果显示
+<ul>
+<li>显示正确率和平均正确反应时间</li>
+<li>展示标准分数和超越百分比</li>
+</ul></li>
+<li>提交原始数据如下表（请参考<a href="/docs/standard/">标准</a>）</li>
+</ul>
+<table>
+<caption><span id="tab:recording-variables">表3: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Round</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">本任务有轮次的概念，此处记录当前在第几个轮次</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ID</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">刺激编号(IDentity)，1-4中的一个</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Target</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">黄色糖果个数</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Distractor</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">绿色糖果个数</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Type</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">刺激阵列第二次出现时的变化，三种可能：<code>Stay</code>, <code>Clockwise</code>, <code>Counter</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>CResp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">正确的反应(Correct Response），包含两种可能：<code>Left</code>, <code>Right</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户的实际反应(Response)，包含三种可能：<code>Left</code>, <code>Right</code>, <code>None</code>（未操作）</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误(ACCuracy)，0=错误，1=正确，-1=未完成操作。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（单位：毫秒）(Response Time)，若未完成操作，则记为0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="试题算分" class="section level1">
+<h1>试题算分</h1>
+<table>
+<caption><span id="tab:sdk-score">表4: </span>传入参数（算分码：<code>104</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>hitRate</code></td>
+<td align="left"><code>float array</code></td>
+<td align="left">对于编号1-10的刺激而言，分别计算旋转过的刺激用户正确判断为“变了”的比例</td>
+</tr>
+<tr class="even">
+<td align="left"><code>FARate</code></td>
+<td align="left"><code>float array</code></td>
+<td align="left">对于编号1-10的刺激而言，分别计算未旋转的刺激用户错误判断为“变了”的比例</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="修订历史" class="section level1">
+<h1>修订历史</h1>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>注意该图仅为样例，实际使用的<a href="#刺激">图形元素</a>（本题目采用的是糖果）与图中不完全一致。<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>刺激阵列消失后需注意给用户的反馈信息。<a href="#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
+最后部署时间（版本：0.0.10）：2018-12-28 14:07:42
+
+  
+  <hr/>
+  &copy; <a href="http://www.iquizoo.com/">爱智游</a> 2017 &ndash; 2018
+  
+  </footer>
+  </body>
+</html>
+

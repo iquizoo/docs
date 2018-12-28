@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on 爱智游设计文档中心</title>
+    <link>https://iquizoo.github.io/docs/</link>
+    <description>Recent content in Home on 爱智游设计文档中心</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 10 Jun 2018 14:45:33 +0800</lastBuildDate>
+    
+	<atom:link href="https://iquizoo.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>保卫地球（ProtectEarth）</title>
+      <link>https://iquizoo.github.io/docs/post/08501-protectearth/</link>
+      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/08501-protectearth/</guid>
+      <description>基本信息 前端交互 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：保卫地球 英文名称：ProtectEarth 题目编号：08501 任务描述：测</description>
+    </item>
+    
+    <item>
+      <title>分门别类（Classification）</title>
+      <link>https://iquizoo.github.io/docs/post/00603-classification/</link>
+      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/00603-classification/</guid>
+      <description>基本信息 前端交互 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：分门别类 英文名称：Classification 题目编号：00603 任务描述</description>
+    </item>
+    
+    <item>
+      <title>寻找物体（SearchObject）</title>
+      <link>https://iquizoo.github.io/docs/post/03703-searchobject/</link>
+      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/03703-searchobject/</guid>
+      <description>基本信息 前端交互 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：寻找物体 英文名称：SearchObject 题目编号：03703 任务描述：测</description>
+    </item>
+    
+    <item>
+      <title>记忆扫描（MemoryScan）</title>
+      <link>https://iquizoo.github.io/docs/post/00302-memoryscan/</link>
+      <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/00302-memoryscan/</guid>
+      <description>基本信息 前端交互 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：记忆扫描 英文名称：MemoryScan 题目编号：00302 任务描述：测查记</description>
+    </item>
+    
+    <item>
+      <title>方向临摹（JLO）</title>
+      <link>https://iquizoo.github.io/docs/post/08401-jlo/</link>
+      <pubDate>Mon, 10 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/08401-jlo/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：方向临摹 英文名称：JLO 题目编号：08401 任务描述：测查</description>
+    </item>
+    
+    <item>
+      <title>龟兔赛跑（MotionPrediction）</title>
+      <link>https://iquizoo.github.io/docs/post/08301-motionprediction/</link>
+      <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/08301-motionprediction/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 流程细节 序列规则 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：龟兔赛跑 英文名称：MotionPredic</description>
+    </item>
+    
+    <item>
+      <title>天气预报员（WeatherPrediction）</title>
+      <link>https://iquizoo.github.io/docs/post/08201-weatherprediction/</link>
+      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/08201-weatherprediction/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 测评流程 卡片规则 序列说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：天气预报员 英文名称：Weather</description>
+    </item>
+    
+    <item>
+      <title>红绿灯（StopSignal）</title>
+      <link>https://iquizoo.github.io/docs/post/06301-stopsignal/</link>
+      <pubDate>Mon, 06 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/06301-stopsignal/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 测评规则 序列说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：红绿灯 英文名称：StopSignal 题目编</description>
+    </item>
+    
+    <item>
+      <title>分配注意中级（ORRChild）</title>
+      <link>https://iquizoo.github.io/docs/post/01402-orrchild/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/01402-orrchild/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：分配注意中级 英文名称：ORRChild 题目编号：01402</description>
+    </item>
+    
+    <item>
+      <title>分配注意初级（DRRChild）</title>
+      <link>https://iquizoo.github.io/docs/post/01401-drrchild/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/01401-drrchild/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：分配注意初级 英文名称：DRRChild 题目编号：01401</description>
+    </item>
+    
+    <item>
+      <title>数字大小比较（numberComparison）</title>
+      <link>https://iquizoo.github.io/docs/post/04901-numbercomparison/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/04901-numbercomparison/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：数字大小比较 英文名称：numberComparison 题目</description>
+    </item>
+    
+    <item>
+      <title>数字魔法师中级（digitalWorkTwo）</title>
+      <link>https://iquizoo.github.io/docs/post/02001-digitalworktwo/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/02001-digitalworktwo/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：数字魔法师中级 英文名称：digitalWorkTwo 题目编</description>
+    </item>
+    
+    <item>
+      <title>数字魔法师初级（digitalWorkOne）</title>
+      <link>https://iquizoo.github.io/docs/post/02002-digitalworkone/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/02002-digitalworkone/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：数字魔法师初级 英文名称：digitalWorkOne 题目编</description>
+    </item>
+    
+    <item>
+      <title>符号记忆（symbolMemory）</title>
+      <link>https://iquizoo.github.io/docs/post/05401-symbolmemory/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/05401-symbolmemory/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：符号记忆 英文名称：symbolMemory 题目编号：054</description>
+    </item>
+    
+    <item>
+      <title>选择速度（discernReactiveChild）</title>
+      <link>https://iquizoo.github.io/docs/post/00602-discernreactivechild/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/00602-discernreactivechild/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：选择速度 英文名称：discernReactiveChild</description>
+    </item>
+    
+    <item>
+      <title>顺背数（digital）</title>
+      <link>https://iquizoo.github.io/docs/post/00201-digital/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/00201-digital/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：顺背数 英文名称：digital 题目编号：00201 任务描述</description>
+    </item>
+    
+    <item>
+      <title>学科能力（subjectAbility）</title>
+      <link>https://iquizoo.github.io/docs/post/07101-subjectability/</link>
+      <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/07101-subjectability/</guid>
+      <description>基本信息 后台配置 数据记录 试题算分 基本信息 显示名称：学科能力 英文名称：subjectAbility 题目编号：07101 任务描述：学科能力是一个</description>
+    </item>
+    
+    <item>
+      <title>语言划消测验（cancellation）</title>
+      <link>https://iquizoo.github.io/docs/post/042xx-cancellation/</link>
+      <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/042xx-cancellation/</guid>
+      <description>基本信息 后台配置 数据记录 试题算分 基本信息 显示名称：语言划消测验 英文名称：cancellation 题目编号：042XX 任务描述：划消测验包含6</description>
+    </item>
+    
+    <item>
+      <title>卡片分类（WCST）</title>
+      <link>https://iquizoo.github.io/docs/post/05501-wcst/</link>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/05501-wcst/</guid>
+      <description>基本信息 前端交互 基本逻辑 详细说明 卡片特征 测评规则 卡片呈现 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：卡片分类 英文名称：WCST 题目编号</description>
+    </item>
+    
+    <item>
+      <title>汉诺塔（TOH）</title>
+      <link>https://iquizoo.github.io/docs/post/08101-toh/</link>
+      <pubDate>Wed, 16 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/08101-toh/</guid>
+      <description>基本信息 交互流程 详细说明 数据记录 试题算分 基本信息 显示名称：汉诺塔 英文名称：TOH 题目编号：08101 任务描述：以最少的步数将圆盘移动到最右边</description>
+    </item>
+    
+    <item>
+      <title>速算师（中级）（computerSub）</title>
+      <link>https://iquizoo.github.io/docs/post/01302-computersub/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/01302-computersub/</guid>
+      <description>基本信息 数据记录 结果显示 数据提交 基本信息 显示名称：速算师（中级） 英文名称：computerSub 题目编号：01302 任务描述：测查大脑的数学</description>
+    </item>
+    
+    <item>
+      <title>速算师（初级）（computer）</title>
+      <link>https://iquizoo.github.io/docs/post/01301-computer/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/01301-computer/</guid>
+      <description>基本信息 数据记录 结果显示 数据提交 基本信息 显示名称：速算师（初级） 英文名称：computer 题目编号：01301 任务描述：测查大脑的数学计算能</description>
+    </item>
+    
+    <item>
+      <title>数字大小混淆（numberStroop）</title>
+      <link>https://iquizoo.github.io/docs/post/02901-numberstroop/</link>
+      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/02901-numberstroop/</guid>
+      <description>基本信息 详细说明 序列配置 数据记录 结果显示 数据提交 基本信息 显示名称：数字大小混淆 英文名称：numberStroop 题目编号：02901 任务描述</description>
+    </item>
+    
+    <item>
+      <title>位置记忆（spatialSpan）</title>
+      <link>https://iquizoo.github.io/docs/post/00301-spatialspan/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/00301-spatialspan/</guid>
+      <description>基本信息 数据记录 结果显示 数据提交 基本信息 显示名称：位置记忆 英文名称：spatialSpan 题目编号：00301 任务描述：测查记忆力，特别是个</description>
+    </item>
+    
+    <item>
+      <title>倒背数（digital-desc）</title>
+      <link>https://iquizoo.github.io/docs/post/00202-digital-desc/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/00202-digital-desc/</guid>
+      <description>基本信息 数据记录 结果显示 数据提交 基本信息 显示名称：倒背数 英文名称：digital-desc 题目编号：00202 任务描述：测查自控力，特别是根</description>
+    </item>
+    
+    <item>
+      <title>数感（numerosity）</title>
+      <link>https://iquizoo.github.io/docs/post/02701-numerosity/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/02701-numerosity/</guid>
+      <description>基本信息 数据记录 结果显示 数据提交 基本信息 显示名称：数感 英文名称：numerosity 题目编号：02701 任务描述：测查大脑的数量感知能力。 测</description>
+    </item>
+    
+    <item>
+      <title>联系记忆（faceSnack）</title>
+      <link>https://iquizoo.github.io/docs/post/02201-facesnack/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/02201-facesnack/</guid>
+      <description>基本信息 详细说明 数据记录 结果显示 数据提交 基本信息 显示名称：联系记忆 英文名称：faceSnack 题目编号：02201 任务描述：测查记忆力，特别</description>
+    </item>
+    
+    <item>
+      <title>超级秒表（PVTAdult）</title>
+      <link>https://iquizoo.github.io/docs/post/01201-pvtadult/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/01201-pvtadult/</guid>
+      <description>基本信息 数据记录 结果显示 数据提交 基本信息 显示名称：超级秒表 英文名称：PVTAdult 题目编号：01201 任务描述：测查反应力，特别是指个体对</description>
+    </item>
+    
+    <item>
+      <title>雷达追踪（itemTracking）</title>
+      <link>https://iquizoo.github.io/docs/post/02101-itemtracking/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/02101-itemtracking/</guid>
+      <description>基本信息 数据记录 结果显示 数据提交 基本信息 显示名称：雷达追踪 英文名称：itemTracking 题目编号：02101 任务描述：测查注意力，特别是</description>
+    </item>
+    
+    <item>
+      <title>蝴蝶照相机（butterfly）</title>
+      <link>https://iquizoo.github.io/docs/post/05803-butterfly/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/05803-butterfly/</guid>
+      <description>基本信息 交互流程 详细说明 刺激 序列 配置参数 数据记录 试题算分 基本信息 显示名称：蝴蝶照相机 英文名称：butterfly 题目编号：05803 任务描述</description>
+    </item>
+    
+    <item>
+      <title>森林中的萤火虫（firefly）</title>
+      <link>https://iquizoo.github.io/docs/post/02102-firefly/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/02102-firefly/</guid>
+      <description>基本信息 交互界面 详细说明 刺激 操作 序列配置 配置参数 数据记录 结果显示 提交数据 试题算分 基本信息 显示名称：森林中的萤火虫 英文名称：firefly 题目</description>
+    </item>
+    
+    <item>
+      <title>速算师（calculator）</title>
+      <link>https://iquizoo.github.io/docs/post/01303-calculator/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/01303-calculator/</guid>
+      <description>基本信息 交互界面 详细说明 题目配置 选项配置 加法干扰选项 减法干扰选项 流程 计分规则 配置参数 数据记录 结果显示 提交数据 试题算分 基本信息 显示名称：速算师</description>
+    </item>
+    
+    <item>
+      <title>图片记忆（pictureMemory）</title>
+      <link>https://iquizoo.github.io/docs/post/03501-picturememory/</link>
+      <pubDate>Mon, 26 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/03501-picturememory/</guid>
+      <description>基本信息 交互界面 详细说明 刺激 操作 序列配置 配置参数 数据记录 试题算分 基本信息 显示名称：图片记忆 英文名称：pictureMemory 题目编号：03</description>
+    </item>
+    
+    <item>
+      <title>班务达人（Filtering）</title>
+      <link>https://iquizoo.github.io/docs/post/06901-filtering/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/06901-filtering/</guid>
+      <description>基本信息 交互界面 详细说明 刺激 操作 序列配置 配置参数 数据记录 试题算分 修订历史 基本信息 显示名称：班务达人 英文名称：Filtering 题目编号：06</description>
+    </item>
+    
+    <item>
+      <title>反应转换（Shifting2）</title>
+      <link>https://iquizoo.github.io/docs/post/03202-shifting2/</link>
+      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/03202-shifting2/</guid>
+      <description>基本信息 显示名称：反应转换 英文名称：Shifting2 题目编号：03202 任务描述：测查思维力，特别是灵活切换思维方式的能力。 测查能力：思维</description>
+    </item>
+    
+    <item>
+      <title>吹气球（BART）</title>
+      <link>https://iquizoo.github.io/docs/post/05001-bart/</link>
+      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/05001-bart/</guid>
+      <description>基本信息 交互界面 详细说明 配置参数 数据记录 试题算分 基本信息 显示名称：吹气球 英文名称：BART 题目编号：05001 任务描述：测查自控力，特别是控</description>
+    </item>
+    
+    <item>
+      <title>思维转换（Shifting）</title>
+      <link>https://iquizoo.github.io/docs/post/03201-shifting/</link>
+      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/03201-shifting/</guid>
+      <description>基本信息 显示名称：思维转换 英文名称：Shifting 题目编号：03201 任务描述：测查思维力，特别是灵活切换思维方式的能力。 测查能力：思维力</description>
+    </item>
+    
+    <item>
+      <title>捉虫（CPT2）</title>
+      <link>https://iquizoo.github.io/docs/post/00903-cpt2/</link>
+      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/00903-cpt2/</guid>
+      <description>基本信息 显示名称：捉虫 英文名称：CPT2 题目编号：00903 参考模板：捉虫-初级，数感 任务描述：测查注意力，特别是长时间注意目标的能力。 测查</description>
+    </item>
+    
+    <item>
+      <title>记忆尾巴（RunningMemory）</title>
+      <link>https://iquizoo.github.io/docs/post/05201-runningmemory/</link>
+      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/05201-runningmemory/</guid>
+      <description>基本信息 显示名称：记忆尾巴 英文名称：RunningMemory 题目编号：05201 任务描述：测查自控力，特别是更新记忆内容的能力。 测查能力：</description>
+    </item>
+    
+    <item>
+      <title>方向达人（Flanker）</title>
+      <link>https://iquizoo.github.io/docs/post/00101-flanker/</link>
+      <pubDate>Fri, 02 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/00101-flanker/</guid>
+      <description>基本信息 显示名称：方向达人 英文名称：Flanker 题目编号：00101 任务描述：测查自控力，特别是排除干扰的能力。 测查能力：自控力-控制冲动</description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>https://iquizoo.github.io/docs/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/about/</guid>
+      <description>爱智游设计文档 国外出色经验 美国国立卫生研究院（National Institute of Health, NIH）已经在发展了一个成熟的工具箱，即NIH-toolbox。其中包含</description>
+    </item>
+    
+    <item>
+      <title>术语</title>
+      <link>https://iquizoo.github.io/docs/glossary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/glossary/</guid>
+      <description>题目文档术语 刺激 在屏幕上显示的图片、播放出来的声音等用户可以感知到并需要用户操作反应的物体或事件。程序需要测量用户对刺激的反应快慢和正确性。</description>
+    </item>
+    
+    <item>
+      <title>标准</title>
+      <link>https://iquizoo.github.io/docs/standard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/standard/</guid>
+      <description>说明 为了便于机器或人之间进行交流，此处对数据交换定出一些标准格式，后面将严格依照这些标准进行数据交换。 标准列表 原始数据记录 把原始数据记录为j</description>
+    </item>
+    
+    <item>
+      <title>算分流程</title>
+      <link>https://iquizoo.github.io/docs/scoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/scoring/</guid>
+      <description>概述 需要区分两种算分： 测评题目的算分 能力和试卷的算分 测评题目算分是能力和试卷算分的基础，它们有着完全不同的计算方式。下面详细说明。 测评题目算</description>
+    </item>
+    
+  </channel>
+</rss>

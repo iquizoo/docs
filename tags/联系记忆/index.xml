@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>联系记忆 on 爱智游设计文档中心</title>
+    <link>https://iquizoo.github.io/docs/tags/%E8%81%94%E7%B3%BB%E8%AE%B0%E5%BF%86/</link>
+    <description>Recent content in 联系记忆 on 爱智游设计文档中心</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 12 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://iquizoo.github.io/docs/tags/%E8%81%94%E7%B3%BB%E8%AE%B0%E5%BF%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>联系记忆（faceSnack）</title>
+      <link>https://iquizoo.github.io/docs/post/02201-facesnack/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/02201-facesnack/</guid>
+      <description>基本信息 详细说明 数据记录 结果显示 数据提交 基本信息 显示名称：联系记忆 英文名称：faceSnack 题目编号：02201 任务描述：测查记忆力，特别</description>
+    </item>
+    
+  </channel>
+</rss>

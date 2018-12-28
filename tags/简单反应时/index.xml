@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>简单反应时 on 爱智游设计文档中心</title>
+    <link>https://iquizoo.github.io/docs/tags/%E7%AE%80%E5%8D%95%E5%8F%8D%E5%BA%94%E6%97%B6/</link>
+    <description>Recent content in 简单反应时 on 爱智游设计文档中心</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 12 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://iquizoo.github.io/docs/tags/%E7%AE%80%E5%8D%95%E5%8F%8D%E5%BA%94%E6%97%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>超级秒表（PVTAdult）</title>
+      <link>https://iquizoo.github.io/docs/post/01201-pvtadult/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://iquizoo.github.io/docs/post/01201-pvtadult/</guid>
+      <description>基本信息 数据记录 结果显示 数据提交 基本信息 显示名称：超级秒表 英文名称：PVTAdult 题目编号：01201 任务描述：测查反应力，特别是指个体对</description>
+    </item>
+    
+  </channel>
+</rss>
