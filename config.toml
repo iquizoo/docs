@@ -1,5 +1,5 @@
 # site is now majorly hosted on https://www.netlify.com/
-baseURL = "https://iquizoo.netlify.com/"
+baseURL = "https://iquizoo.github.io/"
 # use Chinese languages
 languageCode = "zh-CN"
 hasCJKLanguage = true
