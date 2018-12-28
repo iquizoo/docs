@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>干扰排除范式 on 爱智游设计文档中心</title>
-    <link>https://iquizoo.github.io/docs/tags/%E5%B9%B2%E6%89%B0%E6%8E%92%E9%99%A4%E8%8C%83%E5%BC%8F/</link>
+    <link>https://iquizoo.github.io/tags/%E5%B9%B2%E6%89%B0%E6%8E%92%E9%99%A4%E8%8C%83%E5%BC%8F/</link>
     <description>Recent content in 干扰排除范式 on 爱智游设计文档中心</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 07 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://iquizoo.github.io/docs/tags/%E5%B9%B2%E6%89%B0%E6%8E%92%E9%99%A4%E8%8C%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://iquizoo.github.io/tags/%E5%B9%B2%E6%89%B0%E6%8E%92%E9%99%A4%E8%8C%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>班务达人（Filtering）</title>
-      <link>https://iquizoo.github.io/docs/post/06901-filtering/</link>
+      <link>https://iquizoo.github.io/post/06901-filtering/</link>
       <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://iquizoo.github.io/docs/post/06901-filtering/</guid>
+      <guid>https://iquizoo.github.io/post/06901-filtering/</guid>
       <description>基本信息 交互界面 详细说明 刺激 操作 序列配置 配置参数 数据记录 试题算分 修订历史 基本信息 显示名称：班务达人 英文名称：Filtering 题目编号：06</description>
     </item>
     

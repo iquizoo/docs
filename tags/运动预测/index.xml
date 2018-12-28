@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>运动预测 on 爱智游设计文档中心</title>
-    <link>https://iquizoo.github.io/docs/tags/%E8%BF%90%E5%8A%A8%E9%A2%84%E6%B5%8B/</link>
+    <link>https://iquizoo.github.io/tags/%E8%BF%90%E5%8A%A8%E9%A2%84%E6%B5%8B/</link>
     <description>Recent content in 运动预测 on 爱智游设计文档中心</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 27 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://iquizoo.github.io/docs/tags/%E8%BF%90%E5%8A%A8%E9%A2%84%E6%B5%8B/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://iquizoo.github.io/tags/%E8%BF%90%E5%8A%A8%E9%A2%84%E6%B5%8B/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>龟兔赛跑（MotionPrediction）</title>
-      <link>https://iquizoo.github.io/docs/post/08301-motionprediction/</link>
+      <link>https://iquizoo.github.io/post/08301-motionprediction/</link>
       <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://iquizoo.github.io/docs/post/08301-motionprediction/</guid>
+      <guid>https://iquizoo.github.io/post/08301-motionprediction/</guid>
       <description>基本信息 前端交互 基本逻辑 详细说明 流程细节 序列规则 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：龟兔赛跑 英文名称：MotionPredic</description>
     </item>
     

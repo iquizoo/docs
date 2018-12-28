@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>短时记忆 on 爱智游设计文档中心</title>
-    <link>https://iquizoo.github.io/docs/tags/%E7%9F%AD%E6%97%B6%E8%AE%B0%E5%BF%86/</link>
+    <link>https://iquizoo.github.io/tags/%E7%9F%AD%E6%97%B6%E8%AE%B0%E5%BF%86/</link>
     <description>Recent content in 短时记忆 on 爱智游设计文档中心</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 05 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://iquizoo.github.io/docs/tags/%E7%9F%AD%E6%97%B6%E8%AE%B0%E5%BF%86/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://iquizoo.github.io/tags/%E7%9F%AD%E6%97%B6%E8%AE%B0%E5%BF%86/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>记忆扫描（MemoryScan）</title>
-      <link>https://iquizoo.github.io/docs/post/00302-memoryscan/</link>
+      <link>https://iquizoo.github.io/post/00302-memoryscan/</link>
       <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://iquizoo.github.io/docs/post/00302-memoryscan/</guid>
+      <guid>https://iquizoo.github.io/post/00302-memoryscan/</guid>
       <description>基本信息 前端交互 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：记忆扫描 英文名称：MemoryScan 题目编号：00302 任务描述：测查记</description>
     </item>
     
     <item>
       <title>顺背数（digital）</title>
-      <link>https://iquizoo.github.io/docs/post/00201-digital/</link>
+      <link>https://iquizoo.github.io/post/00201-digital/</link>
       <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://iquizoo.github.io/docs/post/00201-digital/</guid>
+      <guid>https://iquizoo.github.io/post/00201-digital/</guid>
       <description>基本信息 前端交互 基本逻辑 详细说明 后台配置 游戏参数 数据记录 试题算分 基本信息 显示名称：顺背数 英文名称：digital 题目编号：00201 任务描述</description>
     </item>
     
     <item>
       <title>位置记忆（spatialSpan）</title>
-      <link>https://iquizoo.github.io/docs/post/00301-spatialspan/</link>
+      <link>https://iquizoo.github.io/post/00301-spatialspan/</link>
       <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://iquizoo.github.io/docs/post/00301-spatialspan/</guid>
+      <guid>https://iquizoo.github.io/post/00301-spatialspan/</guid>
       <description>基本信息 数据记录 结果显示 数据提交 基本信息 显示名称：位置记忆 英文名称：spatialSpan 题目编号：00301 任务描述：测查记忆力，特别是个</description>
     </item>
     

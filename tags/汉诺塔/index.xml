@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>汉诺塔 on 爱智游设计文档中心</title>
-    <link>https://iquizoo.github.io/docs/tags/%E6%B1%89%E8%AF%BA%E5%A1%94/</link>
+    <link>https://iquizoo.github.io/tags/%E6%B1%89%E8%AF%BA%E5%A1%94/</link>
     <description>Recent content in 汉诺塔 on 爱智游设计文档中心</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 16 May 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://iquizoo.github.io/docs/tags/%E6%B1%89%E8%AF%BA%E5%A1%94/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://iquizoo.github.io/tags/%E6%B1%89%E8%AF%BA%E5%A1%94/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>汉诺塔（TOH）</title>
-      <link>https://iquizoo.github.io/docs/post/08101-toh/</link>
+      <link>https://iquizoo.github.io/post/08101-toh/</link>
       <pubDate>Wed, 16 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://iquizoo.github.io/docs/post/08101-toh/</guid>
+      <guid>https://iquizoo.github.io/post/08101-toh/</guid>
       <description>基本信息 交互流程 详细说明 数据记录 试题算分 基本信息 显示名称：汉诺塔 英文名称：TOH 题目编号：08101 任务描述：以最少的步数将圆盘移动到最右边</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>仿真气球模拟范式 on 爱智游设计文档中心</title>
-    <link>https://iquizoo.github.io/docs/tags/%E4%BB%BF%E7%9C%9F%E6%B0%94%E7%90%83%E6%A8%A1%E6%8B%9F%E8%8C%83%E5%BC%8F/</link>
+    <link>https://iquizoo.github.io/tags/%E4%BB%BF%E7%9C%9F%E6%B0%94%E7%90%83%E6%A8%A1%E6%8B%9F%E8%8C%83%E5%BC%8F/</link>
     <description>Recent content in 仿真气球模拟范式 on 爱智游设计文档中心</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 03 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://iquizoo.github.io/docs/tags/%E4%BB%BF%E7%9C%9F%E6%B0%94%E7%90%83%E6%A8%A1%E6%8B%9F%E8%8C%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://iquizoo.github.io/tags/%E4%BB%BF%E7%9C%9F%E6%B0%94%E7%90%83%E6%A8%A1%E6%8B%9F%E8%8C%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>吹气球（BART）</title>
-      <link>https://iquizoo.github.io/docs/post/05001-bart/</link>
+      <link>https://iquizoo.github.io/post/05001-bart/</link>
       <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://iquizoo.github.io/docs/post/05001-bart/</guid>
+      <guid>https://iquizoo.github.io/post/05001-bart/</guid>
       <description>基本信息 交互界面 详细说明 配置参数 数据记录 试题算分 基本信息 显示名称：吹气球 英文名称：BART 题目编号：05001 任务描述：测查自控力，特别是控</description>
     </item>
     
