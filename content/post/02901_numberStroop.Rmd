@@ -34,7 +34,7 @@ SDK <- 201
 
 ## 序列配置
 
-序列配置规则请参考[标准](`r blogdown::shortcode("relref", "standard")`)。[序列](/seq/02901_numberStroop.json)中各个元素的意义：
+[序列文件](/seq/02901_numberStroop.json)中各个元素的意义：
 
 * `length`：序列的长度
 * `nleft`：左侧呈现的数字

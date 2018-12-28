@@ -41,7 +41,8 @@ VER <- "V4"
     + 正式测评总计12个试次，即每种4个试次。
     + 练习总计3次，即每种1次。
 
-* 序列配置（参考[标准](`r blogdown::shortcode("relref", "standard")`)中关于格式的说明）
+* 序列配置
+    + 见[序列文件](/seq/05201_RunningMemory.json){target="_blank"}。
     + 本题目只有一种序列，因此传输序列的[`json`](http://json.org/)字符串仅包含一个由两个`名称/值`配对组成的对象。
         - `prac`: 练习阶段的3个序列。
         - `test`: 正式测试阶段的12个序列。
