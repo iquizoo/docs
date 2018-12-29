@@ -58,5 +58,5 @@ footnotereturnlinkcontents = "↩"
     weight = 8
 
 [params]
-    description = "A website built through Hugo and blogdown."
+    description = "爱智游开发文档库"
     footer = "&copy; [爱智游](http://www.iquizoo.com/) 2017 -- 2018"
