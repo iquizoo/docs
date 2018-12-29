@@ -9,7 +9,7 @@ slug: 08401-jlo # code-English name
 code: "08401"
 sdk: 100
 # hugo taxonomy related
-tasknames: 朝向判断
+tags: 朝向判断
 categories: 文档
 # blogdown output
 output:
@@ -68,7 +68,7 @@ knitr::include_graphics(path = "/images/JLO/interface.png")
 ```{r configs, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "configs.csv")
+    here::here("R", "config", NAME_EN, "configs.csv")
   ),
   caption = "配置参数总表"
 )
@@ -79,7 +79,7 @@ knitr::kable(
 ```{r recording-variables, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "recs.csv")
+    here::here("R", "config", NAME_EN, "recs.csv")
   ),
   caption = "原始数据变量列表"
 )
@@ -90,7 +90,7 @@ knitr::kable(
 ```{r sdk-score, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "sdk.csv")
+    here::here("R", "config", NAME_EN, "sdk.csv")
   ),
   caption = paste0("传入参数（算分码：`", SDK, "`）")
 )

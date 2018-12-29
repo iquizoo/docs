@@ -4,7 +4,7 @@ author: 张亮
 date: '2018-04-21'
 slug: 02901-numberStroop
 code: "02901"
-tasknames: "数量感知"
+tags: "数量感知"
 categories:
 - 文档
 - 刺激序列优化
@@ -34,7 +34,7 @@ SDK <- 201
 
 ## 序列配置
 
-序列配置规则请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。[序列](/seq/02901_numberStroop.json)中各个元素的意义：
+[序列文件](/seq/02901_numberStroop.json)中各个元素的意义：
 
 * `length`：序列的长度
 * `nleft`：左侧呈现的数字
@@ -53,9 +53,9 @@ SDK <- 201
 
 ## 数据提交
 
-表\@ref(tab:recording-variables)说明了对于每一个试次需要记录的数据（请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)）。
+表\@ref(tab:recording-variables)说明了对于每一个试次需要记录的数据（请参考[标准](`r blogdown::shortcode("relref", "standard")`)）。
 
 ```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
-knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_EN, "recs.csv")),
+knitr::kable(readr::read_csv(here::here("R", "config", NAME_EN, "recs.csv")),
              caption = "原始数据变量列表")
 ```

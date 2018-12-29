@@ -4,7 +4,7 @@ author: 申宇杏
 date: 2018-04-02
 slug: 02102-firefly
 code: "02102"
-tasknames: "视觉短时记忆任务"
+tags: "视觉短时记忆任务"
 categories:
 - 文档
 - C2框架
@@ -18,7 +18,7 @@ output:
 NAME_CN <- "森林中的萤火虫"
 NAME_EN <- "firefly"
 CODE <- "02102"
-SDK <- 999
+SDK <- 301
 ```
 
 # 基本信息
@@ -32,7 +32,7 @@ SDK <- 999
 
 # 交互界面
 
-夜晚森林的背景屏幕中随机位置出现几个萤火虫，其中有些会发光有些不发光（发光的个数3、4、5、6、7），闪烁一定时间后萤火虫的亮光消失并且开始飞舞，最后停在新的位置，用户需要点击刚刚闪烁的萤火虫，用触摸（Android/iOS）或鼠标点击（PC）的方式（如图\@ref(fig:taskflow-image)）。
+夜晚森林的背景中随机位置出现一些萤火虫，一开始其中有些会发光（原地闪烁黄光）有些不发光（不发光的萤火虫个数始终固定为**12只**），发光的萤火虫闪烁一定时间后亮光消失（同不发光的萤火虫一模一样）同时所有萤火虫都开始飞舞，最后停在新的位置，用户需要点击刚刚闪烁过的萤火虫，用触摸（Android/iOS）或鼠标点击（PC）的方式（如图\@ref(fig:taskflow-image)）。
 
 ```{r taskflow-image, fig.cap="基本界面", fig.align='center', echo=FALSE, out.width="80%"}
 knitr::include_graphics("/images/VSTM/firefly.png")
@@ -46,9 +46,9 @@ knitr::include_graphics("/images/VSTM/firefly.png")
 
 + **刺激配置**：由若干萤火虫的图片组成。其中：发光的萤火虫为**目标刺激**，不发光的为**干扰刺激**，详细请看下方**刺激列表**。
 + **刺激呈现**
-    - 出现若干萤火虫（不同的目标刺激对应不同的干扰刺激），其中目标开始闪烁，闪烁次数默认值为3次，每次闪烁时间默认值为`300 ms`。
-    - 闪烁结束，所有萤火虫开始飞舞，默认值为`3000 ms`，速度为30。
-    - 飞舞结束，所有萤火虫停到新的位置，用户开始判断，哪些是之前闪烁过的萤火虫，用户点击次数需与目标个数一致，方可开始下一轮。
+    - 出现若干萤火虫（目标刺激的数量自适应，干扰刺激的数量固定为12），其中目标刺激开始闪烁，闪烁次数默认值为3次，每次闪烁时间默认值为`300 ms`。首次出现目标刺激的个数定为3，目标刺激的下限为2，上限为10，即发光的萤火虫最多为10只最少为2只。
+    - 闪烁结束，目标刺激与干扰刺激变得相同，所有萤火虫开始飞舞，默认值为`3000 ms`，速度为30。
+    - 飞舞结束，所有萤火虫停到新的位置，用户开始判断，哪些是目标刺激（之前闪烁过的萤火虫），用户点击次数需与目标个数一致，方可开始下一轮。
     - 刺激消失后到下一个刺激呈现的时间间隔（试次间隔时间）默认值为`500 ms`。
 
 ## 操作
@@ -56,19 +56,29 @@ knitr::include_graphics("/images/VSTM/firefly.png")
 + **操作方式**
     - **`Android/iOS`**：点击触摸上的目标刺激，感应区域要比目标刺激本身大，但不能重合。
     - **`PC/Web`**：若`PC`拥有触摸屏，则用户可以使用`Android/iOS`的操作方式；若`PC`没有触摸屏，则要求用户使用标准输入设备鼠标点击进行操作。
-+ **判断正误**：所有试次都需要操作，没有操作则使用`-1`表示正确与否。当用户操作后，如果点击的目标和目标刺激重合，则为正确；若点击与目标刺激不符，则为错；与点击顺序无关。
++ **判断正误**：用户作答没有时间限制。当用户操作后，如果点击的目标和目标刺激重合，则为正确；若点击与目标刺激不符，则为错；与点击顺序无关。
 + **反馈**
-    - 引导练习：需要对*正确*和*错误*给出听觉和视觉反馈。
-    - 正式测试：不需要对*正确*和*错误*给出听觉和视觉反馈，需要对用户是否操作给出视觉反馈（即用户点击的地方就变亮）
+    - 引导练习：`需要`对*正确*和*错误*给出听觉和视觉反馈。
+    - 正式测试：`不需要`对*正确*和*错误*给出听觉和视觉反馈，需要对用户是否操作给出视觉反馈（即用户点击的地方就变亮）；需要给用户做对个数的反馈，即正确点击的萤火虫的数量。
+
+```{r feedback-image, fig.cap="反馈界面", fig.align='center', echo=FALSE, out.width="80%"}
+knitr::include_graphics("/images/VSTM/fireflyfeedback.png")
+```
 
 ## 序列配置
 
-每次需要追踪的萤火虫数目有5种可能（即3、4、5、6、7），不跟踪的萤火虫数目则始终为7个。每种可能的跟踪萤火虫情况分别出现2次，因而每个用户都累计会完成10次判断，同时保证10次判断的跟踪萤火虫数目是随机打乱了的。
+每次目标刺激的数目根据用户之前的成绩进行自适应，干扰刺激数目保持12只，遵循如下规则：当前试次做对，下一次目标刺激个数加一；当前试次做错，下一次目标刺激的数目不改变；当前做错，下一次也做错，再下次中目标刺激的个数减一。
+
+* 例：第1个试次中有3只发光萤火虫，12只不发光萤火虫，总计15只
+  + 用户第1个试次做对，第2个试次中发光萤火虫的个数变为4；
+  + 用户第1个试次做错，第2个试次中发光萤火虫的个数还是3，若第2个试次也做错，则第3个试次中发光萤火虫的个数变为2；若第2个试次做对，第3个试次中发光萤火虫的个数变为4。
+
+10个试次后，游戏终止。
 
 # 配置参数
 
 ```{r configs, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_EN, "configs.csv")),
+knitr::kable(readr::read_csv(here::here("R", "config", NAME_EN, "configs.csv")),
              caption = "配置参数总表")
 ```
 
@@ -77,22 +87,21 @@ knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_E
 ## 结果显示
 
 * 显示用户得分
-* 展示标准分数和超越百分比
 
 ## 提交数据
 
-* 提交原始数据如下表（参考[标准](`r blogdown::shortcode("relref", "standard.html")`)中关于格式的说明）
+* 提交原始数据如下表（参考[标准](`r blogdown::shortcode("relref", "standard")`)中关于格式的说明）
 
 ```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_EN, "recs.csv")),
+knitr::kable(readr::read_csv(here::here("R", "config", NAME_EN, "recs.csv")),
              caption = "原始数据变量列表")
 ```
 
 # 试题算分
 
-* 算分码：`r SDK`
-* 传入参数：
-
 ```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-knitr::kable(readr::read_csv(here::here("content", "resources", "config", NAME_EN, "sdk.csv")))
+knitr::kable(
+  readr::read_csv(here::here("R", "config", NAME_EN, "sdk.csv")),
+  caption = paste0("传入参数（算分码：`", SDK, "`）")
+)
 ```

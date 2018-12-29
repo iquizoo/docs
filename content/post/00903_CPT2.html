@@ -4,13 +4,13 @@ author: 张亮
 date: 2018-03-03
 slug: 00903-cpt2
 code: "00903"
-tasknames: "持续性操作测试"
+tags: "持续性操作测试"
 categories: "文档"
 ---
 
 
 
-<div class="section level1">
+<div id="section" class="section level1">
 <h1>基本信息</h1>
 <ul>
 <li><strong>显示名称</strong>：捉虫</li>
@@ -21,12 +21,12 @@ categories: "文档"
 <li><strong>测查能力</strong>：注意力-持续注意</li>
 </ul>
 </div>
-<div class="section level1">
+<div id="section-1" class="section level1">
 <h1>交互界面</h1>
 <p>屏幕中央以<em>一次一张</em>的方式<strong>快速闪现</strong>一系列由<strong>四种动物</strong>组成的卡片。每张卡片闪现后，用户必须在下一张卡片出现前对<strong>目标卡片</strong>进行<strong>操作</strong>，之后程序会对其操作给出相应的<strong>反馈</strong>。在反馈或<strong>刺激间隔时间</strong>后，立即呈现下一张卡片。</p>
 <p><strong>练习</strong>。引导的第一屏不宜采用文字，最好制作一个短暂的示意动画来提示（特别是对于低年级儿童）。引导结束后的练习部分至少做20个刺激，保证正确率在80%以上。</p>
 </div>
-<div class="section level1">
+<div id="section-2" class="section level1">
 <h1>详细说明</h1>
 <ul>
 <li>刺激：虚拟卡片
@@ -61,8 +61,9 @@ categories: "文档"
 <li>保证每个刺激出现的频率相等，即都为1/5。</li>
 </ul></li>
 </ul></li>
-<li>序列配置（参考<a href="{{% relref "standard.html" %}}">标准</a>中关于格式的说明）
+<li>序列配置
 <ul>
+<li>见<a href="/seq/00903_CPT2.json" target="_blank">序列文件</a>。</li>
 <li>数组中每一个元素都是一个<code>json</code>对象，包含三个<code>名称/值(name/value)</code>配对，分别是
 <ul>
 <li><code>length</code>：表示序列的长度</li>
@@ -72,7 +73,7 @@ categories: "文档"
 </ul></li>
 </ul>
 </div>
-<div class="section level1">
+<div id="section-3" class="section level1">
 <h1>配置参数</h1>
 <table>
 <caption><span id="tab:configs">表1: </span>配置参数总表</caption>
@@ -152,7 +153,7 @@ categories: "文档"
 </tbody>
 </table>
 </div>
-<div class="section level1">
+<div id="section-4" class="section level1">
 <h1>数据记录</h1>
 <ul>
 <li>题目结果显示
@@ -160,7 +161,7 @@ categories: "文档"
 <li>显示正确率和平均正确反应时间</li>
 <li>展示标准分数和超越百分比</li>
 </ul></li>
-<li>提交原始数据如下表（参考<a href="{{% relref "standard.html" %}}">标准</a>中关于格式的说明）</li>
+<li>提交原始数据如下表（参考<a href="{{% relref "standard" %}}">标准</a>中关于格式的说明）</li>
 </ul>
 <table>
 <caption><span id="tab:recording-variables">表2: </span>原始数据变量列表</caption>
@@ -200,7 +201,7 @@ categories: "文档"
 </tbody>
 </table>
 </div>
-<div class="section level1">
+<div id="section-5" class="section level1">
 <h1>试题算分</h1>
 <ul>
 <li>算分码：101</li>
@@ -228,7 +229,7 @@ categories: "文档"
 </tbody>
 </table>
 </div>
-<div class="section level1">
+<div id="section-6" class="section level1">
 <h1>修订历史</h1>
 <ol style="list-style-type: decimal">
 <li>（2017/10/25，张亮，潘世豪）变更数据记录方式：

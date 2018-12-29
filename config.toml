@@ -1,5 +1,5 @@
 # site is now majorly hosted on https://www.netlify.com/
-baseurl = "http://iquizoo.netlify.com/"
+baseURL = "https://iquizoo.netlify.com/"
 # use Chinese languages
 languageCode = "zh-CN"
 hasCJKLanguage = true
@@ -18,7 +18,7 @@ preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
 
 [taxonomies]
-    taskname = "tasknames"
+    tag = "tags"
     category = "categories"
 
 [permalinks]
@@ -38,21 +38,25 @@ footnotereturnlinkcontents = "↩"
     weight = 3
 [[menu.main]]
     name = "任务列表"
-    url = "/tasknames/"
+    url = "/tags/"
     weight = 4
+[[menu.main]]
+    name = "算分说明"
+    url = "/scoring/"
+    weight = 5
 [[menu.main]]
     name = "术语"
     url = "/glossary/"
-    weight = 5
+    weight = 6
 [[menu.main]]
     name = "标准"
     url = "/standard/"
-    weight = 6
+    weight = 7
 [[menu.main]]
     name = "关于"
     url = "/about/"
-    weight = 7
+    weight = 8
 
 [params]
-    description = "A website built through Hugo and blogdown."
+    description = "爱智游开发文档库"
     footer = "&copy; [爱智游](http://www.iquizoo.com/) 2017 -- 2018"

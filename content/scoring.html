@@ -1,0 +1,52 @@
+---
+title: 算分流程
+---
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/viz/viz.js"></script>
+<link href="/rmarkdown-libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/grViz-binding/grViz.js"></script>
+
+
+<div id="section" class="section level1">
+<h1>概述</h1>
+<p>需要区分两种算分：</p>
+<ol style="list-style-type: decimal">
+<li>测评题目的算分</li>
+<li>能力和试卷的算分</li>
+</ol>
+<p>测评题目算分是能力和试卷算分的基础，它们有着完全不同的计算方式。下面详细说明。</p>
+<div id="section-1" class="section level2">
+<h2>测评题目算分</h2>
+<p>测评题目算分是所有算分的基础。单个题目有两个最终分数，即<strong>原始分</strong>和<strong>标准分</strong>。</p>
+<ul>
+<li><dl>
+<dt>原始分（此处用<span class="math inline">\(X\)</span>表示）</dt>
+<dd>根据当前题目在以往研究中的应用，总结出基于用户对当前题目的所有反应的记录数据而计算出来的基本分数。这个计算方式会在单个文档的算分部分进行详细说明（未来计划）。
+</dd>
+</dl></li>
+<li><dl>
+<dt>标准分（此处用<span class="math inline">\(T\)</span>表示）</dt>
+<dd>根据题目的原始分和该题目的相应<a href="/glossary#常模"><strong>常模</strong></a>计算而来。计算时需根据用户的年龄、性别（如果存在）等信息，获得用户所在用户组的平均得分（此处用<span class="math inline">\(\mu\)</span>表示）和标准差（此处用<span class="math inline">\(\sigma\)</span>表示），然后基于公式<span class="math inline">\(T = (X - \mu) / \sigma * 15 + 100\)</span>算出标准分<span class="math inline">\(T\)</span>。
+</dd>
+</dl></li>
+</ul>
+<div id="section-2" class="section level3">
+<h3>注意</h3>
+<p>由于原始分将被引入报告中，而根据科学研究结果计算出的原始分有很大的变异性，所以需要将这个分数转变到一个标准的尺度上（目前定为0-1000）以便于用户的阅读。转换方式为：<strong>（原始分 - 题目最低分数）/（题目最高分数 - 题目最低分数） * 1000</strong>。</p>
+</div>
+</div>
+<div id="section-3" class="section level2">
+<h2>能力和试卷得分</h2>
+<p>简而言之，能力和试卷得分是试卷中对应题目的标准分的<a href="https://baike.baidu.com/item/加权平均值"><strong>加权平均</strong></a>。为了简单起见，下面我们以一个包含3个能力，每个能力包含2个子能力、每个子能力包含1-2个测评题目的试卷为例子（如下图为结构）进行说明。</p>
+<div id="htmlwidget-1" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"diagram":"digraph scoring {\n    /* attributes */\n    node [shape = box]\n\n    /* nodes */\n    S [label = \"总分\"]\n    A [label = \"能力1\"]\n    B [label = \"能力2\"]\n    C [label = \"能力3\"]\n    A1 [label = \"子能力1\"]\n    A2 [label = \"子能力2\"]\n    B1 [label = \"子能力3\"]\n    B2 [label = \"子能力4\"]\n    C1 [label = \"子能力5\"]\n    C2 [label = \"子能力6\"]\n    T1 [label = \"题1\"]\n    T2 [label = \"题2\"]\n    T3 [label = \"题3\"]\n    T4 [label = \"题4\"]\n    T5 [label = \"题5\"]\n    T6 [label = \"题6\"]\n    T7 [label = \"题7\"]\n    T8 [label = \"题8\"]\n\n    S -> A, B, C [label = \"能力权重\"]\n    A -> A1, A2 [label = \"子能力权重\"]\n    B -> B1, B2 [label = \"子能力权重\"]\n    C -> C1, C2 [label = \"子能力权重\"]\n    A1 -> T1, T2 [label = \"题目权重\"]\n    A2 -> T3 [label = \"题目权重\"]\n    B1 -> T4, T5 [label = \"题目权重\"]\n    B2 -> T6 [label = \"题目权重\"]\n    C1 -> T7 [label = \"题目权重\"]\n    C2 -> T8 [label = \"题目权重\"]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>从图中可以看出来，配置试卷的权重时会有三种权重，即<strong>能力权重</strong>、<strong>子能力权重</strong>和<strong>题目权重</strong>。子能力得分是相应子能力的题目得分的加权平均，例如：</p>
+<p><span class="math display">\[ 子能力1的得分 = \frac{题1\times题1的权重 + 题2\times题2的权重}{题1的权重 + 题2的权重} \]</span></p>
+<p>同样的能力得分则是相应子能力得分的加权平均，而试卷的总分则是试卷中所有能力得分的加权平均。</p>
+<div id="section-4" class="section level3">
+<h3>注意</h3>
+<p>值得一提的是，如果部分题目、部分子能力或者部分能力有分数缺失的情况，计算分数时需要进行特殊处理。目前的方法是，在加权平均时直接去掉缺失的题目、子能力或者能力的得分（即修改权重为0），避免最后的分数过低。</p>
+</div>
+</div>
+</div>

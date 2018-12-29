@@ -4,13 +4,13 @@ author: 张亮
 date: 2018-03-03
 slug: 05201-runningmemory
 code: "05201"
-tasknames: "连续记忆广度"
+tags: "连续记忆广度"
 categories: "文档"
 ---
 
 
 
-<div class="section level1">
+<div id="section" class="section level1">
 <h1>基本信息</h1>
 <ul>
 <li><strong>显示名称</strong>：记忆尾巴</li>
@@ -21,12 +21,12 @@ categories: "文档"
 <li><strong>参考模板</strong>：倒背数，顺背数</li>
 </ul>
 </div>
-<div class="section level1">
+<div id="section-1" class="section level1">
 <h1>交互界面</h1>
 <p>屏幕中央以<strong>一次一个</strong>的方式呈现一系列数字，用户需要不断更新记忆以记住序列中<strong>最后呈现的四个数字</strong>。待所有数字呈现完毕后，屏幕上方显示出与呈现数字个数相同的方框，但仅有最后四个显示为可填入数字的样式（如，将前面数个的样式改为灰色框）。用户此时使用<strong>鼠标点击</strong>（<code>PC</code>）或<strong>触摸</strong>（<code>Android/iOS</code>）屏幕下方呈现的数字键盘以输入所记住的最后四个数字。每输入一个，上方那四个可填入数字的方框的相应位置就显示出所输入的数字。直到四个数字输入完毕后，屏幕显示一定时间（试次间隔时间）的空白，之后进入下一个试次。</p>
 <p><strong>练习</strong>。练习时候需要让用户了解到作答时候顺序的重要性，即必须按原来的顺序点击最后出现的四个数字。</p>
 </div>
-<div class="section level1">
+<div id="section-2" class="section level1">
 <h1>详细说明</h1>
 <ul>
 <li>刺激
@@ -39,8 +39,9 @@ categories: "文档"
 <li>正式测评总计12个试次，即每种4个试次。</li>
 <li>练习总计3次，即每种1次。</li>
 </ul></li>
-<li>序列配置（参考<a href="{{% relref "standard.html" %}}">标准</a>中关于格式的说明）
+<li>序列配置
 <ul>
+<li>见<a href="/seq/05201_RunningMemory.json" target="_blank">序列文件</a>。</li>
 <li>本题目只有一种序列，因此传输序列的<a href="http://json.org/"><code>json</code></a>字符串仅包含一个由两个<code>名称/值</code>配对组成的对象。
 <ul>
 <li><code>prac</code>: 练习阶段的3个序列。</li>
@@ -49,7 +50,7 @@ categories: "文档"
 </ul></li>
 </ul>
 </div>
-<div class="section level1">
+<div id="section-3" class="section level1">
 <h1>配置参数</h1>
 <table>
 <caption><span id="tab:configs">表1: </span>配置参数总表</caption>
@@ -129,7 +130,7 @@ categories: "文档"
 </tbody>
 </table>
 </div>
-<div class="section level1">
+<div id="section-4" class="section level1">
 <h1>数据记录</h1>
 <ul>
 <li>题目结果显示
@@ -137,7 +138,7 @@ categories: "文档"
 <li>显示正确率和平均正确反应时间</li>
 <li>展示标准分数和超越百分比</li>
 </ul></li>
-<li>提交原始数据如下表（参考<a href="{{% relref "standard.html" %}}">标准</a>中关于格式的说明）</li>
+<li>提交原始数据如下表（参考<a href="{{% relref "standard" %}}">标准</a>中关于格式的说明）</li>
 </ul>
 <table>
 <caption><span id="tab:recording-variables">表2: </span>原始数据变量列表</caption>
@@ -177,7 +178,7 @@ categories: "文档"
 </tbody>
 </table>
 </div>
-<div class="section level1">
+<div id="section-5" class="section level1">
 <h1>试题算分</h1>
 <ul>
 <li>算分码：100</li>

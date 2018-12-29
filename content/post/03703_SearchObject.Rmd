@@ -9,7 +9,7 @@ slug: 03703-searchobject # code-English name
 code: "03703"
 sdk: 203
 # hugo taxonomy related
-tasknames: "注意搜索"
+tags: "注意搜索"
 categories:
 - 文档
 - C2框架
@@ -51,7 +51,7 @@ SDK <- rmarkdown::metadata$sdk
 ```{r configs, echo=FALSE, message=FALSE}
 # knitr::kable(
 #   readr::read_csv(
-#     here::here("content", "resources", "config", NAME_EN, "configs.csv")
+#     here::here("R", "config", NAME_EN, "configs.csv")
 #   ),
 #   caption = "配置参数总表"
 # )
@@ -62,7 +62,7 @@ SDK <- rmarkdown::metadata$sdk
 ```{r recording-variables, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "recs.csv")
+    here::here("R", "config", NAME_EN, "recs.csv")
   ),
   caption = "原始数据变量列表"
 )
@@ -73,7 +73,7 @@ knitr::kable(
 ```{r sdk-score, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "sdk.csv")
+    here::here("R", "config", NAME_EN, "sdk.csv")
   ),
   caption = paste0("传入参数（算分码：`", SDK, "`）")
 )

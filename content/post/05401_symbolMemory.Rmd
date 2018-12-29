@@ -9,7 +9,7 @@ slug: 05401-symbolMemory # code-English name
 code: "05401"
 sdk: 102
 # hugo taxonomy related
-tasknames: 情景记忆
+tags: 情景记忆
 categories:
 - 文档
 - 数据记录优化
@@ -35,7 +35,7 @@ SDK <- rmarkdown::metadata$sdk
 * **题目编号**：`r CODE`
 * **任务描述**：测查记忆力，特别是个体记住各种符号的能力。
 * **测查能力**：记忆力-语义记忆
-* **相关任务**：[图片记忆](`r blogdown::shortcode("relref", "03501_pictureMemory.html")`)。
+* **相关任务**：[图片记忆](`r blogdown::shortcode("relref", "03501_pictureMemory")`)。
 
 # 前端交互
 
@@ -54,7 +54,7 @@ SDK <- rmarkdown::metadata$sdk
 ```{r configs, echo=FALSE, message=FALSE}
 # knitr::kable(
 #   readr::read_csv(
-#     here::here("content", "resources", "config", NAME_EN, "configs.csv")
+#     here::here("R", "config", NAME_EN, "configs.csv")
 #   ),
 #   caption = "配置参数总表"
 # )
@@ -65,20 +65,20 @@ SDK <- rmarkdown::metadata$sdk
 ```{r recording-variables, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "recs.csv")
+    here::here("R", "config", NAME_EN, "recs.csv")
   ),
   caption = "原始数据变量列表[^std]"
 )
 ```
 
-[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard.html")`)。
+[^std]: 请参考[标准](`r blogdown::shortcode("relref", "standard")`)。
 
 ## 试题算分
 
 ```{r sdk-score, echo=FALSE, message=FALSE}
 # knitr::kable(
 #   readr::read_csv(
-#     here::here("content", "resources", "config", NAME_EN, "sdk.csv")
+#     here::here("R", "config", NAME_EN, "sdk.csv")
 #   ),
 #   caption = paste0("传入参数（算分码：`", SDK, "`）")
 # )

@@ -9,7 +9,7 @@ slug: 08201-weatherprediction # code-English name
 code: "08201"
 sdk: 100
 # hugo taxonomy related
-tasknames: 概率分类学习范式
+tags: 概率分类学习范式
 categories: 文档
 # blogdown output
 output:
@@ -65,7 +65,7 @@ knitr::include_graphics("/images/WeatherPrediction/interface.png")
 ```{r stimuli, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "stimuli.csv")
+    here::here("R", "config", NAME_EN, "stimuli.csv")
   ),
   caption = "卡片模式编号"
 )
@@ -87,7 +87,7 @@ knitr::kable(
 ```{r configs, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "configs.csv")
+    here::here("R", "config", NAME_EN, "configs.csv")
   ),
   caption = "配置参数总表"
 )
@@ -98,7 +98,7 @@ knitr::kable(
 ```{r recording-variables, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "recs.csv")
+    here::here("R", "config", NAME_EN, "recs.csv")
   ),
   caption = "原始数据变量列表"
 )
@@ -109,7 +109,7 @@ knitr::kable(
 ```{r sdk-score, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "sdk.csv")
+    here::here("R", "config", NAME_EN, "sdk.csv")
   ),
   caption = paste0("传入参数（算分码：`", SDK, "`）")
 )

@@ -4,7 +4,7 @@ author: 张亮
 date: 2018-03-03
 slug: 03202-shifting2
 code: "03202"
-tasknames: "任务转换范式"
+tags: "任务转换范式"
 categories: "文档"
 ---
 
@@ -14,7 +14,7 @@ categories: "文档"
 <script src="/rmarkdown-libs/grViz-binding/grViz.js"></script>
 
 
-<div class="section level1">
+<div id="section" class="section level1">
 <h1>基本信息</h1>
 <ul>
 <li><strong>显示名称</strong>：反应转换</li>
@@ -22,10 +22,10 @@ categories: "文档"
 <li><strong>题目编号</strong>：03202</li>
 <li><strong>任务描述</strong>：测查思维力，特别是灵活切换思维方式的能力。</li>
 <li><strong>测查能力</strong>：思维力-思维灵活性</li>
-<li><strong>相关任务</strong>：<a href="{{% relref "03201_Shifting.html" %}}">思维转换</a>。本题目适用于5年级（10岁）以上儿童，低年级请使用思维转换任务。</li>
+<li><strong>相关任务</strong>：<a href="{{% relref "03201_Shifting" %}}">思维转换</a>。本题目适用于5年级（10岁）以上儿童，低年级请使用思维转换任务。</li>
 </ul>
 </div>
-<div class="section level1">
+<div id="section-1" class="section level1">
 <h1>交互界面</h1>
 <div id="htmlwidget-1" style="width:900px;height:100px;" class="grViz html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"diagram":"digraph task_flow{\n    # atr_list\n    # graph properties\n    graph [rankdir = LR, fontname = \"YouYuan\"]\n    # node properties\n    node [shape = box, fontname = \"YouYuan\"]\n    # edge properties\n    edge [fontname = \"YouYuan\"]\n\n    # node_stmt\n    ETC0 [label = \"...\", shape = plaintext]\n    R0 [label = \"用户操作\", color = \"blue\"]\n    C1 [label = \"线索符号\n（&hearts;/<）\", color = \"green\"]\n    T1 [label = \"目标词语\", color = \"red\"]\n    R1 [label = \"用户操作\", color = \"blue\"]\n    C2 [label = \"线索符号\n（&hearts;/<）\", color = \"green\"]\n    ETC2 [label = \"...\", shape = plaintext]\n\n    # subgraphs\n    subgraph cluster_trial {\n      # edge_stmt in subgraph\n      C1 -> T1 [label = \"500ms\", labeltooltip = \"线索目标间隔（CTI）\"]\n      T1 -> R1 [label = \"反应时间/3000ms\", labeltooltip = \"反应时间，注意用户须在最长等待时间（maxSt，默认3000ms）结束前操作\"]\n      label = \"一个试次\"\n    }\n\n    # edge_stmt in root graph\n    ETC0 -> R0\n    R0 -> C1 [label = \"500ms\", labeltooltip = \"反应线索间隔（RCI）\"]\n    R1 -> C2 [label = \"500ms\", labeltooltip = \"反应线索间隔（RCI）\"]\n    C2 -> ETC2\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
@@ -37,7 +37,7 @@ categories: "文档"
 <li>指引和练习在两个子任务混合起来（实际测试时候的形式）的时候如何操作。</li>
 </ol>
 </div>
-<div class="section level1">
+<div id="section-2" class="section level1">
 <h1>详细说明</h1>
 <ul>
 <li>刺激
@@ -147,8 +147,9 @@ categories: "文档"
 <li>保证刺激在不同的任务类型中比例一致。</li>
 </ul></li>
 </ul></li>
-<li>序列配置（参考<a href="{{% relref "standard.html" %}}">标准</a>中关于格式的说明）
+<li>序列配置
 <ul>
+<li>见<a href="/seq/03202_Shifting.json" target="_blank">序列文件</a>。</li>
 <li><strong>注意</strong>：本题目的第一个试次是一个“填充”试次，因此若设试次数目为<span class="math inline">\(n\)</span>时，实际需要完成的试次数目为<span class="math inline">\(n + 1\)</span>。在序列的配置标准中也是如此，即<code>length</code>为<span class="math inline">\(n\)</span>序列中，<code>stim</code>个数都是<span class="math inline">\(n + 1\)</span>。</li>
 <li>数组中每一个元素都是一个<code>json</code>对象，包含六个<code>名称/值(name/value)</code>配对，分别是
 <ul>
@@ -161,7 +162,7 @@ categories: "文档"
 </ul></li>
 </ul>
 </div>
-<div class="section level1">
+<div id="section-3" class="section level1">
 <h1>配置参数</h1>
 <table>
 <caption><span id="tab:configs">表2: </span>配置参数总表</caption>
@@ -255,7 +256,7 @@ categories: "文档"
 </tbody>
 </table>
 </div>
-<div class="section level1">
+<div id="section-4" class="section level1">
 <h1>数据记录</h1>
 <ul>
 <li>题目结果显示
@@ -263,7 +264,7 @@ categories: "文档"
 <li>显示正确率和平均正确反应时间</li>
 <li>展示标准分数和超越百分比</li>
 </ul></li>
-<li>提交原始数据如下表（参考<a href="{{% relref "standard.html" %}}">标准</a>中关于格式的说明）</li>
+<li>提交原始数据如下表（参考<a href="{{% relref "standard" %}}">标准</a>中关于格式的说明）</li>
 </ul>
 <table>
 <caption><span id="tab:recording-variables">表3: </span>原始数据变量列表</caption>
@@ -318,7 +319,7 @@ categories: "文档"
 </tbody>
 </table>
 </div>
-<div class="section level1">
+<div id="section-5" class="section level1">
 <h1>试题算分</h1>
 <ul>
 <li>算分码：201</li>
@@ -346,6 +347,6 @@ categories: "文档"
 </tbody>
 </table>
 </div>
-<div class="section level1">
+<div id="section-6" class="section level1">
 <h1>修订历史</h1>
 </div>
