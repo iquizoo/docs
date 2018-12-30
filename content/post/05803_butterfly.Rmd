@@ -31,7 +31,7 @@ SDK <- 999
 
 # 交互流程
 
-[点击此处](/axure-rp-design/butterfly/start.html){target="_blank"}查看交互流程设计。
+[点击此处](https://sr0l8g.axshare.com){target="_blank"}查看交互流程设计。
 
 # 详细说明
 
