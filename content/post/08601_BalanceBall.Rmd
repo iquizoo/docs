@@ -1,0 +1,80 @@
+---
+# heading of document
+title: 平衡球（BalanceBall） # Chinese name（English name）
+author: 刘楚麒
+date: 2018-12-28 # format 2006-01-01
+# slug
+slug: 08601-balanceball # code-English name
+# specific parameters for current task
+code: "08601"
+sdk: 999
+# hugo taxonomy related
+tags: 平衡觉
+categories: 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r parse-meta, include=FALSE}
+NAMES <- strsplit(rmarkdown::metadata$title, "（|）")[[1]]
+NAME_CN <- NAMES[1]
+NAME_EN <- NAMES[2]
+CODE <- rmarkdown::metadata$code
+SDK <- rmarkdown::metadata$sdk
+```
+
+# 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：测查平衡觉，特别是手眼协调的能力。
+* **测查能力**：感知觉-平衡觉
+
+# 前端交互
+
+## 基本逻辑
+
+参考这个[演示](http://www.xinli001.com/oxygen/24/)。用户被告知屏幕上会呈现一个矩形空间和一个金属球，要求用户通过摇晃手机设备（重力感应）让球滚落到指定圆圈位置，难度会逐渐提高，记录用户的通关数和反应时。
+
+## 详细说明
+
+任务分为**简单**、**普通**和**困难**三个难度，三个难度都有规定时间限制：
+
+* 在简单难度中，用户只需要控制一个金属球到达指定地点，且障碍物不多（只拐1~3次弯），限制时间为1分钟； 
+* 在普通难度中，用户需要同时控制两个金属球到达两个指定地点，障碍物数量中等（拐1~5次弯），限制时间为1分钟；
+* 在困难难度中，用户需要同时控制两个金属球到达两个指定地点，障碍物数量中等（拐1~5次弯），且路上有陷阱，限制时间为1分钟。
+
+流程如下： 
+
+1. 屏幕中央呈现矩形空间，根据难度出现不同数量的金属球。此时不可操作，并等待用户做出操作，屏幕上方提示用户“触碰开始”。
+1. 任务开始。用户做出操作使金属球到达指定圆圈位置或者达到限制时间后结束任务。当用户连续三次失败时，任务结束。 
+1. 操作反馈。结束每次任务后立即呈现反馈，成功时呈现“成功通关，触碰开始下一关”，失败时呈现“通关失败，触碰再次尝试”。反馈始终呈现直到用户做出操作。
+1. 试次间间隔。用户可自由确定何时开始下一个试次。
+
+# 后台配置
+
+## 数据记录
+
+```{r recording-variables, echo=FALSE, message=FALSE}
+# knitr::kable(
+#   readr::read_csv(
+#     here::here("content", "resources", "config", NAME_EN, "recs.csv")
+#   ),
+#   caption = "原始数据变量列表"
+# )
+```
+
+## 试题算分
+
+```{r sdk-score, echo=FALSE, message=FALSE}
+# knitr::kable(
+#   readr::read_csv(
+#     here::here("content", "resources", "config", NAME_EN, "sdk.csv")
+#   ),
+#   caption = paste0("传入参数（算分码：`", SDK, "`）")
+# )
+```
