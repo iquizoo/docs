@@ -1,0 +1,78 @@
+---
+# heading of document
+title: 是谁在唱歌（AuditoryFusion） # Chinese name（English name）
+author: 刘楚麒
+date: 2018-12-28 # format 2006-01-01
+# slug
+slug: # code-English name
+# specific parameters for current task
+code: "08701"
+sdk: 999
+# hugo taxonomy related
+tags: 听知觉声音分辨
+categories: 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r parse-meta, include=FALSE}
+NAMES <- strsplit(rmarkdown::metadata$title, "（|）")[[1]]
+NAME_CN <- NAMES[1]
+NAME_EN <- NAMES[2]
+CODE <- rmarkdown::metadata$code
+SDK <- rmarkdown::metadata$sdk
+```
+
+# 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：测查听知觉，特别是声音分辨能力。
+* **测查能力**：感知觉-听知觉
+
+# 前端交互
+
+## 基本逻辑
+
+屏幕上呈现一个森林，一左一右分别有一只小鸟，用户被告知两只小鸟会依次发出叫声，之后呈现一个新的声音，要求用户选择该声音更加接近哪只小鸟的叫声，难度会逐渐提高，记录用户的正确率和反应时。
+
+## 详细说明
+
+流程如下：
+
+1. 屏幕呈现森林和一左一右两只小鸟，此时不可操作，并等待用户做出操作，屏幕上方提示用户“触碰开始”。
+1. 任务开始。开始任务500ms后随机一边的小鸟发出声音并有相应动画提示，声音结束1s后另一只小鸟发出声音并有相应动画提示。两只小鸟都发出声音1s后呈现新的声音刺激，要求用户判断该声音更加接近哪只小鸟。一直等待直到用户作出反应。
+【ps: 此处的第三种新的声音是用前两种声音AB进行不同比例混合的，需要麻烦你们那边按照 25%A+75%B、27.5%A+72.5%B，30%A+70%B……75%A+25%B 间隔2.5%进行混合，一共21种】
+【任务难度为逐渐变难，难度是反应在两种比例的差距，即第一个试次为25%A+75%B或75%A+25%B，下一个随机为27.5%A+72.5%B或72.5%A+27.5%B】
+【为了后期分析便利，请把50%+50%的刺激材料称作0，25%A+75%B和75%A+25%B称作1和11、27.5%A+72.5%B和72.5%A+27.5%B称作2和12，如此类推】
+【AB声音如下，】
+1. 操作反馈。结束每次反应后立即呈现反馈，正确时呈现“判断正确，很棒！”，失败时呈现“判断错误，再仔细点聆听哦！”。反馈始终呈现直到用户做出操作，并进入下一试次。
+1. 试次间间隔。反馈消失后1s开始下一个试次。
+
+# 后台配置
+
+## 数据记录
+
+```{r recording-variables, echo=FALSE, message=FALSE}
+# knitr::kable(
+#   readr::read_csv(
+#     here::here("content", "resources", "config", NAME_EN, "recs.csv")
+#   ),
+#   caption = "原始数据变量列表"
+# )
+```
+
+## 试题算分
+
+```{r sdk-score, echo=FALSE, message=FALSE}
+# knitr::kable(
+#   readr::read_csv(
+#     here::here("content", "resources", "config", NAME_EN, "sdk.csv")
+#   ),
+#   caption = paste0("传入参数（算分码：`", SDK, "`）")
+# )
+```
