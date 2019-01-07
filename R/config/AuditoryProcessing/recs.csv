@@ -1,8 +1,7 @@
 ﻿名称,类型,说明
-`Round`,`int`,本任务有轮次的概念，此处记录当前在第几个轮次
-`DUR`,`int`,混合声音持续时间(Duration)，100-1000（ms）
-`Cond`,`char`,"试次条件(Condition)，即升调（up）降调（down）的呈现顺序，包含四种可能：'UU', 'DD', 'UD', 'DU'"
-`CResp`,`char`,"正确的反应(Correct Response），包含四种可能：'UU', 'DD', 'UD', 'DU'"
-`Resp`,`char`,"用户的实际反应(Response)，包含四种可能：'UU', 'DD', 'UD', 'DU'"
-`ACC`,`int`,正确或错误(ACCuracy)，0=错误，1=正确
-`RT`,`int`,用户完成操作所需时间（单位：毫秒）(Response Time)
+`Trial`,`int`,试次数目
+`DUR`,`int`,声音持续时间(Duration)，100-1000（单位：毫秒）
+`CResp`,`char`,升调使用'U'（即Up）表示，降调使用'D'（即Down）表示，多个声音直接拼接在一起
+`Resp`,`char`,升调使用'U'（即Up）表示，降调使用'D'（即Down）表示，多个反应直接拼接在一起
+`ACC`,`int`,正确或错误（ACCuracy），0=错误，1=正确
+`RT`,`int`,用户完成操作所需时间（单位：毫秒）（Response Time）
