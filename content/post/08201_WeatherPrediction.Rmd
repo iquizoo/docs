@@ -73,7 +73,7 @@ knitr::kable(
 
 ### 序列说明
 
-[序列](/seq/08201_WxPredict.json)包含两个字段：
+[序列](/seq/08201_WeatherPrediction.json){target="_blank"}包含两个字段：
 
 * `stim`：卡片呈现模式的编号。请参照表\@ref(tab:stimuli)。
 * `outcome`：当前卡片呈现模式代表的天气情况。其中：`Rain`表示下雨（&#127783;），`Sunshine`表示晴朗（&#127774;）。
