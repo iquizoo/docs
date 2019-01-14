@@ -47,17 +47,6 @@ SDK <- rmarkdown::metadata$sdk
 
 # 后台配置
 
-## 游戏参数
-
-```{r configs, echo=FALSE, message=FALSE}
-# knitr::kable(
-#   readr::read_csv(
-#     here::here("R", "config", NAME_EN, "configs.csv")
-#   ),
-#   caption = "配置参数总表"
-# )
-```
-
 ## 数据记录
 
 ```{r recording-variables, echo=FALSE, message=FALSE}
