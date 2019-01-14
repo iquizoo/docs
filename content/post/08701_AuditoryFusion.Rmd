@@ -4,7 +4,7 @@ title: 是谁在唱歌（AuditoryFusion） # Chinese name（English name）
 author: 刘楚麒
 date: 2018-12-28 # format 2006-01-01
 # slug
-slug: # code-English name
+slug: 08701-auditoryfusion # code-English name
 # specific parameters for current task
 code: "08701"
 sdk: 999
