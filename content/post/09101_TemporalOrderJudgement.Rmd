@@ -55,7 +55,7 @@ SDK <- rmarkdown::metadata$sdk
 ```{r recording-variables, echo=FALSE, message=FALSE}
 knitr::kable(
   readr::read_csv(
-    here::here("content", "resources", "config", NAME_EN, "recs.csv")
+      here::here("R", "config", NAME_EN, "recs.csv")
   ),
   caption = "原始数据变量列表"
 )
