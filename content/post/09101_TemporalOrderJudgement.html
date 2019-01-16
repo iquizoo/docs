@@ -1,0 +1,113 @@
+---
+# heading of document
+title: 顺序判断（TemporalOrderJudgement） # Chinese name（English name）
+author: 刘楚麒
+date: 2018-12-29 # format 2006-01-01
+# slug
+slug: 09101-temporalorderjudgement # code-English name
+# specific parameters for current task
+code: '09101'
+sdk: 999
+# hugo taxonomy related
+tasknames: 多感觉整合TOJ
+categories: 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#前端交互">前端交互</a><ul>
+<li><a href="#基本逻辑">基本逻辑</a></li>
+<li><a href="#详细说明">详细说明</a></li>
+</ul></li>
+<li><a href="#后台配置">后台配置</a><ul>
+<li><a href="#数据记录">数据记录</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：顺序判断</li>
+<li><strong>英文名称</strong>：TemporalOrderJudgement</li>
+<li><strong>题目编号</strong>：09101</li>
+<li><strong>任务描述</strong>：测查多感觉整合能力，特别是视听整合能力。</li>
+<li><strong>测查能力</strong>：感知觉-多感觉整合</li>
+</ul>
+</div>
+<div id="前端交互" class="section level1">
+<h1>前端交互</h1>
+<div id="基本逻辑" class="section level2">
+<h2>基本逻辑</h2>
+<p>屏幕一左一右呈现两个按钮，分别在下面标记“喇叭图片”和“眼睛图片”，任务为间隔一定时间（初始为350ms）分别呈现声音刺激（“哔”）10ms和视觉刺激（颜色上跟背景可区分的圆盘）12ms，两者顺序随机，用户需要根据两者的先后顺序点击相应按钮，记录用户的正确率和反应时。</p>
+</div>
+<div id="详细说明" class="section level2">
+<h2>详细说明</h2>
+<p>流程如下：</p>
+<ol style="list-style-type: decimal">
+<li>任务开始。随机先后间隔350ms呈现两种刺激（声音刺激为“哔”，10ms；视觉刺激为颜色上跟背景可区分的圆盘，12ms），让用户根据两者的先后顺序点击相应按钮。当用户正确反应后提高难度，表现为每次两种刺激间隔时间缩短10ms；当用户失败时降低难度，表现为每次增长刺激间隔时间10ms。当用户累计完成8个轮次时，任务结束。</li>
+<li>操作反馈。反馈始终呈现直到用户做出操作，并进入下一试次。</li>
+<li>试次间间隔。给予反馈1s后开始下一个试次。</li>
+</ol>
+</div>
+</div>
+<div id="后台配置" class="section level1">
+<h1>后台配置</h1>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<table>
+<caption><span id="tab:recording-variables">表1: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Trial</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">试次编号</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Round</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">轮次编号</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Order</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">声音（A）和视觉（V）的呈现顺序，包含两种可能：‘AV’，‘VA’</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Interval</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">两种刺激呈现的时间间隔（单位：毫秒）</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户的实际反应(Response)，包含两种可能：‘AV’，‘VA’</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误(ACCuracy)，0=错误，1=正确</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（单位：毫秒）(Response Time)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
