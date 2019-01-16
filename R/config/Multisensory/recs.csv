@@ -1,4 +1,4 @@
 ﻿名称,类型,说明
-`Cond`,`char`,"试次条件(Condition)，包含三种可能，仅呈现声音、视觉信息或同时呈现：'Auditory', 'Visual', 'Multisensory'"
+`Cond`,`char`,试次条件(Condition)，包含三种可能，仅呈现声音、视觉信息或同时呈现：'Auditory'，'Visual'，'Multisensory'
 `ACC`,`int`,正确或错误(ACCuracy)，0=错误（用户在秒表启动前操作），1=正确（用户在秒表启动后成功操作），-1=未完成操作。
 `RT`,`int`,用户完成操作所需时间（单位：毫秒）(Response Time)，若提前操作或未完成操作，则记为0
