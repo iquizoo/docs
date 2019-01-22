@@ -28,19 +28,23 @@ SDK <- rmarkdown::metadata$sdk
 * **显示名称**：`r NAME_CN`
 * **英文名称**：`r NAME_EN`
 * **题目编号**：`r CODE`
-* **任务描述**：
-* **测查能力**：
-* **相关任务**：
+* **任务描述**：测查个体将物体和空间位置绑定的记忆即联系记忆力。
+* **测查能力**：记忆力——联系记忆
 
 # 前端交互
 
-## 基本逻辑
+[点击此处](https://i1unwb.axshare.com){target="_blank"}查看交互流程设计。
 
-待完善。
+## 基本逻辑
 
 ## 详细说明
 
-待完善。
+* 刺激
+    + 使用不同的动物图片作刺激材料。动物行动的目的是到屏幕中间拿取“奶酪”。
+    + 目标刺激（动物）个数：练习阶段2个，正式测验3-7个。正式测验每种目标刺激个数出现2轮。
+* 序列
+    + 练习阶段：使用动物个数为1、2的两种情况，重复到用户做对为止进入正式测评；
+    + 正式测评：使用动物个数为3-7的五种情况，随机出现，每种情况出现两轮，总计10轮。
 
 # 后台配置
 
@@ -58,10 +62,10 @@ SDK <- rmarkdown::metadata$sdk
 ## 试题算分
 
 ```{r sdk-score, echo=FALSE, message=FALSE}
-# knitr::kable(
-#   readr::read_csv(
-#     here::here("R", "config", NAME_EN, "sdk.csv")
-#   ),
-#   caption = paste0("传入参数（算分码：`", SDK, "`）")
-# )
+knitr::kable(
+  readr::read_csv(
+    here::here("R", "config", NAME_EN, "sdk.csv")
+  ),
+  caption = paste0("传入参数（算分码：`", SDK, "`）")
+)
 ```
