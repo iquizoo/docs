@@ -18,14 +18,17 @@ output:
 <div id="TOC">
 <ul>
 <li><a href="#基本信息">基本信息</a></li>
-<li><a href="#交互流程">交互流程</a></li>
+<li><a href="#前端交互">前端交互</a><ul>
+<li><a href="#基本逻辑">基本逻辑</a></li>
 <li><a href="#详细说明">详细说明</a><ul>
 <li><a href="#刺激">刺激</a></li>
 <li><a href="#序列">序列</a></li>
 </ul></li>
-<li><a href="#配置参数">配置参数</a></li>
+</ul></li>
+<li><a href="#后台配置">后台配置</a><ul>
 <li><a href="#数据记录">数据记录</a></li>
 <li><a href="#试题算分">试题算分</a></li>
+</ul></li>
 </ul>
 </div>
 
@@ -39,14 +42,16 @@ output:
 <li><strong>测查能力</strong>：自控力-信息更新</li>
 </ul>
 </div>
-<div id="交互流程" class="section level1">
-<h1>交互流程</h1>
+<div id="前端交互" class="section level1">
+<h1>前端交互</h1>
+<div id="基本逻辑" class="section level2">
+<h2>基本逻辑</h2>
 <p><a href="https://sr0l8g.axshare.com" target="_blank">点击此处</a>查看交互流程设计。</p>
 </div>
-<div id="详细说明" class="section level1">
-<h1>详细说明</h1>
-<div id="刺激" class="section level2">
-<h2>刺激</h2>
+<div id="详细说明" class="section level2">
+<h2>详细说明</h2>
+<div id="刺激" class="section level3">
+<h3>刺激</h3>
 <p>使用<strong>蝴蝶</strong>作为基本的刺激材料。蝴蝶的形状简单一点，使得用户可以很容易地判断是否对称。</p>
 <p>总计需设计<code>40</code>张张不同的蝴蝶图片，其中</p>
 <ul>
@@ -54,8 +59,8 @@ output:
 <li>正式测评部分需要设计<code>36</code>张不同的蝴蝶图片，对称的和不对称的各占一半。对称的18张蝴蝶图片编号为<code>s01</code>–<code>s18</code>，不对称的18张图片编号为<code>n01</code>–<code>n18</code>。</li>
 </ul>
 </div>
-<div id="序列" class="section level2">
-<h2>序列</h2>
+<div id="序列" class="section level3">
+<h3>序列</h3>
 <ul>
 <li>引导和练习都只需要呈现2张（1张对称、1张不对称）蝴蝶图片进行记忆。</li>
 <li>正式测评按随机顺序分别呈现3、4、5、6张蝴蝶图片进行记忆。<a href="/seq/05803_butterfly.json">序列文件</a>中包含以下值：
@@ -67,84 +72,13 @@ output:
 </ul>
 </div>
 </div>
-<div id="配置参数" class="section level1">
-<h1>配置参数</h1>
-<table>
-<caption><span id="tab:configs">表1: </span>配置参数总表</caption>
-<thead>
-<tr class="header">
-<th align="left">参数类别</th>
-<th align="left">参数名称</th>
-<th align="left">类型</th>
-<th align="center">默认值</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">刺激呈现</td>
-<td align="left"><code>maxSt1</code></td>
-<td align="left"><code>int</code></td>
-<td align="center">3000</td>
-<td align="left">做对称判断时蝴蝶的呈现时间，单位毫秒</td>
-</tr>
-<tr class="even">
-<td align="left">刺激呈现</td>
-<td align="left"><code>hideTime</code></td>
-<td align="left"><code>int</code></td>
-<td align="center">500</td>
-<td align="left">蝴蝶飞入其中一个格子的时间，单位毫秒</td>
-</tr>
-<tr class="odd">
-<td align="left">刺激呈现</td>
-<td align="left"><code>maxSt2</code></td>
-<td align="left"><code>int</code></td>
-<td align="center">1000</td>
-<td align="left">蝴蝶飞入格子后停留在格子中的时间，单位毫秒</td>
-</tr>
-<tr class="even">
-<td align="left">刺激呈现</td>
-<td align="left"><code>iti</code></td>
-<td align="left"><code>int</code></td>
-<td align="center">500</td>
-<td align="left">用户作答完成并反馈后到第二轮蝴蝶出现的间隔时间，单位毫秒</td>
-</tr>
-<tr class="odd">
-<td align="left">操作反馈</td>
-<td align="left"><code>feedbackCorrectError</code></td>
-<td align="left"><code>bool</code></td>
-<td align="center">0</td>
-<td align="left">控制正式测评时候是（1）否（0）需要反馈正确与错误</td>
-</tr>
-<tr class="even">
-<td align="left">操作反馈</td>
-<td align="left"><code>feedbackNoResponse</code></td>
-<td align="left"><code>bool</code></td>
-<td align="center">1</td>
-<td align="left">控制正式测评时候是（1）否（0）需要提示用户未操作</td>
-</tr>
-<tr class="odd">
-<td align="left">操作反馈</td>
-<td align="left"><code>feedbackSound</code></td>
-<td align="left"><code>bool</code></td>
-<td align="center">1</td>
-<td align="left">控制正式测评时候是（1）否（0）给出声音反馈</td>
-</tr>
-<tr class="even">
-<td align="left">操作反馈</td>
-<td align="left"><code>feedbackVisual</code></td>
-<td align="left"><code>bool</code></td>
-<td align="center">1</td>
-<td align="left">控制正式测评时候是（1）否（0）给出视觉反馈</td>
-</tr>
-</tbody>
-</table>
 </div>
-<div id="数据记录" class="section level1">
-<h1>数据记录</h1>
-<p>提交原始数据如表<a href="#tab:recording-variables">2</a>（请参考<a href="{{% relref "standard" %}}">标准</a>）</p>
+<div id="后台配置" class="section level1">
+<h1>后台配置</h1>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
 <table>
-<caption><span id="tab:recording-variables">表2: </span>原始数据变量列表</caption>
+<caption><span id="tab:recording-variables">表1: </span>原始数据变量列表</caption>
 <thead>
 <tr class="header">
 <th align="left">名称</th>
@@ -196,10 +130,10 @@ output:
 </tbody>
 </table>
 </div>
-<div id="试题算分" class="section level1">
-<h1>试题算分</h1>
+<div id="试题算分" class="section level2">
+<h2>试题算分</h2>
 <table>
-<caption><span id="tab:sdk-score">表3: </span>传入参数（算分码：<code>999</code>）</caption>
+<caption><span id="tab:sdk-score">表2: </span>传入参数（算分码：<code>999</code>）</caption>
 <thead>
 <tr class="header">
 <th align="left">参数名称</th>
@@ -215,4 +149,5 @@ output:
 </tr>
 </tbody>
 </table>
+</div>
 </div>
