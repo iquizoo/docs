@@ -33,10 +33,11 @@ SDK <- rmarkdown::metadata$sdk
 
 # 前端交互
 
-[点击此处](https://i1unwb.axshare.com){target="_blank"}查看交互流程设计。
-页面风格扁平化，动物形象画风统一，背景清晰简单，背景颜色与动物颜色对比度高。
-
 ## 基本逻辑
+
+[点击此处](https://i1unwb.axshare.com){target="_blank"}查看交互流程设计。
+
+**注意**：页面风格扁平化，动物形象画风统一，背景清晰简单，背景颜色与动物颜色对比度高。
 
 ## 详细说明
 
