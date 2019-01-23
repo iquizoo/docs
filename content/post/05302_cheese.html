@@ -68,11 +68,58 @@ output:
 <h1>后台配置</h1>
 <div id="数据记录" class="section level2">
 <h2>数据记录</h2>
+<table>
+<caption><span id="tab:recording-variables">表1: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>SLen</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">当前轮次需要记忆的动物位置个数。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>SIDReal</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">当前轮次所有动物的编号顺序，编号之间使用连字符（即<code>-</code>）进行分隔。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>SLocReal</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">当前轮次正确的动物位置编号顺序，和<code>SIDReal</code>一一对应，编号之间使用连字符（即<code>-</code>）进行分隔。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>SIDResp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户实际作答的动物编号顺序，编号之间使用连字符（即<code>-</code>）进行分隔。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>SLocResp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户实际作答的动物位置编号顺序，和<code>SIDResp</code>一一对应，编号之间使用连字符（即<code>-</code>）进行分隔。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>AccLoc</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户作答正确或错误，0=错误，1=正确。例如“1-1-0”表示前两个对了，最后一个错了。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所用时间（单位：毫秒）。</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="试题算分" class="section level2">
 <h2>试题算分</h2>
 <table>
-<caption><span id="tab:sdk-score">表1: </span>传入参数（算分码：<code>999</code>）</caption>
+<caption><span id="tab:sdk-score">表2: </span>传入参数（算分码：<code>999</code>）</caption>
 <thead>
 <tr class="header">
 <th align="left">参数名称</th>
