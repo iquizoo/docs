@@ -60,8 +60,8 @@ SDK <- rmarkdown::metadata$sdk
 
 两只小鸟声音分别去以下网址下载：
 
-* http://sound.niaolei.org.cn/Oriolus-oriolus/144000.html
-* http://sound.niaolei.org.cn/Mirafra-javanica/24538.html
+* http://sc.chinaz.com/yinxiao/181224558111.htm
+* http://sc.chinaz.com/yinxiao/161025485921.htm
 
 分别截取1秒的声音作为原声，之后再两者混合。
 
