@@ -4,6 +4,7 @@ author: 申宇杏
 date: 2018-04-02
 slug: 02102-firefly
 code: "02102"
+sdk: 301
 tags: "视觉短时记忆任务"
 categories:
 - 文档
@@ -14,11 +15,12 @@ output:
     md_extensions: -ascii_identifiers
 ---
 
-```{r basic settings, include=FALSE}
-NAME_CN <- "森林中的萤火虫"
-NAME_EN <- "firefly"
-CODE <- "02102"
-SDK <- 301
+```{r parse-meta, include=FALSE}
+NAMES <- strsplit(rmarkdown::metadata$title, "（|）")[[1]]
+NAME_CN <- NAMES[1]
+NAME_EN <- NAMES[2]
+CODE <- rmarkdown::metadata$code
+SDK <- rmarkdown::metadata$sdk
 ```
 
 # 基本信息
