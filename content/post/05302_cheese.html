@@ -1,0 +1,144 @@
+---
+title: 偷吃奶酪（cheese）
+author: 申宇杏
+date: '2018-12-28'
+slug: 05302_cheese
+categories:
+  - C2框架
+  - 文档
+code: "05302"
+sdk: 999
+tasknames: 联系记忆
+output:
+  blogdown::html_page:
+    toc: yes
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#前端交互">前端交互</a><ul>
+<li><a href="#基本逻辑">基本逻辑</a></li>
+<li><a href="#详细说明">详细说明</a></li>
+</ul></li>
+<li><a href="#后台配置">后台配置</a><ul>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：偷吃奶酪</li>
+<li><strong>英文名称</strong>：cheese</li>
+<li><strong>题目编号</strong>：05302</li>
+<li><strong>任务描述</strong>：测查个体将物体和空间位置绑定的记忆即联系记忆力。</li>
+<li><strong>测查能力</strong>：记忆力——联系记忆</li>
+</ul>
+</div>
+<div id="前端交互" class="section level1">
+<h1>前端交互</h1>
+<div id="基本逻辑" class="section level2">
+<h2>基本逻辑</h2>
+<p><a href="https://i1unwb.axshare.com" target="_blank">点击此处</a>查看交互流程设计。</p>
+<p><strong>注意</strong>：页面风格扁平化，动物形象画风统一，背景清晰简单，背景颜色与动物颜色对比度高。</p>
+</div>
+<div id="详细说明" class="section level2">
+<h2>详细说明</h2>
+<ul>
+<li>刺激
+<ul>
+<li>使用不同的动物图片作刺激材料。动物行动的目的是到屏幕中间拿取“奶酪”。</li>
+<li>目标刺激（动物）个数：练习阶段2个，正式测验3-7个。正式测验每种目标刺激个数出现2轮。</li>
+<li>刺激呈现，即动物出现在特定方格中的时间1500ms，动物运动到屏幕中间奶酪位置1000ms，上一个动物消失到下一个动物出现时间500ms，一轮中最后一只动物消失到挡板揭开（用户可以开始操作）500ms。每一轮的间隔为1000ms。</li>
+</ul></li>
+<li>序列
+<ul>
+<li>练习阶段：使用动物个数为1、2的两种情况，重复到用户做对为止进入正式测评；</li>
+<li>正式测评：使用动物个数为2-7的6种情况，每种情况出现2轮，总计12轮。</li>
+</ul></li>
+<li>序列文件如下：
+<ul>
+<li>正式测评请使用<a href="/seq/cheese_normal.json" target="_blank">序列1</a>。</li>
+<li>若有短时间进行两次测评，第二次测评使用<a href="/seq/cheese_extra.json" target="_blank">序列2</a>。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="后台配置" class="section level1">
+<h1>后台配置</h1>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<table>
+<caption><span id="tab:recording-variables">表1: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>SLen</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">当前轮次需要记忆的动物位置个数。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>SIDReal</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">当前轮次所有动物的编号顺序，编号之间使用连字符（即<code>-</code>）进行分隔。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>SLocReal</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">当前轮次正确的动物位置编号顺序，和<code>SIDReal</code>一一对应，编号之间使用连字符（即<code>-</code>）进行分隔。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>SIDResp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户实际作答的动物编号顺序，编号之间使用连字符（即<code>-</code>）进行分隔。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>SLocResp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户实际作答的动物位置编号顺序，和<code>SIDResp</code>一一对应，编号之间使用连字符（即<code>-</code>）进行分隔。</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Acc</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户作答正确或错误，0=错误，1=正确。例如“1-1-0”表示前两个对了，最后一个错了。</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所用时间（单位：毫秒）。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="试题算分" class="section level2">
+<h2>试题算分</h2>
+<table>
+<caption><span id="tab:sdk-score">表2: </span>传入参数（算分码：<code>999</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>score</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户的总得分</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

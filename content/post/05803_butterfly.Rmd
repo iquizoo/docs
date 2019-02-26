@@ -29,13 +29,21 @@ SDK <- 999
 * **任务描述**：找出蝴蝶隐藏的位置，训练工作记忆
 * **测查能力**：自控力-信息更新
 
-# 交互流程
+# 前端交互
+
+## 基本逻辑
 
 [点击此处](https://sr0l8g.axshare.com){target="_blank"}查看交互流程设计。
 
-# 详细说明
+**界面风格要求**：
 
-## 刺激
+* 目标刺激蝴蝶，用简笔画等更简洁的形式；
+* 背景方格采用平视的视角，所有方格一样大；
+* 配色饱和度低一些，突出蝴蝶而不是背景。
+
+## 详细说明
+
+### 刺激
 
 使用**蝴蝶**作为基本的刺激材料。蝴蝶的形状简单一点，使得用户可以很容易地判断是否对称。
 
@@ -44,31 +52,31 @@ SDK <- 999
 * 引导和练习部分需要设计`4`（2张引导，2张练习）张不同的蝴蝶图片，对称的和不对称的各占一半。对称的编号为`ps01`--`ps02`，不对称的编号为`pn01`--`pn02`。
 * 正式测评部分需要设计`36`张不同的蝴蝶图片，对称的和不对称的各占一半。对称的18张蝴蝶图片编号为`s01`--`s18`，不对称的18张图片编号为`n01`--`n18`。
 
-## 序列
+### 序列
 
 * 引导和练习都只需要呈现2张（1张对称、1张不对称）蝴蝶图片进行记忆。
-* 正式测评按随机顺序分别呈现3、4、5、6张蝴蝶图片进行记忆。[序列文件](/seq/05803_butterfly.json)中包含以下值：
-    + `slen`：当前轮次需要呈现的蝴蝶个数（3-6中的一个）。
-    + `sym`：当前轮次先后呈现的蝴蝶是否对称，其中`s`代表对称，`n`代表不对称。例如`nsn`就表示现后呈现的三张蝴蝶照片依次是**不对称**、**对称**、**不对称**。
-    + `loc`：当前轮次先后呈现的蝴蝶飞入网格后停留的位置，使用16进制数字表示（参考设计中的图）。例如`148`就表示先后呈现的蝴蝶位置分别为1号、4号、8号网格。
+* 正式测评随机呈现3--7张蝴蝶图片进行记忆，以序列文件为准。
+* 序列文件
+    * 一般情况下请使用[序列1](/seq/butterfly_normal.json){target="_blank"}。
+    * 短时间内重复测评，第二次使用[序列2](/seq/butterfly_extra.json){target="_blank"}。
+    * 序列文件中使用的名称说明：
+        * `length`
+        : 需要记忆的蝴蝶个数。
+        * `symmetry`
+        : 各蝴蝶的对称性，`sym`表示**对称**，`asym`表示**不对称**，使用连字符（即`-`）分隔。
+        * `location`
+        : 各蝴蝶隐藏的位置，且位置使用数字1-16编号，使用连字符（即`-`）分隔。
 
-# 配置参数
+# 后台配置
 
-```{r configs, echo=FALSE, message=FALSE, warning=FALSE}
-knitr::kable(readr::read_csv(here::here("R", "config", NAME_EN, "configs.csv")),
-             caption = "配置参数总表")
-```
-
-# 数据记录
-
-提交原始数据如表\@ref(tab:recording-variables)（请参考[标准](`r blogdown::shortcode("relref", "standard")`)）
+## 数据记录
 
 ```{r recording-variables, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::kable(readr::read_csv(here::here("R", "config", NAME_EN, "recs.csv")),
              caption = "原始数据变量列表")
 ```
 
-# 试题算分
+## 试题算分
 
 ```{r sdk-score, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 knitr::kable(readr::read_csv(here::here("R", "config", NAME_EN, "sdk.csv")),
