@@ -1,0 +1,118 @@
+---
+# heading of document
+title: 声音波动（AuditoryProcessing） # Chinese name（English name）
+author: 刘楚麒
+date: 2018-12-29 # format 2006-01-01
+# slug
+slug: 08801-auditoryprocessing # code-English name
+# specific parameters for current task
+code: "08801"
+sdk: 999
+# hugo taxonomy related
+tags: 听知觉音调加工
+categories: 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#前端交互">前端交互</a><ul>
+<li><a href="#基本逻辑">基本逻辑</a></li>
+<li><a href="#详细说明">详细说明</a><ul>
+<li><a href="#流程说明">流程说明</a></li>
+<li><a href="#刺激说明">刺激说明</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#后台配置">后台配置</a><ul>
+<li><a href="#数据记录">数据记录</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：声音波动</li>
+<li><strong>英文名称</strong>：AuditoryProcessing</li>
+<li><strong>题目编号</strong>：08801</li>
+<li><strong>任务描述</strong>：训练听知觉，特别是音调分辨能力。</li>
+<li><strong>测查能力</strong>：感知觉-听知觉</li>
+</ul>
+</div>
+<div id="前端交互" class="section level1">
+<h1>前端交互</h1>
+<div id="基本逻辑" class="section level2">
+<h2>基本逻辑</h2>
+<p>任务中会先后呈现两个声音，屏幕上一左一右有两个按钮“升调”和“降调”，用户需要根据听到的声音按顺序点击相应按钮，难度会逐渐提高，表现为呈现的声音刺激持续时间越来越短，记录用户的正确率和反应时。</p>
+</div>
+<div id="详细说明" class="section level2">
+<h2>详细说明</h2>
+<div id="流程说明" class="section level3">
+<h3>流程说明</h3>
+<p>每个试次流程如下：</p>
+<ol style="list-style-type: decimal">
+<li>分别呈现1秒的声音刺激（升调或降调随机）二至四个，声音都播放结束后让用户根据相应顺序点击按钮。</li>
+<li>操作反馈。结束每次反应后立即呈现反馈。</li>
+<li>试次间间隔。反馈消失后1s开始下一个试次。</li>
+</ol>
+</div>
+<div id="刺激说明" class="section level3">
+<h3>刺激说明</h3>
+<p>使用软件制作1秒的声调和降调声音和压缩声音。</p>
+</div>
+</div>
+</div>
+<div id="后台配置" class="section level1">
+<h1>后台配置</h1>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<table>
+<caption><span id="tab:recording-variables">表1: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Trial</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">试次数目</td>
+</tr>
+<tr class="even">
+<td align="left"><code>DUR</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">声音持续时间(Duration)，100-1000（单位：毫秒）</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>CResp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">升调使用’U’（即Up）表示，降调使用’D’（即Down）表示，多个声音直接拼接在一起</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">升调使用’U’（即Up）表示，降调使用’D’（即Down）表示，多个反应直接拼接在一起</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误（ACCuracy），0=错误，1=正确</td>
+</tr>
+<tr class="even">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（单位：毫秒）（Response Time）</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

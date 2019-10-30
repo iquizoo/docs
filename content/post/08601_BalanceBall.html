@@ -1,0 +1,138 @@
+---
+# heading of document
+title: 平衡球（BalanceBall） # Chinese name（English name）
+author: 刘楚麒
+date: 2018-12-28 # format 2006-01-01
+# slug
+slug: 08601-balanceball # code-English name
+# specific parameters for current task
+code: "08601"
+sdk: 999
+# hugo taxonomy related
+tags: 平衡觉
+categories: 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#前端交互">前端交互</a><ul>
+<li><a href="#基本逻辑">基本逻辑</a></li>
+<li><a href="#详细说明">详细说明</a></li>
+</ul></li>
+<li><a href="#后台配置">后台配置</a><ul>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：平衡球</li>
+<li><strong>英文名称</strong>：BalanceBall</li>
+<li><strong>题目编号</strong>：08601</li>
+<li><strong>任务描述</strong>：测查平衡觉，特别是手眼协调的能力。</li>
+<li><strong>测查能力</strong>：感知觉-平衡觉</li>
+</ul>
+</div>
+<div id="前端交互" class="section level1">
+<h1>前端交互</h1>
+<div id="基本逻辑" class="section level2">
+<h2>基本逻辑</h2>
+<p>参考这个<a href="http://www.xinli001.com/oxygen/24/">演示</a>。用户被告知屏幕上会呈现一个矩形空间和一个金属球，要求用户通过摇晃手机设备（重力感应）让球滚落到指定圆圈位置，难度会逐渐提高，记录用户的通关数和反应时。</p>
+</div>
+<div id="详细说明" class="section level2">
+<h2>详细说明</h2>
+<p>任务分为<strong>简单</strong>、<strong>普通</strong>和<strong>困难</strong>三个难度，三个难度都有规定时间限制：</p>
+<ul>
+<li>在简单难度中，用户只需要控制一个金属球到达指定地点，且障碍物不多（具体见图片关卡1-3），限制时间为1分钟；</li>
+<li>在普通难度中，用户需要同时控制两个金属球到达两个指定地点，障碍物数量中等（具体见图片关卡4-6），限制时间为1分钟；</li>
+<li>在困难难度中，用户需要同时控制一至三个金属球到达一至三个指定地点，障碍物数量中等（具体见图片关卡7-9），且路上有陷阱，限制时间为1分钟。</li>
+</ul>
+<p>各个试次的关卡设置如下：</p>
+{{% directoryindex path="/static/images/balanceball" pathURL="/images/balanceball" %}}
+<p>流程如下：</p>
+<ol style="list-style-type: decimal">
+<li>屏幕中央呈现矩形空间，根据难度出现不同数量的金属球。</li>
+<li>用户需在限定时间内做出操作使金属球到达指定圆圈位置。注意：在困难任务下掉进陷阱后回到出发点，但计时不重置。</li>
+<li>操作反馈。如果用户在限定时间内使金属球达到指定地点，则任务成功；否则为失败。需显示计分动画，时间为2秒，计分规则为：初始分为0分。完成时加分为两部分的和，一部分为任务成功得分100，另一部分为时间加成分，即时间剩余秒数；不完成则总分不变。</li>
+<li>试次间间隔。反馈消失后1秒开始下一个试次。</li>
+</ol>
+</div>
+</div>
+<div id="后台配置" class="section level1">
+<h1>后台配置</h1>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<table>
+<caption><span id="tab:recording-variables">表1: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Trial</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">记录试次数目</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Difficulty</code></td>
+<td align="left">’char`</td>
+<td align="left">记录难度，有三种可能：<code>easy</code>，<code>normal</code>，<code>hard</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>TrapTimes</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">掉进陷阱次数，困难难度外均为0</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户是否顺利完成任务（ACCuracy），且0=未完成，1=完成</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>TimeUsed</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（单位：秒）</td>
+</tr>
+<tr class="even">
+<td align="left"><code>TimeRemain</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">试次结束时所剩时间（单位：秒）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="试题算分" class="section level2">
+<h2>试题算分</h2>
+<table>
+<caption><span id="tab:sdk-score">表2: </span>传入参数（算分码：<code>999</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>score</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户的最终得分</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
