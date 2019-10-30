@@ -1,0 +1,7 @@
+﻿名称,类型,说明
+`Trial`,`int`,试次数目
+`DUR`,`int`,声音持续时间(Duration)，100-1000（单位：毫秒）
+`CResp`,`char`,升调使用'U'（即Up）表示，降调使用'D'（即Down）表示，多个声音直接拼接在一起
+`Resp`,`char`,升调使用'U'（即Up）表示，降调使用'D'（即Down）表示，多个反应直接拼接在一起
+`ACC`,`int`,正确或错误（ACCuracy），0=错误，1=正确
+`RT`,`int`,用户完成操作所需时间（单位：毫秒）（Response Time）
