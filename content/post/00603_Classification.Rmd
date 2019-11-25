@@ -1,6 +1,6 @@
 ---
 # heading of document
-title: 分门别类（Classification） # Chinese name（English name）
+title: 快速归类（Classification） # Chinese name（English name）
 author: 张亮
 date: 2018-11-06 # format 2006-01-01
 # slug
@@ -14,6 +14,7 @@ categories:
 - 文档
 - C2框架
 - 幼儿
+bibliography: "scoring.bib"
 # blogdown output
 output:
   blogdown::html_page:
@@ -78,3 +79,15 @@ knitr::kable(
   caption = paste0("传入参数（算分码：`", SDK, "`）")
 )
 ```
+
+## 算分方法
+
+采用一个考虑了速度准确性权衡的叫做`RCS`[@woltz_availability_2006; @vandierendonck_comparison_2017]的指标作为原始分。规则：
+
+$$RCS = \frac{PC}{RT_c}$$
+
+其中$PC$表示用户作答的正确比例（未作答记为错误），而$RT_c$则表示用户所有作答正确情况下反应时的平均值。值得注意的是这里$RT_c$采用的**单位**：在以前的版本中是毫秒，但是这会导致$RCS$很小，因此新版本应当修改为以**秒**为单位。同时，$RT_c$的可能范围需定在0.1-3秒之间。
+
+原始分的取值范围为0~100。
+
+# 参考文献

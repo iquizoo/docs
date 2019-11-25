@@ -1,6 +1,6 @@
 ---
 # heading of document
-title: 记忆扫描（MemoryScan） # Chinese name（English name）
+title: 方块速记（MemoryScan） # Chinese name（English name）
 author: 张亮
 date: 2018-11-05 # format 2006-01-01
 # slug
@@ -78,3 +78,9 @@ knitr::kable(
   caption = paste0("传入参数（算分码：`", SDK, "`）")
 )
 ```
+
+## 算分方法
+
+计算用户的整体正确比例作为原始分。
+
+原始分的取值范围为0~1。
