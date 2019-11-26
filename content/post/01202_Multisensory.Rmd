@@ -1,0 +1,74 @@
+---
+# heading of document
+title: 超级秒表(高级)（Multisensory） # Chinese name（English name）
+author: 刘楚麒
+date: 2018-12-29 # format 2006-01-01
+# slug
+slug: 01202-multisensory # code-English name
+# specific parameters for current task
+code: '01202'
+sdk: 200
+# hugo taxonomy related
+tasknames: 多感觉整合
+categories: 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+```{r parse-meta, include=FALSE}
+NAMES <- strsplit(rmarkdown::metadata$title, "（|）")[[1]]
+NAME_CN <- NAMES[1]
+NAME_EN <- NAMES[2]
+CODE <- rmarkdown::metadata$code
+SDK <- rmarkdown::metadata$sdk
+```
+
+# 基本信息
+
+* **显示名称**：`r NAME_CN`
+* **英文名称**：`r NAME_EN`
+* **题目编号**：`r CODE`
+* **任务描述**：测查多感觉整合能力，特别是视听整合能力。
+* **测查能力**：感知觉-多感觉整合
+* **相关任务**：超级秒表
+
+# 前端交互
+
+## 基本逻辑
+
+任务为简单反应时任务，均为听到声音（“哔”）或看到秒表开始计时时尽快做出操作，其中包括三种情况：具体见下文。
+
+## 详细说明
+
+任务基本流程与超级秒表一致。在每个试次中，秒表没有启动前均不显示数字。每次随机进入一种任务情况：
+
+* 200ms的声音刺激（“哔”）；
+* 秒表上出现数字并开始计时；
+* 200ms的声音刺激（“哔”）和秒表上出现数字并开始计时。
+
+# 后台配置
+
+## 数据记录
+
+```{r recording-variables, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("R", "config", NAME_EN, "recs.csv")
+  ),
+  caption = "原始数据变量列表"
+)
+```
+
+## 试题算分
+
+```{r sdk-score, echo=FALSE, message=FALSE}
+knitr::kable(
+  readr::read_csv(
+    here::here("R", "config", NAME_EN, "sdk.csv")
+  ),
+  caption = paste0("传入参数（算分码：`", SDK, "`）")
+)
+```
