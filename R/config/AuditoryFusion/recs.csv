@@ -1,0 +1,9 @@
+﻿名称,类型,说明
+`Round`,`int`,本任务有轮次的概念，此处记录当前在第几个轮次
+`PropLeft`,`int`,左边鸟声的混合比例
+`PropRight`,`int`,右边鸟声的混合比例
+`Order`,`char`,左右侧声音的先后顺序，'LR'（先左后右）或'RL'（先右后左）
+`CResp`,`char`,正确的反应（Correct Response），包含两种可能：'Left'，'Right'
+`Resp`,`char`,用户的实际反应（Response），包含两种可能：'Left'，'Right'
+`ACC`,`int`,正确或错误（ACCuracy），0=错误，1=正确
+`RT`,`int`,用户完成操作所需时间（单位：毫秒）（Response Time）

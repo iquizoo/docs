@@ -1,0 +1,161 @@
+---
+# heading of document
+title: 是谁在唱歌（AuditoryFusion） # Chinese name（English name）
+author: 刘楚麒
+date: 2018-12-28 # format 2006-01-01
+# slug
+slug: 08701-auditoryfusion # code-English name
+# specific parameters for current task
+code: "08701"
+sdk: 999
+# hugo taxonomy related
+tags: 听知觉声音分辨
+categories: 文档
+# blogdown output
+output:
+  blogdown::html_page:
+    toc: true
+    md_extensions: -ascii_identifiers
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#基本信息">基本信息</a></li>
+<li><a href="#前端交互">前端交互</a><ul>
+<li><a href="#基本逻辑">基本逻辑</a></li>
+<li><a href="#详细说明">详细说明</a><ul>
+<li><a href="#流程说明">流程说明</a></li>
+<li><a href="#刺激说明">刺激说明</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#后台配置">后台配置</a><ul>
+<li><a href="#数据记录">数据记录</a></li>
+<li><a href="#试题算分">试题算分</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="基本信息" class="section level1">
+<h1>基本信息</h1>
+<ul>
+<li><strong>显示名称</strong>：是谁在唱歌</li>
+<li><strong>英文名称</strong>：AuditoryFusion</li>
+<li><strong>题目编号</strong>：08701</li>
+<li><strong>任务描述</strong>：测查听知觉，特别是声音分辨能力。</li>
+<li><strong>测查能力</strong>：感知觉-听知觉</li>
+</ul>
+</div>
+<div id="前端交互" class="section level1">
+<h1>前端交互</h1>
+<div id="基本逻辑" class="section level2">
+<h2>基本逻辑</h2>
+<p>屏幕上呈现一个森林，一左一右分别有一只小鸟，用户被告知两只小鸟会依次发出叫声，之后呈现一个新的声音，要求用户选择该声音更加接近哪只小鸟的叫声，难度会逐渐提高，记录用户的正确率和反应时。</p>
+</div>
+<div id="详细说明" class="section level2">
+<h2>详细说明</h2>
+<div id="流程说明" class="section level3">
+<h3>流程说明</h3>
+<p>每个试次流程如下：</p>
+<ol style="list-style-type: decimal">
+<li>屏幕呈现森林和一左一右两只小鸟。随机一边的小鸟发出声音并有相应动画提示，声音结束500毫秒后另一只小鸟发出声音并有相应动画提示。用户需要记忆这两种声音。</li>
+<li>500毫秒后呈现目标刺激，是由左右两边小鸟的声音合成的声音。起始混合比例为75%:25%，75%的为左右<strong>随机</strong>的一侧，后面所有的混合都是如此。随着用户的作答情况，混合比例会发生改变：
+<ul>
+<li>若上一个试次用户作答正确，则将上一试次混合比例中较高的减少2.5%（最小为52.5%，下同），而较低的增加2.5%（最大为47.5%，下同）作为本次的混合比例（即难度增加）。</li>
+<li>若上一个试次用户作答错误，则将上一试次混合比例中较高的增加2.5%，而较低的减少2.5%作为本次的混合比例（即难度减小）。</li>
+</ul></li>
+<li>等待用户判断该声音更加接近哪只小鸟。一直等待直到用户作出反应。</li>
+<li>操作反馈。结束每次反应后立即呈现反馈。</li>
+<li>试次间间隔。反馈消失后1s开始下一个试次。</li>
+</ol>
+<p>当用户完成8个<a href="{{% relref "glossary#轮次" %}}">轮次</a>（定义二）后结束测验。</p>
+</div>
+<div id="刺激说明" class="section level3">
+<h3>刺激说明</h3>
+<p>两只小鸟声音分别去以下网址下载：</p>
+<ul>
+<li><a href="http://sc.chinaz.com/yinxiao/181224558111.htm" class="uri">http://sc.chinaz.com/yinxiao/181224558111.htm</a></li>
+<li><a href="http://sc.chinaz.com/yinxiao/161025485921.htm" class="uri">http://sc.chinaz.com/yinxiao/161025485921.htm</a></li>
+</ul>
+<p>分别截取1秒的声音作为原声，之后再两者混合。</p>
+</div>
+</div>
+</div>
+<div id="后台配置" class="section level1">
+<h1>后台配置</h1>
+<div id="数据记录" class="section level2">
+<h2>数据记录</h2>
+<table>
+<caption><span id="tab:recording-variables">表1: </span>原始数据变量列表</caption>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Round</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">本任务有轮次的概念，此处记录当前在第几个轮次</td>
+</tr>
+<tr class="even">
+<td align="left"><code>PropLeft</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">左边鸟声的混合比例</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>PropRight</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">右边鸟声的混合比例</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Order</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">左右侧声音的先后顺序，‘LR’（先左后右）或’RL’（先右后左）</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>CResp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">正确的反应（Correct Response），包含两种可能：‘Left’，‘Right’</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Resp</code></td>
+<td align="left"><code>char</code></td>
+<td align="left">用户的实际反应（Response），包含两种可能：‘Left’，‘Right’</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>ACC</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">正确或错误（ACCuracy），0=错误，1=正确</td>
+</tr>
+<tr class="even">
+<td align="left"><code>RT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户完成操作所需时间（单位：毫秒）（Response Time）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="试题算分" class="section level2">
+<h2>试题算分</h2>
+<table>
+<caption><span id="tab:sdk-score">表2: </span>传入参数（算分码：<code>999</code>）</caption>
+<thead>
+<tr class="header">
+<th align="left">参数名称</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>score</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">用户的最终正确率</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
